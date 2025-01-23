@@ -40,8 +40,8 @@
 /* Class = "UILabel"; text = "Attach application logs"; ObjectID = "V7E-QE-uIA"; */
 "V7E-QE-uIA.text" = "附加應用程式記錄";
 
-/* Class = "UILabel"; text = "Discuss on our forum, in social networks, or on GitHub"; ObjectID = "W6h-Gt-MMt"; */
-"W6h-Gt-MMt.text" = "於我們的論壇、社群網路或 GitHub 上討論";
+/* Class = "UILabel"; text = "Discuss in social networks or on GitHub"; ObjectID = "W6h-Gt-MMt"; */
+"W6h-Gt-MMt.text" = "於社群網路或 GitHub 上討論";
 
 /* Class = "UITableViewController"; title = "Settings"; ObjectID = "bEE-nS-r3u"; */
 "bEE-nS-r3u.title" = "設定";

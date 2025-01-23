@@ -99,7 +99,7 @@ extension AGDns64Settings {
         let dns64Settings = AGDns64Settings()
         dns64Settings.upstreams = upstreams.map { AGDnsUpstream.initialize(from: $0) }
         dns64Settings.maxTries = 2
-        dns64Settings.waitTimeMs = AGDnsProxyConfig.defaultTimeoutMs
+        dns64Settings.waitTimeMs = 5_000 // With DnsLibs 2.4.16+ we set wait time as 5 seconds
 
         return dns64Settings
     }
@@ -117,7 +117,7 @@ extension AGDns64Settings {
 
 extension AGDnsProxyConfig {
     /// AGDnsProxy Fallback timeout
-    public static let defaultTimeoutMs = 60_000
+    public static let defaultTimeoutMs = 0 // With DnsLibs 2.4.16+ we set default timeout as 0
 
     /// Initializer for `AGDnsProxyConfig` from `DnsProxyConfiguration`
     /// We use `DnsProxyConfiguration` to be able to test how we configure `AGDnsProxyConfig`
@@ -153,6 +153,7 @@ extension AGDnsProxyConfig {
         dnsProxyConfiguration.blockEch = false
         dnsProxyConfiguration.helperPath = defaultConfig.helperPath
         dnsProxyConfiguration.upstreamTimeoutMs = UInt(AGDnsProxyConfig.defaultTimeoutMs)
+        dnsProxyConfiguration.enableServfailOnUpstreamsFailure = false // With DnsLibs 2.4.16+ we disable servfail on upstreams failure
         return dnsProxyConfiguration
     }
 
@@ -184,7 +185,7 @@ extension AGDnsProxyConfig {
     }
 }
 
-extension AGBlockingMode {
+extension AGDnsBlockingMode {
     var extendedDescription: String {
         switch self {
         case .AGBM_REFUSED:

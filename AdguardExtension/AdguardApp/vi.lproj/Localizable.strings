@@ -91,8 +91,14 @@
 /* (MainController) login status caption on main screen */
 "protection_disabled_caption" = "Bảo vệ bị vô hiệu hóa";
 
-/* (GetProTableController) upgrade button title */
-"upgrade_button_title" = "Đăng ký";
+/* (GetProTableController) upgrade button title; look like 'Try for free\n7 days free, then 1$.00/moth'*/
+"upgrade_button_title" = "Dùng thử miễn phí\n7 ngày miễn phí, sau đó %@";
+
+/* (GetProTableController) upgrade button title for month; looks like '$1.00/moth' */
+"upgrade_button_subscription_price_month" = "%@/tháng";
+
+/* (GetProTableController) upgrade button title for year; looks like '$1.00/year' */
+"upgrade_button_subscription_price_year" = "%@/năm";
 
 /* (LicenseProductChoiceCell) restore purchase button title */
 "restore_purchase_button_title" = "Khôi phục mua hàng";
@@ -677,7 +683,7 @@
 "dns_filters_notification_title" = "Tắt bớt vài bộ lọc để làm việc chính xác";
 
 /* (DnsFiltersTableController) - DNS filters title */
-"dns_filters_title" = "Bộ lọc DNS";
+"dns_filters_title" = "Các bộ lọc";
 
 /*(DnsLogController) status of dns request */
 "dns_request_status_blocked" = "Bị chặn";

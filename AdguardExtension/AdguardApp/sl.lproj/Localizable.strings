@@ -94,8 +94,14 @@
 /* (MainController) login status caption on main screen */
 "protection_disabled_caption" = "Zaščite je izkjučena";
 
-/* (GetProTableController) upgrade button title */
-"upgrade_button_title" = "Naroči se";
+/* (GetProTableController) upgrade button title; look like 'Try for free\n7 days free, then 1$.00/moth'*/
+"upgrade_button_title" = "Preizkusiti brezplačno\n7 dni brezplačno, nato %@";
+
+/* (GetProTableController) upgrade button title for month; looks like '$1.00/moth' */
+"upgrade_button_subscription_price_month" = "%@/mesec";
+
+/* (GetProTableController) upgrade button title for year; looks like '$1.00/year' */
+"upgrade_button_subscription_price_year" = "%@/leto";
 
 /* (LicenseProductChoiceCell) restore purchase button title */
 "restore_purchase_button_title" = "Obnovi nakup";
@@ -218,7 +224,7 @@
 "add_wifi_name_caption" = "Ime:";
 
 /* (AESupport) Alert message if user have no e-mail account on device */
-"bug_report_sending_error" = "Poročila o napaki ni mogoče poslati. V napravi morda niste nastavili e-pošte.";
+"bug_report_sending_error" = "Poročila o napaki ni mogoče poslati. V napravi morda niste nastavili elektronski naslov.";
 
 /* (MainController) Error on check filter uspdates */
 "filter_updates_error" = "Napaka pri posodabljanju filtra";
@@ -879,6 +885,9 @@
 
 /* (ActivityViewController) -  Data saved alret title */
 "data_saved_info_alert_title" = "Shranjeni podatki";
+
+/* (ActivityViewController) -  Data saved alret message */
+"data_saved_info_alert_message" = "AdGuard vašemu brskalniku ne dovoli nalaganja nepotrebnih elementov strani in tako zmanjša porabo podatkov vaše naprave\n\nTukaj je skupna količina podatkov, ki jih AdGuard shrani za izbrano časovno obdobje";
 
 /* (ActivityViewController) - Companies alert title */
 "companies_info_alert_title" = "Število podjetij";

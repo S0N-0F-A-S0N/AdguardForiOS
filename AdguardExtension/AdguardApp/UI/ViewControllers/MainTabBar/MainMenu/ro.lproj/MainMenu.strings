@@ -40,9 +40,6 @@
 /* Class = "UILabel"; text = "Attach application logs"; ObjectID = "V7E-QE-uIA"; */
 "V7E-QE-uIA.text" = "Atașați jurnalele aplicației";
 
-/* Class = "UILabel"; text = "Discuss on our forum, in social networks, or on GitHub"; ObjectID = "W6h-Gt-MMt"; */
-"W6h-Gt-MMt.text" = "Discutați pe forumul nostru, în rețelele sociale sau pe GitHub";
-
 /* Class = "UITableViewController"; title = "Settings"; ObjectID = "bEE-nS-r3u"; */
 "bEE-nS-r3u.title" = "Setări";
 

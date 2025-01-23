@@ -14,23 +14,8 @@
 		240718EC28DDC6FD00BFC6C8 /* OpenYouTubePlayerControllerParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240718E928DDC6FC00BFC6C8 /* OpenYouTubePlayerControllerParser.swift */; };
 		2408A87427478F9B00D2D1DE /* AdServicesHelperMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2408A87327478F9B00D2D1DE /* AdServicesHelperMock.swift */; };
 		2408A8762747901B00D2D1DE /* IAdFrameworkHelperMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2408A8752747901B00D2D1DE /* IAdFrameworkHelperMock.swift */; };
-		2408A8782747917400D2D1DE /* AdServicesHelperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2408A8772747917400D2D1DE /* AdServicesHelperTest.swift */; };
-		2408A87B2747919800D2D1DE /* IAdFrameworkHelperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2408A87A2747919800D2D1DE /* IAdFrameworkHelperTest.swift */; };
-		2408A87D2747AC7C00D2D1DE /* AdServicesWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2408A87C2747AC7C00D2D1DE /* AdServicesWrapper.swift */; };
-		2408A87E2747ADE300D2D1DE /* AdServicesWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2408A87C2747AC7C00D2D1DE /* AdServicesWrapper.swift */; };
-		2408A87F2747ADE400D2D1DE /* AdServicesWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2408A87C2747AC7C00D2D1DE /* AdServicesWrapper.swift */; };
 		2408A8812747AF9A00D2D1DE /* AdServicesWrapperMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2408A8802747AF9A00D2D1DE /* AdServicesWrapperMock.swift */; };
-		2408A8832747D47B00D2D1DE /* AdServicesAttributionRecordsParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2408A8822747D47B00D2D1DE /* AdServicesAttributionRecordsParserTest.swift */; };
-		2408A8862747DC7700D2D1DE /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24DB3DB5274525AD0038627C /* iAd.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		2408A8872747DC8200D2D1DE /* AdServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24DB3DBA27452BF30038627C /* AdServices.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		2408A8882747DC8A00D2D1DE /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24DB3DB5274525AD0038627C /* iAd.framework */; };
-		2408A8892747DC9000D2D1DE /* AdServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24DB3DBA27452BF30038627C /* AdServices.framework */; };
-		2408A88B2747E3D000D2D1DE /* AppleSearchAdsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240C3AD927464B7C00CD10B3 /* AppleSearchAdsService.swift */; };
-		2408A88C2747E4C500D2D1DE /* AdServicesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2463A7A02746B0A2007C9935 /* AdServicesHelper.swift */; };
-		2408A88D2747E4CF00D2D1DE /* IAdFrameworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2463A79E2746AF64007C9935 /* IAdFrameworkHelper.swift */; };
 		2408A88E2747E4E900D2D1DE /* HttpRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB2F95923F2C56200F9A544 /* HttpRequestService.swift */; };
-		2408A88F2747E4FC00D2D1DE /* AdClientWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240C3ADF2746775800CD10B3 /* AdClientWrapper.swift */; };
-		2408A8902747E51400D2D1DE /* AdServicesWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2408A87C2747AC7C00D2D1DE /* AdServicesWrapper.swift */; };
 		2408A8912747E53F00D2D1DE /* RequestSenderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB2F94623F2B64400F9A544 /* RequestSenderProtocol.swift */; };
 		2408A8922747E55100D2D1DE /* RequestSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB2F94523F2B64400F9A544 /* RequestSender.swift */; };
 		2408A8932747E5C300D2D1DE /* HttpRequestServiceProtocol+sendFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07D343E2612207700213A5A /* HttpRequestServiceProtocol+sendFeedback.swift */; };
@@ -42,11 +27,6 @@
 		2408A89C2747E6DC00D2D1DE /* SendFeedbackRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB2F94F23F2B7C700F9A544 /* SendFeedbackRequest.swift */; };
 		2408A89D2747E6E400D2D1DE /* AdServicesAttributionRecordsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DB3DBD2745443D0038627C /* AdServicesAttributionRecordsRequest.swift */; };
 		2408A8A32747ECD000D2D1DE /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB2F94723F2B64400F9A544 /* RequestFactory.swift */; };
-		2408A8A42747ED0000D2D1DE /* AppleSearchAdsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240C3AD927464B7C00CD10B3 /* AppleSearchAdsService.swift */; };
-		2408A8A52747ED1500D2D1DE /* AdServicesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2463A7A02746B0A2007C9935 /* AdServicesHelper.swift */; };
-		2408A8A62747ED1B00D2D1DE /* IAdFrameworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2463A79E2746AF64007C9935 /* IAdFrameworkHelper.swift */; };
-		2408A8A72747ED2E00D2D1DE /* AdClientWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240C3ADF2746775800CD10B3 /* AdClientWrapper.swift */; };
-		2408A8A82747ED3300D2D1DE /* AdServicesWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2408A87C2747AC7C00D2D1DE /* AdServicesWrapper.swift */; };
 		2408A8A92747ED4500D2D1DE /* HttpRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB2F95923F2C56200F9A544 /* HttpRequestService.swift */; };
 		2408A8AA2747ED5200D2D1DE /* RequestSenderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB2F94623F2B64400F9A544 /* RequestSenderProtocol.swift */; };
 		2408A8AB2747ED5D00D2D1DE /* RequestSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB2F94523F2B64400F9A544 /* RequestSender.swift */; };
@@ -59,16 +39,6 @@
 		2408A8B22747EDB900D2D1DE /* AdServicesAttributionRecordsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240C3ADC274650BC00CD10B3 /* AdServicesAttributionRecordsParser.swift */; };
 		2408A8B32747EDEA00D2D1DE /* SendFeedbackRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB2F94F23F2B7C700F9A544 /* SendFeedbackRequest.swift */; };
 		2408A8B42747EDF400D2D1DE /* AdServicesAttributionRecordsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DB3DBD2745443D0038627C /* AdServicesAttributionRecordsRequest.swift */; };
-		2408A8B52747F39300D2D1DE /* AppleSearchAdsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240C3AD927464B7C00CD10B3 /* AppleSearchAdsService.swift */; };
-		2408A8B62747F39400D2D1DE /* AppleSearchAdsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240C3AD927464B7C00CD10B3 /* AppleSearchAdsService.swift */; };
-		2408A8B72747F39A00D2D1DE /* AdServicesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2463A7A02746B0A2007C9935 /* AdServicesHelper.swift */; };
-		2408A8B82747F39B00D2D1DE /* AdServicesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2463A7A02746B0A2007C9935 /* AdServicesHelper.swift */; };
-		2408A8B92747F3A300D2D1DE /* AdServicesWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2408A87C2747AC7C00D2D1DE /* AdServicesWrapper.swift */; };
-		2408A8BA2747F3A400D2D1DE /* AdServicesWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2408A87C2747AC7C00D2D1DE /* AdServicesWrapper.swift */; };
-		2408A8BB2747F3BB00D2D1DE /* IAdFrameworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2463A79E2746AF64007C9935 /* IAdFrameworkHelper.swift */; };
-		2408A8BC2747F3BC00D2D1DE /* IAdFrameworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2463A79E2746AF64007C9935 /* IAdFrameworkHelper.swift */; };
-		2408A8BD2747F3C400D2D1DE /* AdClientWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240C3ADF2746775800CD10B3 /* AdClientWrapper.swift */; };
-		2408A8BE2747F3C500D2D1DE /* AdClientWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240C3ADF2746775800CD10B3 /* AdClientWrapper.swift */; };
 		2408A8BF2747F3D600D2D1DE /* HttpRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB2F95923F2C56200F9A544 /* HttpRequestService.swift */; };
 		2408A8C02747F3D600D2D1DE /* HttpRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB2F95923F2C56200F9A544 /* HttpRequestService.swift */; };
 		2408A8C12747F3E300D2D1DE /* RequestSenderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB2F94623F2B64400F9A544 /* RequestSenderProtocol.swift */; };
@@ -92,16 +62,9 @@
 		2408A8D32747F47D00D2D1DE /* SendFeedbackRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB2F94F23F2B7C700F9A544 /* SendFeedbackRequest.swift */; };
 		2408A8D42747F48900D2D1DE /* AdServicesAttributionRecordsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DB3DBD2745443D0038627C /* AdServicesAttributionRecordsRequest.swift */; };
 		2408A8D52747F48A00D2D1DE /* AdServicesAttributionRecordsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DB3DBD2745443D0038627C /* AdServicesAttributionRecordsRequest.swift */; };
-		240C3ADA27464B7C00CD10B3 /* AppleSearchAdsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240C3AD927464B7C00CD10B3 /* AppleSearchAdsService.swift */; };
-		240C3ADB27464B7C00CD10B3 /* AppleSearchAdsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240C3AD927464B7C00CD10B3 /* AppleSearchAdsService.swift */; };
 		240C3ADD274650BC00CD10B3 /* AdServicesAttributionRecordsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240C3ADC274650BC00CD10B3 /* AdServicesAttributionRecordsParser.swift */; };
 		240C3ADE274650BC00CD10B3 /* AdServicesAttributionRecordsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240C3ADC274650BC00CD10B3 /* AdServicesAttributionRecordsParser.swift */; };
-		240C3AE02746775800CD10B3 /* AdClientWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240C3ADF2746775800CD10B3 /* AdClientWrapper.swift */; };
-		240C3AE12746775800CD10B3 /* AdClientWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240C3ADF2746775800CD10B3 /* AdClientWrapper.swift */; };
-		240C3B292746A49A00CD10B3 /* AppleSearchAdsServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240C3B282746A49A00CD10B3 /* AppleSearchAdsServiceTest.swift */; };
-		240C3B2A2746A4B700CD10B3 /* AppleSearchAdsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240C3AD927464B7C00CD10B3 /* AppleSearchAdsService.swift */; };
 		240C3B2C2746A4D800CD10B3 /* ADClientWrapperMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240C3B2B2746A4D800CD10B3 /* ADClientWrapperMock.swift */; };
-		240C3B2D2746A4F000CD10B3 /* AdClientWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240C3ADF2746775800CD10B3 /* AdClientWrapper.swift */; };
 		240C3B2F2746A5DB00CD10B3 /* HttpRequestServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240C3B2E2746A5DB00CD10B3 /* HttpRequestServiceMock.swift */; };
 		240C3B302746A5F300CD10B3 /* HttpRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB2F95923F2C56200F9A544 /* HttpRequestService.swift */; };
 		240C3B322746AA6C00CD10B3 /* RequestSenderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB2F94623F2B64400F9A544 /* RequestSenderProtocol.swift */; };
@@ -194,12 +157,6 @@
 		2455B21227317FA9002B86D7 /* ImportSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2455B21027317FA9002B86D7 /* ImportSettings.swift */; };
 		2455B21327317FA9002B86D7 /* ImportSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2455B21027317FA9002B86D7 /* ImportSettings.swift */; };
 		2463A79D2746AD37007C9935 /* RequestSenderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2463A79C2746AD37007C9935 /* RequestSenderMock.swift */; };
-		2463A79F2746AF64007C9935 /* IAdFrameworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2463A79E2746AF64007C9935 /* IAdFrameworkHelper.swift */; };
-		2463A7A22746B16A007C9935 /* AdServicesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2463A7A02746B0A2007C9935 /* AdServicesHelper.swift */; };
-		2463A7A32746B16B007C9935 /* AdServicesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2463A7A02746B0A2007C9935 /* AdServicesHelper.swift */; };
-		2463A7A42746B1BA007C9935 /* IAdFrameworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2463A79E2746AF64007C9935 /* IAdFrameworkHelper.swift */; };
-		2463A7A52746B1BB007C9935 /* IAdFrameworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2463A79E2746AF64007C9935 /* IAdFrameworkHelper.swift */; };
-		2463A7A62746B452007C9935 /* AdServicesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2463A7A02746B0A2007C9935 /* AdServicesHelper.swift */; };
 		246EE281275F872E00104CE4 /* Domain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246EE280275F872E00104CE4 /* Domain.swift */; };
 		246EE282275FAB3100104CE4 /* Domain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246EE280275F872E00104CE4 /* Domain.swift */; };
 		246EE284275FBB6400104CE4 /* DomainTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246EE283275FBB6400104CE4 /* DomainTest.swift */; };
@@ -1431,7 +1388,6 @@
 		C23032179D836CE21967D1C2 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CDAEA42191C9540028001B /* String+Utils.swift */; };
 		C2306B5EBD6E32E284E334C9 /* YouTubeShareLinkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23EEA92DDBC526C3FA37E2F /* YouTubeShareLinkResult.swift */; };
 		C23094C3C9CBD65313F19A1D /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 655A01F21C6B7686000F00D7 /* NSString+Utils.m */; };
-		C231E086502F0395EC2EE947 /* YoutubePlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C231D3CF4A743835726A0C26 /* YoutubePlayerController.swift */; };
 		C232011552D6AB02F9CE6C2F /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 655A01F21C6B7686000F00D7 /* NSString+Utils.m */; };
 		C2326FC77E493BF8F83DB91E /* YouTubeShareLinkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23EEA92DDBC526C3FA37E2F /* YouTubeShareLinkResult.swift */; };
 		C232DDD053E035F5575DC231 /* YouTubeAdsJsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2325E02A9A9579A8947440B /* YouTubeAdsJsResult.swift */; };
@@ -1452,7 +1408,6 @@
 		C239B55BEA3047C1EFC54AE8 /* YoutubeHtmlBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C235A1604901DD066185FBC8 /* YoutubeHtmlBuilder.swift */; };
 		C23A0500C2A25775A0AB15DC /* filter.json in Resources */ = {isa = PBXBuildFile; fileRef = C23386887409D1DD26F5D582 /* filter.json */; };
 		C23ABE368E2EE1B4C6B913FF /* SharedResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF5C51026C261AF001851D6 /* SharedResources.swift */; };
-		C23AE1CF5A6E9A0B6D3440E8 /* YoutubePlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C231D3CF4A743835726A0C26 /* YoutubePlayerController.swift */; };
 		C23BD82E0F30A2B578BF8D4A /* YouTubeShareLinkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23EEA92DDBC526C3FA37E2F /* YouTubeShareLinkResult.swift */; };
 		C23C36EFEC43C4267DF350F8 /* YouTubeAdsJsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2325E02A9A9579A8947440B /* YouTubeAdsJsResult.swift */; };
 		C23C7CC726EF4E648BA10BF0 /* YoutubePlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C231D3CF4A743835726A0C26 /* YoutubePlayerController.swift */; };
@@ -2682,15 +2637,8 @@
 		240718E928DDC6FC00BFC6C8 /* OpenYouTubePlayerControllerParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenYouTubePlayerControllerParser.swift; sourceTree = "<group>"; };
 		2408A87327478F9B00D2D1DE /* AdServicesHelperMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdServicesHelperMock.swift; sourceTree = "<group>"; };
 		2408A8752747901B00D2D1DE /* IAdFrameworkHelperMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAdFrameworkHelperMock.swift; sourceTree = "<group>"; };
-		2408A8772747917400D2D1DE /* AdServicesHelperTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdServicesHelperTest.swift; sourceTree = "<group>"; };
-		2408A87A2747919800D2D1DE /* IAdFrameworkHelperTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAdFrameworkHelperTest.swift; sourceTree = "<group>"; };
-		2408A87C2747AC7C00D2D1DE /* AdServicesWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdServicesWrapper.swift; sourceTree = "<group>"; };
 		2408A8802747AF9A00D2D1DE /* AdServicesWrapperMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdServicesWrapperMock.swift; sourceTree = "<group>"; };
-		2408A8822747D47B00D2D1DE /* AdServicesAttributionRecordsParserTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdServicesAttributionRecordsParserTest.swift; sourceTree = "<group>"; };
-		240C3AD927464B7C00CD10B3 /* AppleSearchAdsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppleSearchAdsService.swift; path = AdguardApp/Services/AppleSearchAdsService.swift; sourceTree = SOURCE_ROOT; };
 		240C3ADC274650BC00CD10B3 /* AdServicesAttributionRecordsParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdServicesAttributionRecordsParser.swift; sourceTree = "<group>"; };
-		240C3ADF2746775800CD10B3 /* AdClientWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdClientWrapper.swift; sourceTree = "<group>"; };
-		240C3B282746A49A00CD10B3 /* AppleSearchAdsServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSearchAdsServiceTest.swift; sourceTree = "<group>"; };
 		240C3B2B2746A4D800CD10B3 /* ADClientWrapperMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADClientWrapperMock.swift; sourceTree = "<group>"; };
 		240C3B2E2746A5DB00CD10B3 /* HttpRequestServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestServiceMock.swift; sourceTree = "<group>"; };
 		240F14F9271DAF4700C0C8F1 /* NetworkSettingsMigrationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSettingsMigrationTest.swift; sourceTree = "<group>"; };
@@ -2728,8 +2676,6 @@
 		24557DF625EFD4AE00BC5B26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2455B21027317FA9002B86D7 /* ImportSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportSettings.swift; sourceTree = "<group>"; };
 		2463A79C2746AD37007C9935 /* RequestSenderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestSenderMock.swift; sourceTree = "<group>"; };
-		2463A79E2746AF64007C9935 /* IAdFrameworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAdFrameworkHelper.swift; sourceTree = "<group>"; };
-		2463A7A02746B0A2007C9935 /* AdServicesHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdServicesHelper.swift; sourceTree = "<group>"; };
 		246EE280275F872E00104CE4 /* Domain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Domain.swift; sourceTree = "<group>"; };
 		246EE283275FBB6400104CE4 /* DomainTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainTest.swift; sourceTree = "<group>"; };
 		2473D8FE277B4B2C00376DF7 /* SafariMigration4_3_1Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariMigration4_3_1Test.swift; sourceTree = "<group>"; };
@@ -4052,8 +3998,6 @@
 				6598869E1CF74DE9003ECD1C /* MessageUI.framework in Frameworks */,
 				7ED0B19626C40DCA00B0CE7B /* Setapp in Frameworks */,
 				6598869F1CF74DE9003ECD1C /* Social.framework in Frameworks */,
-				2408A8892747DC9000D2D1DE /* AdServices.framework in Frameworks */,
-				2408A8882747DC8A00D2D1DE /* iAd.framework in Frameworks */,
 				65D829501EDDA92A008F7F30 /* NetworkExtension.framework in Frameworks */,
 				D0D7E53124371892001801A5 /* libiconv.tbd in Frameworks */,
 				B26B9240271872AC00F1D482 /* DnsAdGuardSDK.framework in Frameworks */,
@@ -4106,10 +4050,8 @@
 				B2C19E5A2716B25D00331109 /* NetworkExtension.framework in Frameworks */,
 				7E4D205E22D71B3E003B0E75 /* libiconv.tbd in Frameworks */,
 				D09E271B2541D00B002D6BC0 /* Setapp in Frameworks */,
-				2408A8862747DC7700D2D1DE /* iAd.framework in Frameworks */,
 				65F3986E1B7C894000ABCD39 /* SafariServices.framework in Frameworks */,
 				B29D53AA270D40EB0045CB16 /* SharedAdGuardSDK.framework in Frameworks */,
-				2408A8872747DC8200D2D1DE /* AdServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4357,17 +4299,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2408A8792747917A00D2D1DE /* AppleSearchAdsTests */ = {
-			isa = PBXGroup;
-			children = (
-				240C3B282746A49A00CD10B3 /* AppleSearchAdsServiceTest.swift */,
-				2408A8772747917400D2D1DE /* AdServicesHelperTest.swift */,
-				2408A87A2747919800D2D1DE /* IAdFrameworkHelperTest.swift */,
-				2408A8822747D47B00D2D1DE /* AdServicesAttributionRecordsParserTest.swift */,
-			);
-			path = AppleSearchAdsTests;
-			sourceTree = "<group>";
-		};
 		240F6F302732C11E00FD5430 /* ImportSettingsTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -4513,18 +4444,6 @@
 				241346CB26131CA300CF8601 /* AppDelegate+Themable.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		24DB3DCC27455A0E0038627C /* AppleSearchAd */ = {
-			isa = PBXGroup;
-			children = (
-				240C3AD927464B7C00CD10B3 /* AppleSearchAdsService.swift */,
-				2463A79E2746AF64007C9935 /* IAdFrameworkHelper.swift */,
-				2463A7A02746B0A2007C9935 /* AdServicesHelper.swift */,
-				240C3ADF2746775800CD10B3 /* AdClientWrapper.swift */,
-				2408A87C2747AC7C00D2D1DE /* AdServicesWrapper.swift */,
-			);
-			path = AppleSearchAd;
 			sourceTree = "<group>";
 		};
 		4982C0BC26D78F2900CACBBE /* extension */ = {
@@ -5796,7 +5715,6 @@
 				24B2F12F25FF4DD500CE46C8 /* URLSchemeParcerTest.swift */,
 				246EE283275FBB6400104CE4 /* DomainTest.swift */,
 				24D9E1F229111BC100B62DBE /* IPAddressValidationTest.swift */,
-				2408A8792747917A00D2D1DE /* AppleSearchAdsTests */,
 				240F6F302732C11E00FD5430 /* ImportSettingsTests */,
 			);
 			path = AdguardTests;
@@ -6875,7 +6793,6 @@
 			isa = PBXGroup;
 			children = (
 				B2673DE1271740C600E04747 /* SettingsResetService.swift */,
-				24DB3DCC27455A0E0038627C /* AppleSearchAd */,
 				B2673DD427173E0F00E04747 /* DomainParserService.swift */,
 				B2673DB327173DFD00E04747 /* Migrations */,
 				B2C19E7A2716DE3A00331109 /* Purchase */,
@@ -8457,7 +8374,6 @@
 				B2673DCF27173DFD00E04747 /* DnsProtectionFiltersMigrationHelper.swift in Sources */,
 				C7DD464C2754E144006E1E6C /* UITraitCollection+Utils.swift in Sources */,
 				247CB5672600B2F60047974C /* AppDelegate+IURLSchemeExecutor.swift in Sources */,
-				2463A7A32746B16B007C9935 /* AdServicesHelper.swift in Sources */,
 				2490F65B2700983F00B1514D /* SuccessFailureParser.swift in Sources */,
 				D0CC0F3E27510D18005E9DA3 /* OpenDnsProvidersControllerWithAdguardParser.swift in Sources */,
 				B2673DCB27173DFD00E04747 /* SafariProtectionAllowlistRulesMigrationHelper.swift in Sources */,
@@ -8587,7 +8503,6 @@
 				D0450F84263C2A1800CA2110 /* NSString+Utils.m in Sources */,
 				24B33CFE26C50DF600499281 /* OnboardingContentView.swift in Sources */,
 				2444013A26EE2F9500FB7CE5 /* ChartType+Utils.swift in Sources */,
-				2408A87E2747ADE300D2D1DE /* AdServicesWrapper.swift in Sources */,
 				24EAE7ED26F759C200386544 /* NewDnsServerModel.swift in Sources */,
 				D0B545AD2435D640002F0AEC /* SystemProtectionEnablerController.swift in Sources */,
 				7E92754026C67ABA007B2C80 /* Reusable.swift in Sources */,
@@ -8680,7 +8595,6 @@
 				2422254026ECC97700EC74AE /* ChartViewModel.swift in Sources */,
 				7EA40F8B2722C81A00FAEE0B /* ChineseUserExposer.swift in Sources */,
 				24C31EC326FF711000673309 /* ApplicationWebReporter.swift in Sources */,
-				240C3AE12746775800CD10B3 /* AdClientWrapper.swift in Sources */,
 				D0B545A12435D63D002F0AEC /* GetProPageController.swift in Sources */,
 				D0B545822435D62A002F0AEC /* Animation+Utils.swift in Sources */,
 				7EBDFE9526CFDA7400CCE8CC /* FilterDetailsTagsCell.swift in Sources */,
@@ -8698,7 +8612,6 @@
 				241346CD26131CA300CF8601 /* AppDelegate+Themable.swift in Sources */,
 				D0D7E5E224444D81001801A5 /* BasicRulesParser.swift in Sources */,
 				240718EB28DDC6FD00BFC6C8 /* OpenYouTubePlayerControllerParser.swift in Sources */,
-				240C3ADB27464B7C00CD10B3 /* AppleSearchAdsService.swift in Sources */,
 				7E4CC0532577E8C1005ADBCA /* HideKeyboardTapGestureRecognizer.swift in Sources */,
 				D0B545852435D62A002F0AEC /* ComplexProtectionService.swift in Sources */,
 				7EDA07C12720490100D2AF86 /* SDKMigrationOldFilesHelper.swift in Sources */,
@@ -8717,7 +8630,6 @@
 				B2673DE3271740C600E04747 /* SettingsResetService.swift in Sources */,
 				D0B545B82435D650002F0AEC /* SafariProtectionController.swift in Sources */,
 				D0B545D92435D69B002F0AEC /* StackElementView.swift in Sources */,
-				2463A7A52746B1BB007C9935 /* IAdFrameworkHelper.swift in Sources */,
 				24AE684E2A388B1C0025CB05 /* DnsMigration4_5_0.swift in Sources */,
 				6598868D1CF74DE9003ECD1C /* NSDate+Utils.m in Sources */,
 				24F66A8626033C9D0097B426 /* OpenDnsSettingsControllerWithLaunchScreenParser.swift in Sources */,
@@ -8820,7 +8732,6 @@
 				241FEB0D2701C84F00C1C487 /* WebReporterWrapperProtocol.swift in Sources */,
 				7E9C0C36256292E200F1999D /* UIColor+Utils.swift in Sources */,
 				2408A8B22747EDB900D2D1DE /* AdServicesAttributionRecordsParser.swift in Sources */,
-				2408A8A42747ED0000D2D1DE /* AppleSearchAdsService.swift in Sources */,
 				D08CE429240D389800A70089 /* KeychainService.swift in Sources */,
 				7E6EFA4526F89D1C002EED38 /* FavIconService.swift in Sources */,
 				244419EC2614CF0F009555F3 /* String+NSRange.swift in Sources */,
@@ -8832,8 +8743,6 @@
 				D0611F0D27396E3100124BC4 /* SafariProtectionFiltersDatabaseMigrationHelper.swift in Sources */,
 				2408A8AB2747ED5D00D2D1DE /* RequestSender.swift in Sources */,
 				D031A13F219EFC99002C17D9 /* DDMultiFormatter.m in Sources */,
-				2408A8A82747ED3300D2D1DE /* AdServicesWrapper.swift in Sources */,
-				2408A8A62747ED1B00D2D1DE /* IAdFrameworkHelper.swift in Sources */,
 				D031A123219EFC99002C17D9 /* DDContextFilterLogFormatter.m in Sources */,
 				7E6EFA3F26F88EF9002EED38 /* UITraitEnvironment+Utils.swift in Sources */,
 				B2C8E9902716ECA100ACDED8 /* PurchaseAssistant.swift in Sources */,
@@ -8880,7 +8789,6 @@
 				655A02931C6B7686000F00D7 /* ACNNetworking.m in Sources */,
 				7EB5526B2422441F000498CC /* ThemableButton.swift in Sources */,
 				D08CE42B240D38AE00A70089 /* LoginResponseParser.swift in Sources */,
-				2408A8A72747ED2E00D2D1DE /* AdClientWrapper.swift in Sources */,
 				D0611F0B27396C7400124BC4 /* SafariMigration4_3.swift in Sources */,
 				D031A177219EFC99002C17D9 /* DDFileLogger.m in Sources */,
 				D09E2A9A254AC0D6002D6BC0 /* Bundle+Utils.swift in Sources */,
@@ -8894,7 +8802,6 @@
 				2408A8AC2747ED6E00D2D1DE /* ParserProtocol.swift in Sources */,
 				D03E533021B6A48800C62152 /* ThemableLabel.swift in Sources */,
 				655A029F1C6B7686000F00D7 /* ACSSystemUtils.m in Sources */,
-				2408A8A52747ED1500D2D1DE /* AdServicesHelper.swift in Sources */,
 				65EC9BCF1BB9824C00F53F3B /* ADLocations.m in Sources */,
 				655A02871C6B7686000F00D7 /* NSURL+Utils.m in Sources */,
 				D0977A6D221D8C9700E10AC8 /* ACLLogFileManagerDefault.swift in Sources */,
@@ -8965,7 +8872,6 @@
 				7EF4285C23AB77AB00948B65 /* ComplexProtectionController.swift in Sources */,
 				C7DD464B2754E144006E1E6C /* UITraitCollection+Utils.swift in Sources */,
 				D09E2D30255D6AFF002D6BC0 /* SettingsParser.swift in Sources */,
-				2463A7A22746B16A007C9935 /* AdServicesHelper.swift in Sources */,
 				D0F9117621303E4C006DF0D3 /* ServiceLocator.swift in Sources */,
 				D0CC0F3D27510D18005E9DA3 /* OpenDnsProvidersControllerWithAdguardParser.swift in Sources */,
 				7EE461CA26FE569900DFBF2A /* DnsConfiguration+Initializers.swift in Sources */,
@@ -9099,7 +9005,6 @@
 				D09E9648216CE5E400313AB1 /* ThemableLabel.swift in Sources */,
 				7E9E10CA26CC1108007A4B8A /* StateHeaderView.swift in Sources */,
 				7E4CC0522577E8C1005ADBCA /* HideKeyboardTapGestureRecognizer.swift in Sources */,
-				2408A87F2747ADE400D2D1DE /* AdServicesWrapper.swift in Sources */,
 				247CB5662600B2F60047974C /* AppDelegate+IURLSchemeExecutor.swift in Sources */,
 				D031A11D219EFC99002C17D9 /* DDContextFilterLogFormatter.m in Sources */,
 				7EF5C51126C261AF001851D6 /* SharedResources+DebugLogs.swift in Sources */,
@@ -9195,7 +9100,6 @@
 				2413B619276C964200CAA585 /* UILabel+Utils.swift in Sources */,
 				24B3DAEF26F8B4D000A66C0F /* DnsProviderActionCell.swift in Sources */,
 				7E303C2126F6463400EBACD1 /* DnsFiltersModelsProvider.swift in Sources */,
-				240C3AE02746775800CD10B3 /* AdClientWrapper.swift in Sources */,
 				D031A163219EFC99002C17D9 /* DDAbstractDatabaseLogger.m in Sources */,
 				7EF5C51326C261AF001851D6 /* SharedResources.swift in Sources */,
 				7E85A82326F37FBD0059BB33 /* OpenLicenseControllerParser.swift in Sources */,
@@ -9211,7 +9115,6 @@
 				7E822C0A2435EDD30015B4D0 /* Constant.swift in Sources */,
 				2490F65F27009E7300B1514D /* RequestFactory.swift in Sources */,
 				D07373A226EB5F0A007366F8 /* LowLevelDnsConfiguration+Utils.swift in Sources */,
-				240C3ADA27464B7C00CD10B3 /* AppleSearchAdsService.swift in Sources */,
 				7EA887E9237D290E00E1043D /* CustomNavigationTransition.swift in Sources */,
 				7E5101932355B53700935FE9 /* NetworkSettingsModel.swift in Sources */,
 				7EDA07C02720490100D2AF86 /* SDKMigrationOldFilesHelper.swift in Sources */,
@@ -9230,7 +9133,6 @@
 				D031A12B219EFC99002C17D9 /* DDDispatchQueueLogFormatter.m in Sources */,
 				7EB55270242247E2000498CC /* ActivityStatisticsModel.swift in Sources */,
 				7EE8AC1626C595350070D477 /* ThemeMode.swift in Sources */,
-				2463A7A42746B1BA007C9935 /* IAdFrameworkHelper.swift in Sources */,
 				7EB89CB026C50C5F00E7C8A1 /* FileManager+Utils.swift in Sources */,
 				7EF005E3239929FC00047073 /* ComplexProtectionService.swift in Sources */,
 				7E1022CE23E1655A00604C90 /* DnsRequestDetailsController.swift in Sources */,
@@ -9308,7 +9210,6 @@
 				D0F7F0D022689CEC00592B1E /* LoginServiceTest.swift in Sources */,
 				7E1AB68E25824ABD00519B2B /* CharacterSet+Utils.swift in Sources */,
 				247521FA2594C0D500BE9177 /* URL+CustomSchemeURLParserProtocol.swift in Sources */,
-				2463A7A62746B452007C9935 /* AdServicesHelper.swift in Sources */,
 				65EC9BD11BB9824C00F53F3B /* ADProductInfo.m in Sources */,
 				B26B92852719B73600F1D482 /* PurchaseStatusProtocol.swift in Sources */,
 				B26B92762719B46F00F1D482 /* SafariProtectionFiltersDatabaseMigrationHelperTests.swift in Sources */,
@@ -9364,8 +9265,6 @@
 				D0EFBF5E22BB6BAC00D2D391 /* LoginResponseParser.swift in Sources */,
 				241436FF273568DC00E33EF0 /* CustomFiltersMetaParserMock.swift in Sources */,
 				2455B21327317FA9002B86D7 /* ImportSettings.swift in Sources */,
-				2408A8782747917400D2D1DE /* AdServicesHelperTest.swift in Sources */,
-				2463A79F2746AF64007C9935 /* IAdFrameworkHelper.swift in Sources */,
 				7E8576632435F1F70055F63D /* RuleLabel.swift in Sources */,
 				24F67F5A26E778DB00ABF2BE /* SafariWebExtensionParametersParser.swift in Sources */,
 				B26B92872719B74300F1D482 /* SharedResources+Theme.swift in Sources */,
@@ -9376,16 +9275,13 @@
 				24F66A9C26033DA00097B426 /* OpenMainPageControllerControllerWithLaunchScreenParser.swift in Sources */,
 				D0288F2E2306974F00A4EBEF /* DDLog.m in Sources */,
 				240C3B392746AB1100CD10B3 /* SendFeedbackRequest.swift in Sources */,
-				240C3B292746A49A00CD10B3 /* AppleSearchAdsServiceTest.swift in Sources */,
 				240C3B352746AAB900CD10B3 /* RequestSender.swift in Sources */,
-				2408A87D2747AC7C00D2D1DE /* AdServicesWrapper.swift in Sources */,
 				2463A79D2746AD37007C9935 /* RequestSenderMock.swift in Sources */,
 				2473D906277B55B500376DF7 /* DnsMigration4_3_1Test.swift in Sources */,
 				249E11582600D38B003A5FBD /* OpenImportSettingsControllerParser.swift in Sources */,
 				240F6F322732C14000FD5430 /* ImportDNSSettingsHelperTest.swift in Sources */,
 				D0EC86B523A7738E00EDF107 /* VpnManagerMock.swift in Sources */,
 				D0288F3F2306997D00A4EBEF /* DDFileLogger.m in Sources */,
-				2408A8832747D47B00D2D1DE /* AdServicesAttributionRecordsParserTest.swift in Sources */,
 				D0288F39230698D300A4EBEF /* ACNHttpUtils.m in Sources */,
 				7E8576672435F1F70055F63D /* ParsedHost.swift in Sources */,
 				D03E532A21B41FF000C62152 /* CocoaLumberjack.swift in Sources */,
@@ -9403,7 +9299,6 @@
 				B26B929A2719BB3200F1D482 /* DnsProtectionFiltersMigrationHelperTests.swift in Sources */,
 				65EC9BC91BB9824C00F53F3B /* ADLocales.m in Sources */,
 				249E11102600D382003A5FBD /* OpenDnsSettingsControllerParser.swift in Sources */,
-				240C3B2D2746A4F000CD10B3 /* AdClientWrapper.swift in Sources */,
 				B26B928B2719B90000F1D482 /* UserRulesRedirectAction.swift in Sources */,
 				24F66A8726033C9D0097B426 /* OpenDnsSettingsControllerWithLaunchScreenParser.swift in Sources */,
 				B26B928D2719B94000F1D482 /* DomainParserService.swift in Sources */,
@@ -9452,7 +9347,6 @@
 				240C3B3A2746AB2900CD10B3 /* AdServicesAttributionRecordsRequest.swift in Sources */,
 				D00E44542563F2AD002DDE98 /* ImportSettingsViewModel.swift in Sources */,
 				B26B92902719BA6100F1D482 /* SharedResources+applicationResources.swift in Sources */,
-				2408A87B2747919800D2D1DE /* IAdFrameworkHelperTest.swift in Sources */,
 				7E774CB8272074BF00A970C1 /* DnsStatisticsOldWrapper.swift in Sources */,
 				B26B92782719B46F00F1D482 /* SDKMigrationNewDbWrapper.swift in Sources */,
 				B26B92892719B78600F1D482 /* PurchaseAssistant.swift in Sources */,
@@ -9476,7 +9370,6 @@
 				7EB89CB226C50C5F00E7C8A1 /* FileManager+Utils.swift in Sources */,
 				7E1AB64625824A6600519B2B /* SupportService+Feedback.swift in Sources */,
 				B26B929D2719BBFB00F1D482 /* DomainConverter.swift in Sources */,
-				240C3B2A2746A4B700CD10B3 /* AppleSearchAdsService.swift in Sources */,
 				2473D903277B4C4400376DF7 /* SafariProtectionMigrationMock.swift in Sources */,
 				D0C940E623EAE3E4008B85EC /* NetworkSettingsService.swift in Sources */,
 				7EE8AC1826C595350070D477 /* ThemeMode.swift in Sources */,
@@ -9701,7 +9594,6 @@
 				B2C8E9792716E4AD00ACDED8 /* PurchaseAssistant.swift in Sources */,
 				7E174BFF271F1534006B7271 /* LoginService.swift in Sources */,
 				B2C19E612716BB9300331109 /* ComplexProtectionService.swift in Sources */,
-				2408A88C2747E4C500D2D1DE /* AdServicesHelper.swift in Sources */,
 				B2C19E622716BD4F00331109 /* AESharedResources.h in Sources */,
 				2408A8972747E67C00D2D1DE /* ParserProtocol.swift in Sources */,
 				B2C19E632716BD6E00331109 /* AESharedResources.m in Sources */,
@@ -9727,7 +9619,6 @@
 				B2C8E97B2716E63300ACDED8 /* UIDevice+Utils.swift in Sources */,
 				B2C19E762716C51300331109 /* SharedResources+Theme.swift in Sources */,
 				B2C8E97C2716E80D00ACDED8 /* DnsConfiguration+Initializers.swift in Sources */,
-				2408A88F2747E4FC00D2D1DE /* AdClientWrapper.swift in Sources */,
 				B2C8E97C2716E80D00ACDED8 /* DnsConfiguration+Initializers.swift in Sources */,
 				2408A8992747E6A900D2D1DE /* SupportService+Feedback.swift in Sources */,
 				B2C8E9812716E91A00ACDED8 /* ADProductInfo.m in Sources */,
@@ -9752,16 +9643,13 @@
 				B2C8E9882716E9AA00ACDED8 /* ACNNetworking.m in Sources */,
 				B2C8E97E2716E8E700ACDED8 /* DDLog.m in Sources */,
 				B2C8E9832716E93A00ACDED8 /* ACLFileLocker.m in Sources */,
-				2408A8902747E51400D2D1DE /* AdServicesWrapper.swift in Sources */,
 				2408A8912747E53F00D2D1DE /* RequestSenderProtocol.swift in Sources */,
 				B2C19E752716C40700331109 /* UIColor+Utils.swift in Sources */,
 				B2C19E802716DFDE00331109 /* PurchaseStatusProtocol.swift in Sources */,
-				2408A88D2747E4CF00D2D1DE /* IAdFrameworkHelper.swift in Sources */,
 				B2C19E772716C53F00331109 /* UIColorUtils.swift in Sources */,
 				2408A89A2747E6C400D2D1DE /* SuccessFailureParser.swift in Sources */,
 				2408A8932747E5C300D2D1DE /* HttpRequestServiceProtocol+sendFeedback.swift in Sources */,
 				B2C19E782716C81300331109 /* NativeDnsSettingsManager.swift in Sources */,
-				2408A88B2747E3D000D2D1DE /* AppleSearchAdsService.swift in Sources */,
 				B2C19E792716D0CB00331109 /* ConfigurationService.swift in Sources */,
 				336FA71FB3A4F7B22E62DC9E /* InAppPurchaseReceiptHashParser.swift in Sources */,
 				336FA3B0A912F61EAC070D6A /* InAppPurchaseReceiptHashRequest.swift in Sources */,
@@ -9799,7 +9687,6 @@
 				C2326FC77E493BF8F83DB91E /* YouTubeShareLinkResult.swift in Sources */,
 				C232DDD053E035F5575DC231 /* YouTubeAdsJsResult.swift in Sources */,
 				C23932418213BF73AC1E5BAD /* YoutubeHtmlBuilder.swift in Sources */,
-				C231E086502F0395EC2EE947 /* YoutubePlayerController.swift in Sources */,
 				C2353CAB0014D4E140FDBEE4 /* SharedResources.swift in Sources */,
 				C2334F1307FCE50CBE3BD88C /* ADProductInfo.m in Sources */,
 			);
@@ -9836,7 +9723,6 @@
 				C2306B5EBD6E32E284E334C9 /* YouTubeShareLinkResult.swift in Sources */,
 				C238EFE71373DEE85CA488FF /* YouTubeAdsJsResult.swift in Sources */,
 				C239B55BEA3047C1EFC54AE8 /* YoutubeHtmlBuilder.swift in Sources */,
-				C23AE1CF5A6E9A0B6D3440E8 /* YoutubePlayerController.swift in Sources */,
 				C23ABE368E2EE1B4C6B913FF /* SharedResources.swift in Sources */,
 				C23F49A7FB0AD347B3993C86 /* ADProductInfo.m in Sources */,
 			);
@@ -10441,7 +10327,6 @@
 				B2673DF3271750B300E04747 /* ThemeMode.swift in Sources */,
 				B2673E0E2717514900E04747 /* CocoaLumberjack.swift in Sources */,
 				B2673DFE271750E400E04747 /* SharedResources+applicationResources.swift in Sources */,
-				2408A8BE2747F3C500D2D1DE /* AdClientWrapper.swift in Sources */,
 				B2673DEF2717506D00E04747 /* SharedStorageUrls.swift in Sources */,
 				B2673DF6271750C100E04747 /* DDLoggerNames.m in Sources */,
 				B2673E0C2717512E00E04747 /* ACLFileLogger.m in Sources */,
@@ -10465,8 +10350,6 @@
 				B2673E162717516D00E04747 /* ConfigurationService.swift in Sources */,
 				7E6AD39C271F15C700BCEA7F /* PurchaseServiceProtocol.swift in Sources */,
 				B2673E02271750F300E04747 /* DnsConfiguration+Initializers.swift in Sources */,
-				2408A8B92747F3A300D2D1DE /* AdServicesWrapper.swift in Sources */,
-				2408A8B72747F39A00D2D1DE /* AdServicesHelper.swift in Sources */,
 				B2673E02271750F300E04747 /* DnsConfiguration+Initializers.swift in Sources */,
 				2408A8C72747F41D00D2D1DE /* RequestProtocol.swift in Sources */,
 				B2673E122717515C00E04747 /* UIColor+Utils.swift in Sources */,
@@ -10484,7 +10367,6 @@
 				2408A8D52747F48A00D2D1DE /* AdServicesAttributionRecordsRequest.swift in Sources */,
 				B2673E04271750FA00E04747 /* SharedResources+DebugLogs.swift in Sources */,
 				B2673DEA2717505400E04747 /* TodayViewController.swift in Sources */,
-				2408A8B52747F39300D2D1DE /* AppleSearchAdsService.swift in Sources */,
 				B2673DEE2717506900E04747 /* LowLevelDnsConfiguration+Utils.swift in Sources */,
 				B2673E0F2717514D00E04747 /* ACNNetworking.m in Sources */,
 				B2673E152717516900E04747 /* NativeDnsSettingsManager.swift in Sources */,
@@ -10506,7 +10388,6 @@
 				B2673DEB2717505800E04747 /* DDTTYLogger.m in Sources */,
 				7E6AD39F271F15E400BCEA7F /* ABECRequest.m in Sources */,
 				B2673E062717510400E04747 /* Bundle+Utils.swift in Sources */,
-				2408A8BC2747F3BC00D2D1DE /* IAdFrameworkHelper.swift in Sources */,
 				B2673E092717510E00E04747 /* APCommonSharedResources.m in Sources */,
 				7E174BFE271F1532006B7271 /* LoginService.swift in Sources */,
 				B2673E0A2717512300E04747 /* String+NSRange.swift in Sources */,
@@ -10542,7 +10423,6 @@
 				B2673E682717543C00E04747 /* NSURL+Utils.m in Sources */,
 				B2673E53271753F100E04747 /* NSDate+Utils.m in Sources */,
 				B2673E622717542700E04747 /* ConfigurationServiceProtocol.swift in Sources */,
-				2408A8B82747F39B00D2D1DE /* AdServicesHelper.swift in Sources */,
 				B2673E482717538A00E04747 /* UIColorUtils.swift in Sources */,
 				B2673E692717543F00E04747 /* ACLLogFileManagerDefault.swift in Sources */,
 				B2673E172717523E00E04747 /* ThemeMode.swift in Sources */,
@@ -10598,7 +10478,6 @@
 				B2673E31271752D400E04747 /* UIColor+Utils.swift in Sources */,
 				B2673E54271753F400E04747 /* DNSSettings.swift in Sources */,
 				2408A8C62747F41C00D2D1DE /* RequestProtocol.swift in Sources */,
-				2408A8BA2747F3A400D2D1DE /* AdServicesWrapper.swift in Sources */,
 				B2673E222717529F00E04747 /* LoginService.swift in Sources */,
 				B2673E362717533400E04747 /* ACLLogger.m in Sources */,
 				B2673E452717536E00E04747 /* SharedResources+Theme.swift in Sources */,
@@ -10613,7 +10492,6 @@
 				B2673E1B2717525600E04747 /* PurchaseService.swift in Sources */,
 				B2673E26271752AF00E04747 /* DDLog.m in Sources */,
 				B2673E5F2717541E00E04747 /* URL+Utils.swift in Sources */,
-				2408A8BB2747F3BB00D2D1DE /* IAdFrameworkHelper.swift in Sources */,
 				D0611F0C27396C7400124BC4 /* SafariMigration4_3.swift in Sources */,
 				B2673E2F271752CD00E04747 /* ACLFileLocker.m in Sources */,
 				B2673E1A2717525300E04747 /* DDDispatchQueueLogFormatter.m in Sources */,
@@ -10627,11 +10505,9 @@
 				2408A8C42747F3F200D2D1DE /* RequestSender.swift in Sources */,
 				B2673E572717540100E04747 /* ConfigurationService.swift in Sources */,
 				B2673E56271753FD00E04747 /* LoaderSegue.swift in Sources */,
-				2408A8BD2747F3C400D2D1DE /* AdClientWrapper.swift in Sources */,
 				2408A8CB2747F44500D2D1DE /* SupportService+Feedback.swift in Sources */,
 				B2673E3B2717534600E04747 /* UITraitEnvironment+Utils.swift in Sources */,
 				2483F7E3277AF79C00BE0A13 /* SafariMigration4_3_1.swift in Sources */,
-				2408A8B62747F39400D2D1DE /* AppleSearchAdsService.swift in Sources */,
 				B2673E30271752D100E04747 /* WebReporterWrapperProtocol.swift in Sources */,
 				B2673E1D2717525E00E04747 /* NSString+Utils.m in Sources */,
 				336FABD9BA5D8F3C700210C0 /* InAppPurchaseReceiptHashParser.swift in Sources */,
@@ -11555,10 +11431,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = ProAppIcon;
 				CODE_SIGN_ENTITLEMENTS = AdguardPro/AdguardPro.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development: Created via API (696F7D6QK5)";
 				CODE_SIGN_STYLE = Manual;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				INFOPLIST_FILE = "$(SRCROOT)/AdguardPro/AdguardPro.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -11567,6 +11444,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "$(ADGUARD_BUNDLE_ID)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.adguard.AdguardPro";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development com.adguard.AdguardPro";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Adguard-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -11585,6 +11463,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				INFOPLIST_FILE = "$(SRCROOT)/AdguardPro/AdguardPro.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -11593,6 +11472,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "$(ADGUARD_BUNDLE_ID)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.adguard.AdguardPro";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match AppStore com.adguard.AdguardPro";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Adguard-Swift.h";
 				SWIFT_VERSION = 5.0;
 				USER_HEADER_SEARCH_PATHS = $inherited;
@@ -11630,10 +11510,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = ActionExtensionIcon;
 				CODE_SIGN_ENTITLEMENTS = ActionExtension/ActionExtension.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development: Created via API (696F7D6QK5)";
 				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "APP_EXTENSION=1";
 				INFOPLIST_FILE = ActionExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -11646,6 +11527,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.adguard.AdguardExtension.ActionExtension";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development com.adguard.AdguardExtension.ActionExtension";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "ActionExtension/ActionExtension-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Adguard-Swift.h";
@@ -11662,6 +11544,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "APP_EXTENSION=1";
 				INFOPLIST_FILE = ActionExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -11674,6 +11557,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.adguard.AdguardExtension.ActionExtension";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match AppStore com.adguard.AdguardExtension.ActionExtension";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "ActionExtension/ActionExtension-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Adguard-Swift.h";
@@ -11741,7 +11625,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LIBRARY_SEARCH_PATHS = "";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -11808,7 +11692,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LIBRARY_SEARCH_PATHS = "";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
@@ -11828,11 +11712,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = Adguard.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development: Created via API (696F7D6QK5)";
 				CODE_SIGN_STYLE = Manual;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				INFOPLIST_FILE = "$(SRCROOT)/AdguardApp/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -11842,6 +11728,7 @@
 				PRODUCT_NAME = Adguard;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.adguard.AdguardExtension";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development com.adguard.AdguardExtension";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				USER_HEADER_SEARCH_PATHS = $inherited;
@@ -11854,11 +11741,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = Adguard.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "Apple Distribution: Adguard Software Limited (TC3Q7MAJXF)";
 				CODE_SIGN_STYLE = Manual;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				INFOPLIST_FILE = "$(SRCROOT)/AdguardApp/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -11868,6 +11757,7 @@
 				PRODUCT_NAME = Adguard;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.adguard.AdguardExtension";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match AppStore com.adguard.AdguardExtension";
 				SWIFT_VERSION = 5.0;
 				USER_HEADER_SEARCH_PATHS = $inherited;
 			};
@@ -11932,9 +11822,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Extension/Extension.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development: Created via API (696F7D6QK5)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				INFOPLIST_FILE = "$(SRCROOT)/Extension/AdguardBlockingExtensionGeneral.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -11945,6 +11836,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.adguard.AdguardExtension.extension";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development com.adguard.AdguardExtension.extension";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Extension/Extension-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Adguard-Swift.h";
@@ -11961,6 +11853,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				INFOPLIST_FILE = "$(SRCROOT)/Extension/AdguardBlockingExtensionGeneral.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -11971,6 +11864,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.adguard.AdguardExtension.extension";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match AppStore com.adguard.AdguardExtension.extension";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Extension/Extension-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Adguard-Swift.h";
@@ -11984,9 +11878,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Extension/Extension.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development: Created via API (696F7D6QK5)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				INFOPLIST_FILE = "$(SRCROOT)/Extension/AdguardBlockingExtensionSecurity.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -11997,6 +11892,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.adguard.AdguardExtension.extensionSecurity";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development com.adguard.AdguardExtension.extensionSecurity";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Extension/Extension-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Adguard-Swift.h";
@@ -12013,6 +11909,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				INFOPLIST_FILE = "$(SRCROOT)/Extension/AdguardBlockingExtensionSecurity.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -12023,6 +11920,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.adguard.AdguardExtension.extensionSecurity";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match AppStore com.adguard.AdguardExtension.extensionSecurity";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Extension/Extension-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Adguard-Swift.h";
@@ -12045,10 +11943,11 @@
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = SafariWebExtension/SafariWebExtension.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development: Created via API (696F7D6QK5)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -12074,6 +11973,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.adguard.AdguardExtension.SafariWebExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.adguard.AdguardExtension.SafariWebExtension";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development com.adguard.AdguardExtension.SafariWebExtension";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -12101,6 +12001,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SafariWebExtension/Info.plist;
@@ -12121,6 +12022,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.adguard.AdguardExtension.SafariWebExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.adguard.AdguardExtension.SafariWebExtension";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match AppStore com.adguard.AdguardExtension.SafariWebExtension";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "SafariWebExtension/SafariWebExtension-Bridging-Header.h";
@@ -12144,10 +12046,11 @@
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = AdguardPro/ProSafariWebExtension.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development: Created via API (696F7D6QK5)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -12173,6 +12076,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.adguard.AdguardPro.ProSafariWebExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.adguard.AdguardPro.ProSafariWebExtension";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development com.adguard.AdguardPro.ProSafariWebExtension";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -12200,6 +12104,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SafariWebExtension/ProSafariWebExtensionInfo.plist;
@@ -12220,6 +12125,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.adguard.AdguardPro.ProSafariWebExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.adguard.AdguardPro.ProSafariWebExtension";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match AppStore com.adguard.AdguardPro.ProSafariWebExtension";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "SafariWebExtension/SafariWebExtension-Bridging-Header.h";
@@ -12241,9 +12147,10 @@
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = AdGuardTodayExtension/AdGuardTodayExtension.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development: Created via API (696F7D6QK5)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -12261,6 +12168,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.adguard.AdguardExtension.todayExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.adguard.AdguardExtension.todayExtension";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development com.adguard.AdguardExtension.todayExtension";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OBJC_BRIDGING_HEADER = "AdGuardTodayExtension/AdGuardTodayExtension-Bridging-Header.h";
@@ -12286,6 +12194,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = AdGuardTodayExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -12298,6 +12207,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.adguard.AdguardExtension.todayExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.adguard.AdguardExtension.todayExtension";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match AppStore com.adguard.AdguardExtension.todayExtension";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "AdGuardTodayExtension/AdGuardTodayExtension-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Adguard-Swift.h";
@@ -12321,11 +12231,12 @@
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = YouTubeAdsActionExtension/YouTubeAdsActionExtension.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development: Created via API (696F7D6QK5)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -12346,6 +12257,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.adguard.AdguardExtension.YouTubeAdsActionExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.adguard.AdguardExtension.YouTubeAdsActionExtension";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development com.adguard.AdguardExtension.YouTubeAdsActionExtension";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -12375,6 +12287,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = YouTubeAdsActionExtension/Info.plist;
@@ -12390,6 +12303,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.adguard.AdguardExtension.YouTubeAdsActionExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.adguard.AdguardExtension.YouTubeAdsActionExtension";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match AppStore com.adguard.AdguardExtension.YouTubeAdsActionExtension";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "YouTubeAdsActionExtension/YouTubeAdsActionExtension-Bridging-Header.h";
@@ -12414,11 +12328,12 @@
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = AdguardPro/ProYouTubeAdsActionExtension.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development: Created via API (696F7D6QK5)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -12440,6 +12355,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.adguard.AdguardPro.ProYouTubeAdsActionExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.adguard.AdguardPro.ProYouTubeAdsActionExtension";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development com.adguard.AdguardPro.ProYouTubeAdsActionExtension";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -12470,6 +12386,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = YouTubeAdsActionExtension/ProInfo.plist;
@@ -12486,6 +12403,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.adguard.AdguardPro.ProYouTubeAdsActionExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.adguard.AdguardPro.ProYouTubeAdsActionExtension";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match AppStore com.adguard.AdguardPro.ProYouTubeAdsActionExtension";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "YouTubeAdsActionExtension/YouTubeAdsActionExtension-Bridging-Header.h";
@@ -12501,9 +12419,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = ProAppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/Tunnel/tunnel.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development: Created via API (696F7D6QK5)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -12519,6 +12438,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.adguard.AdguardExtension.tunnel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.adguard.AdguardExtension.tunnel";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development com.adguard.AdguardExtension.tunnel";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Tunnel/Tunnel-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Adguard-Swift.h";
@@ -12537,6 +12457,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "APP_EXTENSION=1";
 				INFOPLIST_FILE = Tunnel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -12548,6 +12469,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.adguard.AdguardExtension.tunnel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.adguard.AdguardExtension.tunnel";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match AppStore com.adguard.AdguardExtension.tunnel";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Tunnel/Tunnel-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Adguard-Swift.h";
@@ -12724,9 +12646,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Extension/Extension.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development: Created via API (696F7D6QK5)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				INFOPLIST_FILE = "$(SRCROOT)/Extension/AdguardBlockingExtensionPrivacy.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -12737,6 +12660,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.adguard.AdguardExtension.extensionPrivacy";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development com.adguard.AdguardExtension.extensionPrivacy";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Extension/Extension-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Adguard-Swift.h";
@@ -12753,6 +12677,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				INFOPLIST_FILE = "$(SRCROOT)/Extension/AdguardBlockingExtensionPrivacy.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -12763,6 +12688,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.adguard.AdguardExtension.extensionPrivacy";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match AppStore com.adguard.AdguardExtension.extensionPrivacy";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Extension/Extension-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Adguard-Swift.h";
@@ -12776,9 +12702,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Extension/Extension.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development: Created via API (696F7D6QK5)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				INFOPLIST_FILE = "$(SRCROOT)/Extension/AdguardBlockingExtensionAnnoyances.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -12789,6 +12716,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.adguard.AdguardExtension.extensionAnnoyances";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development com.adguard.AdguardExtension.extensionAnnoyances";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Extension/Extension-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Adguard-Swift.h";
@@ -12805,6 +12733,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				INFOPLIST_FILE = "$(SRCROOT)/Extension/AdguardBlockingExtensionAnnoyances.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -12815,6 +12744,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.adguard.AdguardExtension.extensionAnnoyances";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match AppStore com.adguard.AdguardExtension.extensionAnnoyances";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Extension/Extension-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Adguard-Swift.h";
@@ -12828,9 +12758,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Extension/Extension.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development: Created via API (696F7D6QK5)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				INFOPLIST_FILE = "$(SRCROOT)/Extension/AdguardBlockingExtensionOther.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -12841,6 +12772,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.adguard.AdguardExtension.extensionOther";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development com.adguard.AdguardExtension.extensionOther";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Extension/Extension-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Adguard-Swift.h";
@@ -12857,6 +12789,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				INFOPLIST_FILE = "$(SRCROOT)/Extension/AdguardBlockingExtensionOther.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -12867,6 +12800,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.adguard.AdguardExtension.extensionOther";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match AppStore com.adguard.AdguardExtension.extensionOther";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Extension/Extension-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Adguard-Swift.h";
@@ -12880,9 +12814,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Extension/Extension.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development: Created via API (696F7D6QK5)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				INFOPLIST_FILE = "$(SRCROOT)/Extension/AdguardBlockingExtensionCustom.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -12893,6 +12828,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.adguard.AdguardExtension.extensionCustom";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development com.adguard.AdguardExtension.extensionCustom";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Extension/Extension-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Adguard-Swift.h";
@@ -12909,6 +12845,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				INFOPLIST_FILE = "$(SRCROOT)/Extension/AdguardBlockingExtensionCustom.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -12919,6 +12856,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.adguard.AdguardExtension.extensionCustom";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match AppStore com.adguard.AdguardExtension.extensionCustom";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Extension/Extension-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Adguard-Swift.h";
@@ -12932,9 +12870,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = AdguardPro/AdguardProBlockingExtension.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development: Created via API (696F7D6QK5)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				INFOPLIST_FILE = "$(SRCROOT)/Extension/ProBlockingExtensionGeneralInfo.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -12945,6 +12884,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.adguard.AdguardPro.extension";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development com.adguard.AdguardPro.extension";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Extension/Extension-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Adguard-Swift.h";
@@ -12961,6 +12901,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				INFOPLIST_FILE = "$(SRCROOT)/Extension/ProBlockingExtensionGeneralInfo.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -12971,6 +12912,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.adguard.AdguardPro.extension";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match AppStore com.adguard.AdguardPro.extension";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Extension/Extension-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Adguard-Swift.h";
@@ -12984,9 +12926,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = AdguardPro/AdguardProBlockingExtension.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development: Created via API (696F7D6QK5)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				INFOPLIST_FILE = "$(SRCROOT)/Extension/ProBlockingExtensionPrivacyInfo.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -12997,6 +12940,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.adguard.AdguardPro.extensionPrivacy";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development com.adguard.AdguardPro.extensionPrivacy";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Extension/Extension-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Adguard-Swift.h";
@@ -13013,6 +12957,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				INFOPLIST_FILE = "$(SRCROOT)/Extension/ProBlockingExtensionPrivacyInfo.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -13023,6 +12968,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.adguard.AdguardPro.extensionPrivacy";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match AppStore com.adguard.AdguardPro.extensionPrivacy";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Extension/Extension-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Adguard-Swift.h";
@@ -13036,9 +12982,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = AdguardPro/AdguardProBlockingExtension.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development: Created via API (696F7D6QK5)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				INFOPLIST_FILE = "$(SRCROOT)/Extension/ProBlockingExtensionAnnoyancesInfo.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -13049,6 +12996,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.adguard.AdguardPro.extensionAnnoyances";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development com.adguard.AdguardPro.extensionAnnoyances";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Extension/Extension-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Adguard-Swift.h";
@@ -13065,6 +13013,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				INFOPLIST_FILE = "$(SRCROOT)/Extension/ProBlockingExtensionAnnoyancesInfo.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -13075,6 +13024,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.adguard.AdguardPro.extensionAnnoyances";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match AppStore com.adguard.AdguardPro.extensionAnnoyances";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Extension/Extension-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Adguard-Swift.h";
@@ -13088,9 +13038,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = AdguardPro/AdguardProBlockingExtension.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development: Created via API (696F7D6QK5)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				INFOPLIST_FILE = "$(SRCROOT)/Extension/ProBlockingExtensionOtherInfo.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -13101,6 +13052,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.adguard.AdguardPro.extensionOther";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development com.adguard.AdguardPro.extensionOther";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Extension/Extension-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Adguard-Swift.h";
@@ -13117,6 +13069,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				INFOPLIST_FILE = "$(SRCROOT)/Extension/ProBlockingExtensionOtherInfo.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -13127,6 +13080,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.adguard.AdguardPro.extensionOther";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match AppStore com.adguard.AdguardPro.extensionOther";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Extension/Extension-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Adguard-Swift.h";
@@ -13140,9 +13094,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = AdguardPro/AdguardProBlockingExtension.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development: Created via API (696F7D6QK5)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				INFOPLIST_FILE = "$(SRCROOT)/Extension/ProBlockingExtensionCustomInfo.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -13153,6 +13108,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.adguard.AdguardPro.extensionCustom";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development com.adguard.AdguardPro.extensionCustom";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Extension/Extension-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Adguard-Swift.h";
@@ -13169,6 +13125,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				INFOPLIST_FILE = "$(SRCROOT)/Extension/ProBlockingExtensionCustomInfo.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -13179,6 +13136,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.adguard.AdguardPro.extensionCustom";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match AppStore com.adguard.AdguardPro.extensionCustom";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Extension/Extension-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Adguard-Swift.h";
@@ -13192,9 +13150,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = AdguardPro/AdguardProBlockingExtension.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development: Created via API (696F7D6QK5)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				INFOPLIST_FILE = "$(SRCROOT)/Extension/ProBlockingExtensionSecurityInfo.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -13205,6 +13164,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.adguard.AdguardPro.extensionSecurity";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development com.adguard.AdguardPro.extensionSecurity";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Extension/Extension-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Adguard-Swift.h";
@@ -13221,6 +13181,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				INFOPLIST_FILE = "$(SRCROOT)/Extension/ProBlockingExtensionSecurityInfo.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -13231,6 +13192,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.adguard.AdguardPro.extensionSecurity";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match AppStore com.adguard.AdguardPro.extensionSecurity";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Extension/Extension-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Adguard-Swift.h";
@@ -13251,9 +13213,10 @@
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = AdguardPro/AdGuardProTodayExtension.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development: Created via API (696F7D6QK5)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -13271,6 +13234,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.adguard.AdguardPro.todayExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.adguard.AdguardPro.todayExtension";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development com.adguard.AdguardPro.todayExtension";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OBJC_BRIDGING_HEADER = "AdGuardTodayExtension/AdGuardTodayExtension-Bridging-Header.h";
@@ -13296,6 +13260,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = ProTodayExtensionInfo.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -13308,6 +13273,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.adguard.AdguardPro.todayExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.adguard.AdguardPro.todayExtension";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match AppStore com.adguard.AdguardPro.todayExtension";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "AdGuardTodayExtension/AdGuardTodayExtension-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Adguard-Swift.h";
@@ -13322,10 +13288,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = ActionExtensionIcon;
 				CODE_SIGN_ENTITLEMENTS = AdguardPro/ProActionExtension.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development: Created via API (696F7D6QK5)";
 				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "APP_EXTENSION=1";
 				INFOPLIST_FILE = ProActionExtensionInfo.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -13338,6 +13305,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.adguard.AdguardPro.ActionExtension";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development com.adguard.AdguardPro.ActionExtension";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "ActionExtension/ActionExtension-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Adguard-Swift.h";
@@ -13354,6 +13322,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "APP_EXTENSION=1";
 				INFOPLIST_FILE = ProActionExtensionInfo.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -13366,6 +13335,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.adguard.AdguardPro.ActionExtension";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match AppStore com.adguard.AdguardPro.ActionExtension";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "ActionExtension/ActionExtension-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Adguard-Swift.h";
@@ -13382,9 +13352,10 @@
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = AdguardPro/ProTunnel.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development: Created via API (696F7D6QK5)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -13401,6 +13372,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.adguard.AdguardPro.tunnel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.adguard.AdguardPro.tunnel";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development com.adguard.AdguardPro.tunnel";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Tunnel/Tunnel-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Adguard-Swift.h";
@@ -13422,6 +13394,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TC3Q7MAJXF;
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "APP_EXTENSION=1";
 				INFOPLIST_FILE = ProTunnelInfo.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -13434,6 +13407,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.adguard.AdguardPro.tunnel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.adguard.AdguardPro.tunnel";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match AppStore com.adguard.AdguardPro.tunnel";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Tunnel/Tunnel-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Adguard-Swift.h";
@@ -13739,15 +13713,15 @@
 			repositoryURL = "https://github.com/getsentry/sentry-cocoa";
 			requirement = {
 				kind = exactVersion;
-				version = 7.5.3;
+				version = 8.37.0;
 			};
 		};
 		A5E0261A261E31FA00198396 /* XCRemoteSwiftPackageReference "DnsLibs" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AdguardTeam/DnsLibs";
 			requirement = {
-				kind = exactVersion;
-				version = 2.3.5;
+				branch = "v2.5.51@swift-5";
+				kind = branch;
 			};
 		};
 		D02CF39025270B2200F6EF14 /* XCRemoteSwiftPackageReference "Setapp-framework" */ = {

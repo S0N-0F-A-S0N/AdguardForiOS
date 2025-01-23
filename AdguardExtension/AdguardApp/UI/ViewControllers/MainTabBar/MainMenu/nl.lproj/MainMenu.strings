@@ -40,8 +40,8 @@
 /* Class = "UILabel"; text = "Attach application logs"; ObjectID = "V7E-QE-uIA"; */
 "V7E-QE-uIA.text" = "Toepassingslogboeken bijvoegen";
 
-/* Class = "UILabel"; text = "Discuss on our forum, in social networks, or on GitHub"; ObjectID = "W6h-Gt-MMt"; */
-"W6h-Gt-MMt.text" = "Discussie op ons forum, op sociale netwerken, of op GitHub";
+/* Class = "UILabel"; text = "Discuss in social networks or on GitHub"; ObjectID = "W6h-Gt-MMt"; */
+"W6h-Gt-MMt.text" = "Discussie op sociale netwerken of op GitHub";
 
 /* Class = "UITableViewController"; title = "Settings"; ObjectID = "bEE-nS-r3u"; */
 "bEE-nS-r3u.title" = "Instellingen";
@@ -65,7 +65,7 @@
 "in9-YT-8ra.normalTitle" = "Rapport verzenden";
 
 /* Class = "UILabel"; text = "How to block ads with AdGuard"; ObjectID = "iwI-Gm-rAp"; */
-"iwI-Gm-rAp.text" = "Hoe advertenties blokkeren met AdGuard";
+"iwI-Gm-rAp.text" = "Hoe advertenties te blokkeren met AdGuard";
 
 /* Class = "UILabel"; text = "Report a bug or submit a feature request"; ObjectID = "ow5-MW-Ued"; */
 "ow5-MW-Ued.text" = "Een fout melden of een functieverzoek indienen";

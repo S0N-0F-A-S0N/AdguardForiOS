@@ -94,8 +94,14 @@
 /* (MainController) login status caption on main screen */
 "protection_disabled_caption" = "Zaštita je onemogućena";
 
-/* (GetProTableController) upgrade button title */
-"upgrade_button_title" = "Pretplatite se";
+/* (GetProTableController) upgrade button title; look like 'Try for free\n7 days free, then 1$.00/moth'*/
+"upgrade_button_title" = "Isprobati besplatno\n7 dana besplatno, zatim %@";
+
+/* (GetProTableController) upgrade button title for month; looks like '$1.00/moth' */
+"upgrade_button_subscription_price_month" = "%@/mjesec";
+
+/* (GetProTableController) upgrade button title for year; looks like '$1.00/year' */
+"upgrade_button_subscription_price_year" = "%@/godina";
 
 /* (LicenseProductChoiceCell) restore purchase button title */
 "restore_purchase_button_title" = "Oporavak kupovine";
@@ -879,6 +885,9 @@
 
 /* (ActivityViewController) -  Data saved alret title */
 "data_saved_info_alert_title" = "Spremljeni podaci";
+
+/* (ActivityViewController) -  Data saved alret message */
+"data_saved_info_alert_message" = "AdGuard sprječava vaš uređaj da učita praćenje u aplikaciji, smanjujući upotrebu podataka vašeg uređaja\n\nOvdje je ukupna količina podataka koju je AdGuard spremio za odabrano vremensko razdoblje";
 
 /* (ActivityViewController) - Companies alert title */
 "companies_info_alert_title" = "Broj tvrtki";

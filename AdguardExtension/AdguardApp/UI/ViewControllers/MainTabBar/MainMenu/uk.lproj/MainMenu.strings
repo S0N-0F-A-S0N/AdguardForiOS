@@ -40,8 +40,8 @@
 /* Class = "UILabel"; text = "Attach application logs"; ObjectID = "V7E-QE-uIA"; */
 "V7E-QE-uIA.text" = "Надіслати журнали програми";
 
-/* Class = "UILabel"; text = "Discuss on our forum, in social networks, or on GitHub"; ObjectID = "W6h-Gt-MMt"; */
-"W6h-Gt-MMt.text" = "Обговорити на нашому форумі, в соціальних мережах чи GitHub";
+/* Class = "UILabel"; text = "Discuss in social networks or on GitHub"; ObjectID = "W6h-Gt-MMt"; */
+"W6h-Gt-MMt.text" = "Обговорити в соціальних мережах чи на GitHub";
 
 /* Class = "UITableViewController"; title = "Settings"; ObjectID = "bEE-nS-r3u"; */
 "bEE-nS-r3u.title" = "Параметри";
@@ -59,7 +59,7 @@
 "dNj-vb-TQe.text" = "Розв'язання відомих проблем";
 
 /* Class = "UITextField"; placeholder = "Email Address"; ObjectID = "gap-Uy-5ka"; */
-"gap-Uy-5ka.placeholder" = "Електронна адреса";
+"gap-Uy-5ka.placeholder" = "Адреса електронної пошти";
 
 /* Class = "UIButton"; normalTitle = "Submit a report"; ObjectID = "in9-YT-8ra"; */
 "in9-YT-8ra.normalTitle" = "Надіслати звіт";

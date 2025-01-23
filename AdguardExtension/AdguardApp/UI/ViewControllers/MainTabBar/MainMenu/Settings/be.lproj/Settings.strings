@@ -20,7 +20,7 @@
 "BQY-q7-BQU.text" = "Блакавальнікі кантэнту";
 
 /* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "Dfm-If-1AX"; Note = "(AddCustomFilterController) cancel button"; */
-"Dfm-If-1AX.normalTitle" = "Скасаванне";
+"Dfm-If-1AX.normalTitle" = "Скасаваць";
 
 /* Class = "UILabel"; text = "Blocking mode"; ObjectID = "ESe-CM-On1"; */
 "ESe-CM-On1.text" = "Рэжым блакавання";
@@ -59,7 +59,7 @@
 "Vtx-vp-WIV.headerTitle" = "Тэма";
 
 /* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "WUY-Cq-SPm"; Note = "(AddCustomFilterController) cancel button"; */
-"WUY-Cq-SPm.normalTitle" = "Скасаванне";
+"WUY-Cq-SPm.normalTitle" = "Скасаваць";
 
 /* Class = "UILabel"; text = "Auto-update over Wi-Fi only"; ObjectID = "X0A-gU-hzf"; */
 "X0A-gU-hzf.text" = "Аўтаматычнае абнаўленне толькі праз Wi-Fi";

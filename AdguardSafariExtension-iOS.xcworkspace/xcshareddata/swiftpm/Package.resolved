@@ -1,12 +1,13 @@
 {
+  "originHash" : "5d94d69b35d591a6632e05690fc710a4e49d455d33330ddaada0f79ce1ce15b8",
   "pins" : [
     {
       "identity" : "dnslibs",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/AdguardTeam/DnsLibs",
       "state" : {
-        "revision" : "958e69015267d521e6c2ec97fe179baf0cf44fec",
-        "version" : "2.3.5"
+        "branch" : "v2.5.51@swift-5",
+        "revision" : "946785b3fcb18e82df887e04ba7cec2111fb8fa2"
       }
     },
     {
@@ -23,17 +24,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/gumob/PunycodeSwift.git",
       "state" : {
-        "revision" : "4356ec54e073741449640d3d50a1fd24fd1e1b8b",
-        "version" : "2.1.0"
-      }
-    },
-    {
-      "identity" : "reachability.swift",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ashleymills/Reachability.swift",
-      "state" : {
-        "revision" : "c01bbdf2d633cf049ae1ed1a68a2020a8bda32e2",
-        "version" : "5.1.0"
+        "revision" : "30a462bdb4398ea835a3585472229e0d74b36ba5",
+        "version" : "3.0.0"
       }
     },
     {
@@ -41,8 +33,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/AdguardTeam/SafariConverterLib",
       "state" : {
-        "revision" : "39bf98a4040113965ba4ab05c4cfda4a5482f809",
-        "version" : "2.0.48"
+        "revision" : "a9e6920ea68145c6a98fd79acd86c587ec7e0b7b",
+        "version" : "2.1.1"
       }
     },
     {
@@ -50,8 +42,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/getsentry/sentry-cocoa",
       "state" : {
-        "revision" : "d7f02ac0ebd9f8f3ddb1f9a2176a5399c5021e12",
-        "version" : "7.5.3"
+        "revision" : "7c1d627aaebbc702210c5062047508e4442ec9bf",
+        "version" : "8.37.0"
       }
     },
     {
@@ -77,8 +69,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-argument-parser",
       "state" : {
-        "revision" : "6b2aa2748a7881eebb9f84fb10c01293e15b52ca",
-        "version" : "0.5.0"
+        "revision" : "41982a3656a71c768319979febd796c6fd111d5c",
+        "version" : "1.5.0"
       }
     },
     {
@@ -99,5 +91,5 @@
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }

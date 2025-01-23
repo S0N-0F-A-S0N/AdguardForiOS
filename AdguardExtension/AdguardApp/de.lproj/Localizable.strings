@@ -94,8 +94,14 @@
 /* (MainController) login status caption on main screen */
 "protection_disabled_caption" = "Schutz ist deaktiviert";
 
-/* (GetProTableController) upgrade button title */
-"upgrade_button_title" = "Abonnement erhalten";
+/* (GetProTableController) upgrade button title; look like 'Try for free\n7 days free, then 1$.00/moth'*/
+"upgrade_button_title" = "Kostenlos testen\n7 Tage kostenlos, danach %@";
+
+/* (GetProTableController) upgrade button title for month; looks like '$1.00/moth' */
+"upgrade_button_subscription_price_month" = "%@/Monat";
+
+/* (GetProTableController) upgrade button title for year; looks like '$1.00/year' */
+"upgrade_button_subscription_price_year" = "%@/Jahr";
 
 /* (LicenseProductChoiceCell) restore purchase button title */
 "restore_purchase_button_title" = "Käufe wiederherstellen";
@@ -851,7 +857,7 @@
 "bug_report_successed_message" = "Fehlerbericht erfolgreich gesendet!";
 
 /* (IntroductionOnboardingController) - License agreement text */
-"introduction_license_agreement" = "Ich akzeptiere die <a href=%2$@>EULA</a> und die <a href=%1$@>Datenschutzrichtlinie</a> von AdGuard.";
+"introduction_license_agreement" = "Ich akzeptiere den <a href=%2$@>Endbenutzer-Lizenzvertrag</a> und die <a href=%1$@>Datenschutzerklärung</a> von AdGuard.";
 
 /* (ActivityViewController) - Requests alert title */
 "requests_info_alert_title" = "Anfragen";
@@ -984,7 +990,7 @@
 "security_filters_feature_description" = "Sperrt Phishing, Malware und verdächtige Inhalte";
 
 /* (PremiumFeature) - DNS privacy premium feature description */
-"dns_privacy_feature_description" = "Blockieren Sie In-App-Tracker, die stillschweigend Daten über Sie sammeln";
+"dns_privacy_feature_description" = "Sperren Sie In-App-Tracker, die stillschweigend Daten über Sie sammeln";
 
 /* (PremiumFeature) - Custom filters premium feature description */
 "custom_filters_feature_description" = "Verwenden Sie Filter von Drittanbietern oder erstellen Sie eigene";
@@ -1089,7 +1095,7 @@
 "low_level_beta_link" = "Interessieren Sie sich für neue Funktionen von AdGuard? Besuchen Sie unseren <a href=\"%@\">Beta-Kanal</a>.";
 
 /* (LowLevelSettingsController) Low level bootstraps placeholder */
-"low_level_bootstraps_placeholder" = "Liste unverschlüsselter DNS-Server, die für die Auflösung der „DNS über HTTPS“/„DNS über TLS“ verwendet werden sollen (falls vorhanden)";
+"low_level_bootstraps_placeholder" = "Liste der DNS-Server, die für die Auflösung von DOH/DOT-Hostnamen verwendet werden";
 
 /* low_level_fallbacks_placeholder
 (LowLevelSettingsController) Low level fallbacks placeholder
@@ -1106,7 +1112,7 @@ DO NOT TRANSLATE "none" */
 "upstreams_description" = "Upstream-Adresse";
 
 /* (UpstreamsController) Fallbacks title */
-"upstreams_fallbacks_title" = "Fallbacks";
+"upstreams_fallbacks_title" = "Fallback-Server";
 
 /* (UpstreamsController) Custom address title */
 "upstreams_custom_address_title" = "Eigene IP hinzufügen";

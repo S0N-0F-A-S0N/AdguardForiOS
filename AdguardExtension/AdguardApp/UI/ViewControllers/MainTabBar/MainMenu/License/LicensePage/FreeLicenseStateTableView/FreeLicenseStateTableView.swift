@@ -127,7 +127,11 @@ extension FreeLicenseStateTableView: UITableViewDataSource {
             let cell = LicenseProductChoiceCell.getCell(forTableView: tableView)
             cell.setTrialAvailability(model.trialIsAvailable)
             cell.setLoading(false)
-            cell.setProductButtonTitle(model.selectedProductIsSubscription ? String.localizedString("upgrade_button_title") : String.localizedString("upgrade_lifetime_button_title"))
+                if model.selectedProductIsSubscription, let text = model.getSubscriptionButtonText() {
+                    cell.setProductButtonTitle(text)
+                } else {
+                    cell.setProductButtonTitle(String.localizedString("upgrade_lifetime_button_title"))
+                }
             cell.setTrialLabelTitle(model.getTrialDescriptionText())
             cell.setLicenseProduct(model.selectedProductPeriod, model.selectedProductPrice)
             cell.updateTheme(themeService)

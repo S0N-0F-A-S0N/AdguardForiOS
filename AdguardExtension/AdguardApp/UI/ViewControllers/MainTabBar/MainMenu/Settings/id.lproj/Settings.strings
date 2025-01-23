@@ -1,17 +1,17 @@
 /* Class = "UILabel"; text = "Reset settings"; ObjectID = "0RM-mR-ikS"; */
-"0RM-mR-ikS.text" = "Setel ulang pengaturan";
+"0RM-mR-ikS.text" = "Atur ulang pengaturan";
 
 /* Class = "UILabel"; text = "Time in seconds"; ObjectID = "2A9-hH-oY3"; */
 "2A9-hH-oY3.text" = "Waktu dalam detik";
 
 /* Class = "UILabel"; text = "Debug logs"; ObjectID = "3zG-B5-jE5"; */
-"3zG-B5-jE5.text" = "Log debug";
+"3zG-B5-jE5.text" = "Catatan debug";
 
 /* Class = "UILabel"; text = "Blocked response TTL"; ObjectID = "7nl-3p-BP2"; */
-"7nl-3p-BP2.text" = "Respon TLL diblokir";
+"7nl-3p-BP2.text" = "Respons TTL terblokir";
 
 /* Class = "UILabel"; text = "Invert the Allowlist"; ObjectID = "8ad-4w-rbs"; */
-"8ad-4w-rbs.text" = "Balikkan daftar Putih";
+"8ad-4w-rbs.text" = "Balikkan Daftar Putih";
 
 /* Class = "UILabel"; text = "Incompatible with other VPN apps, unstable"; ObjectID = "8jT-85-XFp"; */
 "8jT-85-XFp.text" = "Tidak kompatibel dengan aplikasi VPN lain, tidak stabil";
@@ -23,10 +23,10 @@
 "9hH-ca-VHY.text" = "Hapus profil VPN";
 
 /* Class = "UILabel"; text = "Bootstrap IP address"; ObjectID = "A89-2M-jqd"; */
-"A89-2M-jqd.text" = "Alamat IP Bootstrap";
+"A89-2M-jqd.text" = "Alamat IP bootstrap";
 
 /* Class = "UILabel"; text = "Respond with REFUSED code"; ObjectID = "AtW-mH-6ja"; */
-"AtW-mH-6ja.text" = "Respon dengan kode REFUSED";
+"AtW-mH-6ja.text" = "Respons dengan kode DITOLAK";
 
 /* Class = "UILabel"; text = "Show filter updates progress bar"; ObjectID = "BOT-Ej-15M"; */
 "BOT-Ej-15M.text" = "Tampilkan bar progres pembaruan filter";
@@ -47,13 +47,13 @@
 "FzS-e3-CK1.text" = "Gelap";
 
 /* Class = "UILabel"; text = "Don't change them unless you know what you're doing"; ObjectID = "GBd-dx-t46"; */
-"GBd-dx-t46.text" = "Jangan diubah kecuali Anda tau apa yang Anda lakukan";
+"GBd-dx-t46.text" = "Jangan mengubahnya kecuali Anda tahu apa yang Anda lakukan";
 
 /* Class = "UILabel"; text = "AdGuard will write more details to the logfile. Don't enable unless you need to track down a bug"; ObjectID = "GFO-xu-Bir"; */
 "GFO-xu-Bir.text" = "AdGuard akan menulis detail lebih lanjut ke logfile. Jangan aktifkan kecuali Anda perlu melacak bug";
 
 /* Class = "UILabel"; text = "Split-Tunnel"; ObjectID = "GGp-kp-YJI"; */
-"GGp-kp-YJI.text" = "Split-Tunnel";
+"GGp-kp-YJI.text" = "Tunnel-Terpisah";
 
 /* Class = "UILabel"; text = "Enable this option if you experience issues with the Internet connection while AdGuard is running"; ObjectID = "H3Q-H6-YV0"; */
 "H3Q-H6-YV0.text" = "Aktifkan opsi ini jika Anda mengalami masalah dengan koneksi Internet saat AdGuard berjalan";
@@ -65,7 +65,7 @@
 "JQH-8J-wY8.text" = "Server bootstrap";
 
 /* Class = "UILabel"; text = "This will delete your actual VPN profile and disable DNS protection"; ObjectID = "Jnb-4w-9NY"; */
-"Jnb-4w-9NY.text" = "Ini akan menghapus profil aktual VPN Anda dan mematikan perlindungan DNS";
+"Jnb-4w-9NY.text" = "Ini akan menghapus profil VPN Anda yang sebenarnya dan menonaktifkan perlindungan DNS";
 
 /* Class = "UILabel"; text = "Advanced settings"; ObjectID = "Lig-ju-iTI"; */
 "Lig-ju-iTI.text" = "Pengaturan lanjutan";
@@ -77,7 +77,7 @@
 "Ory-8I-Ih0.text" = "Mode lanjutan";
 
 /* Class = "UILabel"; text = "Reset statistics"; ObjectID = "QEc-dY-TtB"; */
-"QEc-dY-TtB.text" = "Reset statistik";
+"QEc-dY-TtB.text" = "Atur ulang statistik";
 
 /* Class = "UILabel"; text = "Block AAAA requests"; ObjectID = "Rmq-30-7hJ"; */
 "Rmq-30-7hJ.text" = "Blokir permintaan AAAA";
@@ -86,7 +86,7 @@
 "TX9-Md-Qzr.text" = "Sistem standar";
 
 /* Class = "UILabel"; text = "This option will reset all your settings"; ObjectID = "Twq-5a-kOB"; */
-"Twq-5a-kOB.text" = "Opsi ini akan mereset semua pengaturan Anda";
+"Twq-5a-kOB.text" = "Opsi ini akan mengatur ulang semua pengaturan Anda";
 
 /* Class = "UITableViewSection"; headerTitle = "Theme"; ObjectID = "Vtx-vp-WIV"; */
 "Vtx-vp-WIV.headerTitle" = "Tema";
@@ -95,16 +95,16 @@
 "WUY-Cq-SPm.normalTitle" = "Batal";
 
 /* Class = "UILabel"; text = "Auto-update over Wi-Fi only"; ObjectID = "X0A-gU-hzf"; */
-"X0A-gU-hzf.text" = "Perbarui otomatis hanya lewat Wi-Fi";
+"X0A-gU-hzf.text" = "Perbarui otomatis hanya melalui Wi-Fi";
 
 /* Class = "UILabel"; text = "Full-Tunnel"; ObjectID = "aIJ-gX-03k"; */
-"aIJ-gX-03k.text" = "Full-Tunnel";
+"aIJ-gX-03k.text" = "Tunnel-Penuh";
 
 /* Class = "UILabel"; text = "DNS Servers"; ObjectID = "bRu-jJ-qsB"; */
 "bRu-jJ-qsB.text" = "Server DNS";
 
 /* Class = "UILabel"; text = "Tunnel mode"; ObjectID = "bnd-Eh-hpk"; */
-"bnd-Eh-hpk.text" = "Tunnel mode";
+"bnd-Eh-hpk.text" = "Mode tunnel";
 
 /* Class = "UILabel"; text = "Blocking mode"; ObjectID = "cXx-vF-2MX"; */
 "cXx-vF-2MX.text" = "Mode pemblokiran";
@@ -113,28 +113,28 @@
 "cdQ-kW-CG7.text" = "Mode tunnel";
 
 /* Class = "UILabel"; text = "Respond with zero IP address (0.0.0.0 for A; :: for AAAA) when blocked by AdBlock-style rule; respond with the IP address specified in the rule when blocked by /etc/hosts-style rule"; ObjectID = "cgV-he-JNk"; */
-"cgV-he-JNk.text" = "Tanggapi dengan alamat IP nol (0.0.0.0 untuk A; :: untuk AAAA) saat diblokir oleh aturan AdBlock-style; tanggapi dengan alamat IP yang ditentukan dalam aturan ketika diblokir oleh aturan /etc/hosts-style";
+"cgV-he-JNk.text" = "Tanggapi dengan alamat IP nol (0.0.0.0 untuk A; :: untuk AAAA) saat diblokir oleh aturan gaya AdBlock; tanggapi dengan alamat IP yang ditentukan dalam aturan ketika diblokir oleh aturan /etc/hosts-style";
 
 /* Class = "UILabel"; text = "Restart protection when network changes"; ObjectID = "dLN-5K-c1N"; */
-"dLN-5K-c1N.text" = "Ulangi proteksi jika jaringan berubah";
+"dLN-5K-c1N.text" = "Mulai ulang perlindungan ketika jaringan berubah";
 
 /* Class = "UILabel"; text = "Respond with NXDOMAIN code"; ObjectID = "dsw-Ub-m4M"; */
-"dsw-Ub-m4M.text" = "Selalu kembalikan NXDOMAIN";
+"dsw-Ub-m4M.text" = "Tanggapi dengan kode NXDOMAIN";
 
 /* Class = "UILabel"; text = "Advanced settings"; ObjectID = "eIa-RB-Phv"; */
 "eIa-RB-Phv.text" = "Pengaturan lanjutan";
 
 /* Class = "UILabel"; text = "Full-Tunnel (without VPN icon)"; ObjectID = "eiP-yl-Xb3"; */
-"eiP-yl-Xb3.text" = "Full-Tunnel (tanpa ikon VPN)";
+"eiP-yl-Xb3.text" = "Tunnel-Penuh (tanpa ikon VPN)";
 
 /* Class = "UILabel"; text = "Compatible with “Personal VPN” apps"; ObjectID = "gxl-pG-zh1"; */
 "gxl-pG-zh1.text" = "Kompatibel dengan aplikasi \"Personal VPN\"";
 
 /* Class = "UILabel"; text = "In the Split-Tunnel mode AdGuard is compatible with so-called “Personal VPN” apps. As a trade-off, in this mode it may be bypassed by system in case of bad connectivity."; ObjectID = "jmQ-ze-hFG"; */
-"jmQ-ze-hFG.text" = "Pada mode Split-Tunnel, AdGuard kompatibel dengan aplikasi yang disebut \"Personal VPN\". Sebagai pertukaran, dalam mode ini dapat dilewati oleh sistem jika konektivitas buruk.";
+"jmQ-ze-hFG.text" = "Pada mode Tunnel-Terpisah, AdGuard kompatibel dengan aplikasi yang disebut \"Personal VPN\". Sebagai gantinya, dalam mode ini dapat dilewati oleh sistem jika konektivitas buruk.";
 
 /* Class = "UILabel"; text = "Fallback servers"; ObjectID = "k0U-fn-m9X"; */
-"k0U-fn-m9X.text" = "Server Sandaran (Fallback)";
+"k0U-fn-m9X.text" = "Server cadangan";
 
 /* Class = "UITableViewSection"; headerTitle = "Other"; ObjectID = "nL4-Vl-Gcz"; */
 "nL4-Vl-Gcz.headerTitle" = "Lainnya";
@@ -149,7 +149,7 @@
 "qxo-YS-JWL.text" = "Tampilkan status bar";
 
 /* Class = "UILabel"; text = "Respond with zero IP address (0.0.0.0 for A; :: for AAAA)"; ObjectID = "rDk-OP-kAS"; */
-"rDk-OP-kAS.text" = "Menanggapi dengan alamat IP nol (0.0.0.0 untuk A; :: untuk AAAA)";
+"rDk-OP-kAS.text" = "Tanggapi dengan alamat IP nol (0.0.0.0 untuk A; :: untuk AAAA)";
 
 /* Class = "UILabel"; text = "Low-level settings"; ObjectID = "reQ-4X-84i"; */
 "reQ-4X-84i.text" = "Pengaturan tingkat rendah";
@@ -161,16 +161,16 @@
 "sc6-Tw-xnL.text" = "Pengaturan";
 
 /* Class = "UILabel"; text = "If this setting is enabled, AdGuard will use only Wi-Fi for background filter updates"; ObjectID = "tTY-BW-QcN"; */
-"tTY-BW-QcN.text" = "Jika pengaturan ini diaktifkan, AdGuard hanya akan menggunakan Wi-Fi untuk pembaruan filter dibelakang";
+"tTY-BW-QcN.text" = "Jika pengaturan ini diaktifkan, AdGuard hanya akan menggunakan Wi-Fi untuk pembaruan filter latar belakang";
 
 /* Class = "UILabel"; text = "Blocked response TTL"; ObjectID = "uRk-qq-TJH"; */
-"uRk-qq-TJH.text" = "Respon TLL diblokir";
+"uRk-qq-TJH.text" = "Respons TTL terblokir";
 
 /* Class = "UILabel"; text = "Are you a developer?"; ObjectID = "wPe-ae-X0G"; */
 "wPe-ae-X0G.text" = "Apakah Anda seorang pengembang?";
 
 /* Class = "UILabel"; text = "This option will clear all statistical data, such as number of requests, etc."; ObjectID = "wYq-g0-5k6"; */
-"wYq-g0-5k6.text" = "Opsi ini akan mengosongkan semua data statistik, seperti jumlah permintaan, dll.";
+"wYq-g0-5k6.text" = "Opsi ini akan menghapus semua data statistik, seperti jumlah permintaan, dan lain-lain.";
 
 /* Class = "UILabel"; text = "Unblock ads everywhere except for the websites from this list"; ObjectID = "yBG-d2-ebt"; */
-"yBG-d2-ebt.text" = "Tidak memblokir iklan dimanapun kecuali untuk website dari daftar ini";
+"yBG-d2-ebt.text" = "Buka blokir iklan di mana pun kecuali situs web dari daftar ini";

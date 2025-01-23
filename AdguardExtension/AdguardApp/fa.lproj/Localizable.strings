@@ -25,6 +25,12 @@
 /* NO Button caption in alert */
 "common_action_no" = "خیر";
 
+/* (MainPageController) Text for data units (M) Millions */
+"millions_unit" = "%@مـ";
+
+/* (MainPageController) Text for data units (K) Kilo, Thousands */
+"thousands_unit" = "%@هـ";
+
 /* Kilobytes infromation unit */
 "kb_unit" = "%@ کیلوبایت";
 
@@ -45,6 +51,9 @@
 
 /* (MainController) login status caption on main screen */
 "protection_partly_enabled_caption" = "برخی مسدودسازی های محتوا غیرفعال شده اند";
+
+/* (LicenseProductChoiceCell) restore purchase button title */
+"restore_purchase_button_title" = "بازیابی خرید";
 
 /* (FreeLicenseStateTableViewModel) title for permanent subscription */
 "permanent_subscription_title" = "دائمی";
@@ -135,6 +144,9 @@
 
 /* (MainController) Message on main screen during update - count of updated filters */
 "filters_updated_format" = "%lu فیلتر بروز رسانی شده";
+
+/* (FiltersController) Filter Version format */
+"filter_version_format" = "نسخه %@";
 
 /* (DnsSettingController) split tunel mode description */
 "tunnel_mode_split_description" = "تقسیم تونل،سازگار با برنامه های \"وی پی اِن شخصی\"";
@@ -254,7 +266,10 @@
 "on_state" = "فعال شده";
 
 /* (FiltersController) Disabled state in groups section */
-"off_state" = "فعال نشده";
+"off_state" = "غير فعال شده";
+
+/* (AboutViewController) current app version format */
+"about_version_format" = "نسخه %@";
 
 /* (LicensePageViewController) Login title */
 "common_login" = "ورود";
@@ -285,6 +300,9 @@
 
 /* (ListOfRulesModel) title safari Allowlist */
 "whitelist_title" = "لیست سفید";
+
+/* (ListOfRulesModel) title for dns block list */
+"dns_blacklist_title" = "لیست سیاه";
 
 /* (ListOfRulesModel) title for safari user filter */
 "safari_userfilter_title" = "دستورات کاربر سافاری";
@@ -385,23 +403,11 @@
 /*(MainScreen) "24 hours" chart date type */
 "chart_24hours" = "24 ساعت";
 
-/*(MainScreen) "today" chart date type */
-"chart_date_today" = "امروز";
-
-/*(MainScreen) "7 days" chart date type */
-"chart_7days" = "7 روز";
-
 /*(MainScreen) "30 days" chart date type */
 "chart_30days" = "30 روز";
 
-/*(MainScreen) "all time" chart date type */
-"chart_alltime" = "همیشه";
-
 /*(NewCustomFilterDetailsController) title for new custom filter */
 "new_filter_title" = "فیلتر دستی جدید";
-
-/*(NewCustomFilterDetailsController) title for new dns filter */
-"new_dns_filter_title" = "فیلتر DNS جدید";
 
 /*(NewCustomFilterDetailsController) add button title */
 "common_add" = "افزودن";
@@ -409,17 +415,11 @@
 /*(TodayViewController) DNS protection is enabled text  */
 "system_enabled" = "حفاظت از DNS";
 
-/*(DnsRequestDetailsController) action title for info alert  */
-"common_action_more" = "بیشتر...";
-
 /* (DnsFiltersTableController) - DNS filters title */
-"dns_filters_title" = "فيلترهای DNS";
+"dns_filters_title" = "فیلترهای DNS";
 
 /*(DnsLogController) status of dns request */
 "dns_request_status_blocked" = "مسدود شده";
-
-/*(DnsLogController) status of dns request */
-"dns_request_status_processed" = "پردازش شده";
 
 /*(DnsLogController) status of dns request */
 "dns_request_status_allowlisted" = "لیست سفید";
@@ -469,14 +469,17 @@
 /* (DnsRequestDetailsController) "Time" title for cell */
 "time_title" = "زمان";
 
-/* (DnsRequestDetailsController) "Size" title for cell */
-"size_title" = "حجم";
-
 /* (DnsRequestDetailsController) "Type" title for cell */
 "type_title" = "نوع";
 
+/* (DnsRequestDetailsController) "DNS status" title for cell */
+"dns_status_title" = "وضعیت DNS";
+
 /* (DnsRequestDetailsController) "DNS upstream" title for cell */
 "dns_upstream_title" = "جریان ارسالی DNS";
+
+/* (DnsRequestDetailsController) "DNS answer" title for cell */
+"dns_answer_title" = "پاسخ DNS";
 
 /* (DnsRequestDetailsController) "Original answer" title for cell */
 "original_answer_title" = "پاسخ اصلی";
@@ -534,9 +537,6 @@ DO NOT TRANSLATE "none" */
 
 /* (FiltersMasterController) Header Filters title */
 "navigation_item_filters_title" = "فيلترها";
-
-/* (DnsFiltersController) Header DNS Filters title */
-"navigation_item_dns_filters_title" = "فيلترهای DNS";
 
 /* (BackgroundFetchController) - Background app refresh every 1 hour title */
 "background_fetch_hour_period" = "هر ساعت";

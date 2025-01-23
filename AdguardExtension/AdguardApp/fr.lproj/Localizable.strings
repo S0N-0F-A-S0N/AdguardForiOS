@@ -94,8 +94,14 @@
 /* (MainController) login status caption on main screen */
 "protection_disabled_caption" = "Protection désactivée";
 
-/* (GetProTableController) upgrade button title */
-"upgrade_button_title" = "M'abonner";
+/* (GetProTableController) upgrade button title; look like 'Try for free\n7 days free, then 1$.00/moth'*/
+"upgrade_button_title" = "Essai gratuit\n7 jours gratuits, puis %@";
+
+/* (GetProTableController) upgrade button title for month; looks like '$1.00/moth' */
+"upgrade_button_subscription_price_month" = "%@/mois";
+
+/* (GetProTableController) upgrade button title for year; looks like '$1.00/year' */
+"upgrade_button_subscription_price_year" = "%@/an";
 
 /* (LicenseProductChoiceCell) restore purchase button title */
 "restore_purchase_button_title" = "Rétablir l'achat";
@@ -641,7 +647,7 @@
 "add_custom_filter_error_message" = "Quelque chose s'est mal passé, soit le format du fichier avec le filtrage personnalisé est incorrect";
 
 /*(NewCustomFilterDetailsController) title for editing custom filter */
-"edit_custom_filter_title" = "Modifier le filtre personnalisé";
+"edit_custom_filter_title" = "Éditer le filtre personnalisé";
 
 /*(NewCustomFilterDetailsController) add button title */
 "common_add" = "Ajouter";
@@ -773,7 +779,7 @@
 "add_dns_server_alert_title" = "Ajouter un serveur DNS personnalisé";
 
 /* (NewDnsServerController) edit dns server alert title */
-"edit_dns_server_alert_title" = "Modifier le serveur DNS personnalisé";
+"edit_dns_server_alert_title" = "Éditer le serveur DNS personnalisé";
 
 /* (DnsRequestDetailsController) - matched filter name for user filter */
 "system_blacklist" = "Liste Noire du système";
@@ -857,7 +863,7 @@
 "requests_info_alert_title" = "Requêtes";
 
 /* (ActivityViewController) - Requests alert message */
-"requests_info_alert_message" = "Chaque fois que vous visitez un site Web, une demande est envoyée. Les sites Web peuvent envoyer des demandes cachées et divulguer des données personnelles. Il est utile de connaître le nombre de ces demandes pour comprendre l’ampleur de ce problème.";
+"requests_info_alert_message" = "Chaque fois que vous visitez un site web, une requête est envoyée. Les sites web peuvent envoyer des requêtes cachées et divulguer des données personnelles. C'est utile de connaître la quantité de ces requêtes pour comprendre l’ampleur du problème.";
 
 /* (ActivityViewController) -  Blocked alret title */
 "blocked_info_alert_title" = "Requêtes bloquées";
@@ -1194,7 +1200,7 @@ DO NOT TRANSLATE "none" */
 "server_title" = "Serveur";
 
 /* (DnsProviderDetailsController) Website title */
-"website_title" = "Site Web";
+"website_title" = "Site web";
 
 /* (YoutubePlayerController) 'bad url' alert title */
 "youtube_player_controller_bad_url_title" = "URL invalide";
@@ -1206,7 +1212,7 @@ DO NOT TRANSLATE "none" */
 "youtube_player_controller_content_blocking_list_error_title" = "Erreur de filtrage";
 
 /* (YoutubePlayerController) 'content blocking list error' alert message */
-"youtube_player_controller_content_blocking_list_error_message" = "Échec lors de la compilation de la liste de blocage";
+"youtube_player_controller_content_blocking_list_error_message" = "Échec de la compilation de la liste de blocage";
 
 /* (YoutubePlayerController) 'userscript error' alert title */
 "youtube_player_controller_userscript_error_title" = "Erreur de script utilisateur";

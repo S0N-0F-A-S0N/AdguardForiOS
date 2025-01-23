@@ -282,6 +282,10 @@ final class ComplexProtectionController: UITableViewController {
             if indexPath.row == advancedProtectionCell {
                 cell.isHidden = true
             }
+
+            if indexPath.row == advancedYouTubeAdsBlockingCell {
+                cell.isHidden = resources.disableYouTubeFeature
+            }
         }
 
         if indexPath.row == adguardVpnCell {
@@ -300,6 +304,10 @@ final class ComplexProtectionController: UITableViewController {
             }
         } else {
             if indexPath.row == advancedProtectionCell {
+                return 0
+            }
+
+            if indexPath.row == advancedYouTubeAdsBlockingCell && resources.disableYouTubeFeature {
                 return 0
             }
         }

@@ -64,8 +64,14 @@
 /* (MainController) login status caption on main screen */
 "protection_partly_enabled_caption" = "Некаторыя блакавальнікі кантэнту адключаны";
 
-/* (GetProTableController) upgrade button title */
-"upgrade_button_title" = "ПАЧАЦЬ ПРОБНЫ ПЕРЫЯД";
+/* (GetProTableController) upgrade button title; look like 'Try for free\n7 days free, then 1$.00/moth'*/
+"upgrade_button_title" = "Спрабаваць бясплатна\n7 дзён бясплатна, далей %@";
+
+/* (GetProTableController) upgrade button title for month; looks like '$1.00/moth' */
+"upgrade_button_subscription_price_month" = "%@/месяц";
+
+/* (GetProTableController) upgrade button title for year; looks like '$1.00/year' */
+"upgrade_button_subscription_price_year" = "%@/год";
 
 /* (LicenseProductChoiceCell) restore purchase button title */
 "restore_purchase_button_title" = "Аднавіць куплю";
@@ -299,7 +305,7 @@
 "on_state" = "Уключаны";
 
 /* (FiltersController) Disabled state in groups section */
-"off_state" = "Адключаны";
+"off_state" = "Выключана";
 
 /* (FilterDetailsController) delete filter title */
 "delete_filter_title" = "Выдаліць фільтр";
@@ -572,13 +578,16 @@
 "save_button_title" = "Захаваць";
 
 /* (NewDnsServerController) cancel button title */
-"cancel_button_title" = "Скасаванне";
+"cancel_button_title" = "Скасаваць";
 
 /* (NewDnsServerController) delete button title */
 "delete_button_title" = "Выдаліць";
 
 /* (NewDnsServerController) add dns server alert title */
 "add_dns_server_alert_title" = "Дадаць карыстацкі DNS-сервер";
+
+/* (NewDnsServerController) edit dns server alert title */
+"edit_dns_server_alert_title" = "Рэдагаваць карыстальніцкі DNS сервер";
 
 /* (DnsRequestDetailsController) - matched filter name for user filter */
 "system_blacklist" = "Сістэмны чорны спіс";

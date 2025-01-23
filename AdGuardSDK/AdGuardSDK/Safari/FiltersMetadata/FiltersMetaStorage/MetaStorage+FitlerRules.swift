@@ -18,6 +18,7 @@
 
 import Foundation
 import SQLite
+import struct SQLite.Expression
 
 /* FilterRulesTable; filter_rules table */
 private struct FilterRulesTable {

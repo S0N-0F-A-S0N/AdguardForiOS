@@ -70,9 +70,6 @@
 /* (MainController) login status caption on main screen */
 "protection_partly_enabled_caption" = "Noen innholdsblokkerere er skrudd av";
 
-/* (GetProTableController) upgrade button title */
-"upgrade_button_title" = "Abonner";
-
 /* (LicenseProductChoiceCell) restore purchase button title */
 "restore_purchase_button_title" = "Gjenopprett kjøp";
 
@@ -269,7 +266,7 @@
 "on_state" = "Aktivert";
 
 /* (FiltersController) Disabled state in groups section */
-"off_state" = "Skrudd av";
+"off_state" = "Deaktivert";
 
 /* (FilterDetailsController) delete filter title */
 "delete_filter_title" = "Slett filter";

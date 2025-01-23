@@ -17,6 +17,7 @@
 //
 
 import SQLite
+import struct SQLite.Expression
 import SharedAdGuardSDK
 
 /// Object representation of `chart_statistics_table`

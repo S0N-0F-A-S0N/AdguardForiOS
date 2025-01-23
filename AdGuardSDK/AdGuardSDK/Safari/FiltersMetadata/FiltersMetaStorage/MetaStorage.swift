@@ -18,6 +18,7 @@
 
 import SharedAdGuardSDK
 import SQLite
+import struct SQLite.Expression
 
 typealias MetaStorageTypeAlias = FiltersMetaStorageProtocol
                                 & GroupsMetaStorageProtocol

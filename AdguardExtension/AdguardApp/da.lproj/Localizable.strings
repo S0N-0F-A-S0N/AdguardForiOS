@@ -94,8 +94,14 @@
 /* (MainController) login status caption on main screen */
 "protection_disabled_caption" = "Beskyttelsen er slået fra";
 
-/* (GetProTableController) upgrade button title */
-"upgrade_button_title" = "Abonnér";
+/* (GetProTableController) upgrade button title; look like 'Try for free\n7 days free, then 1$.00/moth'*/
+"upgrade_button_title" = "Prøv gratis\n7 dage gratis, derefter %@";
+
+/* (GetProTableController) upgrade button title for month; looks like '$1.00/moth' */
+"upgrade_button_subscription_price_month" = "%@/måned";
+
+/* (GetProTableController) upgrade button title for year; looks like '$1.00/year' */
+"upgrade_button_subscription_price_year" = "%@/år";
 
 /* (LicenseProductChoiceCell) restore purchase button title */
 "restore_purchase_button_title" = "Gendan køb";
@@ -863,7 +869,7 @@
 "blocked_info_alert_title" = "Blokerede forespørgsler";
 
 /* (ActivityViewController) -  Blocked alret message */
-"blocked_info_alert_message" = "AdGuard filtrerer de fleste af din telefons DNS-anmodninger og blokerer sporing og farlige anmodninger\n\nHer er det samlede antal anmodninger blokeret af AdGuard i den valgte tidsperiode";
+"blocked_info_alert_message" = "AdGuard filtrerer de fleste af mobilens DNS-forespørgsler og blokerer sporing og farlige forespørgsler\n\nHer er det samlede antal forespørgsler blokeret af AdGuard i den valgte tidsperiode";
 
 /* (ActivityViewController) - encrypted alert title */
 "encrypted_info_alert_title" = "Krypterede forespørgsler";
@@ -1082,6 +1088,9 @@
 /* (ImportSettingsController) add dns rules title */
 "import_dns_user_rules" = "Tilføj DNS-brugerregler";
 
+/* (ImportSettingsController) disable YouTube feature title */
+"disable_youtube_feature" = "Slå AdGuard Player fra";
+
 /* (LowLevelSettingsController) Low level settings description. <b style=color:#c23814ff> It is a color for WARNING! word*/
 "low_level_description" = "<b style=color:#c23814ff>ADVARSEL!</b> Aktivering af disse funktioner kan muligvis afbryde Internetforbindelsen eller kompromittere din sikkerhed og fortrolighed.";
 
@@ -1213,6 +1222,12 @@ DO NOT TRANSLATE "none" */
 
 /* (YoutubePlayerController) 'userscript error' alert message */
 "youtube_player_controller_userscript_error_message" = "Bruger-script oprettelse mislykkedes";
+
+/* (YoutubePlayerController) YouTube feature disabled alert title */
+"youtube_player_controller_feature_disabled_title" = "AdGuard Player slået fra";
+
+/* (YoutubePlayerController) YouTube feature disabled alert message */
+"youtube_player_controller_feature_disabled_message" = "Videodeling med AdGuard er ikke tilgængelig";
 
 /* (YouTubeAdsRequestHandler) 'no url error' alert title */
 "youtube_share_extension_no_url_title" = "Ingen URL angivet";

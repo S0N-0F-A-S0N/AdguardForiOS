@@ -4,8 +4,7 @@
 /* Class = "UIButton"; normalTitle = "Add"; ObjectID = "1rj-wD-aeH"; */
 "1rj-wD-aeH.normalTitle" = "추가";
 
-/* 4IJ-xy-hky.normalTitle
-Class = &quot;UIButton&quot;; normalTitle = &quot;blocked&quot;; ObjectID = &quot;4IJ-xy-hky&quot;; */
+/* Class = "UIButton"; normalTitle = "blocked"; ObjectID = "4IJ-xy-hky"; */
 "4IJ-xy-hky.normalTitle" = "차단됨";
 
 /* Class = "UILabel"; text = "Activity"; ObjectID = "5bV-zZ-4dr"; */
@@ -98,8 +97,7 @@ Class = &quot;UIButton&quot;; normalTitle = &quot;blocked&quot;; ObjectID = &quo
 /* Class = "UILabel"; text = "Most blocked"; ObjectID = "w2i-mK-dfO"; */
 "w2i-mK-dfO.text" = "최다 차단";
 
-/* wt5-4Q-CTq.normalTitle
-Class = &quot;UIButton&quot;; normalTitle = &quot;blocked&quot;; ObjectID = &quot;wt5-4Q-CTq&quot;; */
+/* Class = "UIButton"; normalTitle = "blocked"; ObjectID = "wt5-4Q-CTq"; */
 "wt5-4Q-CTq.normalTitle" = "차단됨";
 
 /* Class = "UILabel"; text = "Block request"; ObjectID = "y8j-ib-ZgR"; */
@@ -108,6 +106,5 @@ Class = &quot;UIButton&quot;; normalTitle = &quot;blocked&quot;; ObjectID = &quo
 /* Class = "UILabel"; text = "Most active"; ObjectID = "yWy-kc-8Zg"; */
 "yWy-kc-8Zg.text" = "가장 활발한";
 
-/* yio-E8-cQV.normalTitle
-Class = &amp;quot;UIButton&amp;quot;; normalTitle = &amp;quot;data saved&amp;quot;; ObjectID = &amp;quot;yio-E8-cQV&amp;quot;; */
+/* Class = "UIButton"; normalTitle = "data saved"; ObjectID = "yio-E8-cQV"; */
 "yio-E8-cQV.normalTitle" = "절약한 데이터";

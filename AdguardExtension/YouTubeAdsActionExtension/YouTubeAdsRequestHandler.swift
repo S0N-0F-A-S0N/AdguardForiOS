@@ -92,7 +92,11 @@ class YouTubeAdsRequestHandler : UINavigationController {
         var responder: UIResponder? = self
         while responder != nil {
             if let application = responder as? UIApplication {
-                application.perform(#selector(openURL(_:)), with: url)
+                if #available(iOS 18.0, *) {
+                    application.open(url, options: [:], completionHandler: nil)
+                } else {
+                    application.perform(#selector(openURL(_:)), with: url)
+                }
                 extensionContext?.completeRequest(returningItems: nil, completionHandler: nil)
             }
             responder = responder?.next
@@ -246,6 +250,8 @@ fileprivate extension NSExtensionContext {
         let youtubeMobile = "m.youtube.com"
         let youtubeNoCookie = "youtube-nocookie.com"
         let youtubeEmbed = "/embed/"
+        let youtubeLive = "/live/"
+        let youtubeShorts = "/shorts/"
 
         guard let domain: String = URL(string: url)?.domain else { return nil }
 
@@ -254,7 +260,15 @@ fileprivate extension NSExtensionContext {
         }
 
         if equalsAny(domain, [youtubeUrl, youtubeKids, youtubeMusic, youtubeMobile, youtubeNoCookie]) {
-            return url.contains(youtubeEmbed) ? .embed : .regular
+            if url.contains(youtubeEmbed) {
+                return .embed
+            } else if url.contains(youtubeLive) {
+                return .live
+            } else if url.contains(youtubeShorts) {
+                return .shorts
+            } else {
+                return .regular
+            }
         }
 
         return nil

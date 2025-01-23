@@ -38,6 +38,7 @@ protocol FreeLicenseStateTableViewModelProtocol: LicenseProductChoiceCellDelegat
     func selectProduct(with id: String)
     func getSubscriptionsTermsText() -> NSAttributedString?
     func getTrialDescriptionText() -> String?
+    func getSubscriptionButtonText() -> String?
 }
 
 final class FreeLicenseStateTableViewModel: FreeLicenseStateTableViewModelProtocol {
@@ -179,6 +180,12 @@ final class FreeLicenseStateTableViewModel: FreeLicenseStateTableViewModelProtoc
         purchaseService.requestRestore()
     }
 
+    func getSubscriptionButtonText() -> String? {
+        guard let selected = selectedProduct else { return nil }
+
+        return getSubscriptionButtonText(for: selected)
+    }
+
     // MARK: - Private methods
 
     private func getSubscriptionPeriodString(for product: Product) -> String {
@@ -194,6 +201,22 @@ final class FreeLicenseStateTableViewModel: FreeLicenseStateTableViewModelProtoc
         case .month: return String.localizedString("one_month_subscription_title")
         case .year: return String.localizedString("one_year_subscription_title")
         default: return ""
+        }
+    }
+
+    private func getSubscriptionButtonText(for product: Product) -> String? {
+        guard let period = product.period else { return nil }
+
+        let text = String.localizedString("upgrade_button_title")
+
+        switch period.unit {
+            case .month: 
+                let unit = String.localizedString("upgrade_button_subscription_price_month")
+                return String(format: text, String(format: unit, product.price))
+            case .year: 
+                let unit = String.localizedString("upgrade_button_subscription_price_year")
+                return String(format: text, String(format: unit, product.price))
+            default: return nil
         }
     }
 

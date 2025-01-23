@@ -94,8 +94,14 @@
 /* (MainController) login status caption on main screen */
 "protection_disabled_caption" = "保護はオフです。";
 
-/* (GetProTableController) upgrade button title */
-"upgrade_button_title" = "無料お試しスタート";
+/* (GetProTableController) upgrade button title; look like 'Try for free\n7 days free, then 1$.00/moth'*/
+"upgrade_button_title" = "無料で試してみる\n7日間無料、その後 %@";
+
+/* (GetProTableController) upgrade button title for month; looks like '$1.00/moth' */
+"upgrade_button_subscription_price_month" = "%@/月";
+
+/* (GetProTableController) upgrade button title for year; looks like '$1.00/year' */
+"upgrade_button_subscription_price_year" = "%@/年";
 
 /* (LicenseProductChoiceCell) restore purchase button title */
 "restore_purchase_button_title" = "購入を復元";
@@ -143,13 +149,13 @@
 "premium_expired_title" = "注意";
 
 /* (AEUIGetProViewController) message that appears if the account is not premium */
-"not_premium_message" = "AdGuardアカウントのログインできましたが、プレミアム版のライセンスキーがありません。";
+"not_premium_message" = "AdGuardアカウントにログインできましたが、プレミアム版のライセンスキーがありません。";
 
 /* (AEUIGetProViewController) message that appears when the user successfully logs in */
 "login_success_message" = "AdGuardアカウントでログインでき、プレミアム版が有効になりました。";
 
 /* (AEUIGetProViewController) message that appears when the user successfully logs in but all premium keys have expired */
-"login_premium_expired_message" = "AdGuardアカウントのログインできましたが、プレミアム版用のライセンスキーが有効期限切れです。";
+"login_premium_expired_message" = "AdGuardアカウントにログインできましたが、プレミアム版用のライセンスキーが有効期限切れです。";
 
 /* (AEUIGetProViewController) message that appears when an error occurred during purchase restoring */
 "restore_purchases_failure_message" = "購入を復元中にエラーが発生しました。";
@@ -1082,6 +1088,9 @@
 /* (ImportSettingsController) add dns rules title */
 "import_dns_user_rules" = "DNSユーザールールを追加する";
 
+/* (ImportSettingsController) disable YouTube feature title */
+"disable_youtube_feature" = "AdGuard プレイヤーを無効化";
+
 /* (LowLevelSettingsController) Low level settings description. <b style=color:#c23814ff> It is a color for WARNING! word*/
 "low_level_description" = "<b style=color:#c23814ff>【警告】</b> これらの機能を有効にすると、インターネット接続が切断されたり、セキュリティー、プライバシーが危険に晒される可能性があります。";
 
@@ -1213,6 +1222,12 @@ DO NOT TRANSLATE "none" */
 
 /* (YoutubePlayerController) 'userscript error' alert message */
 "youtube_player_controller_userscript_error_message" = "ユーザースクリプトの作成に失敗しました";
+
+/* (YoutubePlayerController) YouTube feature disabled alert title */
+"youtube_player_controller_feature_disabled_title" = "AdGuard プレイヤーは無効化されています";
+
+/* (YoutubePlayerController) YouTube feature disabled alert message */
+"youtube_player_controller_feature_disabled_message" = "この機能は無効化されています";
 
 /* (YouTubeAdsRequestHandler) 'no url error' alert title */
 "youtube_share_extension_no_url_title" = "URL指定がありません";

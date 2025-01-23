@@ -18,6 +18,7 @@
 
 import Foundation
 import SQLite
+import struct SQLite.Expression
 
 protocol SafariProtectionFiltersDatabaseMigrationHelperProtocol: AnyObject {
     /// Returns all groups with states from old DB

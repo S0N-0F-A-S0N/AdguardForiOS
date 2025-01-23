@@ -91,8 +91,14 @@
 /* (MainController) login status caption on main screen */
 "protection_disabled_caption" = "Bescherming is uit";
 
-/* (GetProTableController) upgrade button title */
-"upgrade_button_title" = "Abonneren";
+/* (GetProTableController) upgrade button title; look like 'Try for free\n7 days free, then 1$.00/moth'*/
+"upgrade_button_title" = "Gratis uitproberen\n7 dagen gratis, daarna %@";
+
+/* (GetProTableController) upgrade button title for month; looks like '$1.00/moth' */
+"upgrade_button_subscription_price_month" = "%@/maand";
+
+/* (GetProTableController) upgrade button title for year; looks like '$1.00/year' */
+"upgrade_button_subscription_price_year" = "%@/jaar";
 
 /* (LicenseProductChoiceCell) restore purchase button title */
 "restore_purchase_button_title" = "Aankoop herstellen";
@@ -317,7 +323,7 @@
 "reset_stat_descr" = "Alle statistieken worden verwijderd!";
 
 /* (AdvancedSettingsController) Reset button title */
-"reset_title" = "Herstel";
+"reset_title" = "Herstellen";
 
 /* (AdvancedSettingsController) Remove button title */
 "delete_title" = "Verwijderen";
@@ -677,7 +683,7 @@
 "dns_filters_notification_title" = "Schakel enkele filters uit voor een goede werking";
 
 /* (DnsFiltersTableController) - DNS filters title */
-"dns_filters_title" = "DNS Filters";
+"dns_filters_title" = "DNS filters";
 
 /*(DnsLogController) status of dns request */
 "dns_request_status_blocked" = "Geblokkeerd";
@@ -1073,6 +1079,9 @@
 /* (ImportSettingsController) add dns rules title */
 "import_dns_user_rules" = "DNS gebruikersregels toevoegen";
 
+/* (ImportSettingsController) disable YouTube feature title */
+"disable_youtube_feature" = "AdGuard-speler uitschakelen";
+
 /* (LowLevelSettingsController) Low level settings description. <b style=color:#c23814ff> It is a color for WARNING! word*/
 "low_level_description" = "<b style=color:#c23814ff>WAARSCHUWING!</b>Het inschakelen van deze functies kan de internetverbinding verbreken of je veiligheid en privacy in gevaar brengen.";
 
@@ -1204,6 +1213,12 @@ DO NOT TRANSLATE "none" */
 
 /* (YoutubePlayerController) 'userscript error' alert message */
 "youtube_player_controller_userscript_error_message" = "Aanmaken gebruikersscript mislukt";
+
+/* (YoutubePlayerController) YouTube feature disabled alert title */
+"youtube_player_controller_feature_disabled_title" = "AdGuard-speler uitgeschakeld";
+
+/* (YoutubePlayerController) YouTube feature disabled alert message */
+"youtube_player_controller_feature_disabled_message" = "Video's delen met AdGuard is niet beschikbaar";
 
 /* (YouTubeAdsRequestHandler) 'no url error' alert title */
 "youtube_share_extension_no_url_title" = "Geen URL opgegeven";

@@ -56,16 +56,7 @@ final class StartupService : NSObject {
         let httpRequestService: HttpRequestServiceProtocol = HttpRequestService()
         locator.addService(service: httpRequestService)
 
-        let adServiceWrapper = AdServicesWrapper()
-        let adClientWrapper = AdClientWrapper()
-
-        let adServiceHelper = AdServicesHelper(httpRequestService: httpRequestService,
-                                               adServicesWrapper: adServiceWrapper)
-        let iAdFrameworkHelper = IAdFrameworkHelper(adClientWrapper: adClientWrapper)
-        let appleSearchAdsService = AppleSearchAdsService(adServicesHelper: adServiceHelper,
-                                            iAdFrameworkHelper: iAdFrameworkHelper)
-
-        let purchaseService: PurchaseServiceProtocol = PurchaseService(network: networkService, resources: sharedResources, productInfo: productInfo, appleSearchAdsService: appleSearchAdsService)
+        let purchaseService: PurchaseServiceProtocol = PurchaseService(network: networkService, resources: sharedResources, productInfo: productInfo)
         purchaseService.start()
         locator.addService(service: purchaseService)
 

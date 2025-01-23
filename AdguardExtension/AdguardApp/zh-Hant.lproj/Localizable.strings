@@ -94,8 +94,14 @@
 /* (MainController) login status caption on main screen */
 "protection_disabled_caption" = "防護為關著";
 
-/* (GetProTableController) upgrade button title */
-"upgrade_button_title" = "訂閱";
+/* (GetProTableController) upgrade button title; look like 'Try for free\n7 days free, then 1$.00/moth'*/
+"upgrade_button_title" = "免費試用\n7 天免費，然後 %@";
+
+/* (GetProTableController) upgrade button title for month; looks like '$1.00/moth' */
+"upgrade_button_subscription_price_month" = "%@/月";
+
+/* (GetProTableController) upgrade button title for year; looks like '$1.00/year' */
+"upgrade_button_subscription_price_year" = "%@/年";
 
 /* (LicenseProductChoiceCell) restore purchase button title */
 "restore_purchase_button_title" = "回復購買";
@@ -275,10 +281,10 @@
 "login_error_message" = "當登入時，錯誤已發生。";
 
 /* purchase secription format */
-"purchase_description_format" = "AdGuard 訂閱條款<br><br>• 付款將在購買確認時被記在您的 iTunes 帳戶的帳上。<br><br>• 除非在現行的週期結束前至少 24 小時自動續訂被關掉，否則該訂閱自動地續訂。<br><br>• 該訂閱續訂費用將在現行的週期結束的 24 小時內被記在您的 iTunes 帳戶的帳上。<br><br>• 您可管理您的訂閱，且在購買後透過前往您的帳戶設定關掉自動續訂。<br><br>AdGuard <a href=%2$@>終端用戶授權協定</a>及<a href=%1$@>隱私政策</a>";
+"purchase_description_format" = "AdGuard 訂閱條款<br><br>• 付款將在購買確認時被記在您的 iTunes 帳戶的帳上。<br><br>• 除非在現行的週期結束前至少 24 小時自動續訂被關掉，否則該訂閱自動地續訂。<br><br>• 該訂閱續訂費用將在現行的週期結束的 24 小時內被記在您的 iTunes 帳戶的帳上。<br><br>• 您可管理您的訂閱，且在購買後透過前往您的帳戶設定關掉自動續訂。<br><br>AdGuard <a href=%2$@>終端使用者授權合約</a>及<a href=%1$@>隱私政策</a>";
 
 /* lifetime purchase secription format */
-"lifetime_purchase_description_format" = "AdGuard 的<a href=%2$@>終端用戶授權協定</a>及<a href=%1$@>隱私政策</a>";
+"lifetime_purchase_description_format" = "AdGuard 的<a href=%2$@>終端使用者授權合約</a>及<a href=%1$@>隱私政策</a>";
 
 /* DnsSettingsController - alert button. This message is shown when the user first starts the VPN. */
 "common_action_ok" = "確定";
@@ -851,7 +857,7 @@
 "bug_report_successed_message" = "您的程式錯誤報告已被成功地傳送！";
 
 /* (IntroductionOnboardingController) - License agreement text */
-"introduction_license_agreement" = "我同意 AdGuard 的<a href=%2$@>終端用戶授權協定</a>及<a href=%1$@>隱私政策</a>。";
+"introduction_license_agreement" = "我同意 AdGuard 的<a href=%2$@>終端使用者授權合約</a>及<a href=%1$@>隱私政策</a>。";
 
 /* (ActivityViewController) - Requests alert title */
 "requests_info_alert_title" = "請求";

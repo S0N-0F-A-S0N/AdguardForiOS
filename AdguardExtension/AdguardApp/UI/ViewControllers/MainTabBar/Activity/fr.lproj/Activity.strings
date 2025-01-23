@@ -4,8 +4,7 @@
 /* Class = "UIButton"; normalTitle = "Add"; ObjectID = "1rj-wD-aeH"; */
 "1rj-wD-aeH.normalTitle" = "Ajouter";
 
-/* 4IJ-xy-hky.normalTitle
-Class = &quot;UIButton&quot;; normalTitle = &quot;blocked&quot;; ObjectID = &quot;4IJ-xy-hky&quot;; */
+/* Class = "UIButton"; normalTitle = "blocked"; ObjectID = "4IJ-xy-hky"; */
 "4IJ-xy-hky.normalTitle" = "bloquées";
 
 /* Class = "UILabel"; text = "Activity"; ObjectID = "5bV-zZ-4dr"; */
@@ -31,9 +30,6 @@ Class = &quot;UIButton&quot;; normalTitle = &quot;blocked&quot;; ObjectID = &quo
 
 /* Class = "UILabel"; text = "Domain name:"; ObjectID = "M4r-q5-RXv"; */
 "M4r-q5-RXv.text" = "Nom de domaine :";
-
-/* Class = "UILabel"; text = "You can see who tries to track you, view stats and the log of DNS requests blocking"; ObjectID = "T0y-mr-Zwa"; */
-"T0y-mr-Zwa.text" = "Vous pouvez voir qui essaie de vous suivre, afficher les statistiques et le journal des demandes de blocage DNS";
 
 /* Class = "UILabel"; text = "DNS protection is disabled"; ObjectID = "X1F-2p-Xpe"; */
 "X1F-2p-Xpe.text" = "Protection DNS désactivée";
@@ -98,8 +94,7 @@ Class = &quot;UIButton&quot;; normalTitle = &quot;blocked&quot;; ObjectID = &quo
 /* Class = "UILabel"; text = "Most blocked"; ObjectID = "w2i-mK-dfO"; */
 "w2i-mK-dfO.text" = "Les plus bloqués";
 
-/* wt5-4Q-CTq.normalTitle
-Class = &quot;UIButton&quot;; normalTitle = &quot;blocked&quot;; ObjectID = &quot;wt5-4Q-CTq&quot;; */
+/* Class = "UIButton"; normalTitle = "blocked"; ObjectID = "wt5-4Q-CTq"; */
 "wt5-4Q-CTq.normalTitle" = "bloquées";
 
 /* Class = "UILabel"; text = "Block request"; ObjectID = "y8j-ib-ZgR"; */
@@ -108,6 +103,5 @@ Class = &quot;UIButton&quot;; normalTitle = &quot;blocked&quot;; ObjectID = &quo
 /* Class = "UILabel"; text = "Most active"; ObjectID = "yWy-kc-8Zg"; */
 "yWy-kc-8Zg.text" = "La plus active";
 
-/* yio-E8-cQV.normalTitle
-Class = &amp;quot;UIButton&amp;quot;; normalTitle = &amp;quot;data saved&amp;quot;; ObjectID = &amp;quot;yio-E8-cQV&amp;quot;; */
+/* Class = "UIButton"; normalTitle = "data saved"; ObjectID = "yio-E8-cQV"; */
 "yio-E8-cQV.normalTitle" = "trafic sauvé";

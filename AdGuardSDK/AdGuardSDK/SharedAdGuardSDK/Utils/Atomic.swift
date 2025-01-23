@@ -22,9 +22,8 @@ import Foundation
 public final class Atomic<Value> {
 
     public var wrappedValue: Value {
-        get {
-            return queue.sync { value }
-        }
+        get { queue.sync { value } }
+        set { queue.sync { value = newValue } }
     }
 
     private let queue = DispatchQueue(label: "AdGuardSDK.atomic")

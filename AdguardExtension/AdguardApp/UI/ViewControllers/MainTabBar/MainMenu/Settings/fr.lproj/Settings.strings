@@ -49,9 +49,6 @@
 /* Class = "UILabel"; text = "Don't change them unless you know what you're doing"; ObjectID = "GBd-dx-t46"; */
 "GBd-dx-t46.text" = "Seulement pour les utilisateurs avancés. Modifier ces réglages que si vous êtes certain(e)";
 
-/* Class = "UILabel"; text = "AdGuard will write more details to the logfile. Don't enable unless you need to track down a bug"; ObjectID = "GFO-xu-Bir"; */
-"GFO-xu-Bir.text" = "AdGuard écrira plus de détails dans le fichier journal. Ne l’activer pas sauf si vous avez besoin de traquer un bogue";
-
 /* Class = "UILabel"; text = "Split-Tunnel"; ObjectID = "GGp-kp-YJI"; */
 "GGp-kp-YJI.text" = "Split-Tunnel";
 
@@ -171,6 +168,3 @@
 
 /* Class = "UILabel"; text = "This option will clear all statistical data, such as number of requests, etc."; ObjectID = "wYq-g0-5k6"; */
 "wYq-g0-5k6.text" = "Cette option permettra d'effacer toutes les données statistiques, telles que le nombre de requêtes, etc.";
-
-/* Class = "UILabel"; text = "Unblock ads everywhere except for the websites from this list"; ObjectID = "yBG-d2-ebt"; */
-"yBG-d2-ebt.text" = "Débloquer les annonces partout, sauf pour les sites Web de cette liste";

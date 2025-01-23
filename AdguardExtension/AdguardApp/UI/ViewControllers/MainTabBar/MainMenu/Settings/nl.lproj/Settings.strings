@@ -29,7 +29,7 @@
 "AtW-mH-6ja.text" = "Reageren met code GEWEIGERD";
 
 /* Class = "UILabel"; text = "Show filter updates progress bar"; ObjectID = "BOT-Ej-15M"; */
-"BOT-Ej-15M.text" = "Voortgangsbalk filter updates weergeven";
+"BOT-Ej-15M.text" = "Voortgangsbalk filterupdates weergeven";
 
 /* Class = "UILabel"; text = "Content blockers"; ObjectID = "BQY-q7-BQU"; */
 "BQY-q7-BQU.text" = "Inhoudsblokkeringen";

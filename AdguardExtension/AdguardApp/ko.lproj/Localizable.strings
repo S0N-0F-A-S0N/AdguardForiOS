@@ -94,8 +94,14 @@
 /* (MainController) login status caption on main screen */
 "protection_disabled_caption" = "보호 꺼짐";
 
-/* (GetProTableController) upgrade button title */
-"upgrade_button_title" = "구독";
+/* (GetProTableController) upgrade button title; look like 'Try for free\n7 days free, then 1$.00/moth'*/
+"upgrade_button_title" = "무료로 사용해 보세요!\n7일 무료 체험, 그 다음에는 %@";
+
+/* (GetProTableController) upgrade button title for month; looks like '$1.00/moth' */
+"upgrade_button_subscription_price_month" = "%@/월";
+
+/* (GetProTableController) upgrade button title for year; looks like '$1.00/year' */
+"upgrade_button_subscription_price_year" = "%@/년";
 
 /* (LicenseProductChoiceCell) restore purchase button title */
 "restore_purchase_button_title" = "구매 내역 복구";
@@ -1082,6 +1088,9 @@
 /* (ImportSettingsController) add dns rules title */
 "import_dns_user_rules" = "DNS 사용자 규칙 추가";
 
+/* (ImportSettingsController) disable YouTube feature title */
+"disable_youtube_feature" = "AdGuard 플레이어 비활성화";
+
 /* (LowLevelSettingsController) Low level settings description. <b style=color:#c23814ff> It is a color for WARNING! word*/
 "low_level_description" = "<b style=color:#c23814ff>경고!</b> 이러한 기능을 활성화하면 인터넷 연결이 끊어지거나 보안 및 개인 정보 보호에 문제가 생길 수 있습니다.";
 
@@ -1213,6 +1222,12 @@ DO NOT TRANSLATE "none" */
 
 /* (YoutubePlayerController) 'userscript error' alert message */
 "youtube_player_controller_userscript_error_message" = "사용자 스크립트를 생성하는 데 실패했습니다";
+
+/* (YoutubePlayerController) YouTube feature disabled alert title */
+"youtube_player_controller_feature_disabled_title" = "AdGuard 플레이어가 비활성화됨";
+
+/* (YoutubePlayerController) YouTube feature disabled alert message */
+"youtube_player_controller_feature_disabled_message" = "AdGuard로 동영상을 공유할 수 없습니다.";
 
 /* (YouTubeAdsRequestHandler) 'no url error' alert title */
 "youtube_share_extension_no_url_title" = "제공된 URL 없음";

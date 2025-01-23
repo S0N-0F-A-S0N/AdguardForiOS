@@ -105,7 +105,7 @@ final class DnsProxyConfigurationProvider: DnsProxyConfigurationProviderProtocol
         }
 
         // DNS fallbacks.
-        let fallbacks = getDnsUpstreams(from: lowLevelConfiguration.fallbackServers ?? [])
+        let fallbacks = getDnsUpstreams(from: lowLevelConfiguration.fallbackServers ?? networkUtils.systemDnsServers)
         let proxyFallbacks: [DnsProxyUpstream] = fallbacks.map {
             let id = nextUpstreamId
             let dnsProxy = DnsProxyUpstream(dnsUpstreamInfo: $0, dnsBootstraps: bootstraps, id: id, outboundInterface: outboundInterface)
@@ -180,7 +180,7 @@ final class DnsProxyConfigurationProvider: DnsProxyConfigurationProviderProtocol
     /// Creates upstreams objects from String representation and sets their protocols (DoH, DoT, etc..)
     private func getDnsUpstreams(from upstreams: [String]) -> [DnsUpstream] {
         return upstreams.map {
-            let prot = try? networkUtils.getProtocol(from: $0)
+            let prot = try? networkUtils.getProtocol(from: $0, .adGuard)
             return DnsUpstream(upstream: $0, protocol: prot ?? .dns)
         }
     }

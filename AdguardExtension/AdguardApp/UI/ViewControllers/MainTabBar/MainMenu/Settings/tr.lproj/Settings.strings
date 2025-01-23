@@ -56,7 +56,7 @@
 "GGp-kp-YJI.text" = "Bölünmüş Tünel";
 
 /* Class = "UILabel"; text = "Enable this option if you experience issues with the Internet connection while AdGuard is running"; ObjectID = "H3Q-H6-YV0"; */
-"H3Q-H6-YV0.text" = "AdGuard çalışırken İnternet bağlantısıyla ilgili sorunlar yaşıyorsanız bu seçeneği etkinleştirin";
+"H3Q-H6-YV0.text" = "AdGuard çalışırken internet bağlantısıyla ilgili sorunlar yaşıyorsanız bu seçeneği etkinleştirin";
 
 /* Class = "UILabel"; text = "Low-level settings"; ObjectID = "IvJ-Oi-vGF"; */
 "IvJ-Oi-vGF.text" = "Alt Seviye Ayarlar";
@@ -95,7 +95,7 @@
 "WUY-Cq-SPm.normalTitle" = "İptal";
 
 /* Class = "UILabel"; text = "Auto-update over Wi-Fi only"; ObjectID = "X0A-gU-hzf"; */
-"X0A-gU-hzf.text" = "Yalnızca Wi-Fi üzerinden otomatik güncelleme";
+"X0A-gU-hzf.text" = "Yalnızca Wi-Fi üzerinden otomatik güncelle";
 
 /* Class = "UILabel"; text = "Full-Tunnel"; ObjectID = "aIJ-gX-03k"; */
 "aIJ-gX-03k.text" = "Tam Tünel";

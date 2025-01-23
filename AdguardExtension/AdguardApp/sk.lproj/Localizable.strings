@@ -29,7 +29,7 @@
 "safari_filters_loading_error" = "Filtre nie je možné načítať do Safari, takže Vaše posledné zmeny nebudú použité.";
 
 /* (AppDegelate) Alert message. When converting rules process finished in foreground updating. */
-"load_to_safari_error" = "Filtre sa nedajú načítať do Safari. Skúste vymazať Vaše pravidlá a zoznam povolení, alebo zmeňte nastavenia použitých filtrov.";
+"load_to_safari_error" = "Filtre sa nedajú načítať do Safari. Skúste odstrániť Vaše pravidlá a zoznam povolení, alebo zmeňte nastavenia použitých filtrov.";
 
 /* NO Button caption in alert */
 "common_action_no" = "NIE";
@@ -94,8 +94,14 @@
 /* (MainController) login status caption on main screen */
 "protection_disabled_caption" = "Ochrana je vypnutá";
 
-/* (GetProTableController) upgrade button title */
-"upgrade_button_title" = "Získať predplatné";
+/* (GetProTableController) upgrade button title; look like 'Try for free\n7 days free, then 1$.00/moth'*/
+"upgrade_button_title" = "Vyskúšať zadarmo\n7 dní zadarmo, potom %@";
+
+/* (GetProTableController) upgrade button title for month; looks like '$1.00/moth' */
+"upgrade_button_subscription_price_month" = "%@/mesiac";
+
+/* (GetProTableController) upgrade button title for year; looks like '$1.00/year' */
+"upgrade_button_subscription_price_year" = "%@/rok";
 
 /* (LicenseProductChoiceCell) restore purchase button title */
 "restore_purchase_button_title" = "Obnoviť nákup";
@@ -581,7 +587,7 @@
 "privacy_filters_group_description" = "Zoznamy filtrov, ktoré zabraňujú sledovaniu";
 
 /* (OneSafariGroupFiltersModel) Social Widgets filters group description */
-"social_widgets_filters_group_description" = "Filtrovanie zoznamov, ktoré skrývajú widgety sociálnych médií (tlačidlá \"Like\" atď.)";
+"social_widgets_filters_group_description" = "Zoznam filtrov, ktoré skrývajú widgety sociálnych médií (tlačidlá \"Like\" atď.)";
 
 /* (OneSafariGroupFiltersModel) Annoyances filters group description */
 "annoyances_filters_group_description" = "Zoznamy filtrov, ktoré blokujú nepríjemné prvky na webových stránkach. Definícia pojmu \"otravný\" môže byť subjektívna a závisí od autora zoznamu";
@@ -686,7 +692,7 @@
 "dns_filters_notification_title" = "Pre správnu prácu vypnite niektoré filtre";
 
 /* (DnsFiltersTableController) - DNS filters title */
-"dns_filters_title" = "DNS filtre";
+"dns_filters_title" = "Filtre";
 
 /*(DnsLogController) status of dns request */
 "dns_request_status_blocked" = "Zablokované";
@@ -860,10 +866,10 @@
 "requests_info_alert_message" = "Zakaždým, keď navštívite webovú stránku, pošle sa dopyt. Webové stránky môžu odosielať skryté dopyty a umožniť tak únik osobných údajov. Je užitočné poznať celkový počet takýchto dopytov pre uvedomenie si rozsahu tohto problému.";
 
 /* (ActivityViewController) -  Blocked alret title */
-"blocked_info_alert_title" = "Zablokované žiadosti";
+"blocked_info_alert_title" = "Zablokované dopyty";
 
 /* (ActivityViewController) -  Blocked alret message */
-"blocked_info_alert_message" = "AdGuard filtruje väčšinu požiadaviek DNS Vášho telefónu, blokuje sledovanie a nebezpečné\n\nTu je celkový počet žiadostí zablokovaných programom AdGuard za zvolené časové obdobie";
+"blocked_info_alert_message" = "AdGuard filtruje väčšinu DNS dopytov Vášho telefónu, blokuje sledovanie a nebezpečné\n\nTu je celkový počet dopytov zablokovaných programom AdGuard za zvolené časové obdobie";
 
 /* (ActivityViewController) - encrypted alert title */
 "encrypted_info_alert_title" = "Šifrované dopyty";
@@ -880,6 +886,9 @@
 /* (ActivityViewController) -  Data saved alret title */
 "data_saved_info_alert_title" = "Uložené údaje";
 
+/* (ActivityViewController) -  Data saved alret message */
+"data_saved_info_alert_message" = "AdGuard bráni Vášmu zariadeniu načítať sledovače v aplikácii, čím znižuje spotrebu dát Vášho zariadenia\n\nTu je celkové množstvo dát ušetrených službou AdGuard za vybrané časové obdobie";
+
 /* (ActivityViewController) - Companies alert title */
 "companies_info_alert_title" = "Počet spoločností";
 
@@ -890,7 +899,7 @@
 "all_requests_alert_action" = "Všetky dopyty";
 
 /* (ActivityViewController) - Blocked only alert action */
-"blocked_only_alert_action" = "Len blokované";
+"blocked_only_alert_action" = "Len zablokované";
 
 /* (ActivityViewController) - Allowed only alert action */
 "allowed_only_alert_action" = "Len povolené";
@@ -1079,8 +1088,11 @@
 /* (ImportSettingsController) add dns rules title */
 "import_dns_user_rules" = "Pridať DNS používateľské pravidlá";
 
+/* (ImportSettingsController) disable YouTube feature title */
+"disable_youtube_feature" = "Vypnúť Prehrávač AdGuard";
+
 /* (LowLevelSettingsController) Low level settings description. <b style=color:#c23814ff> It is a color for WARNING! word*/
-"low_level_description" = "<b style=color:#c23814ff>UPOZORNENIE!</b> Povolenie týchto funkcií môže prerušiť internetové pripojenie alebo narušiť Vašu bezpečnosť a ochranu súkromia.";
+"low_level_description" = "<b style=color:#c23814ff>UPOZORNENIE!</b> Zapnutie týchto funkcií môže prerušiť internetové pripojenie alebo narušiť Vašu bezpečnosť a ochranu súkromia.";
 
 /* (LowLevelSettingsController) Low level settings beta channel link */
 "low_level_beta_link" = "Máte záujem o nové super funkcie AdGuard? Vyskúšajte náš <a href=\"%@\">beta kanál.</a>";
@@ -1185,7 +1197,7 @@ DO NOT TRANSLATE "none" */
 "dns_provider_controller_title" = "DNS server";
 
 /* (DnsProvidersController) - Header description */
-"dns_provider_controller_description" = "Šifrovaním prevádzky DNS môžete zlepšiť svoje súkromie online. Vyberte si jedného z odporúčaných poskytovateľov DNS.";
+"dns_provider_controller_description" = "Šifrovaním DNS komunikácie môžete zlepšiť svoje súkromie online. Vyberte si jedného z odporúčaných poskytovateľov DNS.";
 
 /* (DnsProviderDetailsController) Server title */
 "server_title" = "Server";
@@ -1210,6 +1222,12 @@ DO NOT TRANSLATE "none" */
 
 /* (YoutubePlayerController) 'userscript error' alert message */
 "youtube_player_controller_userscript_error_message" = "Tvorba používateľského skriptu zlahala";
+
+/* (YoutubePlayerController) YouTube feature disabled alert title */
+"youtube_player_controller_feature_disabled_title" = "Prehrávač AdGuard je vypnutý";
+
+/* (YoutubePlayerController) YouTube feature disabled alert message */
+"youtube_player_controller_feature_disabled_message" = "Zdieľanie videa s AdGuard nie je k dispozícii";
 
 /* (YouTubeAdsRequestHandler) 'no url error' alert title */
 "youtube_share_extension_no_url_title" = "Nebola poskytnutá URL adresa";

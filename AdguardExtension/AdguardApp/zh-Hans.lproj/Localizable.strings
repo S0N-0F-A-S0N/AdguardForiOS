@@ -94,8 +94,14 @@
 /* (MainController) login status caption on main screen */
 "protection_disabled_caption" = "保护已禁用";
 
-/* (GetProTableController) upgrade button title */
-"upgrade_button_title" = "订阅";
+/* (GetProTableController) upgrade button title; look like 'Try for free\n7 days free, then 1$.00/moth'*/
+"upgrade_button_title" = "免费试用\n7 天免费，然后 %@";
+
+/* (GetProTableController) upgrade button title for month; looks like '$1.00/moth' */
+"upgrade_button_subscription_price_month" = "%@/月";
+
+/* (GetProTableController) upgrade button title for year; looks like '$1.00/year' */
+"upgrade_button_subscription_price_year" = "%@/年";
 
 /* (LicenseProductChoiceCell) restore purchase button title */
 "restore_purchase_button_title" = "恢复购买";
@@ -686,7 +692,7 @@
 "dns_filters_notification_title" = "以正常工作，关闭一些过滤器";
 
 /* (DnsFiltersTableController) - DNS filters title */
-"dns_filters_title" = "DNS 过滤器";
+"dns_filters_title" = "DNS过滤器";
 
 /*(DnsLogController) status of dns request */
 "dns_request_status_blocked" = "已拦截";

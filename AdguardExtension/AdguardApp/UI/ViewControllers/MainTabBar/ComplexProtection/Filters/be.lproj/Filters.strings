@@ -17,7 +17,7 @@
 "NsT-wt-1hd.text" = "Новы фільтр";
 
 /* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "OpB-AR-Og7"; Note = "(AddCustomFilterController) cancel button"; */
-"OpB-AR-Og7.normalTitle" = "Скасаванне";
+"OpB-AR-Og7.normalTitle" = "Скасаваць";
 
 /* Class = "UILabel"; text = "Blocks ads and trackers on websites opened in Safari"; ObjectID = "QHZ-sJ-wTL"; */
 "QHZ-sJ-wTL.text" = "Гэты модуль блакуе рэкламу і асочванне на сайтах, адкрытых у Safari";
@@ -38,7 +38,7 @@
 "kCb-lJ-BLL.normalTitle" = "ДАДАЦЬ";
 
 /* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "mEm-ll-QZR"; Note = "(NewCustomFilterDetailsController) CANCEL button"; */
-"mEm-ll-QZR.normalTitle" = "Скасаванне";
+"mEm-ll-QZR.normalTitle" = "Скасаваць";
 
 /* Class = "UIButton"; normalTitle = "Next"; ObjectID = "nch-wu-mKC"; */
 "nch-wu-mKC.normalTitle" = "Далей";

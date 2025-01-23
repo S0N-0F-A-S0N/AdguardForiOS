@@ -99,8 +99,9 @@ final class ImportSettingsController: BottomAlertController {
         let dnsProtection: DnsProtectionProtocol = ServiceLocator.shared.getService()!
         let vpnManager: VpnManagerProtocol = ServiceLocator.shared.getService()!
         let purchaseService: PurchaseServiceProtocol = ServiceLocator.shared.getService()!
+        let sharedResources: AESharedResourcesProtocol = ServiceLocator.shared.getService()!
 
-        let importService = ImportSettingsService(dnsProvidersManager: dnsProvidersManager, safariProtection: safariProtection, dnsProtection: dnsProtection, vpnManager: vpnManager, purchaseService: purchaseService)
+        let importService = ImportSettingsService(dnsProvidersManager: dnsProvidersManager, safariProtection: safariProtection, dnsProtection: dnsProtection, vpnManager: vpnManager, purchaseService: purchaseService, sharedResources: sharedResources)
 
         return ImportSettingsViewModel(settings: settings, importSettingsService: importService, dnsProvidersManager: dnsProvidersManager, safariProtection: safariProtection)
     }

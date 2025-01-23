@@ -8,7 +8,7 @@
 "3zG-B5-jE5.text" = "Отладочные логи";
 
 /* Class = "UILabel"; text = "Blocked response TTL"; ObjectID = "7nl-3p-BP2"; */
-"7nl-3p-BP2.text" = "Заблокированный ответ TTL";
+"7nl-3p-BP2.text" = "TTL заблокированного ответа";
 
 /* Class = "UILabel"; text = "Invert the Allowlist"; ObjectID = "8ad-4w-rbs"; */
 "8ad-4w-rbs.text" = "Инвертировать белый список";
@@ -83,7 +83,7 @@
 "Rmq-30-7hJ.text" = "Блокировать AAAA-запросы";
 
 /* Class = "UILabel"; text = "System default"; ObjectID = "TX9-Md-Qzr"; */
-"TX9-Md-Qzr.text" = "Системные настройки";
+"TX9-Md-Qzr.text" = "Системная";
 
 /* Class = "UILabel"; text = "This option will reset all your settings"; ObjectID = "Twq-5a-kOB"; */
 "Twq-5a-kOB.text" = "Эта опция меню сбросит все настройки";

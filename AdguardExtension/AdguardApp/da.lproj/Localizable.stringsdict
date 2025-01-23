@@ -21,7 +21,7 @@
     <key>trial_description_weeks</key>
     <dict>
       <key>NSStringLocalizedFormatKey</key>
-      <string>%#@weeks@</string>
+      <string>%#@uger@</string>
       <key>weeks</key>
       <dict>
         <key>NSStringFormatSpecTypeKey</key>
@@ -37,7 +37,7 @@
     <key>trial_description_months</key>
     <dict>
       <key>NSStringLocalizedFormatKey</key>
-      <string>%#@months@</string>
+      <string>%#@måneder@</string>
       <key>months</key>
       <dict>
         <key>NSStringFormatSpecTypeKey</key>
@@ -53,7 +53,7 @@
     <key>trial_description_years</key>
     <dict>
       <key>NSStringLocalizedFormatKey</key>
-      <string>%#@years@</string>
+      <string>%#@år@</string>
       <key>years</key>
       <dict>
         <key>NSStringFormatSpecTypeKey</key>
@@ -69,7 +69,7 @@
     <key>user_rules_format</key>
     <dict>
       <key>NSStringLocalizedFormatKey</key>
-      <string>%#@rules@</string>
+      <string>%#@regler@</string>
       <key>rules</key>
       <dict>
         <key>NSStringFormatSpecTypeKey</key>
@@ -85,7 +85,7 @@
     <key>safari_filters_format</key>
     <dict>
       <key>NSStringLocalizedFormatKey</key>
-      <string>%#@filters@</string>
+      <string>%#@filtre@</string>
       <key>filters</key>
       <dict>
         <key>NSStringFormatSpecTypeKey</key>
@@ -117,7 +117,7 @@
     <key>getPro_full_access_weeks</key>
     <dict>
       <key>NSStringLocalizedFormatKey</key>
-      <string>%#@weeks@</string>
+      <string>%#@uger@</string>
       <key>weeks</key>
       <dict>
         <key>NSStringFormatSpecTypeKey</key>
@@ -133,7 +133,7 @@
     <key>getPro_full_access_months</key>
     <dict>
       <key>NSStringLocalizedFormatKey</key>
-      <string>%#@months@</string>
+      <string>%#@måneder@</string>
       <key>months</key>
       <dict>
         <key>NSStringFormatSpecTypeKey</key>
@@ -149,7 +149,7 @@
     <key>getPro_full_access_years</key>
     <dict>
       <key>NSStringLocalizedFormatKey</key>
-      <string>%#@years@</string>
+      <string>%#@år@</string>
       <key>years</key>
       <dict>
         <key>NSStringFormatSpecTypeKey</key>

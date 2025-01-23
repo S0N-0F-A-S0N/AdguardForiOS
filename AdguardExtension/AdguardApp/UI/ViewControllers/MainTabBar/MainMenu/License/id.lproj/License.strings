@@ -5,10 +5,13 @@
 "J8s-sG-FKu.text" = "Masuk";
 
 /* Class = "UILabel"; text = "Email:"; ObjectID = "LJj-cc-Ko5"; */
-"LJj-cc-Ko5.text" = "Email:";
+"LJj-cc-Ko5.text" = "E-mail:";
 
 /* Class = "UILabel"; text = "Password:"; ObjectID = "P6N-OK-fHG"; */
 "P6N-OK-fHG.text" = "Kata sandi:";
+
+/* Class = "UILabel"; text = "Log in with your AdGuard account or use social login"; ObjectID = "ZuM-Nn-uXv"; */
+"ZuM-Nn-uXv.text" = "Masuk dengan akun AdGuard anda atau gunakan media sosial";
 
 /* Class = "UIButton"; normalTitle = "Log in"; ObjectID = "bUa-fF-AXO"; */
 "bUa-fF-AXO.normalTitle" = "Masuk";

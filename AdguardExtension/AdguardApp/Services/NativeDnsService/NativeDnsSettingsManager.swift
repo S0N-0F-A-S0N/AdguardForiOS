@@ -25,6 +25,7 @@ enum NativeDnsSettingsManagerError: Error {
     case failedToLoadManager
     case unsupportedProtocolsConfiguration
     case invalidUpstreamsNumber
+    case failedToChangeDnsServerToDefault
 }
 
 // TODO: - It is a copy of old delegate; It should be removed in the future
@@ -121,12 +122,15 @@ final class NativeDnsSettingsManager: NativeDnsSettingsManagerProtocol {
 
     @available(iOS 14.0, *)
     func saveDnsConfig(_ onErrorReceived: @escaping (_ error: Error?) -> Void) {
-
-        let server = dnsProvidersManager.activeDnsServer
+        guard let server = validateServerAndChangeActiveDnsProviderIfNeeded(dnsProvidersManager.activeDnsServer)
+        else {
+            onErrorReceived(NativeDnsSettingsManagerError.failedToChangeDnsServerToDefault)
+            return
+        }
 
         loadDnsManager { [weak self] dnsManager in
             guard let manager = dnsManager else {
-                DDLogError("(NativeDnsConfigManager) - saveDnsManager; Received nil DNS manager")
+                DDLogError("(NativeDnsSettingsManager) - saveDnsManager; Received nil DNS manager")
                 onErrorReceived(NativeDnsSettingsManagerError.failedToLoadManager)
                 return
             }
@@ -139,7 +143,7 @@ final class NativeDnsSettingsManager: NativeDnsSettingsManagerProtocol {
     func removeDnsConfig(_ onErrorReceived: @escaping (_ error: Error?) -> Void) {
         loadDnsManager { [weak self] dnsManager in
             guard let dnsManager = dnsManager else {
-                DDLogError("(NativeDnsConfigManager) - removeDnsManager; Received nil DNS manager")
+                DDLogError("(NativeDnsSettingsManager) - removeDnsManager; Received nil DNS manager")
                 onErrorReceived(NativeDnsSettingsManagerError.failedToLoadManager)
                 return
             }
@@ -156,7 +160,7 @@ final class NativeDnsSettingsManager: NativeDnsSettingsManagerProtocol {
     func reset() {
         removeDnsConfig { error in
             if let error = error {
-                DDLogError("(NativeDnsConfigManager) - reset; Error when resetting settings; Error: \(error)")
+                DDLogError("(NativeDnsSettingsManager) - reset; Error when resetting settings; Error: \(error)")
             }
         }
     }
@@ -168,7 +172,7 @@ final class NativeDnsSettingsManager: NativeDnsSettingsManagerProtocol {
         let dnsManager = NEDNSSettingsManager.shared()
         dnsManager.loadFromPreferences { error in
             if let error = error {
-                DDLogError("(NativeDnsConfigManager) - loadDnsManager; Loading error: \(error)")
+                DDLogError("(NativeDnsSettingsManager) - loadDnsManager; Loading error: \(error)")
                 onManagerLoaded(nil)
                 return
             }
@@ -180,7 +184,7 @@ final class NativeDnsSettingsManager: NativeDnsSettingsManagerProtocol {
     private func getDnsManagerStatus(_ onStatusReceived: @escaping (_ status: ManagerStatus) -> Void) {
         loadDnsManager { dnsManager in
             guard let manager = dnsManager else {
-                DDLogError("(NativeDnsConfigManager) - getDnsManagerStatus; Received nil DNS manager")
+                DDLogError("(NativeDnsSettingsManager) - getDnsManagerStatus; Received nil DNS manager")
                 onStatusReceived(ManagerStatus())
                 return
             }
@@ -247,13 +251,13 @@ final class NativeDnsSettingsManager: NativeDnsSettingsManagerProtocol {
             if self?.resources.dnsImplementation == .native {
                 self?.saveDnsConfig({ error in
                     if let error = error {
-                        DDLogError("(NativeDnsConfigManager) - dnsImplementationObserver; Saving dns manager error: \(error)")
+                        DDLogError("(NativeDnsSettingsManager) - dnsImplementationObserver; Saving dns manager error: \(error)")
                     }
                 })
             } else {
                 self?.removeDnsConfig({ error in
                     if let error = error {
-                        DDLogError("(NativeDnsConfigManager) - dnsImplementationObserver; Removing dns manager error: \(error)")
+                        DDLogError("(NativeDnsSettingsManager) - dnsImplementationObserver; Removing dns manager error: \(error)")
                     }
                 })
             }
@@ -276,16 +280,55 @@ final class NativeDnsSettingsManager: NativeDnsSettingsManagerProtocol {
             if !self.configuration.proStatus {
                 self.removeDnsConfig{ error in
                     if let error = error {
-                        DDLogError("(NativeDnsConfigManager) - proObservation; Removing dns manager error: \(error)")
+                        DDLogError("(NativeDnsSettingsManager) - proObservation; Removing dns manager error: \(error)")
                     }
                 }
             } else if self.resources.dnsImplementation == .native && self.configuration.proStatus {
                 self.saveDnsConfig { error in
                     if let error = error {
-                        DDLogError("(NativeDnsConfigManager) - proObservation; Saving dns manager error: \(error)")
+                        DDLogError("(NativeDnsSettingsManager) - proObservation; Saving dns manager error: \(error)")
                     }
                 }
             }
+        }
+    }
+
+    private func validateServerAndChangeActiveDnsProviderIfNeeded(_ activeServer: DnsServerMetaProtocol) -> DnsServerMetaProtocol? {
+        DDLogDebug("(NativeDnsSettingsManager) - Let's validate active DNS server \(activeServer.upstreams)")
+
+        // Native implementation not support upstream that contains `tcp://, udp://, h3://` protocols,
+        // so let's validate upstream and if upstream contains this protocolos sets default DNS server for native implementation
+        guard activeServer
+            .upstreams
+            .contains(where: { upstream in
+                upstream.upstream.hasPrefix("tcp://") ||
+                upstream.upstream.hasPrefix("udp://") ||
+                upstream.upstream.hasPrefix("h3://")
+            } )
+        else {
+            DDLogDebug("(NativeDnsSettingsManager) - Active DNS server is valid, let's use it")
+            return activeServer
+        }
+
+        DDLogDebug("(NativeDnsSettingsManager) - Active DNS server is not valid, let's change server to default native DNS server")
+
+        guard let adGuardDnsDOHServer = dnsProvidersManager
+            .predefinedProviders
+            .first(where: { $0.providerId == 10001 })? // 10001 - id of AdGuardDNS provider
+            .servers
+            .first(where: { $0.type == .doh })
+        else {
+            DDLogError("(NativeDnsSettingsManager) - Failed to find default native DNS server")
+            return nil
+        }
+
+        do {
+            try dnsProvidersManager.selectProvider(withId: adGuardDnsDOHServer.providerId, serverId: adGuardDnsDOHServer.id)
+            DDLogDebug("(NativeDnsSettingsManager) - Successfully select default native DNS server as active server")
+            return adGuardDnsDOHServer
+        } catch {
+            DDLogError("(NativeDnsSettingsManagerb) - Failed to select dns server=\(adGuardDnsDOHServer.id) as active dns server; error=\(error)")
+            return nil
         }
     }
 }

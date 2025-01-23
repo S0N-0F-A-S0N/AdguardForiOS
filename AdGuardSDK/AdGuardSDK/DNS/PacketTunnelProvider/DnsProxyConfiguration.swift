@@ -58,7 +58,7 @@ struct DnsProxyUpstream: Equatable {
 // MARK: - DnsProxyBlockingMode
 
 extension DnsProxyBlockingMode {
-    var agRulesBlockingMode: AGBlockingMode {
+    var agRulesBlockingMode: AGDnsBlockingMode {
         switch self {
         case .defaultMode: return AGDnsProxyConfig.getDefault().adblockRulesBlockingMode
         case .refused: return .AGBM_REFUSED
@@ -68,7 +68,7 @@ extension DnsProxyBlockingMode {
         }
     }
 
-    var agHostsRulesBlockingMode: AGBlockingMode {
+    var agHostsRulesBlockingMode: AGDnsBlockingMode {
         switch self {
         case .defaultMode: return AGDnsProxyConfig.getDefault().hostsRulesBlockingMode
         case .refused: return .AGBM_REFUSED

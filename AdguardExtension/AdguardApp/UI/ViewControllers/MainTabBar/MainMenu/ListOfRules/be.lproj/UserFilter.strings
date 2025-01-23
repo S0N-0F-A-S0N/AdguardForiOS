@@ -1,5 +1,5 @@
 /* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "5eU-q4-Xed"; Note = "(AddRuleController) cancel button"; */
-"5eU-q4-Xed.normalTitle" = "Скасаванне";
+"5eU-q4-Xed.normalTitle" = "Скасаваць";
 
 /* Class = "UIButton"; normalTitle = "Save"; ObjectID = "Bvs-mI-vEr"; */
 "Bvs-mI-vEr.normalTitle" = "Захаваць";
@@ -11,7 +11,7 @@
 "Tei-uI-6Gr.normalTitle" = "Выдаліць";
 
 /* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "UGP-Xr-H1p"; */
-"UGP-Xr-H1p.normalTitle" = "Скасаванне";
+"UGP-Xr-H1p.normalTitle" = "Скасаваць";
 
 /* Class = "UIButton"; normalTitle = "Disable"; ObjectID = "VSR-Wf-7c8"; */
 "VSR-Wf-7c8.normalTitle" = "Адключыць";

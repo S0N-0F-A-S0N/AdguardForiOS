@@ -40,8 +40,8 @@
 /* Class = "UILabel"; text = "Attach application logs"; ObjectID = "V7E-QE-uIA"; */
 "V7E-QE-uIA.text" = "Anwendungsprotokolle senden";
 
-/* Class = "UILabel"; text = "Discuss on our forum, in social networks, or on GitHub"; ObjectID = "W6h-Gt-MMt"; */
-"W6h-Gt-MMt.text" = "Diskutieren Sie in unserem Forum, in den sozialen Netzwerken oder auf GitHub";
+/* Class = "UILabel"; text = "Discuss in social networks or on GitHub"; ObjectID = "W6h-Gt-MMt"; */
+"W6h-Gt-MMt.text" = "In sozialen Netzwerken oder auf GitHub diskutieren";
 
 /* Class = "UITableViewController"; title = "Settings"; ObjectID = "bEE-nS-r3u"; */
 "bEE-nS-r3u.title" = "Einstellungen";
@@ -83,7 +83,7 @@
 "rHj-Ne-4zA.text" = "Ihre E-Mail-Adresse:";
 
 /* Class = "UILabel"; text = "Discuss"; ObjectID = "rlh-5H-fPk"; Note = "(Main Menu) Advanced Settings caption"; */
-"rlh-5H-fPk.text" = "Funktionswünsche";
+"rlh-5H-fPk.text" = "Diskutieren";
 
 /* Class = "UILabel"; text = "Subscriptions and account"; ObjectID = "se6-jk-4Az"; */
 "se6-jk-4Az.text" = "Abonnements und Konto";

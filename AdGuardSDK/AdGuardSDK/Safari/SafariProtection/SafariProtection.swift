@@ -45,7 +45,7 @@ public final class SafariProtection: SafariProtectionProtocol {
     let workingQueue = DispatchQueue(label: "SafariAdGuardSDK.SafariProtection.workingQueue")
 
     // Serial queue for converting Content Blockers to avoid working queue load
-    let cbQueue = DispatchQueue(label: "SafariAdGuardSDK.SafariProtection.cbQueue", qos: .background)
+    let cbQueue = DispatchQueue(label: "SafariAdGuardSDK.SafariProtection.cbQueue", qos: .userInitiated)
 
     // Queue to call completion handlers
     let completionQueue = DispatchQueue(label: "SafariAdGuardSDK.SafariProtection.completionQueue")

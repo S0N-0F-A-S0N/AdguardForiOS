@@ -17,7 +17,6 @@
 //
 
 import NetworkExtension
-import Reachability
 import SharedAdGuardSDK
 
 /**
@@ -53,17 +52,16 @@ open class PacketTunnelProvider: NEPacketTunnelProvider {
         }
     }
 
+    private var networkUtils: NetworkUtilsProtocol?
     private var tunnelProxy: PacketTunnelProviderProxyProtocol!
-    private let reachabilityHandler: Reachability
-    private var reachabilityObserver: NotificationToken?
-    private var reachabilityConnection: Reachability.Connection
+    private var onNetworkStateChangedObserver: NotificationToken?
+
+    @Atomic
+    private var networkState: NetworkStateInfo = NetworkStateInfo()
+
 
     override public init() {
         assertionFailure("This initializer shouldn't be called")
-        // TODO: consider getting rid of Reachability in favor of NWPathMonitor which we already use in NetworkUtils
-        // TODO: strongly consider getting rid of Reachability, it does not fire when the user switches between two different Wi-Fi networks
-        self.reachabilityHandler = try! Reachability()
-        self.reachabilityConnection = .unavailable
         super.init()
     }
 
@@ -122,8 +120,7 @@ open class PacketTunnelProvider: NEPacketTunnelProvider {
             addresses: addresses
         )
 
-        self.reachabilityHandler = try Reachability()
-        self.reachabilityConnection = .unavailable
+        self.networkUtils = networkUtils
 
         super.init()
 
@@ -137,29 +134,19 @@ open class PacketTunnelProvider: NEPacketTunnelProvider {
     public override func startTunnel(options: [String : NSObject]? = nil, completionHandler: @escaping (Error?) -> Void) {
         Logger.logInfo("(PacketTunnelProvider) startTunnel")
 
-        do {
-            try reachabilityHandler.startNotifier()
-        }
-        catch {
-            Logger.logError("Reachability handler start error: \(error)")
-            completionHandler(error)
-            return
-        }
-
         tunnelProxy.startTunnel(options: options) { [weak self] error in
             if error == nil {
                 Logger.logInfo("(PacketTunnelProvider) startTunnel; finished starting")
             } else {
                 Logger.logInfo("(PacketTunnelProvider) startTunnel; finished starting with error: \(error!)")
             }
-            self?.startReachabilityHandling()
+            self?.startObservingNetworkStateChanging()
             completionHandler(error)
         }
     }
 
     public override func stopTunnel(with reason: NEProviderStopReason, completionHandler: @escaping () -> Void) {
         Logger.logInfo("(PacketTunnelProvider) stopTunnel with reason: \(reason)")
-        reachabilityHandler.stopNotifier()
         tunnelProxy.stopTunnel(with: reason, completionHandler: completionHandler)
     }
 
@@ -173,24 +160,29 @@ open class PacketTunnelProvider: NEPacketTunnelProvider {
         tunnelProxy.wake()
     }
 
-    private func startReachabilityHandling() {
-        self.reachabilityConnection = self.reachabilityHandler.connection
 
-        self.reachabilityObserver = NotificationCenter.default.observe(name: .reachabilityChanged, object: nil, queue: nil) { [weak self] note in
-            guard let self = self, let reachability = note.object as? Reachability else { return }
 
-            let currentConnection = reachability.connection
-            Logger.logInfo("Reachability connection changed from \(self.reachabilityConnection) to \(currentConnection)")
+    private func startObservingNetworkStateChanging() {
+        guard let networkUtils = networkUtils else { return }
 
-            // However, we don't need to restart tunnel when there is no connection.
-            if currentConnection != .unavailable && currentConnection != self.reachabilityConnection {
+        self.networkState = networkUtils.getCurrentNetworkStateSync()
+
+        onNetworkStateChangedObserver = NotificationCenter.default.observe(name: .networkStateChanged, object: nil, queue: nil) { [weak self] notification in
+        Logger.logInfo("Receive 'Network state changed' event")
+        guard let self = self, let currentNetworkStateInfo = notification.object as? NetworkStateInfo else { return }
+
+        Logger.logInfo("Old state: [\(self.networkState)]; new state: [\(currentNetworkStateInfo)]")
+
+        // However, we don't need to restart tunnel when there is no connection.
+        if currentNetworkStateInfo.internetState != .unavailable  {
+            if currentNetworkStateInfo.internetState != self.networkState.internetState ||
+                currentNetworkStateInfo.interface?.name != self.networkState.interface?.name {
                 self.tunnelProxy.networkChanged()
             }
-
-            // Save the current reachability.connection even if it's unavailable.
-            self.reachabilityConnection = currentConnection
         }
-    }
+
+        self.networkState = currentNetworkStateInfo
+    } }
 }
 
 // MARK: - PacketTunnelProvider + PacketTunnelProviderProxyDelegate

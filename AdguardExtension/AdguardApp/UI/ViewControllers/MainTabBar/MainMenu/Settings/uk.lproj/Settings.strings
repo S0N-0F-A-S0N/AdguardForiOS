@@ -152,7 +152,7 @@
 "rDk-OP-kAS.text" = "Відповідати нульовою IP-адресою («0.0.0.0» для A, «::» для AAAA)";
 
 /* Class = "UILabel"; text = "Low-level settings"; ObjectID = "reQ-4X-84i"; */
-"reQ-4X-84i.text" = "Низькорівневі налаштування";
+"reQ-4X-84i.text" = "Низькорівневі параметри";
 
 /* Class = "UIButton"; normalTitle = "Save"; ObjectID = "sNF-Hy-NdB"; */
 "sNF-Hy-NdB.normalTitle" = "Зберегти";

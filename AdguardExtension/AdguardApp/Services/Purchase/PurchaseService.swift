@@ -104,7 +104,6 @@ final class PurchaseService: NSObject, PurchaseServiceProtocol, SKPaymentTransac
     private let resources: AESharedResourcesProtocol
     private let keychain: KeychainServiceProtocol
     private let productInfo: ADProductInfoProtocol
-    private let appleSearchAdsService: AppleSearchAdsServiceProtocol?
 
     private var productRequest: SKProductsRequest?
     private var productsToPurchase: [SKProduct] { _atomicProductsToPurchase.wrappedValue }
@@ -217,13 +216,12 @@ final class PurchaseService: NSObject, PurchaseServiceProtocol, SKPaymentTransac
     }
 
     // MARK: - public methods
-    init(network: ACNNetworkingProtocol, resources: AESharedResourcesProtocol, productInfo: ADProductInfoProtocol, appleSearchAdsService: AppleSearchAdsServiceProtocol? = nil) {
+    init(network: ACNNetworkingProtocol, resources: AESharedResourcesProtocol, productInfo: ADProductInfoProtocol) {
         self.network = network
         self.resources = resources
         self.keychain = KeychainService(resources: resources)
         self.productInfo = productInfo
         loginService = LoginService(resources: resources, network: network, keychain: keychain, productInfo: productInfo)
-        self.appleSearchAdsService = appleSearchAdsService
 
         super.init()
 
@@ -248,11 +246,9 @@ final class PurchaseService: NSObject, PurchaseServiceProtocol, SKPaymentTransac
     }
 
     func login(withLicenseKey key: String, completion: @escaping (Bool)->Void) {
-        appleSearchAdsService?.provideAttributionRecords { [weak self] attributionRecords in
-            self?.loginService.login(licenseKey: key, attributionRecords: attributionRecords) { error in
-                let result = self?.processLoginResult(error) ?? false
-                completion(result)
-            }
+        loginService.login(licenseKey: key) { [weak self] error in
+            let result = self?.processLoginResult(error) ?? false
+            completion(result)
         }
     }
 
@@ -278,18 +274,14 @@ final class PurchaseService: NSObject, PurchaseServiceProtocol, SKPaymentTransac
 
         postNotification(PurchaseAssistant.kPSNotificationOauthSucceeded, nil)
 
-        appleSearchAdsService?.provideAttributionRecords { [weak self] attributionRecords in
-            self?.loginService.login(accessToken: token!, attributionRecords: attributionRecords) { (error) in
-                self?.processLoginResult(error)
-            }
+        loginService.login(accessToken: token!) { [weak self] (error) in
+            self?.processLoginResult(error)
         }
     }
 
     func login(name: String, password: String, code2fa: String?) {
-        appleSearchAdsService?.provideAttributionRecords { [weak self] attributionRecords in
-            self?.loginService.login(name: name, password: password, code2fa: code2fa, attributionRecords: attributionRecords) { (error) in
-                self?.processLoginResult(error)
-            }
+        loginService.login(name: name, password: password, code2fa: code2fa) { [weak self] (error) in
+            self?.processLoginResult(error)
         }
     }
 
@@ -744,11 +736,7 @@ final class PurchaseService: NSObject, PurchaseServiceProtocol, SKPaymentTransac
     }
 
     private func checkStatusInternal(completion: @escaping (_ error: Error?) -> Void) {
-        appleSearchAdsService?.provideAttributionRecords { [weak self] attributionRecords in
-            self?.loginService.checkStatus(attributionRecords: attributionRecords) { (error) in
-                completion(error)
-            }
-        }
+        loginService.checkStatus(callback: completion)
     }
 
     func updateSetappState(subscription: SetappSubscription) {

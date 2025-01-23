@@ -1,9 +1,10 @@
+/* Class = "UIButton"; normalTitle = "Switch mode"; ObjectID = "1A6-DD-78f"; */
+"1A6-DD-78f.normalTitle" = "حالت کلید";
 
 /* Class = "UIButton"; normalTitle = "Add"; ObjectID = "1rj-wD-aeH"; */
 "1rj-wD-aeH.normalTitle" = "افزودن";
 
-/* 4IJ-xy-hky.normalTitle
-Class = &quot;UIButton&quot;; normalTitle = &quot;blocked&quot;; ObjectID = &quot;4IJ-xy-hky&quot;; */
+/* Class = "UIButton"; normalTitle = "blocked"; ObjectID = "4IJ-xy-hky"; */
 "4IJ-xy-hky.normalTitle" = "مسدود شده";
 
 /* Class = "UIButton"; normalTitle = "Edit"; ObjectID = "7mk-7J-iLD"; Note = "(AddCustomFilterController) cancel button"; */
@@ -45,6 +46,8 @@ Class = &quot;UIButton&quot;; normalTitle = &quot;blocked&quot;; ObjectID = &quo
 /* Class = "UILabel"; text = "Request details"; ObjectID = "uni-H6-XNc"; */
 "uni-H6-XNc.text" = "جزئیات درخواست";
 
-/* wt5-4Q-CTq.normalTitle
-Class = &quot;UIButton&quot;; normalTitle = &quot;blocked&quot;; ObjectID = &quot;wt5-4Q-CTq&quot;; */
+/* Class = "UIButton"; normalTitle = "blocked"; ObjectID = "wt5-4Q-CTq"; */
 "wt5-4Q-CTq.normalTitle" = "مسدود شده";
+
+/* Class = "UIButton"; normalTitle = "data saved"; ObjectID = "yio-E8-cQV"; */
+"yio-E8-cQV.normalTitle" = "میانگین. زمان";

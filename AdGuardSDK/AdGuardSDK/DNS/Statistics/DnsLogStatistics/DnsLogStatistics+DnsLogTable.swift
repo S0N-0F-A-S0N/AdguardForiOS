@@ -17,6 +17,7 @@
 //
 
 import SQLite
+import struct SQLite.Expression
 import SharedAdGuardSDK
 
 /// Object representation of DB table `DNS_log_statistics.db`

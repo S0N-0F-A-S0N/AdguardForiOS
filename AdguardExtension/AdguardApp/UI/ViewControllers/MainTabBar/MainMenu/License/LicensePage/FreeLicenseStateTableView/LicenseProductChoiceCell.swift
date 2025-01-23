@@ -58,6 +58,9 @@ final class LicenseProductChoiceCell: UITableViewCell, Reusable {
         button.backgroundColor = UIColor.AdGuardColor.lightGreen1
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(subscribeButtonTapped), for: .touchUpInside)
+        button.titleLabel?.numberOfLines = 0
+        button.titleLabel?.textAlignment = .center
+        button.contentEdgeInsets = .init(top: 8, left: 0, bottom: 8, right: 0)
         return button
     }()
 
@@ -187,7 +190,6 @@ final class LicenseProductChoiceCell: UITableViewCell, Reusable {
             licenseProductButton.heightAnchor.constraint(equalToConstant: 40.0),
 
             subscribeButton.topAnchor.constraint(equalTo: licenseProductButton.bottomAnchor, constant: 16.0),
-            subscribeButton.heightAnchor.constraint(equalToConstant: 40.0),
 
             restorePurchaseButton.topAnchor.constraint(equalTo: subscribeButton.bottomAnchor, constant: 16.0),
             restorePurchaseButton.heightAnchor.constraint(equalToConstant: 40.0)
@@ -197,12 +199,11 @@ final class LicenseProductChoiceCell: UITableViewCell, Reusable {
             container.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 32.0),
             container.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -24.0),
             container.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            container.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.4),
+            container.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.6),
 
             licenseProductButton.heightAnchor.constraint(equalToConstant: 50.0),
 
             subscribeButton.topAnchor.constraint(equalTo: licenseProductButton.bottomAnchor, constant: 24.0),
-            subscribeButton.heightAnchor.constraint(equalToConstant: 50.0),
 
             restorePurchaseButton.topAnchor.constraint(equalTo: subscribeButton.bottomAnchor, constant: 24.0),
             restorePurchaseButton.heightAnchor.constraint(equalToConstant: 50.0)

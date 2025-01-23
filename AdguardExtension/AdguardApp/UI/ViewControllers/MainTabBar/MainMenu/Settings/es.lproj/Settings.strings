@@ -83,7 +83,7 @@
 "Rmq-30-7hJ.text" = "Bloquear peticiones AAAA";
 
 /* Class = "UILabel"; text = "System default"; ObjectID = "TX9-Md-Qzr"; */
-"TX9-Md-Qzr.text" = "Sistema por defecto";
+"TX9-Md-Qzr.text" = "Predeterminado del sistema";
 
 /* Class = "UILabel"; text = "This option will reset all your settings"; ObjectID = "Twq-5a-kOB"; */
 "Twq-5a-kOB.text" = "Esta opción restablecerá todas tus configuraciones";

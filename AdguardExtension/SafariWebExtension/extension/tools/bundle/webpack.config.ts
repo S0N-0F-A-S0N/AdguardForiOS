@@ -12,8 +12,21 @@ const CONTENT_PATH = path.resolve(__dirname, '../../src/targets/content');
 const ASSISTANT_PATH = path.resolve(__dirname, '../../src/targets/assistant');
 const POPUP_PATH = path.resolve(__dirname, '../../src/targets/popup');
 
+/**
+ * Max size limit for assets and entry points.
+ *
+ * Based on production build with minification.
+ *
+ * 600 KiB.
+ */
+const MAX_FILE_SIZE_LIMIT = 600 * 1024;
+
 export const config = {
     mode: 'production',
+    performance: {
+        maxAssetSize: MAX_FILE_SIZE_LIMIT,
+        maxEntrypointSize: MAX_FILE_SIZE_LIMIT,
+    },
     devtool: false,
     entry: {
         background: BACKGROUND_PATH,

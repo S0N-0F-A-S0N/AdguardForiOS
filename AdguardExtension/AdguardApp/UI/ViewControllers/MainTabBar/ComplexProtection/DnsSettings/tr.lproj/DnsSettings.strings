@@ -2,7 +2,7 @@
 "0ZJ-BI-849.text" = "Ağ ayarları";
 
 /* Class = "UITextField"; placeholder = "Name"; ObjectID = "3BA-9g-I6J"; Note = "(Add Custom Filter) url hint"; */
-"3BA-9g-I6J.placeholder" = "Ad";
+"3BA-9g-I6J.placeholder" = "Adı";
 
 /* Class = "UILabel"; text = "How to set it up?"; ObjectID = "7H8-Df-Igr"; */
 "7H8-Df-Igr.text" = "Nasıl ayarlanır?";

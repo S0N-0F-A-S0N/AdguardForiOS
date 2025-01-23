@@ -27,6 +27,7 @@ enum ImportRowType {
     case license
     case userRules
     case dnsRules
+    case youTubeFeature
 }
 
 struct SettingRow {
@@ -100,6 +101,8 @@ class ImportSettingsViewModel: ImportSettingsViewModelProtocol {
             settings.isLicenseImportEnabled = state
         case .userRules:
             settings.isSafariBlocklistRulesImportEnabled = state
+        case .youTubeFeature:
+            settings.disableYouTubeFeature = state
         }
 
         row.enabled = state
@@ -133,6 +136,8 @@ class ImportSettingsViewModel: ImportSettingsViewModelProtocol {
         fillUserRules(imported)
 
         fillDnsRules(imported)
+
+        fillYouTubeFeature(imported)
     }
 
     fileprivate func fillDnsRules(_ imported: Bool) {
@@ -257,6 +262,20 @@ class ImportSettingsViewModel: ImportSettingsViewModelProtocol {
 
             rows.append(row)
             index += 1
+        }
+    }
+
+    fileprivate func fillYouTubeFeature(_ imported: Bool) {
+        if let disableFeatureState = settings.disableYouTubeFeature {
+
+            var row = SettingRow(type: .youTubeFeature, index: 0)
+
+            row.title = String.localizedString("disable_youtube_feature")
+            row.imported = imported
+            row.enabled = disableFeatureState
+            row.setImportStatus(imported: imported, status: settings.importDisableYouTubeFeatureStatus)
+
+            rows.append(row)
         }
     }
 }

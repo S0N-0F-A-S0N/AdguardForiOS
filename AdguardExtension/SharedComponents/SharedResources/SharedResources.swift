@@ -394,6 +394,13 @@ extension AESharedResourcesProtocol {
         get { sharedDefaults().bool(forKey: migrationTo4_5_0Passedkey) }
         set { sharedDefaults().set(newValue, forKey: migrationTo4_5_0Passedkey) }
     }
+
+
+
+    var disableYouTubeFeature: Bool {
+        get { sharedDefaults().object(forKey: disableYouTubeFeatureKey) as? Bool ?? false } // FALSE value by default
+        set { sharedDefaults().set(newValue, forKey: disableYouTubeFeatureKey) }
+    }
 }
 
 fileprivate extension AESharedResourcesProtocol {
@@ -402,6 +409,7 @@ fileprivate extension AESharedResourcesProtocol {
     var advancedProtectionPermissionsGrantedKey: String { "advancedProtectionPermissionsGrantedKey" }
     var safariWebExtensionIsOnKey: String { "safariWebExtensionIsOnKey" }
     var whatsNewScreenShownKey: String { "whatsNewScreenShownKey" }
+    var disableYouTubeFeatureKey: String { "disableYouTubeFeatureKey" }
 
     // Migration keys
     var migrationTo4_3PassedKey: String { "isMigrationTo4_3PassedKey" }

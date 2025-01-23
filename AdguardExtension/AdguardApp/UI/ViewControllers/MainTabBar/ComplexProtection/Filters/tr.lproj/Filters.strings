@@ -5,7 +5,7 @@
 "6WB-a0-8YE.text" = "Safari koruması";
 
 /* Class = "UILabel"; text = "Name:"; ObjectID = "Cyn-cw-Zrm"; */
-"Cyn-cw-Zrm.text" = "Ad:";
+"Cyn-cw-Zrm.text" = "Adı:";
 
 /* Class = "UILabel"; text = "AdGuard is disabled for the websites from this list"; ObjectID = "Gg8-4u-qvU"; */
 "Gg8-4u-qvU.text" = "AdGuard bu listedeki siteler için devre dışı bırakıldı";

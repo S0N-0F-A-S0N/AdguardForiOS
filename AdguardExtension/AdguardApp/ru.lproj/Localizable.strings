@@ -94,8 +94,14 @@
 /* (MainController) login status caption on main screen */
 "protection_disabled_caption" = "Защита отключена";
 
-/* (GetProTableController) upgrade button title */
-"upgrade_button_title" = "Подписаться";
+/* (GetProTableController) upgrade button title; look like 'Try for free\n7 days free, then 1$.00/moth'*/
+"upgrade_button_title" = "Попробовать бесплатно\n7 дней бесплатно, затем %@";
+
+/* (GetProTableController) upgrade button title for month; looks like '$1.00/moth' */
+"upgrade_button_subscription_price_month" = "%@ в месяц";
+
+/* (GetProTableController) upgrade button title for year; looks like '$1.00/year' */
+"upgrade_button_subscription_price_year" = "%@ в год";
 
 /* (LicenseProductChoiceCell) restore purchase button title */
 "restore_purchase_button_title" = "Восстановить покупку";
@@ -686,7 +692,7 @@
 "dns_filters_notification_title" = "Отключите несколько фильтров для корректной работы";
 
 /* (DnsFiltersTableController) - DNS filters title */
-"dns_filters_title" = "Фильтры DNS";
+"dns_filters_title" = "DNS-фильтры";
 
 /*(DnsLogController) status of dns request */
 "dns_request_status_blocked" = "Заблокирован";

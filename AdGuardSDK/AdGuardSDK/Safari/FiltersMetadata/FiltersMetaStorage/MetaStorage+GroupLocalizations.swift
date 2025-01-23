@@ -18,6 +18,7 @@
 
 import SharedAdGuardSDK
 import SQLite
+import struct SQLite.Expression
 
 /* FilterGroupLocalizationsTable; filter_group_localization table */
 struct FilterGroupLocalizationsTable {

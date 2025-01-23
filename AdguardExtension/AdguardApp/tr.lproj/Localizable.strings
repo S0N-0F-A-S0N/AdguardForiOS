@@ -94,8 +94,14 @@
 /* (MainController) login status caption on main screen */
 "protection_disabled_caption" = "Koruma kapalı";
 
-/* (GetProTableController) upgrade button title */
-"upgrade_button_title" = "Abone ol";
+/* (GetProTableController) upgrade button title; look like 'Try for free\n7 days free, then 1$.00/moth'*/
+"upgrade_button_title" = "Ücretsiz deneyin\n7 gün ücretsiz, ardından %@";
+
+/* (GetProTableController) upgrade button title for month; looks like '$1.00/moth' */
+"upgrade_button_subscription_price_month" = "%@/ay";
+
+/* (GetProTableController) upgrade button title for year; looks like '$1.00/year' */
+"upgrade_button_subscription_price_year" = "%@/yıl";
 
 /* (LicenseProductChoiceCell) restore purchase button title */
 "restore_purchase_button_title" = "Satın alımı geri yükle";
@@ -215,10 +221,10 @@
 "add_whitelist_domain_caption" = "Alan adı:";
 
 /* (UserFilterController) add wifi name caption */
-"add_wifi_name_caption" = "Ad:";
+"add_wifi_name_caption" = "Adı:";
 
 /* (AESupport) Alert message if user have no e-mail account on device */
-"bug_report_sending_error" = "Hata raporu gönderilemiyor. Cihazınızda e-posta yapılandırılmamış olabilir.";
+"bug_report_sending_error" = "Hata bildirimi gönderilemiyor. Cihazınızda e-posta yapılandırılmamış olabilir.";
 
 /* (MainController) Error on check filter uspdates */
 "filter_updates_error" = "Filtre güncelleme hatası";
@@ -692,7 +698,7 @@
 "dns_request_status_blocked" = "Engellenen";
 
 /*(DnsLogController) status of dns request */
-"dns_request_status_processed" = "İşlenen";
+"dns_request_status_processed" = "İşlendi";
 
 /*(DnsLogController) status of dns request */
 "dns_request_status_encrypted" = "Şifrelenmiş";
@@ -797,7 +803,7 @@
 "category_title" = "Kategori";
 
 /* (DnsRequestDetailsController) "Name" title for cell */
-"name_title" = "Ad";
+"name_title" = "Adı";
 
 /* (DnsRequestDetailsController) "Website" title for cell */
 "website_title" = "Site";
@@ -848,7 +854,7 @@
 "bug_report_failed_message" = "Hata raporu gönderilemedi, lütfen tekrar deneyin";
 
 /* (BugReportController) Message when bug report successed */
-"bug_report_successed_message" = "Hata raporunuz başarıyla gönderildi!";
+"bug_report_successed_message" = "Hata bildiriminiz başarıyla gönderildi!";
 
 /* (IntroductionOnboardingController) - License agreement text */
 "introduction_license_agreement" = "AdGuard'ın <a href=%2$@>SKLS</a> ve <a href=%1$@>Gizlilik Politikasını</a> kabul ediyorum.";
@@ -880,6 +886,9 @@
 /* (ActivityViewController) -  Data saved alret title */
 "data_saved_info_alert_title" = "Veri tasarrufu";
 
+/* (ActivityViewController) -  Data saved alret message */
+"data_saved_info_alert_message" = "AdGuard, cihazınızın uygulama içi izleyicileri yüklenmesini önleyerek cihazınızın veri kullanımını azaltır.\n\nİşte seçilen zaman aralığı için AdGuard tarafından tasarruf edilen toplam veri miktarı";
+
 /* (ActivityViewController) - Companies alert title */
 "companies_info_alert_title" = "Şirket sayısı";
 
@@ -893,7 +902,7 @@
 "blocked_only_alert_action" = "Yalnızca engellenenler";
 
 /* (ActivityViewController) - Allowed only alert action */
-"allowed_only_alert_action" = "Sadece izin verilenler";
+"allowed_only_alert_action" = "Yalnızca izin verilenler";
 
 /* (ActivityViewController) - None message when there is no statistics */
 "none_message" = "Hiçbiri";
@@ -1079,6 +1088,9 @@
 /* (ImportSettingsController) add dns rules title */
 "import_dns_user_rules" = "DNS Kullanıcı Kuralı Ekle";
 
+/* (ImportSettingsController) disable YouTube feature title */
+"disable_youtube_feature" = "AdGuard Oynatıcıyı devre dışı bırak";
+
 /* (LowLevelSettingsController) Low level settings description. <b style=color:#c23814ff> It is a color for WARNING! word*/
 "low_level_description" = "<b style=color:#c23814ff>UYARI!</b> Bu özelliklerin etkinleştirilmesi İnternet bağlantısını kesebilir veya güvenliğinizi ve gizliliğinizi tehlikeye atabilir.";
 
@@ -1210,6 +1222,12 @@ DO NOT TRANSLATE "none" */
 
 /* (YoutubePlayerController) 'userscript error' alert message */
 "youtube_player_controller_userscript_error_message" = "Kullanıcı betiği oluşturulamadı";
+
+/* (YoutubePlayerController) YouTube feature disabled alert title */
+"youtube_player_controller_feature_disabled_title" = "AdGuard Oynatıcı devre dışı";
+
+/* (YoutubePlayerController) YouTube feature disabled alert message */
+"youtube_player_controller_feature_disabled_message" = "AdGuard ile video paylaşımı mevcut değil";
 
 /* (YouTubeAdsRequestHandler) 'no url error' alert title */
 "youtube_share_extension_no_url_title" = "URL sağlanmadı";

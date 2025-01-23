@@ -19,6 +19,7 @@
 import SharedAdGuardSDK
 import Zip
 import SQLite
+import struct SQLite.Expression
 
 protocol DefaultDatabaseManagerProtocol {
     // default.db file URL

@@ -17,6 +17,7 @@
 //
 
 import SQLite
+import struct SQLite.Expression
 import DnsAdGuardSDK
 
 /// This object is a helper for `SDKMigrationServiceHelper`

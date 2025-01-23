@@ -94,8 +94,14 @@
 /* (MainController) login status caption on main screen */
 "protection_disabled_caption" = "Захист вимкнено";
 
-/* (GetProTableController) upgrade button title */
-"upgrade_button_title" = "Передплатити";
+/* (GetProTableController) upgrade button title; look like 'Try for free\n7 days free, then 1$.00/moth'*/
+"upgrade_button_title" = "Спробувати безкоштовно\n7 днів безкоштовно, потім %@";
+
+/* (GetProTableController) upgrade button title for month; looks like '$1.00/moth' */
+"upgrade_button_subscription_price_month" = "%@/місяць";
+
+/* (GetProTableController) upgrade button title for year; looks like '$1.00/year' */
+"upgrade_button_subscription_price_year" = "%@/рік";
 
 /* (LicenseProductChoiceCell) restore purchase button title */
 "restore_purchase_button_title" = "Відновити покупку";
@@ -874,6 +880,9 @@
 /* (ActivityViewController) -  Data saved alret title */
 "data_saved_info_alert_title" = "Заощаджено трафіку";
 
+/* (ActivityViewController) -  Data saved alret message */
+"data_saved_info_alert_message" = "AdGuard запобігає завантаженню вбудованих трекерів, зменшуючи використання даних вашого пристрою\n\nОсь загальний обсяг даних, який AdGuard заощадив за вибраний проміжок часу";
+
 /* (ActivityViewController) - Companies alert title */
 "companies_info_alert_title" = "Кількість компаній";
 
@@ -1118,7 +1127,7 @@ DO NOT TRANSLATE "none" */
 "unsupported_setting" = "Ця функція несумісна з режимом Вбудованого DNS";
 
 /* (SetappManager) - alert message on error during login via setapp  */
-"setapp_device_limit_reached" = "Ви досягли обмеження кількості під'єднаних пристроїв для свого облікового запису.";
+"setapp_device_limit_reached" = "Ви досягли обмеження кількості підʼєднаних пристроїв для свого облікового запису.";
 
 /* (AdvancedYouTubeBlockingController) YouTube blocking instruction text that is shown if youtube app is installed */
 "block_youtube_ads_instructions_safari" = "А ви знали, що YouTube змінив свої алгоритми, щоб показувати більше реклами?<br><br>І тепер, щоб блокувати її, вам треба:<br><br>1. Відкрити <a href=\"%@\">Safari</a>.<br><br>2. Open youtube.com.<br><br> Натиснути %@ «Поділитись».<br><br>3. Натиснути «Блокувати рекламу YouTube (з AdGuard)».";

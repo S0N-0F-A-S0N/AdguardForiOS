@@ -33,7 +33,7 @@ protocol LoginServiceProtocol {
 
     var licenseKey: String? { get }
 
-    func checkStatus(attributionRecords: String?, callback: @escaping (Error?)->Void )
+    func checkStatus(callback: @escaping (Error?)->Void )
     func logout()->Bool
 
     /**
@@ -44,10 +44,10 @@ protocol LoginServiceProtocol {
      1) login through oauth in safari and get access_token. Then we make auth_token request and get license key. Then bind this key to user device id(app_id) through status request with license key in params
      2) login directly with license key. In this case we immediately send status request with this license key
      */
-    func login(accessToken: String, attributionRecords: String?, callback: @escaping  (_: NSError?)->Void)
-    func login(licenseKey: String, attributionRecords: String?, callback: @escaping  (_: NSError?)->Void)
+    func login(accessToken: String, callback: @escaping  (_: NSError?)->Void)
+    func login(licenseKey: String, callback: @escaping  (_: NSError?)->Void)
 
-    func login(name:String, password: String, code2fa: String?, attributionRecords: String?, callback: @escaping  ( _: NSError?)->Void)
+    func login(name:String, password: String, code2fa: String?, callback: @escaping  ( _: NSError?)->Void)
 
     var activeChanged: (() -> Void)? { get set }
 
@@ -152,7 +152,6 @@ final class LoginService: LoginServiceProtocol {
     private let LOGIN_ACCESS_TOKEN_PARAM = "access_token"
     private let LOGIN_APP_VERSION_PARAM = "app_version"
     private let STATUS_DEVICE_NAME_PARAM = "device_name"
-    private let STATUS_ATTRIBUTION_RECORDS_PARAM = "iad_metadata" // Param for Apple Search Ads
     private let STATUS_NOOP_PARAM = "noop" // Param to identify users with lost keychain
 
     private let resources: AESharedResourcesProtocol
@@ -173,24 +172,24 @@ final class LoginService: LoginServiceProtocol {
 
     // MARK: - Internal methods
 
-    func login(licenseKey: String, attributionRecords: String?, callback: @escaping (NSError?) -> Void) {
-        requestStatus(licenseKey: licenseKey, attributionRecords: attributionRecords, callback: callback)
+    func login(licenseKey: String, callback: @escaping (NSError?) -> Void) {
+        requestStatus(licenseKey: licenseKey, callback: callback)
     }
 
-    func login(accessToken: String, attributionRecords: String?, callback: @escaping  (NSError?)->Void) {
+    func login(accessToken: String, callback: @escaping  (NSError?)->Void) {
         // we must reset license before login to unbind previously attached license key
         resetLicense { [weak self] (error) in
             if error != nil {
                 callback(error)
             }
             else {
-                self?.loginInternal(accessToken: accessToken, attributionRecords: attributionRecords, callback: callback)
+                self?.loginInternal(accessToken: accessToken, callback: callback)
             }
         }
     }
 
-    func checkStatus(attributionRecords: String?, callback: @escaping (Error?) -> Void) {
-        requestStatus(licenseKey: nil, attributionRecords: attributionRecords, callback: callback)
+    func checkStatus(callback: @escaping (Error?) -> Void) {
+        requestStatus(licenseKey: nil, callback: callback)
     }
 
     func logout()->Bool {
@@ -252,12 +251,12 @@ final class LoginService: LoginServiceProtocol {
         }
     }
 
-    func login(name: String, password: String, code2fa: String?, attributionRecords: String?, callback: @escaping (NSError?) -> Void) {
+    func login(name: String, password: String, code2fa: String?, callback: @escaping (NSError?) -> Void) {
 
         self.getOauthToken(username: name, password: password, twoFactorToken: code2fa) { [weak self] (token, error) in
 
             if error == nil && token != nil {
-                self?.login(accessToken: token!, attributionRecords: attributionRecords) { (error) in
+                self?.login(accessToken: token!) { (error) in
                     if error == nil {
                         callback(nil)
                     }
@@ -284,7 +283,7 @@ final class LoginService: LoginServiceProtocol {
 
     // MARK: - Private methods
 
-    private func loginInternal(accessToken: String, attributionRecords: String?, callback: @escaping (NSError?) -> Void) {
+    private func loginInternal(accessToken: String, callback: @escaping (NSError?) -> Void) {
 
         guard let appId = keychain.appId else {
             DDLogError("(LoginService) loginInternal error - can not obtain appId)")
@@ -333,11 +332,11 @@ final class LoginService: LoginServiceProtocol {
                 return
             }
 
-            sSelf.requestStatus(licenseKey: licenseKey, attributionRecords: attributionRecords, callback: callback)
+            sSelf.requestStatus(licenseKey: licenseKey, callback: callback)
         }
     }
 
-    private func requestStatus(licenseKey: String?, attributionRecords: String?, callback: @escaping (NSError?)->Void ) {
+    private func requestStatus(licenseKey: String?, callback: @escaping (NSError?)->Void ) {
 
         DDLogInfo("(LoginService) requestStatus " + (licenseKey == nil ? "without license key" : "with license key"))
 
@@ -361,11 +360,6 @@ final class LoginService: LoginServiceProtocol {
         // https://jira.adguard.com/browse/AG-16180
         if resources.pretendPremiumAfterKeychainLoss {
             params[STATUS_NOOP_PARAM] = "1"
-        }
-
-        if let attributionRecords = attributionRecords {
-            DDLogInfo("(LoginService) - requestStatus; Attribution records added as parameter for request status")
-            params[STATUS_ATTRIBUTION_RECORDS_PARAM] = attributionRecords
         }
 
         guard let url = URL(string: STATUS_URL) else  {

@@ -79,7 +79,7 @@ final class AdvancedSettingsController: UITableViewController {
         resources.isDebugLogs = isDebugLogs
         DDLogInfo("Log level changed to \(isDebugLogs ? "DEBUG" : "Normal")")
         ACLLogger.singleton()?.logLevel = isDebugLogs ? ACLLDebugLevel : ACLLDefaultLevel
-        AGLogger.setLevel(isDebugLogs ? .AGLL_TRACE : .AGLL_INFO)
+        AGDnsLogger.setLevel(isDebugLogs ? .AGDLLTrace : .AGDLLInfo)
         dnsConfigAssistant.applyDnsPreferences(for: .modifiedAdvancedSettings, completion: nil) // restart tunnel to apply new log level
     }
 

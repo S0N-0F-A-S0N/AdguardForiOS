@@ -29,7 +29,24 @@ final class DnsProvidersModel {
 
     var tableModels: [DnsProvidersTableModel] {
         let allProviders = dnsProvidersManager.allProviders
-        return allProviders.map { DnsProvidersTableModel(provider: $0) }
+
+        if resources.dnsImplementation == .adGuard { return allProviders.map { DnsProvidersTableModel(provider: $0) } }
+
+        // Native implementation not support upstream that contains `tcp://, udp://, h3://` protocols,
+        // so let's filter providers to exclude not valid providers.
+        // And we assume that predefined providers does not have DNS-upstreams that can contain not valid protocols.
+        // Only custom providers may contains such upstreams.
+        return allProviders.compactMap {
+            let containsExclusion = $0.dnsServers.contains(where: {
+                $0.upstreams.contains(where: {
+                    $0.upstream.hasPrefix("tcp://") ||
+                    $0.upstream.hasPrefix("udp://") ||
+                    $0.upstream.hasPrefix("h3://")
+                })
+            })
+
+            return containsExclusion ? nil : DnsProvidersTableModel(provider: $0)
+        }
     }
 
     // MARK: - Private properties

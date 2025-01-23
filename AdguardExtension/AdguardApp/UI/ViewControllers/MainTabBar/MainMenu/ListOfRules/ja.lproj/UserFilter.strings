@@ -11,7 +11,7 @@
 "Tei-uI-6Gr.normalTitle" = "削除する";
 
 /* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "UGP-Xr-H1p"; */
-"UGP-Xr-H1p.normalTitle" = "キャンセル";
+"UGP-Xr-H1p.normalTitle" = "キャンセル ";
 
 /* Class = "UIButton"; normalTitle = "Disable"; ObjectID = "VSR-Wf-7c8"; */
 "VSR-Wf-7c8.normalTitle" = "無効にする";

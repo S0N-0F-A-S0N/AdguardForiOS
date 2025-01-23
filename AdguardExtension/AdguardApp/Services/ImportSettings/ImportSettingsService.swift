@@ -41,6 +41,7 @@ final class ImportSettingsService: ImportSettingsServiceProtocol {
     private let dnsProtection: DnsProtectionProtocol
     private let vpnManager: VpnManagerProtocol
     private let purchaseService: PurchaseServiceProtocol
+    private let sharedResources: AESharedResourcesProtocol
 
     //MARK: - Private properties
 
@@ -51,20 +52,21 @@ final class ImportSettingsService: ImportSettingsServiceProtocol {
 
     // MARK: - Init
 
-    init(dnsProvidersManager: DnsProvidersManagerProtocol, safariProtection: SafariProtectionProtocol, dnsProtection: DnsProtectionProtocol, vpnManager: VpnManagerProtocol, purchaseService: PurchaseServiceProtocol
+    init(dnsProvidersManager: DnsProvidersManagerProtocol, safariProtection: SafariProtectionProtocol, dnsProtection: DnsProtectionProtocol, vpnManager: VpnManagerProtocol, purchaseService: PurchaseServiceProtocol, sharedResources: AESharedResourcesProtocol
     ) {
         self.dnsProvidersManager = dnsProvidersManager
         self.safariProtection = safariProtection
         self.dnsProtection = dnsProtection
         self.vpnManager = vpnManager
         self.purchaseService = purchaseService
+        self.sharedResources = sharedResources
 
         self.safariImportHelper = ImportSafariProtectionSettingsHelper(safariProtection: safariProtection)
         self.dnsImportHelper = ImportDNSSettingsHelper(dnsProvidersManager: dnsProvidersManager, dnsProtection: dnsProtection)
     }
 
     /// Init for tests
-    init(dnsProvidersManager: DnsProvidersManagerProtocol, safariProtection: SafariProtectionProtocol, dnsProtection: DnsProtectionProtocol, vpnManager: VpnManagerProtocol, purchaseService: PurchaseServiceProtocol, safariImportHelper: ImportSafariProtectionSettingsHelperProtocol, dnsImportHelper: ImportDNSSettingsHelperProtocol) {
+    init(dnsProvidersManager: DnsProvidersManagerProtocol, safariProtection: SafariProtectionProtocol, dnsProtection: DnsProtectionProtocol, vpnManager: VpnManagerProtocol, purchaseService: PurchaseServiceProtocol, safariImportHelper: ImportSafariProtectionSettingsHelperProtocol, dnsImportHelper: ImportDNSSettingsHelperProtocol, sharedResources: AESharedResourcesProtocol) {
 
         self.dnsProvidersManager = dnsProvidersManager
         self.safariProtection = safariProtection
@@ -73,6 +75,7 @@ final class ImportSettingsService: ImportSettingsServiceProtocol {
         self.purchaseService = purchaseService
         self.safariImportHelper = safariImportHelper
         self.dnsImportHelper = dnsImportHelper
+        self.sharedResources = sharedResources
     }
 
     // MARK: - Internal methods
@@ -118,6 +121,11 @@ final class ImportSettingsService: ImportSettingsServiceProtocol {
         let isLicensePurchased = purchaseService.isProPurchased || Bundle.main.isPro
         guard availableStatus && isLicensePurchased else {
             return resultSettings
+        }
+
+        if let disableYouTubeFeature = settings.disableYouTubeFeature {
+            sharedResources.disableYouTubeFeature = disableYouTubeFeature
+            resultSettings.importDisableYouTubeFeatureStatus = .successful
         }
 
         // DNS Imports

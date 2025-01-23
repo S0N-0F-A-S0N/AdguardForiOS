@@ -18,6 +18,7 @@
 
 import SharedAdGuardSDK
 import SQLite
+import struct SQLite.Expression
 
 // MARK: - FiltersMetaStorageProtocol + Filters methods
 

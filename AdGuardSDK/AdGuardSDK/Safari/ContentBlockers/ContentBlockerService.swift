@@ -52,7 +52,7 @@ final public class ContentBlockerService: ContentBlockerServiceProtocol {
     // MARK: - Private properties
 
     // Queue for updating content blockers
-    private let updateQueue = DispatchQueue(label: "AdGuardSDK.ContentBlockerService.updateQueue", qos: .background)
+    private let updateQueue = DispatchQueue(label: "AdGuardSDK.ContentBlockerService.updateQueue", qos: .userInitiated)
 
     /* Services */
     private let appBundleId: String

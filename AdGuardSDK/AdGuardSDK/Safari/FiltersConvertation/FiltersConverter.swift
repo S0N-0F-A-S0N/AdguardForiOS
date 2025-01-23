@@ -52,9 +52,14 @@ protocol ContentBlockerConverterProtocol {
 final class ContentBlockerConverterWrapper: ContentBlockerConverterProtocol {
     func convertArray(rules: [String], safariVersion: SafariVersion, optimize: Bool, advancedBlocking: Bool) -> ConversionResult {
         let converter = ContentBlockerConverter()
+
+        // In iOS 17.0, there was a bug in content blockers that caused them to crash if a safari rules file larger than 10 megabytes was passed. (Feedback ID FB13282146).
+        // Since iOS 17.2 Apple has fixed the issue, so it is possible to remove the size limit for the safari rules file.
         var maxJsonSizeBytes: Int?
         if #available(iOS 17.0, *) {
-            maxJsonSizeBytes = 10 * 1024 * 1024 // 10 MB in bytes
+            if #unavailable(iOS 17.2) {
+                maxJsonSizeBytes = 10 * 1024 * 1024 // 10 MB in bytes
+            }
         }
 
         let result = converter.convertArray(
@@ -186,6 +191,7 @@ final class FiltersConverter: FiltersConverterProtocol {
         let safariVersion = SafariVersion(configuration.iosVersion)
         let conversionResult: [FiltersConverterResult] = filters.concurrentMap { [unowned self] cbType, rules -> FiltersConverterResult in
 
+            let start = Date()
             Logger.logInfo("(FiltersConverter) - convertFilters; Start converting \(cbType)")
 
             let converter = ContentBlockerConverterWrapper()
@@ -196,7 +202,10 @@ final class FiltersConverter: FiltersConverterProtocol {
                 advancedBlocking: configuration.advancedBlockingIsEnabled && configuration.proStatus
             )
 
-            Logger.logInfo("(FiltersConverter) - FiltersConverter for \(cbType) result: \(result.convertedCount) rules")
+            let elapsed = String(format: "%.2fs", Date().timeIntervalSince(start))
+
+            Logger.logInfo("(FiltersConverter) - FiltersConverter for \(cbType) result: \(result.convertedCount) rules, elapsed \(elapsed)")
+
             Logger.logDebug("(FiltersConverter) - FiltersConverter for \(cbType) result message: \(result.message)")
 
             // Just take the info we need

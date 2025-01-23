@@ -18,6 +18,7 @@
 
 import Foundation
 import SQLite
+import struct SQLite.Expression
 
 // MARK: - DnsUpstream + save/load from DB
 extension DnsUpstream: Value {

@@ -17,6 +17,7 @@
 //
 
 import SQLite
+import struct SQLite.Expression
 
 // MARK: - Expression + DB functions
 

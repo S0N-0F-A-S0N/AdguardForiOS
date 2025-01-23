@@ -1,5 +1,6 @@
 module.exports = {
     verbose: true,
+    preset: 'ts-jest',
     testEnvironment: 'jsdom',
     setupFiles: ['./tests/__setups__/chrome.ts'],
     setupFilesAfterEnv: ['<rootDir>/tests/__setups__/jest-setup.ts'],

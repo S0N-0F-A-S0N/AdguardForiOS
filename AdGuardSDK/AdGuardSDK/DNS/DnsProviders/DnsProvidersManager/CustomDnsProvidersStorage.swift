@@ -205,7 +205,7 @@ final class CustomDnsProvidersStorage: CustomDnsProvidersStorageProtocol {
             throw CustomDnsProvidersStorageError.emptyUpstreams
         }
 
-        let protocols = try upstreams.map { try networkUtils.getProtocol(from: $0) }
+        let protocols = try upstreams.map { try networkUtils.getProtocol(from: $0, configuration.dnsImplementation) }
         guard protocols.allElementsAreEqual else {
             throw CustomDnsProvidersStorageError.differentDnsProtocols(upstreams: upstreams)
         }

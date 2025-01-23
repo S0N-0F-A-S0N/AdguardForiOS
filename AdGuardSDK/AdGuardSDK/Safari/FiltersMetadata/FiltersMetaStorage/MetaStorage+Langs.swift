@@ -18,6 +18,7 @@
 
 import SharedAdGuardSDK
 import SQLite
+import struct SQLite.Expression
 
 /* FilterLangsTablel; filter_langs table */
 fileprivate struct FilterLangsTable {

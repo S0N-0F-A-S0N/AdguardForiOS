@@ -44,6 +44,18 @@ class YoutubePlayerController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let resources: AESharedResourcesProtocol = ServiceLocator.shared.getService()!
+        if resources.disableYouTubeFeature {
+            DDLogInfo("(YoutubePlayerController) -- YouTube feature disabled")
+            presentSimpleAlert(
+                title: String.localizedString("youtube_player_controller_feature_disabled_title"),
+                message: String.localizedString("youtube_player_controller_feature_disabled_message")
+            ) { 
+                self.dismiss(animated: true)
+            }
+            return
+        }
+
         setUpCloseButton()
         startPlayer(videoId: videoId)
     }

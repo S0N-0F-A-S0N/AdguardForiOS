@@ -94,8 +94,14 @@
 /* (MainController) login status caption on main screen */
 "protection_disabled_caption" = "Zaštita je isključena";
 
-/* (GetProTableController) upgrade button title */
-"upgrade_button_title" = "Pretplati se";
+/* (GetProTableController) upgrade button title; look like 'Try for free\n7 days free, then 1$.00/moth'*/
+"upgrade_button_title" = "Isprobati besplatno\n7 dana besplatno, zatim %@";
+
+/* (GetProTableController) upgrade button title for month; looks like '$1.00/moth' */
+"upgrade_button_subscription_price_month" = "%@/mesečno";
+
+/* (GetProTableController) upgrade button title for year; looks like '$1.00/year' */
+"upgrade_button_subscription_price_year" = "%@/godišnje";
 
 /* (LicenseProductChoiceCell) restore purchase button title */
 "restore_purchase_button_title" = "Oporavi kupovinu";
@@ -686,7 +692,7 @@
 "dns_filters_notification_title" = "Isključite neke filtere za ispravan rad";
 
 /* (DnsFiltersTableController) - DNS filters title */
-"dns_filters_title" = "DNS filteri";
+"dns_filters_title" = "Filteri";
 
 /*(DnsLogController) status of dns request */
 "dns_request_status_blocked" = "Blokirano";
@@ -879,6 +885,9 @@
 
 /* (ActivityViewController) -  Data saved alret title */
 "data_saved_info_alert_title" = "Sačuvani podaci";
+
+/* (ActivityViewController) -  Data saved alret message */
+"data_saved_info_alert_message" = "AdGuard sprečava uređaj da učitava tragače u aplikacijama, smanjujući korišćenje podataka uređaja\n\nEvo ukupne količine podataka koje je AdGuard sačuvao za izabrani vremenski period";
 
 /* (ActivityViewController) - Companies alert title */
 "companies_info_alert_title" = "Broj kompanija";

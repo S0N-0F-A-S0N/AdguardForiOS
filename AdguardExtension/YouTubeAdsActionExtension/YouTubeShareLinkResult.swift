@@ -71,12 +71,16 @@ struct YouTubeShareLinkResult {
         case embed
         // https://youtube.com/embed/watch?v=<video_id><?params>
         case regular
+        // https://youtube.com/live/<video_id><?params>
+        case live
+        // https://youtube.com/shorts/<video_id><?params>
+        case shorts
 
         // Extracts video ID from given youtube URL according to given validation result
         func extractVideoId(from: String) -> String? {
             switch self {
 
-            case .compressed, .embed:
+                case .compressed, .embed, .live, .shorts:
                 guard let firstIdx = from.lastIndex(of: "/") else { return nil }
 
                 if let lastIdx = from.firstIndex(of: "?") {

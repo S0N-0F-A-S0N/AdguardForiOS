@@ -12,7 +12,7 @@ import {
 
 import { app } from '../../background/app';
 
-import { getDomain } from '../../common/utils/url';
+import { getHostname } from '../../common/utils/url';
 
 /**
  * Creates an instance of filtering engine with passed `rulesText`.
@@ -79,7 +79,7 @@ const getMatchingResult = (url: string, engine: Engine): MatchingResult => {
  * @returns TSUrlFilter's CosmeticResult.
  */
 export const getEngineCosmeticResult = (rulesText: string, url: string): CosmeticResult => {
-    const hostname = getDomain(url);
+    const hostname = getHostname(url);
     const request = new Request(hostname, null, RequestType.Document);
 
     const engine = createEngine(rulesText);
