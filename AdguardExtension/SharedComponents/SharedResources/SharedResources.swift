@@ -228,6 +228,54 @@ extension AESharedResourcesProtocol {
         }
     }
 
+    // MARK: - VPN/Proxy configuration
+
+    dynamic var proxyEnabled: Bool {
+        get {
+            sharedDefaults().object(forKey: proxyEnabledKey) as? Bool ?? false
+        }
+        set {
+            sharedDefaults().set(newValue, forKey: proxyEnabledKey)
+        }
+    }
+
+    dynamic var proxyHost: String? {
+        get {
+            sharedDefaults().string(forKey: proxyHostKey)
+        }
+        set {
+            sharedDefaults().setValue(newValue, forKey: proxyHostKey)
+        }
+    }
+
+    dynamic var proxyPort: Int {
+        get {
+            sharedDefaults().integer(forKey: proxyPortKey)
+        }
+        set {
+            sharedDefaults().set(newValue, forKey: proxyPortKey)
+        }
+    }
+
+    dynamic var vpnServerHost: String {
+        get {
+            sharedDefaults().string(forKey: vpnServerHostKey) ?? "127.0.0.1"
+        }
+        set {
+            sharedDefaults().setValue(newValue, forKey: vpnServerHostKey)
+        }
+    }
+
+    dynamic var vpnServerPort: Int {
+        get {
+            let value = sharedDefaults().object(forKey: vpnServerPortKey) as? Int
+            return value ?? 0
+        }
+        set {
+            sharedDefaults().set(newValue, forKey: vpnServerPortKey)
+        }
+    }
+
     dynamic var lastDnsFiltersUpdateTime: Date? {
         get {
             sharedDefaults().object(forKey: LastDnsFiltersUpdateTime) as? Date
@@ -410,6 +458,13 @@ fileprivate extension AESharedResourcesProtocol {
     var safariWebExtensionIsOnKey: String { "safariWebExtensionIsOnKey" }
     var whatsNewScreenShownKey: String { "whatsNewScreenShownKey" }
     var disableYouTubeFeatureKey: String { "disableYouTubeFeatureKey" }
+
+    // VPN/Proxy keys
+    var proxyEnabledKey: String { "proxyEnabled" }
+    var proxyHostKey: String { "proxyHost" }
+    var proxyPortKey: String { "proxyPort" }
+    var vpnServerHostKey: String { "vpnServerHost" }
+    var vpnServerPortKey: String { "vpnServerPort" }
 
     // Migration keys
     var migrationTo4_3PassedKey: String { "isMigrationTo4_3PassedKey" }

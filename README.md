@@ -167,6 +167,15 @@ Run this command to generate `FASTLANE_SESSION` which you'll then need to use on
 bundle exec fastlane auth
 ```
 
+## VPN and Proxy configuration
+
+AdGuard for iOS now exposes basic VPN/Proxy parameters in the low level settings.
+These settings allow specifying whether a proxy should be used and the address of
+that proxy server. In addition, the VPN server host and port can be customized so
+that a remote VPN server may be used instead of the default local one. Default
+values keep the proxy disabled and use the local VPN endpoint to maintain the
+previous behaviour.
+
 ### Acknowledgments
 
 Please visit the acknowledgements [page](https://kb.adguard.com/en/miscellaneous/acknowledgments#ios)

@@ -342,7 +342,10 @@ class VpnManager: VpnManagerProtocol {
         // setup protocol configuration
         let protocolConfiguration = NETunnelProviderProtocol()
         protocolConfiguration.providerBundleIdentifier = AP_TUNNEL_ID
-        protocolConfiguration.serverAddress = "127.0.0.1"
+        protocolConfiguration.serverAddress = resources.vpnServerHost
+        protocolConfiguration.providerConfiguration = [
+            "serverPort": resources.vpnServerPort
+        ]
 
         manager.protocolConfiguration = protocolConfiguration
 
