@@ -88,7 +88,7 @@ You can submit an application to participate in AdGuard for beta-testing program
 
 ## Our plans
 
-To see the 'big picture', to watch current progress and to get an idea of approximate dates for upcoming AdGuard for iOS releases, see this page: https://github.com/AdguardTeam/AdguardForIos/milestones
+To see the 'big picture', to watch current progress and to get an idea of approximate dates for upcoming AdGuard for iOS releases, see this page: https://github.com/S0N-0F-A-S0N/AdguardForiOS/milestones
 
 <a id="how-to-build"></a>
 
