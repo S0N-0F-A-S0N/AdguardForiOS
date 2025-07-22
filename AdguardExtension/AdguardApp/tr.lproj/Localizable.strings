@@ -322,6 +322,24 @@
 /* (ContentBlockersTableController) - Content Blockers title */
 "cb_screen_content_blockers_title" = "İçerik Engelleyicileri";
 
+/* (ContentBlockersTableController) - General content blocker name */
+"cb_screen_content_blockers_general_name" = "Genel";
+
+/* (ContentBlockersTableController) - Privacy content blocker name */
+"cb_screen_content_blockers_privacy_name" = "Gizlilik";
+
+/* (ContentBlockersTableController) - Social content blocker name */
+"cb_screen_content_blockers_social_name" = "Sosyal";
+
+/* (ContentBlockersTableController) - Other content blocker name */
+"cb_screen_content_blockers_other_name" = "Diğer";
+
+/* (ContentBlockersTableController) - Custom content blocker name */
+"cb_screen_content_blockers_custom_name" = "Özel";
+
+/* (ContentBlockersTableController) - Security content blocker name */
+"cb_screen_content_blockers_security_name" = "Güvenlik";
+
 /* (AdvancedSettingsController) Restart when network changes error */
 "general_settings_restart_tunnel_error" = "Önce VPN'i etkinleştirmeniz gerek";
 
@@ -584,7 +602,7 @@
 "ads_filters_group_description" = "Reklamları kaldıran filtre listeleri";
 
 /* (OneSafariGroupFiltersModel) Privacy filters group description */
-"privacy_filters_group_description" = "İzlemeyi engelleyen filtre listeleri";
+"privacy_filters_group_description" = "İzlemeyi önleyen filtre listeleri";
 
 /* (OneSafariGroupFiltersModel) Social Widgets filters group description */
 "social_widgets_filters_group_description" = "Sosyal medya araçlarını gizleyen filtre listeleri (\"Beğen\" düğmeleri, vb.)";
@@ -605,7 +623,7 @@
 "custom_filters_group_description" = "El olarak eklediğiniz filtre listeleri";
 
 /* confirm reset lert text */
-"confirm_reset_text" = "Kullanıcı kuralları, DNS koruması, arayüz ve yetkilendirme ayarları dahil tüm ayarlar sıfırlanacaktır. Bu işlem geri alınamaz. Ayarlar sıfırlansın mı?";
+"confirm_reset_text" = "Kullanıcı kuralları, DNS koruması, arayüz ve yetkilendirme ayarları dâhil tüm ayarlar sıfırlanacaktır. Bu işlem geri alınamaz. Ayarlar sıfırlansın mı?";
 
 /* (DnsLogContainerController) reset activity log title */
 "reset_activity_title" = "Etkinlik günlüğünü sıfırla";
@@ -730,6 +748,9 @@
 /* (OnboardingController) second step with advanced protection text */
 "advanced_protection_onboarding_second_step_text" = "<b>Safari > Uzantılar</b> öğesine gidin.";
 
+/* (OnboardingController) second step with advanced protection text for iOS 18+ */
+"advanced_protection_onboarding_second_step_text_ios_18" = "<b>Uygulamalar > Safari > Uzantılar</b> öğesine gidin.";
+
 /* (OnboardingController) third step text */
 "onboarding_third_step_text" = "Tüm AdGuard uzantılarını <b>etkinleştirin</b>.";
 
@@ -737,7 +758,7 @@
 "advanced_protection_onboarding_third_step_text" = "Tüm AdGuard geçişlerini <b>açık</b> olarak ayarlayın. Başlayabilirsiniz!";
 
 /* (OnboardingContentView) fours step. '%@' will be replaced with the share icon */
-"onboarding_fours_step_text" = "<b>Gelişmiş</b> koruma için Safari'yi açın, URL alanının sol tarafındaki <b>aA</b> simgesine dokunun,<br><br> %@ <br><br>sonra <b>Uzantıları yönet</b> öğesine dokunun ve <b>AdGuard</b> geçişini açın.";
+"onboarding_fours_step_text" = "<b>Gelişmiş</b> koruma için Safari'yi açın, URL alanının sol tarafındaki simgesine dokunun,<br><br> %@ <br><br>sonra <b>Uzantıları yönet</b> öğesine dokunun ve <b>AdGuard</b> geçişini açın.";
 
 /* (BlockRequestController) Block request title */
 "block_request" = "İsteği engelle";
@@ -1124,7 +1145,7 @@ DO NOT TRANSLATE "none" */
 "upstreams_custom_address_description" = "IP adresi";
 
 /* (BlockingModeController) Custom ip description text */
-"custom_ip_description" = "El ile ayarlanmış bir IP adresi ile yanıt verin";
+"custom_ip_description" = "Elle ayarlanmış bir IP adresi ile yanıt verin";
 
 /* (FiltersMasterController) Header Filters title */
 "navigation_item_filters_title" = "Filtreler";
@@ -1197,7 +1218,7 @@ DO NOT TRANSLATE "none" */
 "dns_provider_controller_title" = "DNS sunucusu";
 
 /* (DnsProvidersController) - Header description */
-"dns_provider_controller_description" = "DNS trafiğini şifreleyerek çevrimiçi gizliliğinizi artırabilirsiniz. Bunu yapmak için tavsiye edilen DNS sağlayıcılarından birini seçin.";
+"dns_provider_controller_description" = "DNS trafiğini şifreleyerek çevrimiçi gizliliğinizi artırabilirsiniz. Bunu yapmak için önerilen DNS sağlayıcılarından birini seçin.";
 
 /* (DnsProviderDetailsController) Server title */
 "server_title" = "Sunucu";
@@ -1242,7 +1263,7 @@ DO NOT TRANSLATE "none" */
 "youtube_share_extension_bad_url_summary" = "YouTube videolarını reklamsız izlemek için AdGuard ile paylaşın";
 
 /* (YouTubeAdsRequestHandler) 'item provider error' alert title */
-"youtube_share_extension_item_provider_error_title" = "Dahili hata";
+"youtube_share_extension_item_provider_error_title" = "Dâhili hata";
 
 /* (YouTubeAdsRequestHandler) 'item provider error' alert message */
 "youtube_share_extension_item_provider_error_summary" = "AdGuard bağlantısı paylaşılamadı";

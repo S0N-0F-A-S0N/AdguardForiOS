@@ -104,7 +104,7 @@ extension BlockedResponseTtlController: ThemableProtocol {
         titleLabel.textColor = theme.popupTitleTextColor
         contentView.backgroundColor = theme.popupBackgroundColor
         theme.setupPopupLabels(themableLabels)
-        theme.setupTextField(ttlTextField)
+        theme.setupTextFieldCode(ttlTextField)
         saveButton?.indicatorStyle = theme.indicatorStyle
         ttlTextField.updateTheme()
     }

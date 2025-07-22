@@ -1,7 +1,9 @@
 /* eslint-disable no-console,class-methods-use-this */
-import { storage } from '../../common/storage';
-import { APPEARANCE_THEME_DEFAULT, AppearanceTheme } from '../../common/constants';
-import { ActionLinks, NativeHostInitData, NativeHostInterface } from './NativeHost';
+import browser from 'webextension-polyfill';
+import { APPEARANCE_THEME_DEFAULT, AppearanceTheme, Platform } from '../../common/constants';
+import { NativeHostInitData, NativeHostInterface } from './NativeHost';
+import { getDomain } from '../../common/utils/url';
+import { ContentScriptData } from '../../common/interfaces';
 
 const sleep = (timeout: number) => {
     return new Promise((resolve) => {
@@ -9,199 +11,226 @@ const sleep = (timeout: number) => {
     });
 };
 
-interface State {
+/**
+ * Represents application state.
+ */
+interface ApplicationState {
+    /**
+     * Application theme.
+     */
     appearanceTheme: AppearanceTheme,
-    protectionEnabled: boolean,
+
+    /**
+     * Current platform (iPhone or iPad).
+     */
+    platform: Platform,
+
+    /**
+     * True if the app is paid.
+     */
     premiumApp: boolean,
-    contentBlockersEnabled: boolean,
-    hasUserRules: boolean,
+
+    /**
+     * True if advanced blocking is enabled in the app.
+     * This is a setting that the user can change in the app.
+     */
     advancedBlockingEnabled: boolean,
+
+    /**
+     * True if Safari protection is enabled in the app.
+     * This is a setting that the user can switch in the app.
+     */
+    safariProtectionEnabled: boolean,
+
+    /**
+     * True when at least some content blocking extensions are enabled.
+     * The user need to enable at least one content blocking extension
+     * in **Safari settings** to have this true.
+     */
+    contentBlockersEnabled: boolean,
+
+    /**
+     * True if the user has enabled "inverted allowlist" in the app settings.
+     */
+    allowlistInverted: boolean,
+}
+
+/**
+ * Represents website state.
+ */
+interface WebsiteState {
+    /**
+     * Website-specific.
+     *
+     * True if there are user rules for this website.
+     */
+    hasUserRules: boolean,
+
+    /**
+     * Website-specific.
+     *
+     * True if protection is enabled for this particular website.
+     */
+    protectionEnabled: boolean,
 }
 
 class NativeHostMock implements NativeHostInterface {
-    STATE_KEY = 'state';
-
-    DEFAULT_STATE: State = {
+    private DEFAULT_APPLICATION_STATE: ApplicationState = {
         appearanceTheme: APPEARANCE_THEME_DEFAULT,
-        protectionEnabled: true,
+        platform: Platform.IPad,
         premiumApp: true,
-        contentBlockersEnabled: true,
-        hasUserRules: true,
         advancedBlockingEnabled: true,
+        safariProtectionEnabled: true,
+        contentBlockersEnabled: true,
+        allowlistInverted: false,
     };
 
-    links?: ActionLinks;
-
-    getState = async (): Promise<State> => {
-        const currentState = await storage.get(this.STATE_KEY) as State;
-        return currentState || this.DEFAULT_STATE;
+    private DEFAULT_WEBSITE_STATE: WebsiteState = {
+        protectionEnabled: true,
+        hasUserRules: false,
     };
 
-    setState = async (key: string, value: unknown) => {
-        const prevState = await this.getState();
-        const newState = { ...prevState, [key]: value };
-        console.log('new state:', newState);
-        await storage.set('state', newState);
-    };
+    /**
+     * Current application state.
+     */
+    private applicationState: ApplicationState = this.DEFAULT_APPLICATION_STATE;
 
-    withSleep = async (result?: any) => {
+    /**
+     * Holds websites state. If state for the domain is not found, uses
+     * DEFAULT_WEBSITE_STATE.
+     */
+    private websites: Map<string, WebsiteState> = new Map();
+
+    /**
+     * Helper function that is required to mock slow async functions.
+     *
+     * @param result result to return.
+     * @returns Promise with the result.
+     */
+    private withSleep = async (result?: any) => {
         await sleep(1000);
         return result;
     };
 
-    isProtectionEnabled = async (url: string): Promise<boolean> => {
-        console.log('isProtectionEnabled', url);
-        const currentState = await this.getState();
-        return this.withSleep(currentState.protectionEnabled);
+    /**
+     * Helper function that opens a URL in a new tab and prints
+     * the specified string on the page
+     *
+     * @param text string to print on the page.
+     */
+    private openLinkToAction = async (text: string) => {
+        console.log('openLinkToAction', text);
+
+        const encodedText = btoa(`[mock action] ${text}`);
+        const url = `https://httpbin.agrd.dev/base64/decode/${encodedText}`;
+        await browser.tabs.create({ url });
+
+        await this.withSleep();
     };
 
-    enableProtection = async (): Promise<void> => {
-        console.log('enableProtection');
-        await this.setState('protectionEnabled', true);
-        return this.withSleep();
-    };
-
-    disableProtection = async (): Promise<void> => {
-        console.log('disableProtection');
-        await this.setState('protectionEnabled', false);
-        return this.withSleep();
-    };
-
-    hasUserRulesBySite = async (url: string) => {
-        console.log('hasUserRulesBySite', url);
-        return this.withSleep(true);
-    };
-
-    removeUserRulesBySite = async (url: string) => {
-        console.log('removeUserRulesBySite', url);
-        return this.withSleep();
-    };
-
-    isPremium = async () => {
-        console.log('isPremium');
-        const state = await this.getState();
-        return this.withSleep(state.premiumApp);
-    };
-
-    togglePremium = async () => {
-        const state = await this.getState();
-        await this.setState('premiumApp', !state.premiumApp);
-    };
-
-    areContentBlockersEnabled = async () => {
-        console.log('areContentBlockersEnabled');
-        const state = await this.getState();
-        return this.withSleep(state.contentBlockersEnabled);
-    };
-
-    toggleContentBlockersState = async () => {
-        const key = 'contentBlockersEnabled';
-        const state = await this.getState();
-        await this.setState(key, !state[key]);
-    };
-
-    getAppearanceTheme = async () => {
-        const state = await this.getState();
-        return this.withSleep(state.appearanceTheme);
-    };
-
-    setAppearanceTheme = async (value: AppearanceTheme) => {
-        await this.setState('appearanceTheme', value);
-    };
-
-    /* eslint-disable max-len */
-    getAdvancedRulesText = async () => {
-        const rulesText = `
-!
-! Title: Rules for extended css rules test
-!
-! Filter to be used for testing purposes
-! https://testcases.adguard.com
-!
-! Hide warning
-testcases.adguard.com,surge.sh###subscribe-to-test-extended-css-rules-filter
-!
-testcases.adguard.com,surge.sh#?##case1.banner:has(a.banner-link)
-testcases.adguard.com,surge.sh#?##case2.banner:contains(Click Me!)
-testcases.adguard.com,surge.sh#?##case3.banner:matches-css(opacity: 0.9)
-testcases.adguard.com,surge.sh#?##case4.banner:matches-css-after(content: sponsored)
-testcases.adguard.com,surge.sh#?##case5.banner:matches-css-before(content: sponsored)
-testcases.adguard.com,surge.sh#?##case6.banner:has-text(You would want to click me for sure!)
-testcases.adguard.com,surge.sh#?##case7.banner:-abp-has(a.banner-link)
-testcases.adguard.com,surge.sh#?##case8.banner:contains(Click Me!)
-testcases.adguard.com,surge.sh#?##case9.banner:contains(/[aа]{20,}/)
-testcases.adguard.com,surge.sh#?##case10.banner:matches-css(background-image: /url\\(data\\:image\\/svg\\+xml;base64,[A-Za-z0-9]{100,}/)
-testcases.adguard.com,surge.sh#?##case11.banner:matches-css-after(background-image: /url\\(data\\:image\\/svg\\+xml;base64,[A-Za-z0-9]{100,}/)
-testcases.adguard.com,surge.sh#?##case12.banner:matches-css-before(background-image: /url\\(data\\:image\\/svg\\+xml;base64,[A-Za-z0-9]{100,}/)
-testcases.adguard.com,surge.sh#?#body #case13.banner[-ext-has="a.banner-link"]
-testcases.adguard.com,surge.sh#?#.container > #case14.banner[-ext-contains="/[aа]{20,}/"]
-testcases.adguard.com,surge.sh#?##case14 + #case15.banner[-ext-matches-css-after="content:sponsored"]
-testcases.adguard.com,surge.sh#?##case1 ~ #case16.banner[-ext-matches-css-before="content:sponsored"]
-testcases.adguard.com,surge.sh#?#*:contains(/absolute[\\s\\S]*-\\d{4}/) + * > .banner:contains(/а/) ~ #case17.banner:has(> div:contains(/а/):nth-child(100n + 2))
-testcases.adguard.com,surge.sh#?#.test-xpath-case18:xpath(//*[@class="test-case18-div"]/../..)
-testcases.adguard.com,surge.sh#?#.test-nth-ancestor-case19:nth-ancestor(3)
-testcases.adguard.com,surge.sh#?#.test-upward-selector:upward(#case20)
-testcases.adguard.com,surge.sh#?#.test-upward-number-case21:upward(4)
-! Case 22
-testcases.adguard.com,surge.sh#?##inframe1:has(.content)
-!
-testcases.adguard.com,surge.sh#?##case23 > div:contains(/kick me!|\\(18\\+\\)|https:\\/\\/vk.cc|testTEXT|vk.com\\/test_id/)
-testcases.adguard.com,surge.sh#?##case24 > div:matches-attr("/^data-.{4}$/"="/banner/")
-testcases.adguard.com,surge.sh#?##case25 > div:matches-property("id"="/property-match/")
-testcases.adguard.com,surge.sh#?##case26:remove()
-testcases.adguard.com,surge.sh#$?##case27:has(div) { remove: true; }
-testcases.adguard.com,surge.sh#?##case28 > :is(.case28, #main, footer, span):contains(isTest)
-        `;
-        return this.withSleep(rulesText);
-    };
-    /* eslint-enable max-len */
-
-    setLinks(links: ActionLinks) {
-        this.links = links;
-    }
-
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     async getInitData(url: string): Promise<NativeHostInitData> {
-        const state = await this.getState();
-        return this.withSleep({
-            appearanceTheme: state.appearanceTheme,
-            contentBlockersEnabled: state.contentBlockersEnabled,
-            hasUserRules: state.hasUserRules,
-            premiumApp: state.premiumApp,
-            protectionEnabled: state.protectionEnabled,
-            advancedBlockingEnabled: state.advancedBlockingEnabled,
-            addToBlocklistLink: '',
-            addToAllowlistLink: '',
-            removeAllBlocklistRulesLink: '',
-            removeFromAllowlistLink: '',
-        });
+        console.log('getInitData', url);
+
+        const appState = this.applicationState;
+
+        const domain = getDomain(url);
+        const websiteState = this.websites.get(domain) || this.DEFAULT_WEBSITE_STATE;
+
+        const initData: NativeHostInitData = { ...appState, ...websiteState };
+
+        return this.withSleep(initData);
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    addToUserRules(ruleText: string): Promise<void> {
-        throw new Error('Method not implemented.');
+    async getContentScriptData(url: string, topUrl?: string): Promise<ContentScriptData> {
+        console.log('getContentScriptData', url, topUrl);
+
+        const contentScriptData: ContentScriptData = {
+            configuration: {
+                css: [],
+                extendedCss: [],
+                js: ['console.log("Content script loaded")'],
+                scriptlets: [],
+                engineTimestamp: 0,
+            },
+            init_ts: Date.now(),
+            request_received_ts: Date.now(),
+            response_created_ts: Date.now(),
+        };
+
+        return contentScriptData;
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    reportProblem(url: string): Promise<void> {
-        throw new Error('Method not implemented.');
-    }
+    enableProtection = async (url: string): Promise<void> => {
+        console.log('enableProtection', url);
 
-    upgradeMe(): Promise<void> {
-        throw new Error('Method not implemented.');
+        const domain = getDomain(url);
+        const websiteState = this.websites.get(domain) || this.DEFAULT_WEBSITE_STATE;
+        websiteState.protectionEnabled = true;
+        this.websites.set(domain, websiteState);
+
+        return this.openLinkToAction(`enable site protection: ${url}`);
+    };
+
+    disableProtection = async (url: string): Promise<void> => {
+        console.log('disableProtection', url);
+
+        const domain = getDomain(url);
+        const websiteState = this.websites.get(domain) || this.DEFAULT_WEBSITE_STATE;
+        websiteState.protectionEnabled = false;
+        this.websites.set(domain, websiteState);
+
+        return this.openLinkToAction(`disable site protection: ${url}`);
+    };
+
+    enableSafariProtection(url: string): Promise<void> {
+        console.log('enableSafariProtection', url);
+
+        const domain = getDomain(url);
+        const websiteState = this.websites.get(domain) || this.DEFAULT_WEBSITE_STATE;
+        websiteState.protectionEnabled = true;
+        this.websites.set(domain, websiteState);
+
+        return this.openLinkToAction(`enable safari protection: ${url}`);
     }
 
     enableAdvancedBlocking(): Promise<void> {
-        throw new Error('Method not implemented.');
+        console.log('enableAdvancedBlocking');
+
+        return this.openLinkToAction('enable advanced blocking');
     }
 
-    shouldUpdateAdvancedRules(): Promise<boolean> {
-        throw new Error('Method not implemented.');
+    addToUserRules(ruleText: string): Promise<void> {
+        console.log('addToUserRules', ruleText);
+
+        const domain = ruleText.split('##')[0];
+        const websiteState = this.websites.get(domain) || this.DEFAULT_WEBSITE_STATE;
+        websiteState.hasUserRules = true;
+        this.websites.set(domain, websiteState);
+
+        return this.openLinkToAction(`add user rule: ${ruleText}`);
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    enableSafariProtection(url: string): Promise<void> {
-        throw new Error('Method not implemented');
+    removeUserRulesBySite = async (url: string) => {
+        console.log('removeUserRulesBySite', url);
+
+        const domain = getDomain(url);
+        const websiteState = this.websites.get(domain) || this.DEFAULT_WEBSITE_STATE;
+        websiteState.hasUserRules = false;
+        this.websites.set(domain, websiteState);
+
+        return this.openLinkToAction(`remove user rules by site: ${url}`);
+    };
+
+    reportProblem(url: string): Promise<void> {
+        console.log('reportProblem', url);
+
+        return this.openLinkToAction(`report problem: ${url}`);
+    }
+
+    upgradeMe(): Promise<void> {
+        console.log('upgradeMe');
+
+        return this.openLinkToAction('upgrade me');
     }
 }
 

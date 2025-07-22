@@ -81,12 +81,16 @@ struct YouTubeShareLinkResult {
             switch self {
 
                 case .compressed, .embed, .live, .shorts:
-                guard let firstIdx = from.lastIndex(of: "/") else { return nil }
+                guard let firstIdx = from.lastIndex(of: "/"),
+                      from.endIndex != firstIdx
+                else { return nil }
+
+                let afterSlash = from.index(after: firstIdx)
 
                 if let lastIdx = from.firstIndex(of: "?") {
-                    return String(from[firstIdx...lastIdx])
+                    return String(from[afterSlash..<lastIdx])
                 } else {
-                    return String(from[firstIdx...])
+                    return String(from[afterSlash...])
                 }
             case .regular:
                 return URL(string: from)?.parseUrl().params?["v"]

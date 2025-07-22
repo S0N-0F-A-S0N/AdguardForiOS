@@ -112,7 +112,12 @@ final class OnboardingController: UIViewController {
             switch self.onboardingContentView.onboardingType {
             case .withAdvancedProtection:
                 settingsLabelText = String.localizedString("advanced_protection_onboarding_first_step_text")
-                safariLabelText = String.localizedString("advanced_protection_onboarding_second_step_text")
+                if #available(iOS 18.0, *) {
+                    safariLabelText = String.localizedString("advanced_protection_onboarding_second_step_text_ios_18")
+                } else {
+                    safariLabelText = String.localizedString("advanced_protection_onboarding_second_step_text")
+                }
+
                 switchLabelText = String.localizedString("advanced_protection_onboarding_third_step_text")
             case .withoutAdvancedProtection:
                 settingsLabelText = String.localizedString("onboarding_first_step_text")

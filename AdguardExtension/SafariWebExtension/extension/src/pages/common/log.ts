@@ -65,7 +65,7 @@ class Log {
             return;
         }
 
-        let formatted = args.map((arg) => {
+        const formatted = args.map((arg) => {
             if (typeof arg !== 'undefined') {
                 let value = arg;
                 if (value instanceof Error) {
@@ -81,9 +81,9 @@ class Log {
             return arg;
         }).join(' ');
 
-        formatted = `${this.getLocalTimeString(new Date())}: ${formatted}`;
+        const timestamp = `[${new Date().toISOString()}]`;
 
-        console[method](formatted);
+        console[method](timestamp, formatted);
     }
 
     debug(...args: any[]) {

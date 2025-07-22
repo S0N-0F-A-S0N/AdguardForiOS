@@ -1,4 +1,3 @@
-&nbsp;
 <p align="center">
   <img src="https://cdn.adguard.com/public/Adguard/Common/Logos/ios.svg" width="300px" alt="AdGuard for iOS"
  />
@@ -14,32 +13,15 @@
     <a href="https://twitter.com/AdGuard">Twitter</a> |
     <a href="https://t.me/adguard_en">Telegram</a>
     <br/><br/>
-    <a href="https://github.com/AdguardTeam/AdguardForiOS/issues?q=sort%3Acreated-desc%20label%3ABug%20is%3Aopen%20-label%3A%22Status%3A%20Closed%22%2C%22Status%3A%20Resolved%22%20">
-        <img src="https://img.shields.io/github/issues-search/AdguardTeam/AdguardForiOS?color=orangered&label=%F0%9F%90%9B%20Open%20bugs&query=sort%3Acreated-desc%20label%3ABug%20is%3Aopen%20-label%3A%22Status%3A%20Closed%22%2C%22Status%3A%20Resolved%22%20" />
-    </a>
-    <a href="https://github.com/AdguardTeam/AdguardForiOS/issues?q=sort%3Acreated-desc%20label%3ABug%20label%3A%22Status%3A%20Resolved%22%2C%22Status%3A%20Closed%22%20-label%3A%22Resolution%3A%20Won%27t%20Do%22%2C%22Resolution%3A%20Won%27t%20Fix%22%2C%22Resolution%3A%20Duplicate%22%2C%22Resolution%3A%20Incomplete%22%2C%22Resolution%3A%20Cannot%20Reproduce%22%20">
-        <img src="https://img.shields.io/github/issues-search/AdguardTeam/AdguardForiOS?color=goldenrod&label=Resolved&query=sort%3Acreated-desc%20label%3ABug%20label%3A%22Status%3A%20Resolved%22%2C%22Status%3A%20Closed%22%20-label%3A%22Resolution%3A%20Won%27t%20Do%22%2C%22Resolution%3A%20Won%27t%20Fix%22%2C%22Resolution%3A%20Duplicate%22%2C%22Resolution%3A%20Incomplete%22%2C%22Resolution%3A%20Cannot%20Reproduce%22%20" />
-    </a>
-    <br />
-    <a href="https://github.com/AdguardTeam/AdguardForiOS/issues?q=label%3A%22Feature%20request%22%2CEnhancement%20state%3Aopen%20sort%3Areactions-%2B1-desc%20-label%3A%22Status%3A%20Closed%22%2C%22Status%3A%20Resolved%22%2Cautomatic%20">
-        <img src="https://img.shields.io/github/issues-search/AdguardTeam/AdguardForiOS?color=seagreen&label=%F0%9F%9A%80%20Open%20feature%20requests&query=label%3A%22Feature%20request%22%2CEnhancement%20state%3Aopen%20sort%3Areactions-%2B1-desc%20-label%3A%22Status%3A%20Closed%22%2C%22Status%3A%20Resolved%22%2Cautomatic%20" />
-    </a>
-    <a href="https://github.com/AdguardTeam/AdguardForiOS/issues?q=sort%3Areactions-%2B1-desc%20label%3A%22Feature%20request%22%2CEnhancement%20label%3A%22Status%3A%20Resolved%22%2C%22Status%3A%20Closed%22%20-label%3A%22Resolution%3A%20Won%27t%20Do%22%2C%22Resolution%3A%20Won%27t%20Fix%22%2C%22Resolution%3A%20Duplicate%22%2C%22Resolution%3A%20Incomplete%22%2C%22Resolution%3A%20Cannot%20Reproduce%22%2Cautomatic%20">
-        <img src="https://img.shields.io/github/issues-search/AdguardTeam/AdguardForiOS?color=%2358A459&label=Implemented&query=sort%3Areactions-%2B1-desc%20label%3A%22Feature%20request%22%2CEnhancement%20label%3A%22Status%3A%20Resolved%22%2C%22Status%3A%20Closed%22%20-label%3A%22Resolution%3A%20Won%27t%20Do%22%2C%22Resolution%3A%20Won%27t%20Fix%22%2C%22Resolution%3A%20Duplicate%22%2C%22Resolution%3A%20Incomplete%22%2C%22Resolution%3A%20Cannot%20Reproduce%22%2Cautomatic%20" />
-    </a>
-    <br />
-    <a href="https://github.com/AdguardTeam/AdguardForiOS/releases">
+
+  <a href="https://github.com/AdguardTeam/AdguardForiOS/releases">
       <img src="https://img.shields.io/github/release/AdguardTeam/AdguardForiOS/all.svg" alt="Latest release" />
-    </a>
+  </a>
+  <a href="https://agrd.io/ios">
+    <img alt="iTunes App Store" src="https://img.shields.io/itunes/v/1047223162.svg">
+  </a>
   </p>
 
-  <p align="center">
-    <a href="https://agrd.io/github_ios_adblocker">
-      <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us" alt="Download on the App Store" height="48" />
-    </a>
-  </p>
-
-&nbsp;
 - [Contribution](#contribution)
   - [How to report an issue](#issue)
   - [Translating AdGuard](#contribution-translating)
@@ -94,15 +76,25 @@ To see the 'big picture', to watch current progress and to get an idea of approx
 
 ## How to build
 
-### (optional) Install a newer ruby version:
+### Install node v22 and yarn
 
+Use [nvm](https://github.com/nvm-sh/nvm) to install node 22, it is required to build the web extension.
+
+```sh
+nvm install 22
+nvm alias default 22
+npm install -g yarn
 ```
+
+### (optional) Install a newer ruby version
+
+```sh
 brew install ruby
 ```
 
 Add to your `~/.bash_profile`
 
-```
+```sh
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH="/usr/local/lib/ruby/gems/2.7.0/bin:$PATH"
 ```
@@ -153,7 +145,7 @@ Actions below are supposed to be used from CI only:
 
 In the case when certificate expires, you may need to nuke the old certs and generate them again:
 
-```
+```sh
 bundle exec fastlane match nuke development
 bundle exec fastlane match nuke distribution
 bundle exec fastlane generate
@@ -163,7 +155,7 @@ In order for fastlane to work properly in CI environment, we use [spaceauth](htt
 
 Run this command to generate `FASTLANE_SESSION` which you'll then need to use on the CI server:
 
-```
+```sh
 bundle exec fastlane auth
 ```
 

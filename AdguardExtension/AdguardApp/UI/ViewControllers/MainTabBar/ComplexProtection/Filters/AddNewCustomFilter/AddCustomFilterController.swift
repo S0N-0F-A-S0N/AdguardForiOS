@@ -186,7 +186,7 @@ extension AddCustomFilterController: ThemableProtocol {
         titleLabel.textColor = theme.popupTitleTextColor
         contentView.backgroundColor = theme.popupBackgroundColor
         theme.setupPopupLabels(themableLabels)
-        theme.setupTextField(urlTextField)
+        theme.setupTextFieldCode(urlTextField)
         nextButton.indicatorStyle = theme.indicatorStyle
         urlTextField.updateTheme()
     }

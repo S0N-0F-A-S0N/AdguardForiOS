@@ -60,6 +60,21 @@ static NSDictionary *stringUIResources;
     return region;
 }
 
++ (NSString *)canonicalLang{
+    NSString *lang = [self lang];
+
+    if ([lang isEqualToString:@"zh"]) {
+        NSString *canonical = [NSLocale canonicalLanguageIdentifierFromString:NSLocale.currentLocale.localeIdentifier];
+        if ([canonical containsString:@"Hant"]) {
+            return @"zh_tw";
+        } else {
+            return @"zh";
+        }
+    }
+
+    return lang;
+}
+
 + (NSString *)canonicalLanguageIdentifier {
 
     NSString *localeIdentifier = NSLocale.currentLocale.localeIdentifier;

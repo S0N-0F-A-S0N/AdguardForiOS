@@ -1,6 +1,15 @@
 
+/* Class = "UILabel"; text = "Terms and Conditions"; ObjectID = "E6C-TE-ZI6"; */
+"E6C-TE-ZI6.text" = "Умовы выкарыстання";
+
+/* Class = "UILabel"; text = "Enable AdGuard for Safari"; ObjectID = "F7O-MB-LHu"; */
+"F7O-MB-LHu.text" = "Каб уключыць AdGuard для Safari, выканайце некалькі простых крокаў";
+
 /* Class = "UIButton"; normalTitle = "Continue"; ObjectID = "cMV-qC-ZdE"; */
 "cMV-qC-ZdE.normalTitle" = "Працягнуць";
 
 /* Class = "UIButton"; normalTitle = "Continue"; ObjectID = "q8l-xM-B5q"; */
 "q8l-xM-B5q.normalTitle" = "Працягнуць";
+
+/* Class = "UILabel"; text = "Use our collection of flexible filters to remove any type of content. Tune the filtering to your liking and surf the web your way."; ObjectID = "thP-lV-BhN"; Note = "String must be less or equal 4 lines"; */
+"thP-lV-BhN.text" = "Выкарыстоўвайце нашу калекцыю гнуткіх фільтраў для таго, каб выдаліць любы тып кантэнту. Настройце фільтрацыю пад свае патрэбы і сёрфіце ў Інтэрнэце так, як вам хочецца.";

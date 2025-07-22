@@ -39,13 +39,17 @@ class ContentBlockerRequestHandler: NSObject, NSExtensionRequestHandling {
             return
         }
 
+        let sharedStorageUrls: SharedStorageUrlsProtocol = SharedStorageUrls()
+
         let url: URL?
 
         do {
             let jsonProvider = try ContentBlockerJsonProvider(
                 cbBundleId: cbBundleId,
                 mainAppBundleId: Bundle.main.hostAppBundleId,
-                jsonStorageUrl: SharedStorageUrls().cbJsonsFolderUrl,
+                jsonStorageUrl: sharedStorageUrls.cbJsonsFolderUrl,
+                webExtFolderUrl: sharedStorageUrls.webExtFolderUrl,
+                advancedRulesFileUrl: sharedStorageUrls.advancedRulesFileUrl,
                 userDefaults: resources.sharedDefaults()
             )
             url = jsonProvider.jsonUrl

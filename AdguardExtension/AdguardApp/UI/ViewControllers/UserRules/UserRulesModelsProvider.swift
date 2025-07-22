@@ -57,7 +57,7 @@ final class UserRulesModelsProvider: UserRulesModelsProviderProtocol {
     private var searchModels: [UserRuleCellModel] = []
 
     init(initialModels: [UserRuleCellModel]) {
-        self.initialModels = initialModels.reversed().sorted(by: { $0.isEnabled && !$1.isEnabled })
+        self.initialModels = initialModels.sorted(by: { $0.isEnabled && !$1.isEnabled })
     }
 
     // MARK: - Internal methods

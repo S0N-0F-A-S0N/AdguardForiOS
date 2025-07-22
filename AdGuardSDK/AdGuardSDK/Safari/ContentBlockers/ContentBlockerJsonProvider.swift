@@ -28,7 +28,7 @@ public protocol ContentBlockerJsonProviderProtocol {
 }
 
 
-/// This class should be used in Content Blocker's extensions to get appropriate JSON
+/// This class should be used in Content Blocker's extensions to get appropriate JSON for this particular CB.
 public final class ContentBlockerJsonProvider: ContentBlockerJsonProviderProtocol {
 
     public var jsonUrl: URL { jsonStorage.getJsonUrl(for: type) }
@@ -36,9 +36,30 @@ public final class ContentBlockerJsonProvider: ContentBlockerJsonProviderProtoco
     private let jsonStorage: ContentBlockersInfoStorageProtocol
     private let type: ContentBlockerType
 
-    public init(cbBundleId: String, mainAppBundleId: String, jsonStorageUrl: URL, userDefaults: UserDefaults) throws {
+    /// Initializes a new instance of a ContentBlockerJsonProvider.
+    ///
+    /// - Parameters:
+    ///   - cbBundleId: Bundle ID of this content blocker extension.
+    ///   - mainAppBundleId: Bundle ID of the main app.
+    ///   - jsonStorageUrl: URL to the directory where content blockers' JSON files are stored.
+    ///   - webExtFolderUrl: URL to the directory where WebExtension's files are stored.
+    ///   - advancedRulesFileUrl: (deprecated) URL to the file with plain text advanced rules.
+    ///   - userDefaultsStorage: User defaults
+    public init(
+        cbBundleId: String,
+        mainAppBundleId: String,
+        jsonStorageUrl: URL,
+        webExtFolderUrl: URL,
+        advancedRulesFileUrl: URL,
+        userDefaults: UserDefaults
+    ) throws {
         let userDefaultsStorage = UserDefaultsStorage(storage: userDefaults)
-        self.jsonStorage = try ContentBlockersInfoStorage(jsonStorageUrl: jsonStorageUrl, userDefaultsStorage: userDefaultsStorage)
+        self.jsonStorage = try ContentBlockersInfoStorage(
+            jsonStorageUrl: jsonStorageUrl,
+            webExtFolderUrl: webExtFolderUrl,
+            advancedRulesFileUrl: advancedRulesFileUrl,
+            userDefaultsStorage: userDefaultsStorage
+        )
         self.type = Self.typeForBundleId(cbBundleId, mainAppBundleId: mainAppBundleId)
     }
 

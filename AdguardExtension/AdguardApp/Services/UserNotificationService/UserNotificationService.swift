@@ -40,7 +40,7 @@ protocol UserNotificationServiceProtocol {
     /**
      Posts notification without badge (red circle in the top right corner of app icon)
      */
-    func postNotificationWithoutBadge(title: String?, body: String?, onNotificationSent: @escaping () -> Void)
+    func postNotificationWithoutBadge(title: String?, body: String?, onNotificationSent: @escaping () -> Void, onNotificationPermissionNotGranted: @escaping () -> Void)
 
     /*
      Method to post notifications which come while app is in foreground
@@ -81,12 +81,17 @@ class UserNotificationService: NSObject, UserNotificationServiceProtocol, UNUser
         }
     }
 
-    func postNotificationWithoutBadge(title: String?, body: String?, onNotificationSent: @escaping () -> Void) {
+    func postNotificationWithoutBadge(
+        title: String?,
+        body: String?,
+        onNotificationSent: @escaping () -> Void,
+        onNotificationPermissionNotGranted: @escaping () -> Void
+    ) {
         let center = UNUserNotificationCenter.current()
 
         center.getNotificationSettings { [weak self] settings in
             if settings.authorizationStatus != .authorized {
-                onNotificationSent()
+                onNotificationPermissionNotGranted()
                 return
             }
 

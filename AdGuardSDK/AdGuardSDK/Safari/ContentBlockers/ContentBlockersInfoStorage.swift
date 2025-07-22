@@ -18,6 +18,7 @@
 
 import SharedAdGuardSDK
 import ContentBlockerConverter
+import FilterEngine
 
 // MARK: - ContentBlockerType
 
@@ -43,20 +44,37 @@ public enum ContentBlockerType: Int, CaseIterable, Codable {
 
 // MARK: - ConverterResult
 
-/**
- This struct is used to represent the convertation result of Converter lib.
- It is practically the same as **FiltersConverterResult** but instead of storing JSON file string it stores JSON file URL.
- It is more convenient to use URLs because Content Blockers are waiting JSON URL with converted rules.
- */
+/// Represents the result of converting filter rules for a specific content blocker.
+/// This struct is similar to `FiltersConverterResult`, but stores only
+/// the metadata required for storage and further processing, and references
+/// the JSON file by URL rather than by string.
+///
+/// - Note: Used for storing conversion results in persistent storage.
 public struct ConverterResult: Codable, Equatable {
-    public let type: ContentBlockerType // Content blocker type the result is related with
-    public let totalRules: Int // Total valis rules number, because some rules that we pass can be invalid
-    public let totalConverted: Int // The result number of rules with Content blockers limit of 'contentBlockerRulesLimit' rules
-    public let overlimit: Bool // Is true if totalRules is greater than 'contentBlockerRulesLimit' rules
-    public let errorsCount: Int // Number of errors handled
-    public let advancedBlockingConvertedCount: Int // Number of entries in advanced blocking part
-    public let message: String // Result message
+    /// The type of content blocker this result is associated with.
+    public let type: ContentBlockerType
 
+    /// The total number of valid rules processed (invalid rules are ignored).
+    public let totalRules: Int
+
+    /// The number of rules included in the final result, limited by the content
+    /// blocker rules limit.
+    public let totalConverted: Int
+
+    /// Indicates whether the total number of rules exceeded the allowed limit.
+    public let overlimit: Bool
+
+    /// The number of errors encountered during conversion.
+    public let errorsCount: Int
+
+    /// The number of advanced blocking rules included in the result.
+    public let advancedBlockingConvertedCount: Int
+
+    /// A message describing the outcome of the conversion.
+    public let message: String
+
+    /// Initializes a new `ConverterResult` from a `FiltersConverterResult`.
+    /// - Parameter result: The source conversion result containing all relevant data.
     init(result: FiltersConverterResult) {
         self.type = result.type
         self.totalRules = result.totalRules
@@ -71,33 +89,29 @@ public struct ConverterResult: Codable, Equatable {
 // MARK: - ContentBlockersInfoStorage
 
 protocol ContentBlockersInfoStorageProtocol: ResetableSyncProtocol {
-    /* Number of advanced rules that will be passed to Safari Web Extension */
+    /// Number of advanced rules that will be passed to Safari Web Extension.
     var advancedRulesCount: Int { get }
 
-    /* We save advanced rules to the file and pass them to Safari Web Extension */
-    var advancedRulesFileUrl: URL { get }
-
-    /* Returns all content blocker conversion results and JSONs urls */
+    /// Returns all content blocker conversion results and JSONs urls.
     var allConverterResults: [ConverterResult] { get }
 
-    /* Saves filters convertion info and JSON files to storage */
+    /// Saves filters convertion info and JSON files to storage.
     func save(converterResults: [FiltersConverterResult]) throws
 
-    /* Loads filters convertion result and JSON file url for specified content blocker type */
+    /// Loads filters convertion result and JSON file url for specified content blocker type.
     func getConverterResult(for cbType: ContentBlockerType) -> ConverterResult?
 
-    /// returns url to content blocker json for specified content blocker type
+    /// Returns URL to the content blocker json for specified content blocker type.
     func getJsonUrl(for cbType: ContentBlockerType) -> URL
 }
 
-/* This class is responsible for managing JSON files for every content blocker */
+/// This class is responsible for managing JSON files for every content blocker
+/// and also for storing advanced blocking data.
 final class ContentBlockersInfoStorage: ContentBlockersInfoStorageProtocol {
 
     // MARK: - Public properties
 
     var advancedRulesCount: Int { userDefaultsStorage.advancedRulesCount }
-
-    var advancedRulesFileUrl: URL { jsonStorageUrl.appendingPathComponent(Constants.Files.advancedRulesFileName) }
 
     var allConverterResults: [ConverterResult] { userDefaultsStorage.allCbInfo }
 
@@ -105,18 +119,41 @@ final class ContentBlockersInfoStorage: ContentBlockersInfoStorageProtocol {
 
     private let fileManager = FileManager.default
 
-    // URL of directory where jsons for each content blocker will be stored
+    /// URL of directory where jsons for each content blocker will be stored.
     private let jsonStorageUrl: URL
+
+    /// URL to the directory where WebExtension's files are stored.
+    private let webExtFolderUrl: URL
+
+    /// URL of the file where plain text advanced rules were stored before v4.5.11.
+    /// In the current version we only make sure that this file is removed when advanced rules are saved.
+    @available(*, deprecated, message: "Remove in v5.0")
+    private let advancedRulesFileUrl: URL
+
     private let userDefaultsStorage: UserDefaultsStorageProtocol
 
     // MARK: - Initialization
 
-    init(jsonStorageUrl: URL, userDefaultsStorage: UserDefaultsStorageProtocol) throws {
+    /// Initializes a new instance of a ContentBlockersInfoStorage.
+    ///
+    /// - Parameters:
+    ///   - jsonStorageUrl: URL to the directory where content blockers' JSON files are stored.
+    ///   - webExtFolderUrl: URL to the directory where WebExtension's files are stored.
+    ///   - advancedRulesFileUrl: (deprecated) URL to the file with plain text advanced rules.
+    ///   - userDefaultsStorage: User defaults
+    init(
+        jsonStorageUrl: URL,
+        webExtFolderUrl: URL,
+        advancedRulesFileUrl: URL,
+        userDefaultsStorage: UserDefaultsStorageProtocol
+    ) throws {
         // We are trying to create directory if passed URL is not a valid directory
         if !jsonStorageUrl.isDirectory {
             try fileManager.createDirectory(at: jsonStorageUrl, withIntermediateDirectories: true, attributes: nil)
         }
         self.jsonStorageUrl = jsonStorageUrl
+        self.webExtFolderUrl = webExtFolderUrl
+        self.advancedRulesFileUrl = advancedRulesFileUrl
         self.userDefaultsStorage = userDefaultsStorage
     }
 
@@ -150,7 +187,10 @@ final class ContentBlockersInfoStorage: ContentBlockersInfoStorageProtocol {
         // Remove all converted JSON fils
         try fileManager.removeItem(at: jsonStorageUrl)
 
-        // Create directory
+        // Remove all web extension files
+        try fileManager.removeItem(at: webExtFolderUrl)
+
+        // Create new directory for content blocker files
         try fileManager.createDirectory(at: jsonStorageUrl, withIntermediateDirectories: true, attributes: nil)
 
         // Clear user defaults
@@ -185,8 +225,19 @@ final class ContentBlockersInfoStorage: ContentBlockersInfoStorageProtocol {
         // String from unique rules
         let uniqueRulesText = rules.joined(separator: "\n")
 
-        try uniqueRulesText.write(to: advancedRulesFileUrl, atomically: true, encoding: .utf8)
         userDefaultsStorage.advancedRulesCount = rules.count
+
+        // Compile the filter engine from the rules and store the compilation result
+        // in webExtFolder.
+        let webExtension = try WebExtension(containerURL: self.webExtFolderUrl)
+        _ = try webExtension.buildFilterEngine(rules: uniqueRulesText)
+
+        // Make sure the old plain text rules file is removed when the filter engine is compiled.
+        // This cleans up files from the old version.
+        if fileManager.fileExists(atPath: advancedRulesFileUrl.path) {
+            try fileManager.removeItem(at: advancedRulesFileUrl)
+        }
+
         Logger.logInfo("(ContentBlockersInfoStorage) - saveAdvancedRules; finished saving \(rules.count) rules")
     }
 }

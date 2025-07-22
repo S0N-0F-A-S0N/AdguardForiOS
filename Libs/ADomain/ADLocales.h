@@ -42,6 +42,9 @@
 /// Get 2 letters identifier of current application Region (Country Code)
 + (NSString *)region;
 
+/// Returns canonical language
++ (NSString *)canonicalLang;
+
 /**
  returns canonical language identifier for current locale
  */

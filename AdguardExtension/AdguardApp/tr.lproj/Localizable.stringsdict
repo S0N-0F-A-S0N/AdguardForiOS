@@ -93,9 +93,9 @@
         <key>NSStringFormatValueTypeKey</key>
         <string>d</string>
         <key>one</key>
-        <string>1 filtre etkinleştirildi</string>
+        <string>1 filtre etkin</string>
         <key>other</key>
-        <string>%d filtre etkinleştirildi</string>
+        <string>%d filtre etkin</string>
       </dict>
     </dict>
     <key>getPro_full_access_days</key>

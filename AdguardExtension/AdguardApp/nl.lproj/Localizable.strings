@@ -17,7 +17,7 @@
 "common_error_title" = "Fout";
 
 /* Something went wrong title for unknown error */
-"something_went_wrong_title" = "Er liep iets fout";
+"something_went_wrong_title" = "Er is iets misgegaan";
 
 /* Unknown error desription */
 "unknown_error_description" = "Meld deze fout aan de ondersteuning a.u.b.";
@@ -313,6 +313,24 @@
 /* (ContentBlockersTableController) - Content Blockers title */
 "cb_screen_content_blockers_title" = "Inhoudsblokkeringen";
 
+/* (ContentBlockersTableController) - General content blocker name */
+"cb_screen_content_blockers_general_name" = "Algemeen";
+
+/* (ContentBlockersTableController) - Privacy content blocker name */
+"cb_screen_content_blockers_privacy_name" = "Privacy";
+
+/* (ContentBlockersTableController) - Social content blocker name */
+"cb_screen_content_blockers_social_name" = "Sociaal";
+
+/* (ContentBlockersTableController) - Other content blocker name */
+"cb_screen_content_blockers_other_name" = "Overige";
+
+/* (ContentBlockersTableController) - Custom content blocker name */
+"cb_screen_content_blockers_custom_name" = "Aangepast";
+
+/* (ContentBlockersTableController) - Security content blocker name */
+"cb_screen_content_blockers_security_name" = "Beveiliging";
+
 /* (AdvancedSettingsController) Restart when network changes error */
 "general_settings_restart_tunnel_error" = "Je moet eerst VPN inschakelen";
 
@@ -347,7 +365,7 @@
 "disabled_current_state_label" = "Uitgezet in Safari instellingen";
 
 /* (ContentBlockerStateCell) Description for advanced protection disabled state */
-"disabled_current_state_advanced_protection" = "Uitgeschakeld in Beveiligingsinstellingen";
+"disabled_current_state_advanced_protection" = "Uitgeschakeld in Beschermingsinstellingen";
 
 /* (ContentBlockerStateCell) text is shown in currentFilterStateLabel when updating  */
 "update_current_state_label" = "Laden in Safari...";
@@ -461,7 +479,7 @@
 "export" = "Exporteren";
 
 /* (UserRulesTableController) - title for editing user rules option  */
-"open_user_rules_editor" = "Open editor";
+"open_user_rules_editor" = "Editor openen";
 
 /* (UserRulesTableController) - description for Safari user rules in editor  */
 "editor_safari_user_rules_description" = "Safari gebruikersregels toevoegen";
@@ -596,7 +614,7 @@
 "custom_filters_group_description" = "Filterlijsten die je handmatig hebt toegevoegd";
 
 /* confirm reset lert text */
-"confirm_reset_text" = "Alle instellingen, inclusief gebruikersregels, DNS-beveiliging, interface en autorisatie-instellingen, worden gereset. Deze bewerking kan niet ongedaan worden gemaakt. Instellingen resetten?";
+"confirm_reset_text" = "Alle instellingen, inclusief gebruikersregels, DNS-bescherming, interface en autorisatie-instellingen, worden hersteld. Deze bewerking kan niet ongedaan worden gemaakt. Instellingen herstellen?";
 
 /* (DnsLogContainerController) reset activity log title */
 "reset_activity_title" = "Activiteiten logboek resetten";
@@ -650,13 +668,13 @@
 "protection_enabled" = "Bescherming is aan";
 
 /*(TodayViewController) Complex protection is enabled text  */
-"complex_enabled" = "Safari- en DNS-beveiliging is aan";
+"complex_enabled" = "Safari- en DNS-bescherming is aan";
 
 /*(TodayViewController) Safari protection is enabled text  */
-"safari_enabled" = "Safari-beveiliging is aan";
+"safari_enabled" = "Safari-bescherming is aan";
 
 /*(TodayViewController) All protection is disabled text  */
-"complex_disabled" = "Safari- en DNS-beveiliging is uit";
+"complex_disabled" = "Safari- en DNS-bescherming is uit";
 
 /*(TodayViewController) DNS protection is enabled text  */
 "system_enabled" = "DNS bescherming";
@@ -721,6 +739,9 @@
 /* (OnboardingController) second step with advanced protection text */
 "advanced_protection_onboarding_second_step_text" = "Ga naar <b>Safari > Uitbreidingen</b>.";
 
+/* (OnboardingController) second step with advanced protection text for iOS 18+ */
+"advanced_protection_onboarding_second_step_text_ios_18" = "Ga naar <b>Apps > Safari > Uitbreidingen</b>.";
+
 /* (OnboardingController) third step text */
 "onboarding_third_step_text" = "Alle AdGuard-uitbreidingen <b>inschakelen</b>.";
 
@@ -728,7 +749,7 @@
 "advanced_protection_onboarding_third_step_text" = "Zet alle AdGuard-schakelaars op <b>aan</b>. Je bent er klaar voor!";
 
 /* (OnboardingContentView) fours step. '%@' will be replaced with the share icon */
-"onboarding_fours_step_text" = "Voor <b>Geavanceerde</b> bescherming, open Safari en tik het pictogram <b>aA</b> aan de linkerkant van het URL-veld,<br><br> %@ <br><br>tik vervolgens op <b>Uitbreidingen beheren</b> en schakel de uitbreiding <b>AdGuard</b> in.";
+"onboarding_fours_step_text" = "Voor <b>Geavanceerde</b> bescherming, open Safari en tik het pictogram aan de linkerkant van het URL-veld,<br><br> %@ <br><br>tik vervolgens op <b>Uitbreidingen beheren</b> en schakel de uitbreiding <b>AdGuard</b> in.";
 
 /* (BlockRequestController) Block request title */
 "block_request" = "Verzoek blokkeren";
@@ -1035,7 +1056,7 @@
 // MARK: - SystemProtectionEnablerController
 /* (SystemProtectionEnablerController) Enable DNS protection for VoiceOver*/
 
-"enable_system_protection_voiceover" = "DNS beveiliging inschakelen";
+"enable_system_protection_voiceover" = "DNS-bescherming inschakelen";
 
 
 // MARK: - GetProTableController
@@ -1080,7 +1101,7 @@
 "import_dns_user_rules" = "DNS gebruikersregels toevoegen";
 
 /* (ImportSettingsController) disable YouTube feature title */
-"disable_youtube_feature" = "AdGuard-speler uitschakelen";
+"disable_youtube_feature" = "AdGuard-afspeler uitschakelen";
 
 /* (LowLevelSettingsController) Low level settings description. <b style=color:#c23814ff> It is a color for WARNING! word*/
 "low_level_description" = "<b style=color:#c23814ff>WAARSCHUWING!</b>Het inschakelen van deze functies kan de internetverbinding verbreken of je veiligheid en privacy in gevaar brengen.";
@@ -1182,7 +1203,7 @@ DO NOT TRANSLATE "none" */
 "background_app_refresh_time_title" = "Vernieuwingsinterval app op achtergrond";
 
 /* (DnsProvidersController) - add new dns server title */
-"add_custom_dns_server_title" = "Gebruiker DNS-server toevoegen";
+"add_custom_dns_server_title" = "Aangepaste DNS-server toevoegen";
 
 /* (DnsProvidersController) - Header title */
 "dns_provider_controller_title" = "DNS-server";
@@ -1215,7 +1236,7 @@ DO NOT TRANSLATE "none" */
 "youtube_player_controller_userscript_error_message" = "Aanmaken gebruikersscript mislukt";
 
 /* (YoutubePlayerController) YouTube feature disabled alert title */
-"youtube_player_controller_feature_disabled_title" = "AdGuard-speler uitgeschakeld";
+"youtube_player_controller_feature_disabled_title" = "AdGuard-afspeler uitgeschakeld";
 
 /* (YoutubePlayerController) YouTube feature disabled alert message */
 "youtube_player_controller_feature_disabled_message" = "Video's delen met AdGuard is niet beschikbaar";

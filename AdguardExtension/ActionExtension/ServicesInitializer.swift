@@ -30,7 +30,6 @@ final class ServicesInitializer {
     let configuration: ConfigurationServiceProtocol
     let migrationVersionProvider: MigrationServiceVersionProviderProtocol
     let productInfo: ADProductInfoProtocol
-    let devAccountMigrationHelper: DevAccountMigrationHelper
 
     init() throws {
         self.resources = AESharedResources()
@@ -54,7 +53,7 @@ final class ServicesInitializer {
         let networkService = ACNNetworking()
         productInfo = ADProductInfo()
         let purchaseService = PurchaseService(network: networkService, resources: resources, productInfo: productInfo)
-        let sharedUrls = SharedStorageUrls()
+        let sharedUrls: SharedStorageUrlsProtocol = SharedStorageUrls()
         let preloadedFilesManager = PreloadedFilesManager(sharedStorageUrls: sharedUrls, bundle: bundle)
         try preloadedFilesManager.processPreloadedFiles()
 
@@ -72,6 +71,8 @@ final class ServicesInitializer {
             filterFilesDirectoryUrl: sharedUrls.filtersFolderUrl,
             dbContainerUrl: sharedUrls.dbFolderUrl,
             jsonStorageUrl: sharedUrls.cbJsonsFolderUrl,
+            webExtFolderUrl: sharedUrls.webExtFolderUrl,
+            advancedRulesFileUrl: sharedUrls.advancedRulesFileUrl,
             userDefaults: resources.sharedDefaults()
         )
         /* End of initializing SDK */
@@ -85,8 +86,6 @@ final class ServicesInitializer {
         self.themeService = ThemeService(configuration)
 
         self.migrationVersionProvider = MigrationServiceVersionProvider(resources: resources)
-
-        self.devAccountMigrationHelper = DevAccountMigrationHelper(fromExtension: true, resources, productInfo, UserNotificationService())
     }
 
     private static func setupLogger(_ resources: AESharedResourcesProtocol) {

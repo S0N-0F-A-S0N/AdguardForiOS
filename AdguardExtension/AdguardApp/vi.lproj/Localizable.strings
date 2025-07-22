@@ -313,6 +313,24 @@
 /* (ContentBlockersTableController) - Content Blockers title */
 "cb_screen_content_blockers_title" = "Trình chặn nội dung";
 
+/* (ContentBlockersTableController) - General content blocker name */
+"cb_screen_content_blockers_general_name" = "Tổng quan";
+
+/* (ContentBlockersTableController) - Privacy content blocker name */
+"cb_screen_content_blockers_privacy_name" = "Riêng tư";
+
+/* (ContentBlockersTableController) - Social content blocker name */
+"cb_screen_content_blockers_social_name" = "Xã hội";
+
+/* (ContentBlockersTableController) - Other content blocker name */
+"cb_screen_content_blockers_other_name" = "Khác";
+
+/* (ContentBlockersTableController) - Custom content blocker name */
+"cb_screen_content_blockers_custom_name" = "Tuỳ chọn";
+
+/* (ContentBlockersTableController) - Security content blocker name */
+"cb_screen_content_blockers_security_name" = "Bảo mật";
+
 /* (AdvancedSettingsController) Restart when network changes error */
 "general_settings_restart_tunnel_error" = "Bạn cần mở VPN trước";
 
@@ -721,6 +739,9 @@
 /* (OnboardingController) second step with advanced protection text */
 "advanced_protection_onboarding_second_step_text" = "Đi tới <b>Safari > Tiện ích mở rộng</b>.";
 
+/* (OnboardingController) second step with advanced protection text for iOS 18+ */
+"advanced_protection_onboarding_second_step_text_ios_18" = "Vào <b>Ứng dụng > Safari > Tiện ích mở rộng</b>.";
+
 /* (OnboardingController) third step text */
 "onboarding_third_step_text" = "<b>Mở tất cả bộ chặn thành phần</b> và trở lại với ứng dụng của chúng tôi!";
 
@@ -728,7 +749,7 @@
 "advanced_protection_onboarding_third_step_text" = "Đặt các tuỳ chọn của AdGuard về trạng thái <b>Bật</b>. Vậy là xong!";
 
 /* (OnboardingContentView) fours step. '%@' will be replaced with the share icon */
-"onboarding_fours_step_text" = "Với bảo vệ <b>Nâng Cao</b>, mở Safari, chọn biểu tượng <b>aA</b> ở góc bên trái của thanh URL, <br><br>%@<br><br> sau đó chọn Quản lý tiện ích mở rộng và kích hoạt công tắc của <b>AdGuard</b>.";
+"onboarding_fours_step_text" = "Với bảo vệ <b>Nâng Cao</b>, mở Safari, chọn biểu tượng ở góc bên trái của thanh URL, <br><br>%@<br><br> sau đó chọn Quản lý tiện ích mở rộng và kích hoạt công tắc của <b>AdGuard</b>.";
 
 /* (BlockRequestController) Block request title */
 "block_request" = "Chặn yêu cầu";
@@ -876,6 +897,9 @@
 
 /* (ActivityViewController) -  Data saved alret title */
 "data_saved_info_alert_title" = "Dữ liệu đã lưu";
+
+/* (ActivityViewController) -  Data saved alret message */
+"data_saved_info_alert_message" = "AdGuard ngăn thiết bị của bạn tải trình theo dõi trong ứng dụng, giúp giảm mức sử dụng dữ liệu của thiết bị\n\nSau đây là tổng lượng dữ liệu được AdGuard lưu trong khoảng thời gian đã chọn";
 
 /* (ActivityViewController) - Companies alert title */
 "companies_info_alert_title" = "Số lượng chung";
@@ -1076,6 +1100,9 @@
 /* (ImportSettingsController) add dns rules title */
 "import_dns_user_rules" = "Thêm quy tắc DNS của người dùng";
 
+/* (ImportSettingsController) disable YouTube feature title */
+"disable_youtube_feature" = "Tắt AdGuard Player";
+
 /* (LowLevelSettingsController) Low level settings description. <b style=color:#c23814ff> It is a color for WARNING! word*/
 "low_level_description" = "<b style=color:#c23814ff>CẢNH BÁO!</b> Việc bật các tính năng này có thể phá vỡ kết nối Internet hoặc ảnh hưởng đến bảo mật và quyền riêng tư của bạn.";
 
@@ -1207,6 +1234,12 @@ DO NOT TRANSLATE "none" */
 
 /* (YoutubePlayerController) 'userscript error' alert message */
 "youtube_player_controller_userscript_error_message" = "Không tạo được tập lệnh người dùng";
+
+/* (YoutubePlayerController) YouTube feature disabled alert title */
+"youtube_player_controller_feature_disabled_title" = "Trình phát AdGuard đã bị vô hiệu hóa";
+
+/* (YoutubePlayerController) YouTube feature disabled alert message */
+"youtube_player_controller_feature_disabled_message" = "Chia sẻ video với AdGuard không khả dụng";
 
 /* (YouTubeAdsRequestHandler) 'no url error' alert title */
 "youtube_share_extension_no_url_title" = "Không có URL nào được cung cấp";

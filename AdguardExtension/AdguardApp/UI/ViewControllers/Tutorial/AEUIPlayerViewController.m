@@ -24,6 +24,7 @@
 
 #define DEFAULT_TUTORIAL_VIDEO                      @"ManageContentBlocker"
 #define DEFAULT_TUTORIAL_VIDEO_SINCE_IOS_15         @"ManageContentBlockerSinceIOS15"
+#define DEFAULT_TUTORIAL_VIDEO_SINCE_IOS_18         @"ManageContentBlockerSinceIOS18"
 #define HIDE_NAVIGATION_DELAY 4 // seconds
 
 @implementation AEUIPlayerViewController
@@ -104,10 +105,12 @@
 }
 
 -(NSURL*)getUrlForPlayer:(BOOL)useDefaultLanguage {
-    if (@available(iOS 15, *)) {
-        return [NSURL URLWithString:[NSString stringWithFormat:URL_TEMPLATE, useDefaultLanguage ? ADL_DEFAULT_LANG : [ADLocales lang], DEFAULT_TUTORIAL_VIDEO_SINCE_IOS_15]];
+    if (@available(iOS 18, *)) {
+        return [NSURL URLWithString:[NSString stringWithFormat:URL_TEMPLATE, useDefaultLanguage ? ADL_DEFAULT_LANG : [ADLocales canonicalLang], DEFAULT_TUTORIAL_VIDEO_SINCE_IOS_18]];
+    } else if (@available(iOS 15, *)) {
+        return [NSURL URLWithString:[NSString stringWithFormat:URL_TEMPLATE, useDefaultLanguage ? ADL_DEFAULT_LANG : [ADLocales canonicalLang], DEFAULT_TUTORIAL_VIDEO_SINCE_IOS_15]];
     } else {
-        return [NSURL URLWithString:[NSString stringWithFormat:URL_TEMPLATE, useDefaultLanguage ? ADL_DEFAULT_LANG : [ADLocales lang], DEFAULT_TUTORIAL_VIDEO]];
+        return [NSURL URLWithString:[NSString stringWithFormat:URL_TEMPLATE, useDefaultLanguage ? ADL_DEFAULT_LANG : [ADLocales canonicalLang], DEFAULT_TUTORIAL_VIDEO]];
     }
 }
 

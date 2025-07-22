@@ -227,7 +227,7 @@ extension UpstreamsController: ThemableProtocol {
         upstreamTypeLabel.textColor = theme.popupTitleTextColor
         contentView.backgroundColor = theme.popupBackgroundColor
         theme.setupPopupLabels(themableLabels)
-        theme.setupTextField(upstreamsTextField)
+        theme.setupTextFieldCode(upstreamsTextField)
         saveButton?.indicatorStyle = theme.indicatorStyle
         upstreamsTextField.updateTheme()
     }

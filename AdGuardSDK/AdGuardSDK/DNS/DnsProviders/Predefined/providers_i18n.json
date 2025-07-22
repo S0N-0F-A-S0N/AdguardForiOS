@@ -39,7 +39,7 @@
             },
             "ja": {
                 "name": "システムデフォルト",
-                "description": "ISP(インターネットサービスプロバイダ) が提供するシステムデフォルトのDNSサーバーを使用する"
+                "description": "ISP(インターネットサービスプロバイダ) が提供するシステムデフォルトのDNSサーバーを使用します。"
             },
             "it": {
                 "name": "Predefinito di sistema",
@@ -83,7 +83,7 @@
             },
             "ar": {
                 "name": "النظام الافتراضي",
-                "description": "استخدام ملقمات DNS الافتراضية للنظام التي يوفرها ISP (موفر خدمه إنترنت)"
+                "description": "استخدم خوادم DNS الافتراضية للنظام الذي يوفرها مزود خدمة الإنترنت (ISP) الخاص بك"
             },
             "hr": {
                 "name": "Sustavno zadano",
@@ -114,12 +114,12 @@
                 "description": "ISP(인터넷 서비스 제공자)에서 제공하는 시스템 기본 DNS 서버를 사용합니다."
             },
             "fi": {
-                "name": "Järjestelmän oletus",
-                "description": "Käytä järjestelmän oletusarvoisia Internet-palveluntarjoajan DNS-palvelimia"
+                "name": "Järjestelmä",
+                "description": "Käytä järjestelmän oletusarvoisia Internet-palveluntarjoajan DNS-palvelimia."
             },
             "id": {
                 "name": "Sistem standar",
-                "description": "Pakai server DNS standar system yang disediakan oleh ISP (Penyedia Layanan Internet) Anda"
+                "description": "Gunakan server DNS sistem standar yang disediakan oleh ISP (Penyedia Layanan Internet) Anda"
             },
             "fr": {
                 "name": "Valeur du système",
@@ -151,7 +151,7 @@
             },
             "tr": {
                 "name": "Sistem varsayılanı",
-                "description": "İnternet Servis Sağlayıcınız (ISS) tarafından sağlanan sistem varsayılan DNS sunucularını kullanın"
+                "description": "İnternet Servis Sağlayıcınız (İSS) tarafından sağlanan sistem varsayılan DNS sunucularını kullanın"
             }
         },
         "10019": {
@@ -192,7 +192,7 @@
                 "name": "Quad9"
             },
             "ja": {
-                "description": "フィッシングやスパイウェアからの保護付き無料の代替DNSサービス",
+                "description": "不正なドメインへの接続から保護する無料の代替DNSサービス",
                 "name": "Quad9"
             },
             "it": {
@@ -236,7 +236,7 @@
                 "name": "Quad9"
             },
             "ar": {
-                "description": "خدمة DNS العامة التي تحجب النطاقات الضارة",
+                "description": "خدمة DNS العامة التي تحظر النطاقات الضارة",
                 "name": "Quad9"
             },
             "hr": {
@@ -260,7 +260,7 @@
                 "name": "Quad9"
             },
             "de": {
-                "description": "Öffentlicher DNS-Dienst zum Blockieren von bösartigen Domains",
+                "description": "Öffentlicher DNS-Dienst zum Sperren schädlicher Domains",
                 "name": "Quad9"
             },
             "ko": {
@@ -268,7 +268,7 @@
                 "name": "Quad9"
             },
             "fi": {
-                "description": "Julkinen DNS-palvelu, joka estää haitallisia verkkotunnuksia",
+                "description": "Julkinen DNS-palvelu, joka estää haitallisia verkkotunnuksia.",
                 "name": "Quad9"
             },
             "id": {
@@ -315,7 +315,7 @@
             },
             "sk": {
                 "description": "Verejná služba DNS, ktorá blokuje obsah pre dospelých, ponúkaná spoločnosťou Cisco",
-                "name": "OpenDNS with Family Shield"
+                "name": "OpenDNS s ochranou rodiny"
             },
             "pl": {
                 "description": "Publiczna usługa DNS blokująca treści dla dorosłych, oferowana przez Cisco",
@@ -346,8 +346,8 @@
                 "name": "OpenDNS med Family Shield"
             },
             "ja": {
-                "description": "アダルトコンテンツブロッキング搭載のOpenDNSサーバー",
-                "name": "Cisco OpenDNS ファミリーシールド搭載"
+                "description": "アダルトコンテンツをブロックするパブリックDNSサービス（Cisco提供）",
+                "name": "OpenDNS with Family Shield"
             },
             "it": {
                 "description": "Servizio DNS pubblico che blocca i contenuti per adulti, offerto da Cisco",
@@ -390,7 +390,7 @@
                 "name": "含家庭保護的 OpenDNS"
             },
             "ar": {
-                "description": "خدمة DNS العامة التي تحجب محتوى البالغين، التي تقدمها Cisco",
+                "description": "خدمة DNS العامة التي تحظر محتوى البالغين، مقدمة من Cisco",
                 "name": "OpenDNS مع درع العائلة"
             },
             "hr": {
@@ -422,7 +422,7 @@
                 "name": "OpenDNS with Family Shield"
             },
             "fi": {
-                "description": "Ciscon tarjoama julkinen DNS-palvelu, joka estää aikuisille tarkoitettua sisältöä",
+                "description": "Ciscon tarjoama julkinen DNS-palvelu, joka estää aikuisille tarkoitettua sisältöä.",
                 "name": "OpenDNS with Family Shield"
             },
             "id": {
@@ -500,8 +500,8 @@
                 "description": "Offentlig DNS-tjeneste som blokkerer skadelig programvare og phishing, tilbudt av Cisco"
             },
             "ja": {
-                "name": "Cisco OpenDNS",
-                "description": "お使いのデバイスを追跡から保護するDNSサーバー"
+                "name": "OpenDNS",
+                "description": "お使いのデバイスを追跡から保護する、CiscoのDNSサーバー"
             },
             "it": {
                 "name": "OpenDNS",
@@ -545,7 +545,7 @@
             },
             "ar": {
                 "name": "OpenDNS",
-                "description": "خدمة DNS العامة التي تمنع البرامج الضارة والتصيد الاحتيالي، التي تقدمها Cisco"
+                "description": "خدمة DNS العامة التي تحظر البرمجيات الخبيثة والتصيّد الاحتيالي، التي تقدمها Cisco"
             },
             "hr": {
                 "name": "Cisco OpenDNS",
@@ -569,7 +569,7 @@
             },
             "de": {
                 "name": "Cisco OpenDNS",
-                "description": "Öffentlicher DNS-Dienst von Cisco zum Blockieren von Malware und Phishing"
+                "description": "Öffentlicher DNS-Dienst von Cisco zum Sperren von Malware und Phishing"
             },
             "ko": {
                 "name": "OpenDNS",
@@ -577,7 +577,7 @@
             },
             "fi": {
                 "name": "OpenDNS",
-                "description": "Ciscon tarjoama julkinen DNS-palvelu, joka estää haittaohjelmia ja tietojenkalastelua"
+                "description": "Ciscon tarjoama julkinen DNS-palvelu, joka estää haittaohjelmia ja tietojenkalastelua."
             },
             "id": {
                 "name": "OpenDNS",
@@ -654,8 +654,8 @@
                 "description": "Offentlig DNS-tjeneste som blokkerer skadelig programvare, tilbudt av Cloudflare"
             },
             "ja": {
-                "name": "マルウェア対策Cloudflare DNS",
-                "description": "悪意のあるドメインをブロックするCloudflareのマルウェア対策DNSサーバー"
+                "name": "Cloudflare for Families – MB",
+                "description": "不正なドメインへの接続から保護するCloudflareのDNSサーバー"
             },
             "it": {
                 "name": "Cloudflare for Families – Malware Blocking",
@@ -723,7 +723,7 @@
             },
             "de": {
                 "name": "Cloudflare for Families – Malware Blocking",
-                "description": "Öffentlicher DNS-Dienst von Cloudfare zum Blockieren von Malware"
+                "description": "Öffentlicher DNS-Dienst von Cloudflare zum Sperren von Malware"
             },
             "ko": {
                 "name": "Cloudflare for Families – Malware Blocking",
@@ -731,7 +731,7 @@
             },
             "fi": {
                 "name": "Cloudflare for Families – Malware Blocking",
-                "description": "Cloudflaren tarjoama julkinen DNS-palvelu, joka estää haittaohjelmia"
+                "description": "Cloudflaren tarjoama julkinen DNS-palvelu, joka estää haittaohjelmia."
             },
             "id": {
                 "name": "Cloudflare for Families – Malware Blocking",
@@ -808,7 +808,7 @@
                 "name": "Cloudflare DNS"
             },
             "ja": {
-                "description": "Cloudflareによる無料の代替DNSサービス",
+                "description": "CloudflareによるパブリックDNSサービス",
                 "name": "Cloudflare DNS"
             },
             "it": {
@@ -884,7 +884,7 @@
                 "name": "Cloudflare DNS"
             },
             "fi": {
-                "description": "Cloudflaren tarjoama julkinen DNS-palvelu",
+                "description": "Cloudflaren tarjoama julkinen DNS-palvelu.",
                 "name": "Cloudflare DNS"
             },
             "id": {
@@ -934,7 +934,7 @@
                 "description": "Rozšírená služba AdGuard DNS, ktorá blokuje aj obsah pre dospelých a umožňuje bezpečné vyhľadávanie a bezpečný režim"
             },
             "pl": {
-                "name": "Ochrona rodzinna Adguard DNS",
+                "name": "Ochrona rodzinna AdGuard DNS",
                 "description": "Rozszerzona usługa AdGuard DNS, która blokuje również treści dla dorosłych oraz umożliwia bezpieczne wyszukiwanie i tryb bezpieczny"
             },
             "vi": {
@@ -962,8 +962,8 @@
                 "description": "Utvidet AdGuard DNS-tjeneste som også blokkerer voksent innhold og aktiverer Sikkert Søk og Sikker modus"
             },
             "ja": {
-                "name": "AdGuard DNS ファミリープロテクション",
-                "description": "AdGuard DNS + セーフサーチ + アダルトコンテンツブロック"
+                "name": "AdGuard DNS ファミリー保護",
+                "description": "通常のAdGuard DNS性能に加え、アダルトコンテンツもブロックしセーフサーチとセーフモードを適用するファミリー向けAdGuard DNSサービス"
             },
             "it": {
                 "name": "AdGuard DNS Protezione Famiglia",
@@ -1007,7 +1007,7 @@
             },
             "ar": {
                 "name": "AdGuard DNS خدمة حماية الاسرة",
-                "description": "خدمة AdGuard DNS الموسعة التي تحظر أيضًا محتوى البالغين وتتيح البحث الآمن والوضع الآمن"
+                "description": "خدمة AdGuard DNS الموسعة التي تحظر أيضًا محتوى البالغين وتمكّن البحث الآمن والوضع الآمن"
             },
             "hr": {
                 "name": "AdGuard DNS zaštita obitelji",
@@ -1031,7 +1031,7 @@
             },
             "de": {
                 "name": "AdGuard DNS Familienschutz",
-                "description": "Erweiterter AdGuard-DNS-Dienst, der auch Inhalte für Erwachsene blockiert und die sichere Suche und den abgesicherten Modus aktiviert"
+                "description": "Erweiterter AdGuard DNS-Dienst, der zudem Inhalte für Erwachsene sperrt und die sichere Suche und den sicheren Modus aktiviert"
             },
             "ko": {
                 "name": "AdGuard DNS 가족 보호",
@@ -1039,7 +1039,7 @@
             },
             "fi": {
                 "name": "AdGuard DNS Perhesuojaus",
-                "description": "Laajennettu AdGuard DNS -palvelu, joka estää myös aikuisille tarkoitetun sisällön, ottaa Turvallisen haun ja Turvallisen tilan käyttöön"
+                "description": "AdGuardin laajempi DNS-palvelu, joka estää myös aikuisille tarkoitetun sisällön, ottaa Turvallisen haun ja Turvallisen tilan käyttöön."
             },
             "id": {
                 "name": "AdGuard DNS Perlindungan Keluarga",
@@ -1084,7 +1084,7 @@
                 "name": "AdGuard DNS"
             },
             "sk": {
-                "description": "Služba AdGuard DNS, ktorá blokuje reklamy a sledovacie zariadenia",
+                "description": "Služba AdGuard DNS, ktorá blokuje reklamy a sledovače",
                 "name": "AdGuard DNS"
             },
             "pl": {
@@ -1116,7 +1116,7 @@
                 "name": "AdGuard DNS"
             },
             "ja": {
-                "description": "広告を削除し、追跡からデバイスを保護",
+                "description": "広告と個人情報追跡をブロックするAdGuard DNSサービス",
                 "name": "AdGuard DNS"
             },
             "it": {
@@ -1160,7 +1160,7 @@
                 "name": "AdGuard DNS"
             },
             "ar": {
-                "description": "خدمة AdGuard DNS التي تمنع الإعلانات وأجهزة التتبع",
+                "description": "خدمة AdGuard DNS التي تحظر الإعلانات والمتعقبين",
                 "name": "AdGuard DNS"
             },
             "hr": {
@@ -1184,7 +1184,7 @@
                 "name": "AdGuard DNS"
             },
             "de": {
-                "description": "DNS-Dienst von AdGuard zum Blockieren von Werbung und Trackern",
+                "description": "DNS-Dienst von AdGuard zum Sperren von Werbung und Trackern",
                 "name": "AdGuard DNS"
             },
             "ko": {
@@ -1192,7 +1192,7 @@
                 "name": "AdGuard DNS"
             },
             "fi": {
-                "description": "AdGuard DNS -palvelu, joka estää mainokset ja seurannan",
+                "description": "AdGuardin DNS-palvelu, joka estää mainokset ja seurannat.",
                 "name": "AdGuard DNS"
             },
             "id": {
@@ -1271,7 +1271,7 @@
             },
             "ja": {
                 "name": "Google DNS",
-                "description": "Google提供の無料代替DNSサービス"
+                "description": "Google提供のDNSサービス"
             },
             "it": {
                 "name": "Google DNS",
@@ -1347,7 +1347,7 @@
             },
             "fi": {
                 "name": "Google DNS",
-                "description": "Googlen tarjoama DNS-palvelu"
+                "description": "Googlen tarjoama DNS-palvelu."
             },
             "id": {
                 "name": "Google DNS",
@@ -1424,8 +1424,8 @@
                 "name": "Cloudflare for Families – Malware and Adult Content"
             },
             "ja": {
-                "description": "「アダルト」系と悪意のあるドメインへのアクセスを制限するCloudflareのブロッキングサーバー",
-                "name": "CloudflareファミリーDNS"
+                "description": "「アダルト」系などのドメインから保護するCloudflareのDNSサーバー",
+                "name": "Cloudflare ファミリー DNS"
             },
             "it": {
                 "description": "Servizio DNS pubblico che blocca malware e contenuti per adulti, offerto da Cloudflare",
@@ -1492,7 +1492,7 @@
                 "name": "Cloudflare for Families – Malware and Adult Content"
             },
             "de": {
-                "description": "Öffentlicher DNS-Dienst von Cloudfare, der Malware und Inhalte für Erwachsene blockiert",
+                "description": "Öffentlicher DNS-Dienst von Cloudfare, der Malware und Inhalte für Erwachsene sperrt",
                 "name": "Cloudflare for Families – Malware and Adult Content"
             },
             "ko": {
@@ -1500,7 +1500,7 @@
                 "name": "Cloudflare for Families – Malware and Adult Content"
             },
             "fi": {
-                "description": "Cloudflaren tarjoama julkinen DNS-palvelu, joka estää haittaohjelmia ja aikuisille tarkoitetta sisältöä",
+                "description": "Cloudflaren tarjoama julkinen DNS-palvelu, joka estää haittaohjelmia ja aikuisille tarkoitetta sisältöä.",
                 "name": "Cloudflare for Families – Malware and Adult Content"
             },
             "id": {
@@ -1578,7 +1578,7 @@
                 "name": "AdGuard DNS uten filtrering"
             },
             "ja": {
-                "description": "セキュアで安定した接続を提供しますが、フィルタリングは行いません。",
+                "description": "フィルタリングを行わず、セキュアで安定した接続を提供するAdGuard DNSサービス",
                 "name": "AdGuard DNS (フィルタリングなし)"
             },
             "it": {
@@ -1654,7 +1654,7 @@
                 "name": "AdGuard DNS 필터링 미사용"
             },
             "fi": {
-                "description": "AdGuard DNS -palvelu, joka tarjoaa turvallisen ja luotettavan yhteyden, muttei suodata mitään",
+                "description": "AdGuardin DNS-palvelu, joka tarjoaa turvallisen ja luotettavan yhteyden, muttei suodata mitään.",
                 "name": "AdGuard DNS Ei-suodattava"
             },
             "id": {
@@ -1703,7 +1703,7 @@
             },
             "sk": {
                 "description": "Blokuje reklamy a sledovacie servery",
-                "name": "Blokovanie reklamy"
+                "name": "Blokovanie reklám"
             },
             "pl": {
                 "description": "Blokuje reklamy i serwery śledzące",
@@ -1778,8 +1778,8 @@
                 "name": "廣告封鎖"
             },
             "ar": {
-                "description": "يحظر الإعلانات وخوادم التتبع",
-                "name": "حجب الإعلانات"
+                "description": "حظر الإعلانات والخوادم المتتبعة",
+                "name": "حظر الإعلانات"
             },
             "hr": {
                 "description": "Blokira oglase i pratitelje",
@@ -1811,7 +1811,7 @@
             },
             "fi": {
                 "description": "Estää mainokset ja seurantapalvelimet",
-                "name": "Mainosten esto"
+                "name": "Mainosesto"
             },
             "id": {
                 "description": "Blokir iklan dan server pelacakan",
@@ -1932,8 +1932,8 @@
                 "description": "封鎖已知的網路釣魚和其它危險的網域"
             },
             "ar": {
-                "name": "الامان",
-                "description": "حظر البرامج الضارة المعروفة ونطاقات التصيد الاحتيالي"
+                "name": "تأمين",
+                "description": "يحظر التصيد الاحتيالي المعروف والمجالات الخطرة الأخرى"
             },
             "hr": {
                 "name": "Sigurno",
@@ -2087,7 +2087,7 @@
             },
             "ar": {
                 "description": "لحظر مواقع الويب التي تتضمن محتوى للبالغين",
-                "name": "حجب محتوى البالغين"
+                "name": "حظر محتوى البالغين"
             },
             "hr": {
                 "description": "Blokira stranice s sadržajem za odrasle",
@@ -2154,7 +2154,7 @@
                 "name": "การปิดกั้นเนื้อหาสำหรับผู้ใหญ่"
             },
             "tr": {
-                "description": "Yetişkin içerikli siteleri engeller",
+                "description": "Yetişkinlere yönelik siteleri engeller",
                 "name": "Yetişkinlere yönelik içerik engelleme"
             }
         },
@@ -2240,8 +2240,8 @@
                 "description": "不讓第三方監視您的瀏覽活動"
             },
             "ar": {
-                "name": "التعمية",
-                "description": "لا تدع أطراف ثالثة تتجسس على نشاط التصفح الخاص بك"
+                "name": "التشفير",
+                "description": "لا تسمح لأطراف ثالثة بالتجسس على نشاط التصفح الخاص بك"
             },
             "hr": {
                 "name": "Šifriranje",
@@ -2273,7 +2273,7 @@
             },
             "fi": {
                 "name": "Salaus",
-                "description": "Ei anna kolmansien osapuolten vakoilla selaustasi"
+                "description": "Ei anna kolmannen osapuolen vakoilla selaustasi"
             },
             "id": {
                 "name": "Enkripsi",
@@ -2309,7 +2309,7 @@
             },
             "tr": {
                 "name": "Şifreleme",
-                "description": "Üçüncü tarafların gezinme eyleminize casusluk yapmasına izin vermez"
+                "description": "Üçüncü tarafların tarama etkinliğinizde casusluk yapmasına izin vermez"
             }
         },
         "no_logs": {
@@ -2394,8 +2394,8 @@
                 "name": "無記錄"
             },
             "ar": {
-                "description": "الخاصة بك DNS لا تخزن سجلات استعلامات",
-                "name": "لا توجد سجلات"
+                "description": "لا يخزن سجلات استعلامات DNS الخاصة بك",
+                "name": "لا سجلات"
             },
             "hr": {
                 "description": "Ne pohranjuje vaše DNS zapise upita",
@@ -2410,7 +2410,7 @@
                 "name": "Nincs naplózás"
             },
             "nl": {
-                "description": "Bewaart je DNS-verzoeken logs niet",
+                "description": "Je DNS-verzoeken logboeken niet bewaren",
                 "name": "Geen logboeken"
             },
             "bg": {
@@ -2426,8 +2426,8 @@
                 "name": "로그 없음"
             },
             "fi": {
-                "description": "Ei kerää lokitietoja DNS-pyynnöistäsi",
-                "name": "Ei lokeja"
+                "description": "Ei tallenna historiaa DNS-pyynnöistä ",
+                "name": "Ei lokitietoja"
             },
             "id": {
                 "description": "Tidak akan menyimpan kueri DNS ke log",
@@ -2548,8 +2548,8 @@
                 "description": "為受歡迎的搜尋引擎和 YouTube 強制執行安全搜尋"
             },
             "ar": {
-                "name": "البحث الأمن",
-                "description": "يفرض البحث الأمن على محركات البحث الشائعة واليوتيوب"
+                "name": "البحث الآمن",
+                "description": "يفرض البحث الآمن لمحركات البحث الشهيرة ويوتيوب"
             },
             "hr": {
                 "name": "Sigurno pretraživanje",

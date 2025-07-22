@@ -24,16 +24,21 @@ import SafariServices
  We use it in order to be able to test code in ContentBlockerService
  */
 protocol ContentBlockersManagerProtocol {
+    /// Provides a wrapper over SFContentBlockerManager.reloadContentBlocker.
     func reloadContentBlocker(withId id: String, _ onContentBlockerReloaded: @escaping (_ error: Error?) -> Void)
+
+    /// Provides a wrapper over SFContentBlockerManager.getStateOfContentBlocker.
     func getStateOfContentBlocker(withId id: String, _ onContentBlockerStateRevealed: @escaping (_ result: Result<Bool>) -> Void)
 }
 
 struct ContentBlockersManager: ContentBlockersManagerProtocol {
 
+    /// Provides a wrapper over SFContentBlockerManager.reloadContentBlocker.
     func reloadContentBlocker(withId id: String, _ onContentBlockerReloaded: @escaping (_ error: Error?) -> Void) {
         SFContentBlockerManager.reloadContentBlocker(withIdentifier: id, completionHandler: onContentBlockerReloaded)
     }
 
+    /// Provides a wrapper over SFContentBlockerManager.getStateOfContentBlocker.
     func getStateOfContentBlocker(withId id: String, _ onContentBlockerStateRevealed: @escaping (Result<Bool>) -> Void) {
         SFContentBlockerManager.getStateOfContentBlocker(withIdentifier: id) { state, error in
             if let error = error {

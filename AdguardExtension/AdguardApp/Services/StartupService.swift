@@ -60,7 +60,7 @@ final class StartupService : NSObject {
         purchaseService.start()
         locator.addService(service: purchaseService)
 
-        let sharedUrls = SharedStorageUrls()
+        let sharedUrls: SharedStorageUrlsProtocol = SharedStorageUrls()
         let preloadedFilesManager = PreloadedFilesManager(sharedStorageUrls: sharedUrls)
         try! preloadedFilesManager.processPreloadedFiles()
 
@@ -78,10 +78,12 @@ final class StartupService : NSObject {
         let defaultDnsProtectionConfiguration = DnsConfiguration.defaultConfiguration()
 
         // TODO: - try! is bad
-        let dnsProtection: DnsProtectionProtocol = try! DnsProtection(configuration: dnsProtectionConfiguration,
-                                          defaultConfiguration: defaultDnsProtectionConfiguration,
-                                          userDefaults: sharedResources.sharedDefaults(),
-                                          filterFilesDirectoryUrl: sharedUrls.dnsFiltersFolderUrl)
+        let dnsProtection: DnsProtectionProtocol = try! DnsProtection(
+            configuration: dnsProtectionConfiguration,
+            defaultConfiguration: defaultDnsProtectionConfiguration,
+            userDefaults: sharedResources.sharedDefaults(),
+            filterFilesDirectoryUrl: sharedUrls.dnsFiltersFolderUrl
+        )
 
         // TODO: - try! is bad
         let safariProtection: SafariProtectionProtocol = try! SafariProtection(
@@ -90,13 +92,19 @@ final class StartupService : NSObject {
             filterFilesDirectoryUrl: sharedUrls.filtersFolderUrl,
             dbContainerUrl: sharedUrls.dbFolderUrl,
             jsonStorageUrl: sharedUrls.cbJsonsFolderUrl,
+            webExtFolderUrl: sharedUrls.webExtFolderUrl,
+            advancedRulesFileUrl: sharedUrls.advancedRulesFileUrl,
             userDefaults: sharedResources.sharedDefaults(),
             dnsBackgroundFetchUpdater: dnsProtection)
 
         let networkUtils: NetworkUtilsProtocol = NetworkUtils()
         locator.addService(service: networkUtils)
 
-        let dnsProvidersManager: DnsProvidersManagerProtocol = try! DnsProvidersManager(configuration: dnsProtectionConfiguration, userDefaults: sharedResources.sharedDefaults(), networkUtils: networkUtils)
+        let dnsProvidersManager: DnsProvidersManagerProtocol = try! DnsProvidersManager(
+            configuration: dnsProtectionConfiguration,
+            userDefaults: sharedResources.sharedDefaults(),
+            networkUtils: networkUtils
+        )
 
         locator.addService(service: safariProtection)
         locator.addService(service: dnsProtection)
@@ -134,7 +142,18 @@ final class StartupService : NSObject {
         let keyChainService: KeychainServiceProtocol = KeychainService(resources: sharedResources)
         locator.addService(service: keyChainService)
 
-        let supportService: SupportServiceProtocol = SupportService(resources: sharedResources, configuration: configuration, complexProtection: complexProtection, productInfo: productInfo, keyChainService: keyChainService, safariProtection: safariProtection, networkSettings: networkSettingsService, dnsProvidersManager: dnsProvidersManager, dnsProtection: dnsProtection)
+        let supportService: SupportServiceProtocol = SupportService(
+            resources: sharedResources,
+            sharedStorageUrls: sharedUrls,
+            configuration: configuration,
+            complexProtection: complexProtection,
+            productInfo: productInfo,
+            keyChainService: keyChainService,
+            safariProtection: safariProtection,
+            networkSettings: networkSettingsService,
+            dnsProvidersManager: dnsProvidersManager,
+            dnsProtection: dnsProtection
+        )
         locator.addService(service: supportService)
 
         let userNotificationService: UserNotificationServiceProtocol = UserNotificationService()

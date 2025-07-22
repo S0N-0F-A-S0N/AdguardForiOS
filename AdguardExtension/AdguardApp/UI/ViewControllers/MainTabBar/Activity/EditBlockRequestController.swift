@@ -99,7 +99,7 @@ extension EditBlockRequestController: ThemableProtocol {
     func updateTheme() {
         titleLabel.textColor = theme.popupTitleTextColor
         contentView.backgroundColor = theme.popupBackgroundColor
-        theme.setupTextField(domainNameTextField)
+        theme.setupTextFieldCode(domainNameTextField)
         theme.setupPopupLabels(themableLabels)
         domainNameTextField.updateTheme()
     }

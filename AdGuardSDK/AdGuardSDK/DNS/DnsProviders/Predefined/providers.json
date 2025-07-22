@@ -45,7 +45,7 @@
                 {
                     "id": 2,
                     "providerId": 10001,
-                    "name": "AdGuard DNS dnscrypt",
+                    "name": "AdGuard DNS (DNSCrypt)",
                     "type": "dnscrypt",
                     "upstreams": [
                         "sdns://AQMAAAAAAAAAETk0LjE0MC4xNC4xNDo1NDQzINErR_JS3PLCu_iZEIbq95zkSV2LFsigxDIuUso_OQhzIjIuZG5zY3J5cHQuZGVmYXVsdC5uczEuYWRndWFyZC5jb20"
@@ -60,7 +60,7 @@
                 {
                     "id": 3,
                     "providerId": 10001,
-                    "name": "AdGuard DNS doh",
+                    "name": "AdGuard DNS (DNS-over-HTTPS)",
                     "type": "doh",
                     "upstreams": [
                         "https://dns.adguard-dns.com/dns-query"
@@ -75,7 +75,7 @@
                 {
                     "id": 4,
                     "providerId": 10001,
-                    "name": "AdGuard DNS dot",
+                    "name": "AdGuard DNS (DNS-over-TLS)",
                     "type": "dot",
                     "upstreams": [
                         "tls://dns.adguard-dns.com"
@@ -90,7 +90,7 @@
                 {
                     "id": 33,
                     "providerId": 10001,
-                    "name": "AdGuard DNS doq",
+                    "name": "AdGuard DNS (DNS-over-QUIC)",
                     "type": "doq",
                     "upstreams": [
                         "quic://dns.adguard-dns.com"
@@ -132,7 +132,7 @@
                 {
                     "id": 6,
                     "providerId": 10005,
-                    "name": "AdGuard DNS family dnscrypt",
+                    "name": "AdGuard DNS family (DNSCrypt)",
                     "type": "dnscrypt",
                     "upstreams": [
                         "sdns://AQMAAAAAAAAAETk0LjE0MC4xNC4xNTo1NDQzILgxXdexS27jIKRw3C7Wsao5jMnlhvhdRUXWuMm1AFq6ITIuZG5zY3J5cHQuZmFtaWx5Lm5zMS5hZGd1YXJkLmNvbQ"
@@ -149,7 +149,7 @@
                 {
                     "id": 7,
                     "providerId": 10005,
-                    "name": "AdGuard DNS family doh",
+                    "name": "AdGuard DNS family (DNS-over-HTTPS)",
                     "type": "doh",
                     "upstreams": [
                         "https://family.adguard-dns.com/dns-query"
@@ -166,7 +166,7 @@
                 {
                     "id": 8,
                     "providerId": 10005,
-                    "name": "AdGuard DNS family dot",
+                    "name": "AdGuard DNS family (DNS-over-TLS)",
                     "type": "dot",
                     "upstreams": [
                         "tls://family.adguard-dns.com"
@@ -183,7 +183,7 @@
                 {
                     "id": 34,
                     "providerId": 10005,
-                    "name": "AdGuard DNS family doq",
+                    "name": "AdGuard DNS family (DNS-over-QUIC)",
                     "type": "doq",
                     "upstreams": [
                         "quic://family.adguard-dns.com"
@@ -224,7 +224,7 @@
                 {
                     "id": 29,
                     "providerId": 10028,
-                    "name": "AdGuard DNS non-filtered dnscrypt",
+                    "name": "AdGuard DNS non-filtered (DNSCrypt)",
                     "type": "dnscrypt",
                     "upstreams": [
                         "sdns://AQMAAAAAAAAAEjk0LjE0MC4xNC4xNDA6NTQ0MyC16ETWuDo-PhJo62gfvqcN48X6aNvWiBQdvy7AZrLa-iUyLmRuc2NyeXB0LnVuZmlsdGVyZWQubnMxLmFkZ3VhcmQuY29t"
@@ -237,7 +237,7 @@
                 {
                     "id": 30,
                     "providerId": 10028,
-                    "name": "AdGuard DNS non-filtered doh",
+                    "name": "AdGuard DNS non-filtered (DNS-over-HTTPS)",
                     "type": "doh",
                     "upstreams": [
                         "https://unfiltered.adguard-dns.com/dns-query"
@@ -250,7 +250,7 @@
                 {
                     "id": 31,
                     "providerId": 10028,
-                    "name": "AdGuard DNS non-filtered dot",
+                    "name": "AdGuard DNS non-filtered (DNS-over-TLS)",
                     "type": "dot",
                     "upstreams": [
                         "tls://unfiltered.adguard-dns.com"
@@ -263,7 +263,7 @@
                 {
                     "id": 35,
                     "providerId": 10028,
-                    "name": "AdGuard DNS non-filtered doq",
+                    "name": "AdGuard DNS non-filtered (DNS-over-QUIC)",
                     "type": "doq",
                     "upstreams": [
                         "quic://unfiltered.adguard-dns.com"
@@ -298,7 +298,7 @@
                 {
                     "id": 10,
                     "providerId": 10009,
-                    "name": "Google DNS doh",
+                    "name": "Google DNS (DNS-over-HTTPS)",
                     "type": "doh",
                     "upstreams": [
                         "https://dns.google/dns-query"
@@ -310,7 +310,7 @@
                 {
                     "id": 11,
                     "providerId": 10009,
-                    "name": "Google DNS dot",
+                    "name": "Google DNS (DNS-over-TLS)",
                     "type": "dot",
                     "upstreams": [
                         "tls://dns.google"
@@ -345,7 +345,7 @@
                 {
                     "id": 13,
                     "providerId": 10012,
-                    "name": "Cloudflare DNS doh",
+                    "name": "Cloudflare DNS (DNS-over-HTTPS)",
                     "type": "doh",
                     "upstreams": [
                         "https://dns.cloudflare.com/dns-query"
@@ -358,7 +358,7 @@
                 {
                     "id": 14,
                     "providerId": 10012,
-                    "name": "Cloudflare DNS dot",
+                    "name": "Cloudflare DNS (DNS-over-TLS)",
                     "type": "dot",
                     "upstreams": [
                         "tls://1.1.1.1"
@@ -392,7 +392,7 @@
                 {
                     "id": 25,
                     "providerId": 10024,
-                    "name": "Cloudflare Anti-malware DNS doh",
+                    "name": "Cloudflare Anti-malware DNS (DNS-over-HTTPS)",
                     "type": "doh",
                     "upstreams": [
                         "https://security.cloudflare-dns.com/dns-query"
@@ -431,7 +431,7 @@
                 {
                     "id": 27,
                     "providerId": 10026,
-                    "name": "Cloudflare Family DNS doh",
+                    "name": "Cloudflare Family DNS (DNS-over-HTTPS)",
                     "type": "doh",
                     "upstreams": [
                         "https://family.cloudflare-dns.com/dns-query"
@@ -469,7 +469,7 @@
                 {
                     "id": 16,
                     "providerId": 10015,
-                    "name": "Cisco OpenDNS dnscrypt",
+                    "name": "Cisco OpenDNS (DNSCrypt)",
                     "type": "dnscrypt",
                     "upstreams": [
                         "sdns://AQAAAAAAAAAADjIwOC42Ny4yMjAuMjIwILc1EUAgbyJdPivYItf9aR6hwzzI1maNDL4Ev6vKQ_t5GzIuZG5zY3J5cHQtY2VydC5vcGVuZG5zLmNvbQ"
@@ -482,7 +482,7 @@
                 {
                     "id": 22,
                     "providerId": 10015,
-                    "name": "Cisco OpenDNS doh",
+                    "name": "Cisco OpenDNS (DNS-over-HTTPS)",
                     "type": "doh",
                     "upstreams": [
                         "https://doh.opendns.com/dns-query"
@@ -520,7 +520,7 @@
                 {
                     "id": 18,
                     "providerId": 10017,
-                    "name": "Cisco OpenDNS with Family Shield dnscrypt",
+                    "name": "Cisco OpenDNS with Family Shield (DNSCrypt)",
                     "type": "dnscrypt",
                     "upstreams": [
                         "sdns://AQEAAAAAAAAADjIwOC42Ny4yMjAuMTIzILc1EUAgbyJdPivYItf9aR6hwzzI1maNDL4Ev6vKQ_t5GzIuZG5zY3J5cHQtY2VydC5vcGVuZG5zLmNvbQ"
@@ -535,7 +535,7 @@
                 {
                     "id": 23,
                     "providerId": 10017,
-                    "name": "Cisco OpenDNS with Family Shield doh",
+                    "name": "Cisco OpenDNS with Family Shield (DNS-over-HTTPS)",
                     "type": "doh",
                     "upstreams": [
                         "https://doh.familyshield.opendns.com/dns-query"
@@ -574,7 +574,7 @@
                 {
                     "id": 20,
                     "providerId": 10019,
-                    "name": "Quad9 DNS dnscrypt",
+                    "name": "Quad9 DNS (DNSCrypt)",
                     "type": "dnscrypt",
                     "upstreams": [
                         "sdns://AQMAAAAAAAAADDkuOS45Ljk6ODQ0MyBnyEe4yHWM0SAkVUO-dWdG3zTfHYTAC4xHA2jfgh2GPhkyLmRuc2NyeXB0LWNlcnQucXVhZDkubmV0"
@@ -588,7 +588,7 @@
                 {
                     "id": 21,
                     "providerId": 10019,
-                    "name": "Quad9 DNS doh",
+                    "name": "Quad9 DNS (DNS-over-HTTPS)",
                     "type": "doh",
                     "upstreams": [
                         "https://dns9.quad9.net:443/dns-query"
@@ -602,7 +602,7 @@
                 {
                     "id": 32,
                     "providerId": 10019,
-                    "name": "Quad9 DNS dot",
+                    "name": "Quad9 DNS (DNS-over-TLS)",
                     "type": "dot",
                     "upstreams": [
                         "tls://dns.quad9.net"

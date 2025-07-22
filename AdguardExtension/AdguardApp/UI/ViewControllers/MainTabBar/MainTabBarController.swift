@@ -18,7 +18,7 @@
 
 import Foundation
 
-enum TabBarTabs: Int {
+enum TabBarTabs: Int, CaseIterable {
     typealias RawValue = Int
 
     case mainTab = 0
@@ -29,10 +29,15 @@ enum TabBarTabs: Int {
 
 class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
 
+    private let resource: AESharedResourcesProtocol = ServiceLocator.shared.getService()!
+
     private var bottomView: UIView?
     private let bottomLineHeight: CGFloat = 4.0
 
     private var bottomViewLeftAnchor: NSLayoutConstraint?
+
+    private var onSettingsImportDidEndObserver: NotificationToken?
+    private var onSettingsResetObserver: NotificationToken?
 
     private lazy var theme: ThemeServiceProtocol = { ServiceLocator.shared.getService()! }()
 
@@ -72,6 +77,16 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         updateTheme()
         createSelectionIndicator()
         addTabBarShadow()
+
+        onSettingsImportDidEndObserver = NotificationCenter.default.observe(name: .settingsImportDidEnd, object: nil, queue: .main) { [weak self] _ in
+            self?.addOrRemoveActivityTabIfNeeded()
+        }
+
+        onSettingsResetObserver = NotificationCenter.default.observe(name: .resetSettings, object: nil, queue: .main) { [weak self] _ in
+            self?.addOrRemoveActivityTabIfNeeded()
+        }
+
+        addOrRemoveActivityTabIfNeeded()
     }
 
     override var selectedViewController: UIViewController? {
@@ -91,6 +106,23 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         guard let item = tabBar.selectedItem else { return }
         resizeIndicator()
         changeLeftAnchor(for: item)
+    }
+
+    private func addOrRemoveActivityTabIfNeeded() {
+        guard var viewControllersCount = viewControllers?.count else { return }
+
+        if resource.disableSecurityRelatedFeatures && viewControllersCount == TabBarTabs.allCases.count {
+            self.viewControllers?.remove(at: TabBarTabs.activityTab.rawValue)
+            return
+        }
+
+        // We'll assume that this is the case when the activity screen was removed
+        if !resource.disableSecurityRelatedFeatures && viewControllersCount < TabBarTabs.allCases.count,
+           let activityController = UIStoryboard(name: "MainPage", bundle: nil).instantiateViewController(withIdentifier: "ActivityMainNavigationControllerId") as? MainNavigationController
+        {
+            self.viewControllers?.insert(activityController, at: TabBarTabs.activityTab.rawValue)
+            return
+        }
     }
 
     private func changeLeftAnchor(for item: UITabBarItem){

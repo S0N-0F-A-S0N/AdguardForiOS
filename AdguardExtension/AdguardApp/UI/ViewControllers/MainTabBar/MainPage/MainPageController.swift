@@ -45,12 +45,7 @@ final class MainPageController: UIViewController, DateTypeChangedProtocol, Compl
 
     private lazy var safariProtectionButton = { getButton(for: .safari) }()
     private lazy var systemProtectionButton = { getButton(for: .system) }()
-    private lazy var vpnUpsellButton: RoundRectButton? = {
-        if !ChineseUserExposer.isUserFromChina {
-            return getButton(for: .vpn)
-        }
-        return nil
-    }()
+    private lazy var vpnUpsellButton: RoundRectButton? = { getButton(for: .vpn) }()
 
     @IBOutlet weak var protectionButtonsStackView: UIStackView!
 
@@ -164,6 +159,7 @@ final class MainPageController: UIViewController, DateTypeChangedProtocol, Compl
     private lazy var dnsProtection: DnsProtectionProtocol = { ServiceLocator.shared.getService()! }()
     private lazy var dnsProvidersManager: DnsProvidersManagerProtocol = { ServiceLocator.shared.getService()! }()
     private lazy var dnsConfigAssistant: DnsConfigManagerAssistantProtocol = { ServiceLocator.shared.getService()! }()
+    private lazy var notification: UserNotificationServiceProtocol = { ServiceLocator.shared.getService()! }()
 
     // MARK: - View models
     private lazy var mainPageModel: MainPageModelProtocol = { MainPageModel(safariProtection: safariProtection, dnsProtection: dnsProtection, dnsConfigAssistant: dnsConfigAssistant) }()
@@ -176,6 +172,8 @@ final class MainPageController: UIViewController, DateTypeChangedProtocol, Compl
     private var dnsImplementationObserver: NotificationToken?
     private var currentDnsServerObserver: NotificationToken?
     private var proStatusObserver: NotificationToken?
+    private var onSettingsImportDidEndObserver: NotificationToken?
+    private var onSettingsResetObserver: NotificationToken?
 
     // MARK: - View Controller life cycle
 
@@ -414,6 +412,7 @@ final class MainPageController: UIViewController, DateTypeChangedProtocol, Compl
         resources.sharedDefaults().set(true, forKey: OnboardingWasShown)
         configuration.showStatusBar = true
         onBoardingIsInProcess = false
+        requestNotificationPermission()
     }
 
     // MARK: - LicensePageViewControllerDelegate delegate
@@ -586,6 +585,14 @@ final class MainPageController: UIViewController, DateTypeChangedProtocol, Compl
         currentDnsServerObserver = NotificationCenter.default.observe(name: .currentDnsServerChanged, object: nil, queue: .main) { [weak self] _ in
             self?.processDnsServerChange()
         }
+
+        onSettingsImportDidEndObserver = NotificationCenter.default.observe(name: .settingsImportDidEnd, object: nil, queue: .main) { [weak self] _ in
+            self?.reapplyProtectionButtons()
+        }
+
+        onSettingsResetObserver = NotificationCenter.default.observe(name: .resetSettings, object: nil, queue: .main) { [weak self] _ in
+            self?.reapplyProtectionButtons()
+        }
     }
 
     /**
@@ -663,6 +670,20 @@ final class MainPageController: UIViewController, DateTypeChangedProtocol, Compl
             dnsProviderNameLabel.text = nil
             dnsProtocolNameLabel.text = nil
         }
+    }
+
+    private func reapplyProtectionButtons() {
+        protectionButtonsStackView.arrangedSubviews.forEach {
+            protectionButtonsStackView.removeArrangedSubview($0)
+            $0.removeFromSuperview()
+        }
+        setupProtectionButtonsStackView()
+    }
+
+    private func getVpnUpsellButton() -> RoundRectButton? {
+        if ChineseUserExposer.isUserFromChina || resources.disableIntegrationFeature { return nil }
+
+        return vpnUpsellButton
     }
 
     /**
@@ -906,7 +927,10 @@ final class MainPageController: UIViewController, DateTypeChangedProtocol, Compl
         if !configuration.someContentBlockersEnabled && !contentBlockerHelperWasShown {
             showContentBlockersHelper()
             contentBlockerHelperWasShown = true
+            return
         }
+
+        requestNotificationPermission()
     }
 
     private func initChartViewModel() {
@@ -960,6 +984,12 @@ final class MainPageController: UIViewController, DateTypeChangedProtocol, Compl
         onBoardingIsInProcess = true // Skip onboarding presentation stage
         present(controller, animated: false)
         onBoardingIsInProcess = false
+    }
+
+    private func requestNotificationPermission() {
+        notification.requestPermissions {
+            DDLogInfo("(MainPageController) - User notification permission granted=\($0)")
+        }
     }
 }
 
@@ -1051,7 +1081,7 @@ fileprivate extension MainPageController {
 
         protectionButtonsStackView.addArrangedSubview(safariProtectionButton)
         protectionButtonsStackView.addArrangedSubview(systemProtectionButton)
-        if let vpnButton = vpnUpsellButton {
+        if let vpnButton = getVpnUpsellButton() {
             protectionButtonsStackView.addArrangedSubview(vpnButton)
         }
     }

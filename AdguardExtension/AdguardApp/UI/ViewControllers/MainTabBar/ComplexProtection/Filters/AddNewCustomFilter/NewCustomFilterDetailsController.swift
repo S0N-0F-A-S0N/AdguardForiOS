@@ -270,7 +270,7 @@ extension NewCustomFilterDetailsController: ThemableProtocol {
     func updateTheme() {
         newFilterTitle.textColor = theme.popupTitleTextColor
         contentView.backgroundColor = theme.popupBackgroundColor
-        theme.setupTextField(name)
+        theme.setupTextFieldCode(name)
         theme.setupPopupLabels(themableLabels)
         name.updateTheme()
     }

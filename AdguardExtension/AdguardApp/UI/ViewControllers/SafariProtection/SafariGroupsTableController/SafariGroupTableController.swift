@@ -41,10 +41,13 @@ final class SafariGroupTableController: UITableViewController {
     private let configuration: ConfigurationServiceProtocol = ServiceLocator.shared.getService()!
     private let model: SafariGroupsModel
 
+    private var onSettingsImportDidEndObserver: NotificationToken?
+    private var onSettingsResetObserver: NotificationToken?
+
     // MARK: - Initializer
 
     required init?(coder: NSCoder) {
-        self.model = SafariGroupsModel(safariProtection: safariProtection, configuration: configuration)
+        self.model = SafariGroupsModel(safariProtection: safariProtection, configuration: configuration, resources: ServiceLocator.shared.getService()!)
         super.init(coder: coder)
     }
 
@@ -65,6 +68,14 @@ final class SafariGroupTableController: UITableViewController {
         setupTableView()
         updateTheme()
         setupBackButton()
+
+        onSettingsImportDidEndObserver = NotificationCenter.default.observe(name: .settingsImportDidEnd, object: nil, queue: .main) { [weak self] _ in
+            self?.model.updateModels()
+        }
+
+        onSettingsResetObserver = NotificationCenter.default.observe(name: .resetSettings, object: nil, queue: .main) { [weak self] _ in
+            self?.model.updateModels()
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {

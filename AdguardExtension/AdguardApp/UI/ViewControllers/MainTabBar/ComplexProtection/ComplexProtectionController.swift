@@ -115,6 +115,8 @@ final class ComplexProtectionController: UITableViewController {
     private var vpnChangeObservation: NotificationToken?
     private var proObservation: NotificationToken?
     private var appWillEnterForegroundObservation: NotificationToken?
+    private var onSettingsImportDidEndObserver: NotificationToken?
+    private var onSettingsResetObserver: NotificationToken?
 
     private var proStatus: Bool {
         return configuration.proStatus
@@ -289,7 +291,7 @@ final class ComplexProtectionController: UITableViewController {
         }
 
         if indexPath.row == adguardVpnCell {
-            cell.isHidden = ChineseUserExposer.isUserFromChina
+            cell.isHidden = ChineseUserExposer.isUserFromChina || resources.disableIntegrationFeature
         }
     }
 
@@ -312,7 +314,7 @@ final class ComplexProtectionController: UITableViewController {
             }
         }
 
-        if indexPath.row == adguardVpnCell && ChineseUserExposer.isUserFromChina {
+        if indexPath.row == adguardVpnCell && (ChineseUserExposer.isUserFromChina || resources.disableIntegrationFeature) {
             return 0
         }
 
@@ -344,6 +346,14 @@ final class ComplexProtectionController: UITableViewController {
         appWillEnterForegroundObservation = NotificationCenter.default.observe(name: UIApplication.willEnterForegroundNotification, object: nil, queue: .main, using: { [weak self] _ in
             self?.updateAdGuardVpnStatus()
         })
+
+        onSettingsImportDidEndObserver = NotificationCenter.default.observe(name: .settingsImportDidEnd, object: nil, queue: .main) { [weak self] _ in
+            self?.tableView.reloadData()
+        }
+
+        onSettingsResetObserver = NotificationCenter.default.observe(name: .resetSettings, object: nil, queue: .main) { [weak self] _ in
+            self?.tableView.reloadData()
+        }
     }
 
     /**

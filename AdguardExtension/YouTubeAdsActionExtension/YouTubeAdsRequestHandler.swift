@@ -42,9 +42,6 @@ class YouTubeAdsRequestHandler : UINavigationController {
         let isDebugLogs = resources.isDebugLogs
         DDLogInfo("(YouTubeAdsRequestHandler) Start with log level: \(isDebugLogs ? "DEBUG" : "Normal")")
         ACLLogger.singleton()?.logLevel = isDebugLogs ? ACLLDebugLevel : ACLLDefaultLevel
-
-        // Let's check if we need to process dev account migration
-        DevAccountMigrationHelper(fromExtension: true, resources, ADProductInfo(), notifications).processDevAccountMigrationIfNeeded()
     }
 
     override func beginRequest(with context: NSExtensionContext) {
@@ -54,10 +51,18 @@ class YouTubeAdsRequestHandler : UINavigationController {
             // This closure used for case when user activate extension not from YouTube app. We just injected JS code to Safari Browser to remove ads from YouTube web page.
 
             if let result = jsResult {
-                self?.notifications.postNotificationWithoutBadge(title: nil, body: result.status.title, onNotificationSent: {
-                    DDLogInfo("(YouTubeAdsRequestHandler) js finished with result: \(result)")
-                    self?.extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
-                })
+                self?.notifications.postNotificationWithoutBadge(
+                    title: nil,
+                    body: result.status.title,
+                    onNotificationSent: {
+                        DDLogInfo("(YouTubeAdsRequestHandler) js finished with result: \(result)")
+                        self?.extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
+                    },
+                    onNotificationPermissionNotGranted: { [weak self] in
+                        DDLogInfo("(YouTubeAdsRequestHandler) js finished with result: \(result)")
+                        self?.presentSimpleAlert(title: nil, message: result.status.title) { self?.extensionContext?.completeRequest(returningItems: nil, completionHandler: nil) }
+                    }
+                )
             } else {
                 DDLogInfo("(YouTubeAdsRequestHandler) js finished, result is nil")
                 self?.extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
@@ -104,11 +109,19 @@ class YouTubeAdsRequestHandler : UINavigationController {
     }
 
     private func finish(withError error: YouTubeShareLinkResult.SharingLinkError?) {
-        presentSimpleAlert(
-            title: error?.alertTitle ?? String.localizedString("youtube_share_extension_item_provider_unknown_error_title"),
-            message: error?.alertMessage ?? String.localizedString("youtube_share_extension_item_provider_unknown_error_summary")) {
-            self.extensionContext?.completeRequest(returningItems: nil, completionHandler: nil)
-        }
+        let title = error?.alertTitle ?? String.localizedString("youtube_share_extension_item_provider_unknown_error_title")
+        let message = error?.alertMessage ?? String.localizedString("youtube_share_extension_item_provider_unknown_error_summary")
+        notifications.postNotificationWithoutBadge(
+            title: title,
+            body: message,
+            onNotificationSent: { [weak self] in self?.extensionContext?.completeRequest(returningItems: nil, completionHandler: nil) },
+            onNotificationPermissionNotGranted: { [weak self] in
+                self?.presentSimpleAlert(
+                    title: title,
+                    message: message
+                ) { self?.extensionContext?.completeRequest(returningItems: nil, completionHandler: nil) }
+            }
+        )
     }
 }
 
@@ -154,7 +167,26 @@ fileprivate extension NSExtensionContext {
             }
 
             let youTubeAdsJsResult = YouTubeAdsJsResult(jsDict: youTubeAdsJsResultDict)
-            onJsExecuted(youTubeAdsJsResult)
+
+            // Starting from app version 4.5.11, we decided to intercept user-shared YouTube links
+            // and open them directly in the app, stopping JavaScript injection used for ad blocking.
+            if let jsResult = youTubeAdsJsResult,
+               jsResult.status == .success,
+               let href = jsResult.href
+            {
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
+                    
+                    onYouTubeShareLinkResult(self.processUrlString(href))
+                }
+
+                return
+            }
+
+            DDLogInfo("(YouTubeAdsRequestHandler) Info - Receive json from JS=\(youTubeAdsJsResult)")
+            DispatchQueue.main.async {
+                onJsExecuted(youTubeAdsJsResult)
+            }
         }
     }
 

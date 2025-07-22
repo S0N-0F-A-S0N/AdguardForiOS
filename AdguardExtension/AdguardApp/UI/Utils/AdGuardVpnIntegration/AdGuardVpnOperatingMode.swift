@@ -25,7 +25,15 @@ enum AdGuardVpnOperatingMode: CaseIterable {
     /* ACNCidrRange objects represent IP address range with network mask  */
     var networkInterfaces: [ACNCidrRange] {
         switch self {
-        case .general: return [ACNCidrRange(cidrString: "172.16.209.2"), ACNCidrRange(cidrString: "fd12:1:1:1::2")]
+        case .general: return [
+            ACNCidrRange(cidrString: "172.16.209.2"),
+            ACNCidrRange(cidrString: "fd12:1:1:1::2"),
+
+            // Since AdGuard VPN v2.1.0, VPN interface addresses have been changed.
+            // To preserve compatibility with older versions detection logic, we keep the old addresses and add a new address pair.
+            ACNCidrRange(cidrString: "172.20.2.13"),
+            ACNCidrRange(cidrString: "fdfd:29::2")
+        ]
         case .ipSec: return [ACNCidrRange(cidrString: "10.40.32.0/19")]
         }
     }

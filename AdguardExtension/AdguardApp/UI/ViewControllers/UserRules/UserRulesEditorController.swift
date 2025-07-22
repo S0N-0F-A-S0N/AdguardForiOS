@@ -81,6 +81,6 @@ extension UserRulesEditorController: ThemableProtocol {
         view.backgroundColor = theme.backgroundColor
         theme.setupLabel(titleLabel)
         theme.setupLabel(descriptionLabel)
-        theme.setupTextView(rulesTextView)
+        theme.setupTextViewCode(rulesTextView)
     }
 }

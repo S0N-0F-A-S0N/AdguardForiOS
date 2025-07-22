@@ -49,11 +49,14 @@ final class LicensePageViewController: UIViewController {
     private let configuration: ConfigurationServiceProtocol = ServiceLocator.shared.getService()!
     private let purchaseService: PurchaseServiceProtocol = ServiceLocator.shared.getService()!
     private let productInfo: ADProductInfoProtocol = ServiceLocator.shared.getService()!
+    private let resources: AESharedResourcesProtocol = ServiceLocator.shared.getService()!
 
     /* Segue identifiers */
     let loginSegueId = "loginSegueId"
 
     private var proStatusObserver: NotificationToken?
+    private var onSettingsImportDidEndObserver: NotificationToken?
+    private var onSettingsResetObserver: NotificationToken?
 
     // MARK: - Public methods
 
@@ -78,6 +81,25 @@ final class LicensePageViewController: UIViewController {
             self?.setupNavigationBar()
             self?.setNavBarColor()
         }
+
+        let payload = { [weak self] in
+            guard let self = self,
+                  self.state == .premium,
+                  let stateView = self.view as? PremiumLicenseStateView
+            else { return }
+
+            stateView.models = PremiumFeature.allCases.compactMap {
+                if self.resources.disableSecurityRelatedFeatures && $0 == .securityFilters { return nil  }
+
+                return PremiumFeatureViewModel(icon: $0.icon, featureName: $0.localizedName, featureDescription: $0.localizedDescr)
+            }
+
+            stateView.updateTheme()
+        }
+
+        onSettingsImportDidEndObserver = NotificationCenter.default.observe(name: .settingsImportDidEnd, object: nil, queue: .main) { _ in payload() }
+
+        onSettingsResetObserver = NotificationCenter.default.observe(name: .resetSettings, object: nil, queue: .main) { _ in payload() }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -110,8 +132,10 @@ final class LicensePageViewController: UIViewController {
         case .premium:
             freeModel = nil
             let premiumView = PremiumLicenseStateView()
-            premiumView.models = PremiumFeature.allCases.map {
-                PremiumFeatureViewModel(icon: $0.icon, featureName: $0.localizedName, featureDescription: $0.localizedDescr)
+            premiumView.models = PremiumFeature.allCases.compactMap {
+                if resources.disableSecurityRelatedFeatures && $0 == .securityFilters { return nil  }
+
+                return PremiumFeatureViewModel(icon: $0.icon, featureName: $0.localizedName, featureDescription: $0.localizedDescr)
             }
             premiumView.delegate = self
             premiumView.updateTheme()

@@ -972,7 +972,7 @@
         <!--Main Navigation Controller-->
         <scene sceneID="bA7-uX-8tw">
             <objects>
-                <navigationController id="oBM-uz-5je" customClass="MainNavigationController" customModule="Adguard" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ActivityMainNavigationControllerId" id="oBM-uz-5je" customClass="MainNavigationController" customModule="Adguard" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="activity" id="o1g-zx-23d"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" shadowImage="nil" id="Tcm-Rv-cqD">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

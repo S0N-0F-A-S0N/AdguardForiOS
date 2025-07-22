@@ -322,6 +322,24 @@
 /* (ContentBlockersTableController) - Content Blockers title */
 "cb_screen_content_blockers_title" = "Blocante de conținut";
 
+/* (ContentBlockersTableController) - General content blocker name */
+"cb_screen_content_blockers_general_name" = "General";
+
+/* (ContentBlockersTableController) - Privacy content blocker name */
+"cb_screen_content_blockers_privacy_name" = "Viața privată";
+
+/* (ContentBlockersTableController) - Social content blocker name */
+"cb_screen_content_blockers_social_name" = "Social";
+
+/* (ContentBlockersTableController) - Other content blocker name */
+"cb_screen_content_blockers_other_name" = "Altele";
+
+/* (ContentBlockersTableController) - Custom content blocker name */
+"cb_screen_content_blockers_custom_name" = "Personalizat";
+
+/* (ContentBlockersTableController) - Security content blocker name */
+"cb_screen_content_blockers_security_name" = "Securitate";
+
 /* (AdvancedSettingsController) Restart when network changes error */
 "general_settings_restart_tunnel_error" = "Trebuie activat VPN mai întâi";
 
@@ -730,6 +748,9 @@
 /* (OnboardingController) second step with advanced protection text */
 "advanced_protection_onboarding_second_step_text" = "Accesați <b>Safari > Extensii</b>.";
 
+/* (OnboardingController) second step with advanced protection text for iOS 18+ */
+"advanced_protection_onboarding_second_step_text_ios_18" = "Accesați <b>Aplicații > Safari > Extensii</b>.";
+
 /* (OnboardingController) third step text */
 "onboarding_third_step_text" = "<b>Activarea</b> tuturor extensiilor AdGuard.";
 
@@ -737,7 +758,7 @@
 "advanced_protection_onboarding_third_step_text" = "Setați toate comutatoarele AdGuard pe <b>activat</b>. Sunteți gata de plecare!";
 
 /* (OnboardingContentView) fours step. '%@' will be replaced with the share icon */
-"onboarding_fours_step_text" = "Pentru protecție <b>Avansată</b>, deschideți Safari, atingeți pictograma <b>aA</b> din partea stângă a câmpului URL,<br><br> %@ <br><br>apoi atingeți <b>Gestionare extensii</b> și activați comutatorul <b>AdGuard</b>.";
+"onboarding_fours_step_text" = "Pentru protecție <b>Avansată</b>, deschideți Safari, atingeți pictograma din partea stângă a câmpului URL,<br><br> %@ <br><br>apoi atingeți <b>Gestionare extensii</b> și activați comutatorul <b>AdGuard</b>.";
 
 /* (BlockRequestController) Block request title */
 "block_request" = "Blocare cerere";
@@ -885,6 +906,9 @@
 
 /* (ActivityViewController) -  Data saved alret title */
 "data_saved_info_alert_title" = "Date salvate";
+
+/* (ActivityViewController) -  Data saved alret message */
+"data_saved_info_alert_message" = "AdGuard nu permite browserului să încarce elemente inutile de pagină, reducând astfel consumul de date al dispozitivului dvs.\n\nIată cantitatea totală de date salvată de AdGuard pentru perioada de timp selectată";
 
 /* (ActivityViewController) - Companies alert title */
 "companies_info_alert_title" = "Numărul de companii";
@@ -1085,6 +1109,9 @@
 /* (ImportSettingsController) add dns rules title */
 "import_dns_user_rules" = "Adăugați Reguli Utilizator DNS";
 
+/* (ImportSettingsController) disable YouTube feature title */
+"disable_youtube_feature" = "Dezactivați AdGuard Player";
+
 /* (LowLevelSettingsController) Low level settings description. <b style=color:#c23814ff> It is a color for WARNING! word*/
 "low_level_description" = "<b style=color:#c23814ff>AVERTISMENT!</b> Activarea acestor funcții poate întrerupe conexiunea la Internet sau vă poate compromite securitatea și confidențialitatea.";
 
@@ -1216,6 +1243,12 @@ DO NOT TRANSLATE "none" */
 
 /* (YoutubePlayerController) 'userscript error' alert message */
 "youtube_player_controller_userscript_error_message" = "Nu s-a reușit crearea unui script de utilizator";
+
+/* (YoutubePlayerController) YouTube feature disabled alert title */
+"youtube_player_controller_feature_disabled_title" = "AdGuard Player dezactivat";
+
+/* (YoutubePlayerController) YouTube feature disabled alert message */
+"youtube_player_controller_feature_disabled_message" = "Partajarea video cu AdGuard nu este disponibilă";
 
 /* (YouTubeAdsRequestHandler) 'no url error' alert title */
 "youtube_share_extension_no_url_title" = "Niciun URL furnizat";

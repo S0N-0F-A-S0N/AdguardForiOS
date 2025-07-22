@@ -17,5 +17,5 @@
 //
 
 // Builder target resources directory
-BUILDER_DIR = $(SYMROOT)/$(CONFIGURATION)
+BUILDER_DIR = $(SRCROOT)/../SupportingScripts/.builder
 BUILDER_RESOURCES_DIR = $(BUILDER_DIR)/BuilderResources

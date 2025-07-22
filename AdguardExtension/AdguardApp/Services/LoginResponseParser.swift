@@ -58,6 +58,7 @@ class LoginResponseParser: LoginResponseParserProtocol {
     private let AUTH_SUCCESS = "SUCCESS"
     private let AUTH_BAD_CREDINTIALS = "BAD_CREDENTIALS"
     private let AUTH_MAX_COMPUTERS_EXCEEDED = "MAX_COMPUTERS_EXCEED"
+    private let AUTH_BLOCKED = "BLOCKED"
 
     // premium values
     private let PREMIUM_STATUS_ACTIVE = "ACTIVE"
@@ -188,6 +189,15 @@ class LoginResponseParser: LoginResponseParserProtocol {
             if licenseKeyStatus == AUTH_MAX_COMPUTERS_EXCEEDED {
                 error = NSError(domain: LoginService.loginErrorDomain, code: LoginService.loginMaxComputersExceeded, userInfo: nil)
             }
+
+            if licenseKeyStatus == AUTH_BLOCKED {
+                if (json[STATUS_RESPONSE_KEY_PARAM] as? String) == nil {
+                    error = NSError(domain: LoginService.loginErrorDomain, code: LoginService.applicationBlocked, userInfo: nil)
+                } else {
+                    error = NSError(domain: LoginService.loginErrorDomain, code: LoginService.licenseBlocked, userInfo: nil)
+                }
+            }
+
             return (false, nil, nil, error)
         }
 

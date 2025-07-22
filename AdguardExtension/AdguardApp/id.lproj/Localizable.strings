@@ -322,6 +322,24 @@
 /* (ContentBlockersTableController) - Content Blockers title */
 "cb_screen_content_blockers_title" = "Pemblokir Konten";
 
+/* (ContentBlockersTableController) - General content blocker name */
+"cb_screen_content_blockers_general_name" = "Umum";
+
+/* (ContentBlockersTableController) - Privacy content blocker name */
+"cb_screen_content_blockers_privacy_name" = "Privasi";
+
+/* (ContentBlockersTableController) - Social content blocker name */
+"cb_screen_content_blockers_social_name" = "Sosial";
+
+/* (ContentBlockersTableController) - Other content blocker name */
+"cb_screen_content_blockers_other_name" = "Lainnya";
+
+/* (ContentBlockersTableController) - Custom content blocker name */
+"cb_screen_content_blockers_custom_name" = "Buatan";
+
+/* (ContentBlockersTableController) - Security content blocker name */
+"cb_screen_content_blockers_security_name" = "Keamanan";
+
 /* (AdvancedSettingsController) Restart when network changes error */
 "general_settings_restart_tunnel_error" = "Anda harus mengaktifkan VPN terlebih dahulu";
 
@@ -644,7 +662,7 @@
 "new_dns_filter_title" = "Filter DNS baru";
 
 /* (NewCustomFilterDetailsController) Error message when adding custom filter fails */
-"add_custom_filter_error_message" = "Terjadi kesalahan, atau format file dengan pemfilteran kustom salah";
+"add_custom_filter_error_message" = "Terjadi kesalahan, atau format berkas dengan pemfilteran kustom salah";
 
 /*(NewCustomFilterDetailsController) title for editing custom filter */
 "edit_custom_filter_title" = "Edit filter kustom";
@@ -730,6 +748,9 @@
 /* (OnboardingController) second step with advanced protection text */
 "advanced_protection_onboarding_second_step_text" = "Buka <b>Safari > Ekstensi</b>.";
 
+/* (OnboardingController) second step with advanced protection text for iOS 18+ */
+"advanced_protection_onboarding_second_step_text_ios_18" = "Buka <b>Aplikasi > Safari > Ekstensi</b>.";
+
 /* (OnboardingController) third step text */
 "onboarding_third_step_text" = "<b>Aktifkan</b> semua ekstensi AdGuard.";
 
@@ -737,7 +758,7 @@
 "advanced_protection_onboarding_third_step_text" = "Atur semua tombol toggle AdGuard menjadi <b>aktif</b>. Setelah itu selesai!";
 
 /* (OnboardingContentView) fours step. '%@' will be replaced with the share icon */
-"onboarding_fours_step_text" = "Untuk perlindungan <b>Tingkat Lanjut</b>, buka Safari, pilih ikon <b>aA</b> di sisi kiri kolom URL, <br><br>%@<br><br>kemudian pilih <b>Kelola Ekstensi</b> dan aktifkan tombol toggle <b>AdGuard</b>.";
+"onboarding_fours_step_text" = "Untuk perlindungan <b>Tingkat Lanjut</b>, buka Safari, pilih ikon di sisi kiri kolom URL, <br><br>%@<br><br>kemudian pilih <b>Kelola Ekstensi</b> dan aktifkan tombol toggle <b>AdGuard</b>.";
 
 /* (BlockRequestController) Block request title */
 "block_request" = "Permintaan blokir";
@@ -1088,6 +1109,9 @@
 /* (ImportSettingsController) add dns rules title */
 "import_dns_user_rules" = "Tambahkan Aturan Pengguna DNS";
 
+/* (ImportSettingsController) disable YouTube feature title */
+"disable_youtube_feature" = "Nonaktifkan Pemutar AdGuard";
+
 /* (LowLevelSettingsController) Low level settings description. <b style=color:#c23814ff> It is a color for WARNING! word*/
 "low_level_description" = "<b style=color:#c23814ff>PERINGATAN!</b> Mengaktifkan fitur ini dapat memutus koneksi internet atau membahayakan keamanan dan privasi Anda.";
 
@@ -1219,6 +1243,12 @@ DO NOT TRANSLATE "none" */
 
 /* (YoutubePlayerController) 'userscript error' alert message */
 "youtube_player_controller_userscript_error_message" = "Gagal membuat skrip pengguna";
+
+/* (YoutubePlayerController) YouTube feature disabled alert title */
+"youtube_player_controller_feature_disabled_title" = "Pemutar AdGuard dinonaktifkan";
+
+/* (YoutubePlayerController) YouTube feature disabled alert message */
+"youtube_player_controller_feature_disabled_message" = "Berbagi video dengan AdGuard tidak tersedia";
 
 /* (YouTubeAdsRequestHandler) 'no url error' alert title */
 "youtube_share_extension_no_url_title" = "Tidak ada URL yang disediakan";

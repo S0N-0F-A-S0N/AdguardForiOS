@@ -322,6 +322,24 @@
 /* (ContentBlockersTableController) - Content Blockers title */
 "cb_screen_content_blockers_title" = "Blokátory obsahu";
 
+/* (ContentBlockersTableController) - General content blocker name */
+"cb_screen_content_blockers_general_name" = "Všeobecné";
+
+/* (ContentBlockersTableController) - Privacy content blocker name */
+"cb_screen_content_blockers_privacy_name" = "Súkromie";
+
+/* (ContentBlockersTableController) - Social content blocker name */
+"cb_screen_content_blockers_social_name" = "Sociálne siete";
+
+/* (ContentBlockersTableController) - Other content blocker name */
+"cb_screen_content_blockers_other_name" = "Iné";
+
+/* (ContentBlockersTableController) - Custom content blocker name */
+"cb_screen_content_blockers_custom_name" = "Vlastné";
+
+/* (ContentBlockersTableController) - Security content blocker name */
+"cb_screen_content_blockers_security_name" = "Bezpečnosť";
+
 /* (AdvancedSettingsController) Restart when network changes error */
 "general_settings_restart_tunnel_error" = "Najskôr musíte zapnúť VPN";
 
@@ -730,6 +748,9 @@
 /* (OnboardingController) second step with advanced protection text */
 "advanced_protection_onboarding_second_step_text" = "Prejdite na <b>Safari > Rozšírenia</b>.";
 
+/* (OnboardingController) second step with advanced protection text for iOS 18+ */
+"advanced_protection_onboarding_second_step_text_ios_18" = "Prejdite na <b>Aplikácie > Safari > Rozšírenia</b>.";
+
 /* (OnboardingController) third step text */
 "onboarding_third_step_text" = "<b>Zapnúť</b> všetky AdGuard rozšírenia.";
 
@@ -737,7 +758,7 @@
 "advanced_protection_onboarding_third_step_text" = "Nastavte všetky prepínače AdGuard na <b>zapnuté</b>. Ste pripravení vyraziť!";
 
 /* (OnboardingContentView) fours step. '%@' will be replaced with the share icon */
-"onboarding_fours_step_text" = "Pre <b>rozšírenú</b> ochranu otvorte Safari, ťuknite na ikonu <b>aA</b> a ľavej strane poľa URL adresy,<br><br> %@ <br><br>potom ťuknite na <b>položku Spravovať rozšírenia</b> a zapnite prepínač <b>AdGuard</b>.";
+"onboarding_fours_step_text" = "Pre <b>rozšírenú</b> ochranu otvorte Safari, ťuknite na ikonu a ľavej strane poľa URL adresy,<br><br> %@ <br><br>potom ťuknite na <b>položku Spravovať rozšírenia</b> a zapnite prepínač <b>AdGuard</b>.";
 
 /* (BlockRequestController) Block request title */
 "block_request" = "Zablokovať dopyt";
@@ -884,7 +905,7 @@
 "average_info_alert_message" = "Priemerný čas potrebný na spracovanie DNS dopytu. Čím rýchlejší DNS server používate, tým nižšia hodnota by to mala byť.";
 
 /* (ActivityViewController) -  Data saved alret title */
-"data_saved_info_alert_title" = "Uložené údaje";
+"data_saved_info_alert_title" = "Ušetrené dáta";
 
 /* (ActivityViewController) -  Data saved alret message */
 "data_saved_info_alert_message" = "AdGuard bráni Vášmu zariadeniu načítať sledovače v aplikácii, čím znižuje spotrebu dát Vášho zariadenia\n\nTu je celkové množstvo dát ušetrených službou AdGuard za vybrané časové obdobie";

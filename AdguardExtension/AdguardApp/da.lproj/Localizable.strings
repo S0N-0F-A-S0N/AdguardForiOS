@@ -322,6 +322,24 @@
 /* (ContentBlockersTableController) - Content Blockers title */
 "cb_screen_content_blockers_title" = "Indholdsblockere";
 
+/* (ContentBlockersTableController) - General content blocker name */
+"cb_screen_content_blockers_general_name" = "Generalt";
+
+/* (ContentBlockersTableController) - Privacy content blocker name */
+"cb_screen_content_blockers_privacy_name" = "Fortrolighed";
+
+/* (ContentBlockersTableController) - Social content blocker name */
+"cb_screen_content_blockers_social_name" = "Social";
+
+/* (ContentBlockersTableController) - Other content blocker name */
+"cb_screen_content_blockers_other_name" = "Andet";
+
+/* (ContentBlockersTableController) - Custom content blocker name */
+"cb_screen_content_blockers_custom_name" = "Tilpasset";
+
+/* (ContentBlockersTableController) - Security content blocker name */
+"cb_screen_content_blockers_security_name" = "Sikkerhed";
+
 /* (AdvancedSettingsController) Restart when network changes error */
 "general_settings_restart_tunnel_error" = "Du skal først aktivere VPN";
 
@@ -730,6 +748,9 @@
 /* (OnboardingController) second step with advanced protection text */
 "advanced_protection_onboarding_second_step_text" = "Gå til <b>Safari > Udvidelser</b>.";
 
+/* (OnboardingController) second step with advanced protection text for iOS 18+ */
+"advanced_protection_onboarding_second_step_text_ios_18" = "Gå til <b>Apps > Safari > Udvidelser</b>.";
+
 /* (OnboardingController) third step text */
 "onboarding_third_step_text" = "<b>Aktivér</b> alle AdGuard-udvidelser.";
 
@@ -737,7 +758,7 @@
 "advanced_protection_onboarding_third_step_text" = "Sæt alle AdGuard-omskiftere på <b>Til</b>. Alt er nu klar!";
 
 /* (OnboardingContentView) fours step. '%@' will be replaced with the share icon */
-"onboarding_fours_step_text" = "For <b>Avanceret</b> beskyttelse, så åbn Safari, tryk på ikonet <b>aA</b> i venstre side af URL-feltet,<br><br> %@ <br><br>, tryk derefter på Håndtér udvidelser og slå <b>AdGuard</b>-omskifteren til.";
+"onboarding_fours_step_text" = "For <b>Avanceret</b> beskyttelse, så åbn Safari, tryk på ikonet i venstre side af URL-feltet,<br><br> %@ <br><br>, tryk derefter på Håndtér udvidelser og slå <b>AdGuard</b>-omskifteren til.";
 
 /* (BlockRequestController) Block request title */
 "block_request" = "Blokér forespørgsel";

@@ -322,6 +322,24 @@
 /* (ContentBlockersTableController) - Content Blockers title */
 "cb_screen_content_blockers_title" = "内容拦截器";
 
+/* (ContentBlockersTableController) - General content blocker name */
+"cb_screen_content_blockers_general_name" = "通用";
+
+/* (ContentBlockersTableController) - Privacy content blocker name */
+"cb_screen_content_blockers_privacy_name" = "隐私";
+
+/* (ContentBlockersTableController) - Social content blocker name */
+"cb_screen_content_blockers_social_name" = "社交";
+
+/* (ContentBlockersTableController) - Other content blocker name */
+"cb_screen_content_blockers_other_name" = "其它";
+
+/* (ContentBlockersTableController) - Custom content blocker name */
+"cb_screen_content_blockers_custom_name" = "自定义";
+
+/* (ContentBlockersTableController) - Security content blocker name */
+"cb_screen_content_blockers_security_name" = "安全";
+
 /* (AdvancedSettingsController) Restart when network changes error */
 "general_settings_restart_tunnel_error" = "你需要先启用 VPN";
 
@@ -730,6 +748,9 @@
 /* (OnboardingController) second step with advanced protection text */
 "advanced_protection_onboarding_second_step_text" = "前往 <b>Safari > 扩展</b>";
 
+/* (OnboardingController) second step with advanced protection text for iOS 18+ */
+"advanced_protection_onboarding_second_step_text_ios_18" = "前往 <b>应用程序 > Safari > 扩展</b>。";
+
 /* (OnboardingController) third step text */
 "onboarding_third_step_text" = "<b>开启</b>所有 AdGuard 扩展";
 
@@ -737,7 +758,7 @@
 "advanced_protection_onboarding_third_step_text" = "将所有 AdGuard 的开关设置为<b>开</b>。现在可以开始了！";
 
 /* (OnboardingContentView) fours step. '%@' will be replaced with the share icon */
-"onboarding_fours_step_text" = "如要启用<b>高级</b>保护，请打开 Safari 浏览器，点击网址字段左侧的<b>大小</b>图标，<br><br>%@<br><br>然后点击<b>管理扩展</b> ，启用 <b>AdGuard</b> 开关。";
+"onboarding_fours_step_text" = "如要启用<b>高级</b>保护，请打开 Safari 浏览器，点击网址字段左侧的图标，<br><br>%@<br><br>然后点击<b>管理扩展</b> ，启用 <b>AdGuard</b> 开关。";
 
 /* (BlockRequestController) Block request title */
 "block_request" = "拦截请求";
@@ -1088,6 +1109,9 @@
 /* (ImportSettingsController) add dns rules title */
 "import_dns_user_rules" = "添加 DNS 用户规则";
 
+/* (ImportSettingsController) disable YouTube feature title */
+"disable_youtube_feature" = "禁用 AdGuard 播放器";
+
 /* (LowLevelSettingsController) Low level settings description. <b style=color:#c23814ff> It is a color for WARNING! word*/
 "low_level_description" = "<b style=color:#c23814ff>警告！</b>开启以下功能将会导致网络连接中断或您的安全与隐私受到损害。";
 
@@ -1219,6 +1243,12 @@ DO NOT TRANSLATE "none" */
 
 /* (YoutubePlayerController) 'userscript error' alert message */
 "youtube_player_controller_userscript_error_message" = "创建用户脚本失败";
+
+/* (YoutubePlayerController) YouTube feature disabled alert title */
+"youtube_player_controller_feature_disabled_title" = "AdGuard 播放器已禁用";
+
+/* (YoutubePlayerController) YouTube feature disabled alert message */
+"youtube_player_controller_feature_disabled_message" = "无法使用 AdGuard 进行视频共享";
 
 /* (YouTubeAdsRequestHandler) 'no url error' alert title */
 "youtube_share_extension_no_url_title" = "未提供 URL";

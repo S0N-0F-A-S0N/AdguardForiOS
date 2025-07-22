@@ -31,7 +31,7 @@ export const BlockElement = observer(() => {
         show = false;
     }
 
-    if (!store.contentBlockersEnabled) {
+    if (!store.contentBlockersEnabled || !store.currentSiteDomain) {
         show = true;
         disabled = true;
     }

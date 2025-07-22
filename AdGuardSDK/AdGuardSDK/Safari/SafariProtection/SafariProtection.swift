@@ -47,6 +47,10 @@ public final class SafariProtection: SafariProtectionProtocol {
     // Serial queue for converting Content Blockers to avoid working queue load
     let cbQueue = DispatchQueue(label: "SafariAdGuardSDK.SafariProtection.cbQueue", qos: .userInitiated)
 
+    /// lastCbReloadTime is used to avoid extra unnecessary rules conversions when several reloads are scheduled
+    /// on the `cbQueue`.
+    var lastReloadTime = Date()
+
     // Queue to call completion handlers
     let completionQueue = DispatchQueue(label: "SafariAdGuardSDK.SafariProtection.completionQueue")
 
@@ -64,31 +68,41 @@ public final class SafariProtection: SafariProtectionProtocol {
 
     // MARK: - Initialization
 
-    /**
-     Mediator object that controls all SDK. Every call to SDK must go through this object
-     - Parameter configuration: Current application configuration
-     - Parameter defaultConfiguration: Сonfiguration that will replace the current one when resetting the settings, a copy of passed object will be made
-     - Parameter filterFilesDirectoryUrl: Directory URL where SDK should store filter files
-     - Parameter dbContainerUrl: Directory URL where db files should be located
-     - Parameter jsonStorageUrl: Directory URL where Content Blockers JSON files should be stored
-     - Parameter userDefaults: UserDefaults objects where SDK will store temporary variables
-     - Throws: Can throw an error if initialization of one of inner services fails
-     */
-    public init(configuration: SafariConfigurationProtocol,
-                defaultConfiguration: SafariConfigurationProtocol,
-                filterFilesDirectoryUrl: URL,
-                dbContainerUrl: URL,
-                jsonStorageUrl: URL,
-                userDefaults: UserDefaults,
-                dnsBackgroundFetchUpdater: DnsBackgroundFetchUpdateProtocol? = nil) throws
-    {
+    /// Mediator object that controls all SDK. Every call to SDK must go through this object
+    ///
+    /// - Parameters:
+    ///   - configuration: Current application configuration
+    ///   - defaultConfiguration: Сonfiguration that will replace the current one when resetting
+    ///                           the settings, a copy of passed object will be made
+    ///   - filterFilesDirectoryUrl: Directory URL where SDK should store filter files
+    ///   - dbContainerUrl: Directory URL where db files should be located
+    ///   - jsonStorageUrl: Directory URL where Content Blockers JSON files should be stored
+    ///   - webExtFolderUrl: URL to the directory where web extension files are stored
+    ///   - advancedRulesFileUrl: (deprecated) URL to the file where plain text advanced rules are stored
+    ///   - userDefaults: UserDefaults objects where SDK will store temporary variables
+    /// - Throws: Can throw an error if initialization of one of inner services fails
+    public init(
+        configuration: SafariConfigurationProtocol,
+        defaultConfiguration: SafariConfigurationProtocol,
+        filterFilesDirectoryUrl: URL,
+        dbContainerUrl: URL,
+        jsonStorageUrl: URL,
+        webExtFolderUrl: URL,
+        advancedRulesFileUrl: URL,
+        userDefaults: UserDefaults,
+        dnsBackgroundFetchUpdater: DnsBackgroundFetchUpdateProtocol? = nil
+    ) throws {
         Logger.logInfo("(SafariProtection) - init start")
 
-        let services = try ServicesStorage(configuration: configuration,
-                                          filterFilesDirectoryUrl: filterFilesDirectoryUrl,
-                                          dbContainerUrl: dbContainerUrl,
-                                          userDefaults: userDefaults,
-                                          jsonStorageUrl: jsonStorageUrl)
+        let services = try ServicesStorage(
+            configuration: configuration,
+            filterFilesDirectoryUrl: filterFilesDirectoryUrl,
+            dbContainerUrl: dbContainerUrl,
+            jsonStorageUrl: jsonStorageUrl,
+            webExtFolderUrl: webExtFolderUrl,
+            advancedRulesFileUrl: advancedRulesFileUrl,
+            userDefaults: userDefaults
+        )
 
         self.configuration = configuration
         self.defaultConfiguration = defaultConfiguration
@@ -132,13 +146,7 @@ public final class SafariProtection: SafariProtectionProtocol {
 
     /* Resets all sdk to default configuration. Deletes all stored filters, filters meta and user rules */
     public func reset(withReloadCB: Bool, _ onResetFinished: @escaping (Error?) -> Void) {
-        workingQueue.async { [weak self] in
-            guard let self = self else {
-                Logger.logError("(SafariProtection) - reset; self is missing!")
-                DispatchQueue.main.async { onResetFinished(CommonError.missingSelf) }
-                return
-            }
-
+        workingQueue.async {
             Logger.logInfo("(SafariProtection) - reset start")
 
             //Update config with default configuration
@@ -210,12 +218,28 @@ public final class SafariProtection: SafariProtectionProtocol {
 
     /* Creates JSON files for Content blockers and reloads CBs to apply new JSONs */
     func reloadContentBlockers(onCbReloaded: @escaping (_ error: Error?) -> Void) {
-        BackgroundTaskExecutor.executeAsynchronousTask("SafariProtection.reloadContentBlockers") { [weak self] onTaskFinished in
-            self?.cbQueue.async { [weak self] in
-                guard let self = self else {
-                    Logger.logError("(SafariProtection) - reloadContentBlockers; self is missing!")
-                    onCbReloaded(CommonError.missingSelf)
-                    onTaskFinished()
+        BackgroundTaskExecutor.executeAsynchronousTask("SafariProtection.reloadContentBlockers") { onTaskFinished in
+
+            // Capture the time when the task was scheduled to the queue.
+            // The idea is that there could be several tasks scheduled on `cbQueue`, for instance,
+            // in reaction to the user quickly switching multiple filter lists or adding several
+            // rules.
+            // So here's what we do. When the task starts executing we first check when it was
+            // scheduled. If it was scheduled before the previous task started executing, then
+            // we can safely skip it.
+            let scheduleReloadTime = Date()
+
+            self.cbQueue.async {
+                // Capture the time when the task started executing.
+                let reloadTaskStartTime = Date()
+
+                if scheduleReloadTime < self.lastReloadTime {
+                    Logger.logInfo("(SafariProtection) - reloadContentBlockers; Skipping reload because last reload was performed earlier than the task was scheduled")
+                    self.workingQueue.async {
+                        onCbReloaded(nil)
+                        onTaskFinished()
+                    }
+
                     return
                 }
 
@@ -225,51 +249,36 @@ public final class SafariProtection: SafariProtectionProtocol {
                 }
                 catch {
                     Logger.logError("(SafariProtection) - createNewCbJsonsAndReloadCbs; Error converting filters: \(error)")
-                    self.workingQueue.sync {
+                    self.workingQueue.async {
                         onCbReloaded(error)
                         onTaskFinished()
                     }
                     return
                 }
 
-                // TODO: - Can be improved
-                // This flag is set when advanced rules are converted and saved to file
-                // Now it is done for messaging in Safari Web extension as we haven't found another solution yet
-                self.userDefaults.shouldUpdateAdvancedRules = true
+                // Semaphore is used to wait until updating content blockers is finished so that we
+                // didn't try to run conversion (and overwriting files) until it is finished.
+                let semaphore = DispatchSemaphore(value: 0)
 
-                self.cbService.updateContentBlockers { [weak self] error in
-                    guard let self = self else {
-                        Logger.logError("(SafariProtection) - reloadContentBlockers; self is missing!")
-                        self?.workingQueue.sync {
-                            onCbReloaded(CommonError.missingSelf)
-                            onTaskFinished()
-                        }
-                        return
-                    }
+                // Schedule reloading Safari content blockers. It will be done asynchronously and
+                // depending on the implementation we can reload ALL of them in parallel.
+                self.cbService.updateContentBlockers { error in
+                    // Signal that updating content blockers has been finished.
+                    semaphore.signal()
 
-                    self.workingQueue.sync {
+                    self.workingQueue.async {
                         onCbReloaded(error)
                         onTaskFinished()
                     }
                 }
+
+                // Wait until Safari content blockers finished updating.
+                semaphore.wait()
+
+                // Store the task's start time so that it sould be used by the next task
+                // to check if it can be skipped.
+                self.lastReloadTime = reloadTaskStartTime
             }
-        }
-    }
-}
-
-// MARK: - UserDefaultsStorageProtocol + shouldUpdateAdvancedRulesKey
-
-fileprivate extension UserDefaultsStorageProtocol {
-
-    private var shouldUpdateAdvancedRulesKey: String { "SafariAdGuardSDK.shouldUpdateAdvancedRulesKey" }
-
-    /// Returns true if advanced protection rules should be updated
-    var shouldUpdateAdvancedRules: Bool {
-        get {
-            storage.bool(forKey: shouldUpdateAdvancedRulesKey)
-        }
-        set {
-            storage.set(newValue, forKey: shouldUpdateAdvancedRulesKey)
         }
     }
 }

@@ -55,6 +55,8 @@ final class DnsSettingsController : UITableViewController {
     private var didBecomeActiveNotification: NotificationToken?
     private var proStatusObservation: NotificationToken?
     private var currentDnsServerObserver: NotificationToken?
+    private var onSettingsImportDidEndObserver: NotificationToken?
+    private var onSettingsResetObserver: NotificationToken?
 
     private var proStatus: Bool {
         return configuration.proStatus
@@ -102,6 +104,14 @@ final class DnsSettingsController : UITableViewController {
 
         currentDnsServerObserver = NotificationCenter.default.observe(name: .currentDnsServerChanged, object: nil, queue: .main) { [weak self] _ in
             self?.updateServerName()
+        }
+
+        onSettingsImportDidEndObserver = NotificationCenter.default.observe(name: .settingsImportDidEnd, object: nil, queue: .main) { [weak self] _ in
+            self?.tableView.reloadData()
+        }
+
+        onSettingsResetObserver = NotificationCenter.default.observe(name: .resetSettings, object: nil, queue: .main) { [weak self] _ in
+            self?.tableView.reloadData()
         }
 
         let product = purchaseService.standardProduct
@@ -165,8 +175,8 @@ final class DnsSettingsController : UITableViewController {
                 dnsFilteringSeparator.isHidden = resources.dnsImplementation != .native
             }
 
-            if !ios14available && indexPath.row == implementationRow {
-                cell.isHidden = true
+            if indexPath.row == implementationRow {
+                cell.isHidden = !ios14available || resources.disableSecurityRelatedFeatures
             }
         }
 
@@ -191,7 +201,7 @@ final class DnsSettingsController : UITableViewController {
                 return 0.0
             }
 
-            if !ios14available && indexPath.row == implementationRow {
+            if indexPath.row == implementationRow && (!ios14available || resources.disableSecurityRelatedFeatures) {
                 return 0.0
             }
 

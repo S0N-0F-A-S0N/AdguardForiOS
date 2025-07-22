@@ -38,12 +38,27 @@ final class ServicesStorage: ServicesStorageProtocol {
     let filters: FiltersServiceProtocol
     let converter: FiltersConverterServiceProtocol
 
-    init(configuration: SafariConfigurationProtocol,
-         filterFilesDirectoryUrl: URL,
-         dbContainerUrl: URL,
-         userDefaults: UserDefaults,
-         jsonStorageUrl: URL) throws
-    {
+    /// Creates an instance of ServicesStorage.
+    ///
+    /// - Parameters:
+    ///   - configuration: Safari protection configuration
+    ///   - filterFilesDirectoryUrl: URL to the directory where filter files are stored
+    ///   - dbContainerUrl: URL to the directory where the app database is stored
+    ///   - jsonStorageUrl: URL to the directory where content blockers' JSON files are stored
+    ///   - webExtFolderUrl: URL to the directory where web extension files are stored
+    ///   - advancedRulesFileUrl: (deprecated) URL to the file where plain text advanced rules are stored
+    ///   - userDefaults: Shared user defaults
+    ///
+    /// - Throws: Throws an error if it fails to initialize filters directory.
+    init(
+        configuration: SafariConfigurationProtocol,
+        filterFilesDirectoryUrl: URL,
+        dbContainerUrl: URL,
+        jsonStorageUrl: URL,
+        webExtFolderUrl: URL,
+        advancedRulesFileUrl: URL,
+        userDefaults: UserDefaults
+    ) throws {
         Logger.logInfo("(ServicesStorage) - init start")
 
         let filterFilesStorage = try FilterFilesStorage(filterFilesDirectoryUrl: filterFilesDirectoryUrl)
@@ -61,6 +76,8 @@ final class ServicesStorage: ServicesStorageProtocol {
 
         self.cbStorage = try ContentBlockersInfoStorage(
             jsonStorageUrl: jsonStorageUrl,
+            webExtFolderUrl: webExtFolderUrl,
+            advancedRulesFileUrl: advancedRulesFileUrl,
             userDefaultsStorage: self.userDefaults
         )
 

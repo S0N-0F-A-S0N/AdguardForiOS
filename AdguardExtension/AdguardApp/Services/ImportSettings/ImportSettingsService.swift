@@ -89,6 +89,7 @@ final class ImportSettingsService: ImportSettingsServiceProtocol {
 
             let result = self.applySettingsInternal(settings)
             completion(result)
+            NotificationCenter.default.post(name: .settingsImportDidEnd, object: self)
         }
     }
 
@@ -126,6 +127,18 @@ final class ImportSettingsService: ImportSettingsServiceProtocol {
         if let disableYouTubeFeature = settings.disableYouTubeFeature {
             sharedResources.disableYouTubeFeature = disableYouTubeFeature
             resultSettings.importDisableYouTubeFeatureStatus = .successful
+        }
+
+        if let disableSecurityRelatedFeatures = settings.disableSecurityRelatedFeatures {
+            sharedResources.disableSecurityRelatedFeatures = disableSecurityRelatedFeatures
+            dnsProvidersManager.update(dnsImplementation: .native)
+            sharedResources.dnsImplementation = .native
+            resultSettings.importDisableSecurityRelatedFeatures = .successful
+        }
+
+        if let disableIntegrationFeature = settings.disableIntegrationFeature {
+            sharedResources.disableIntegrationFeature = disableIntegrationFeature
+            resultSettings.importDisableIntegrationFeatureStatus = .successful
         }
 
         // DNS Imports
@@ -277,4 +290,10 @@ final class ImportSettingsService: ImportSettingsServiceProtocol {
         group.wait()
         return result
     }
+}
+
+
+
+extension Notification.Name {
+    static var settingsImportDidEnd: Notification.Name { return .init(rawValue: "settingsImportDidEnd") }
 }

@@ -65,7 +65,9 @@ protocol ThemeServiceProtocol {
     func setupNavigationBar(_ navBarOrNil: UINavigationBar?, backgroundColor: UIColor)
     func setupSearchBar(_ searchBar: UISearchBar)
     func setupTextField(_ textField: UITextField)
+    func setupTextFieldCode(_ textField: UITextField)
     func setupTextView(_ textView: UITextView)
+    func setupTextViewCode(_ textView: UITextView)
     func setupTable(_ table: UITableView)
     func setupTableCell(_ cell: UITableViewCell)
     func setupLogTableCell(_ cell: UITableViewCell, blocked: Bool)
@@ -313,9 +315,33 @@ final class ThemeService: ThemeServiceProtocol {
         textField.keyboardAppearance = configuration.darkTheme ? .dark : .light
     }
 
+    func setupTextFieldCode(_ textField: UITextField) {
+        textField.smartQuotesType = .no
+        textField.smartDashesType = .no
+        textField.smartInsertDeleteType = .no
+        textField.autocorrectionType = .no
+        textField.spellCheckingType = .no
+        textField.autocapitalizationType = .none
+        textField.keyboardType = .default
+
+        setupTextField(textField)
+    }
+
     func setupTextView(_ textView: UITextView) {
         textView.textColor = configuration.darkTheme ? .white : .darkGray
         textView.keyboardAppearance = configuration.darkTheme ? .dark : .light
+    }
+
+    func setupTextViewCode(_ textView: UITextView) {
+        textView.smartDashesType = .no
+        textView.smartQuotesType = .no
+        textView.smartInsertDeleteType = .no
+        textView.autocorrectionType = .no
+        textView.autocapitalizationType = .none
+        textView.spellCheckingType = .no
+        textView.keyboardType = .default
+
+        setupTextView(textView)
     }
 
     func setupTable(_ table: UITableView) {

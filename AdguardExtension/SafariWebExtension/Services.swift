@@ -19,19 +19,33 @@
 import Foundation
 
 final class Services {
+    static let initTime = Date()
     static let shared = Services()
 
     let resources: AESharedResourcesProtocol
-    let urlsStorage: SharedStorageUrlsProtocol
     let processor: SafariWebExtensionMessageProcessorProtocol
     let productInfo: ADProductInfoProtocol
-    let devAccountMigrationHelper: DevAccountMigrationHelper
 
     init() {
         self.resources = AESharedResources()
-        self.urlsStorage = SharedStorageUrls()
         self.productInfo = ADProductInfo()
-        self.processor = SafariWebExtensionMessageProcessor(resources: resources, productInfo: productInfo)
-        self.devAccountMigrationHelper = DevAccountMigrationHelper(fromExtension: true, resources, productInfo, UserNotificationService())
+
+        // Init logger
+        ACLLogger.singleton()?.initLogger(self.resources.sharedAppLogsURL())
+        let isDebugLogs = resources.isDebugLogs
+        DDLogDebug("Safari Web Extension was initialized with log level: \(isDebugLogs ? "DEBUG" : "NORMAL")")
+        ACLLogger.singleton()?.logLevel = isDebugLogs ? ACLLDebugLevel : ACLLDefaultLevel
+
+        let sharedStorageUrls: SharedStorageUrlsProtocol = SharedStorageUrls()
+
+        // Init message processor singleton.
+        self.processor = SafariWebExtensionMessageProcessor(
+            resources: resources,
+            productInfo: productInfo,
+            sharedStorageUrls: sharedStorageUrls
+        )
+
+        let migration = WebExtMigrationService(resources: resources, sharedStorageUrls: sharedStorageUrls)
+        migration.migrateIfNeeded()
     }
 }

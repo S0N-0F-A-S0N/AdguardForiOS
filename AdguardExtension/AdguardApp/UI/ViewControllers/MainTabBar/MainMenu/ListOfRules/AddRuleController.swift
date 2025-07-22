@@ -240,6 +240,6 @@ extension AddRuleController: ThemableProtocol {
         contentView.backgroundColor = theme.popupBackgroundColor
         titleLabel.textColor = theme.popupTitleTextColor
         theme.setupPopupLabels(themableLabels)
-        theme.setupTextView(ruleTextView)
+        theme.setupTextViewCode(ruleTextView)
     }
 }

@@ -1,88 +1,95 @@
 /**
- * @file
+ * @file Content script for the WebExtension.
  *
- * Earlier the engine was created once on the background page
- * for advanced rules conversion (1) into a string
- * and preparation (2) into {@link SelectorsAndScripts} data format —
- * the engine is needed for the _preparation_.
- * And content script requested this data by messaging and applied it.
- *
- * The main problem was that the messaging from content script to background page and back
- * took too much time comparing to storage access.
- * So we decided to avoid the messaging when it is possible
- * and create an engine instance in content script.
- *
- * Now the advanced rules are previously converted into a string (1)
- * and set to the storage on the background page,
- * and later in the content script we get the string from the storage,
- * create an engine instance for advanced rule preparation (2), and apply them.
+ * This script runs in the context of a web page, and it's responsible for:
+ * - Requesting necessary configuration (rules) from the background script.
+ * - Initializing the content script by applying those configurations.
+ * - Managing event dispatching with a slight delay to capture important page
+ * events.
  */
 
 import browser from 'webextension-polyfill';
-
-import { getAdvancedRulesText } from './rule-storage';
-import { getEngineCosmeticResult } from './engine';
-import { prepareAdvancedRules } from './prepare-rules';
-import { applyAdvancedRules } from './apply-rules';
-
+import { ContentScript } from '@adguard/safari-extension';
+import { ContentScriptData } from '../common/interfaces';
 import { log } from '../common/log';
 import { MessagesToBackgroundPage } from '../common/constants';
+import { setupDelayedEventDispatcher } from './delayedEventDispatcher';
+
+// Configure debug-level logging. If you need to debug the content script,
+// set verbose to true.
+const verbose = false;
+if (verbose) {
+    log.setLevelDebug();
+}
+
+// The delay of 300ms is used as a buffer to capture critical initial events
+// while waiting for the rules response.
+const DELAY_EVENTS_MS = 300;
+
+// Initialize the delayed event dispatcher. This may intercept DOMContentLoaded
+// and load events. The idea is to delay `load` and `DOMContentLoaded` so that
+// they fire AFTER scriptlets and JS rules are executed. This may help on some
+// websites where scriptlets timing is important. It won't completely solve all
+// issues, but it's a simple way to improve the situation.
+const cancelDelayedDispatchAndDispatch = setupDelayedEventDispatcher(DELAY_EVENTS_MS);
+
+// Save the time when the content script was initialized.
+const initTime = Date.now();
 
 /**
- * Sends empty message to background page just to check if advanced rules should be updated.
- * This is the way to ensure that advanced rules are updated and set to storage there
- * before getting them from storage.
+ * Print timing information that can be helpful to debug performance issues.
+ *
+ * @param contentScriptData Content script data received from the background.
  */
-const checkAdvancedRulesUpdate = async (): Promise<void> => {
-    try {
-        await browser.runtime.sendMessage({
-            type: MessagesToBackgroundPage.CheckAdvancedRulesUpdate,
-        });
-    } catch (e) {
-        log.info('Could not wake up background page due to error:', e);
+const printTiming = (contentScriptData: ContentScriptData) => {
+    const nativeHostAge = Date.now() - contentScriptData.init_ts;
+    const elapsedTotal = Date.now() - initTime;
+    const elapsedRequest = contentScriptData.request_received_ts - initTime;
+    const elapsedNative = contentScriptData.response_created_ts
+        - contentScriptData.request_received_ts;
+
+    log.debug(`Native host age: ${nativeHostAge}ms`);
+    log.debug(`Elapsed on getting content script data: ${elapsedTotal}ms`);
+
+    if (!contentScriptData.cached) {
+        log.debug(`Elapsed on messaging to native host: ${elapsedRequest}ms`);
+        log.debug(`Elapsed on native host processing: ${elapsedNative}ms`);
     }
 };
 
+/**
+ * Main entry point function for the content script.
+ *
+ * This function:
+ * 1. Requests configuration (rules) from the background script.
+ * 2. Checks and applies the configuration if available.
+ */
 const init = async () => {
-    if (document instanceof HTMLDocument) {
-        const frameUrl = window.location.href;
-        if (frameUrl && frameUrl.indexOf('http') === 0) {
-            // TODO: Pass logging level via storage from the background page / native host
-            const ENABLE_DEBUG_LOGGING = false;
-            if (ENABLE_DEBUG_LOGGING) {
-                log.setLevelDebug();
-            }
+    // Log that the content script process has started.
+    log.debug(`Content script is starting on ${window.location.href} (iframe=${window == window.top})...`);
 
-            /**
-             * Ensure that advanced rules are updated and set to storage.
-             *
-             * IMPORTANT: it should not be 'await checkAdvancedRulesUpdate()'
-             * because it will postpone the execution of the following code and it is not needed.
-             * We need to apply the rules as soon as possible.
-             */
-            checkAdvancedRulesUpdate();
+    // Request the content script data from the background page.
+    const contentScriptData: ContentScriptData = await browser.runtime.sendMessage({
+        type: MessagesToBackgroundPage.RequestContentScriptData,
+    });
 
-            let rulesText;
-            const startTime = performance.now();
-            try {
-                rulesText = await getAdvancedRulesText();
-            } catch (e) {
-                log.error(e);
-            }
-            if (!rulesText) {
-                log.info('AG: no scripts and selectors found');
-                return;
-            }
+    printTiming(contentScriptData);
 
-            log.info(`Time to get advanced rules in content script: ${performance.now() - startTime} ms`);
+    if (contentScriptData.configuration) {
+        log.debug(`Found rules for the website ${window.location.href}`);
 
-            const cosmeticResult = getEngineCosmeticResult(rulesText, frameUrl);
+        // Instantiate and run the content script with the provided configuration.
+        const contentScript = new ContentScript(contentScriptData.configuration);
+        contentScript.run(verbose, '[AdGuard Web Extension]');
 
-            const selectorsAndScripts = prepareAdvancedRules(cosmeticResult, frameUrl, ENABLE_DEBUG_LOGGING);
-
-            applyAdvancedRules(selectorsAndScripts, frameUrl);
-        }
+        log.debug(`The rules have been applied for the website ${window.location.href}`);
+    } else {
+        log.debug(`No rules found for the website ${window.location.href}`);
     }
+
+    // After processing, cancel any pending delayed event dispatch and process
+    // any queued events immediately.
+    cancelDelayedDispatchAndDispatch();
 };
 
 export const content = {

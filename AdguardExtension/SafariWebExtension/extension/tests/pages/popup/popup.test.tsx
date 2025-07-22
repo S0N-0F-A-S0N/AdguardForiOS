@@ -65,6 +65,7 @@ describe('popup screen', () => {
 
     it('Tests separate component with custom store', async () => {
         const store = {
+            currentSiteDomain: 'example.org',
             hasUserRules: true,
             protectionEnabled: true,
             contentBlockersEnabled: true,

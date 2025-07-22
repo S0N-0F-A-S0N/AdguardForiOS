@@ -118,16 +118,25 @@ final class DnsProxy: DnsProxyProtocol {
         // Proxy init
         proxy = AGDnsProxy(config: agConfig, handler: agEvents, error: &error)
 
+        let proxyInited = proxy != nil
+
         if let error = error {
+            if proxyInited && (error.code == AGDnsProxyInitError.AGDPE_MEM_LIMIT_REACHED.rawValue) {
+                Logger.logError("(DnsProxy) - started with memory limit error: let's the proxy continue to work. Error = \(error)")
+                return nil
+            }
+
             Logger.logError("(DnsProxy) - started with error: \(error)")
             return error
-        } else if proxy != nil {
+        }
+
+        if proxyInited {
             Logger.logInfo("(DnsProxy) - started successfully")
             return nil
-        } else {
-            Logger.logError("(DnsProxy) - started with unknown error")
-            assertionFailure("Error and AGDnsProxy can't be both nil at the same time")
-            return CommonError.missingData
         }
+
+        Logger.logError("(DnsProxy) - started with unknown error")
+        assertionFailure("Error and AGDnsProxy can't be both nil at the same time")
+        return CommonError.missingData
     }
 }

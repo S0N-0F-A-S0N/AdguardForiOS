@@ -23,6 +23,7 @@ protocol MigrationServiceVersionProviderProtocol {
     var isLastVersionLessThan4_1: Bool { get }
     var isMigrationFrom4_3_0To4_3_1Needed: Bool { get }
     var isMigrationFrom4_3_1_to_4_5_0Needed: Bool { get }
+    var isMigrationTo4_5_11Needed: Bool { get }
 }
 
 class MigrationServiceVersionProvider: MigrationServiceVersionProviderProtocol {
@@ -47,6 +48,13 @@ class MigrationServiceVersionProvider: MigrationServiceVersionProviderProtocol {
     var isMigrationFrom4_3_1_to_4_5_0Needed: Bool {
         let lastBuildVersion = resources.buildVersion
         return lastBuildVersion >= 998 && lastBuildVersion <= 1003
+    }
+
+    var isMigrationTo4_5_11Needed: Bool {
+        let lastBuildVersion = resources.buildVersion
+
+        // The previous version is 4.5.10 or older.
+        return lastBuildVersion <= 1031
     }
 
     private let resources: AESharedResourcesProtocol

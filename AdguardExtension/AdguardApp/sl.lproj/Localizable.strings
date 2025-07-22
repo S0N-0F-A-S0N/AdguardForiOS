@@ -322,6 +322,24 @@
 /* (ContentBlockersTableController) - Content Blockers title */
 "cb_screen_content_blockers_title" = "Zaviralci vsebine";
 
+/* (ContentBlockersTableController) - General content blocker name */
+"cb_screen_content_blockers_general_name" = "Splošni";
+
+/* (ContentBlockersTableController) - Privacy content blocker name */
+"cb_screen_content_blockers_privacy_name" = "Zasebnost";
+
+/* (ContentBlockersTableController) - Social content blocker name */
+"cb_screen_content_blockers_social_name" = "Družbena omrežja";
+
+/* (ContentBlockersTableController) - Other content blocker name */
+"cb_screen_content_blockers_other_name" = "Ostalo";
+
+/* (ContentBlockersTableController) - Custom content blocker name */
+"cb_screen_content_blockers_custom_name" = "Po meri";
+
+/* (ContentBlockersTableController) - Security content blocker name */
+"cb_screen_content_blockers_security_name" = "Varnost";
+
 /* (AdvancedSettingsController) Restart when network changes error */
 "general_settings_restart_tunnel_error" = "Najprej omogočite VPN";
 
@@ -730,6 +748,9 @@
 /* (OnboardingController) second step with advanced protection text */
 "advanced_protection_onboarding_second_step_text" = "Pojdite v <b>Safari -> Razširitve</b>.";
 
+/* (OnboardingController) second step with advanced protection text for iOS 18+ */
+"advanced_protection_onboarding_second_step_text_ios_18" = "Pojdite v <b>Aplikacije -> Safari -> Razširitve</b>.";
+
 /* (OnboardingController) third step text */
 "onboarding_third_step_text" = "<b>Omogoči</b> vse AdGuard razširitve.";
 
@@ -737,7 +758,7 @@
 "advanced_protection_onboarding_third_step_text" = "Nastavi vse stikala AdGuard na <b>vklopljeno</b>. Pripravljeni ste!";
 
 /* (OnboardingContentView) fours step. '%@' will be replaced with the share icon */
-"onboarding_fours_step_text" = "Za <b>Napredno</b> zaščito, odprite Safari, tapnite ikono <b>aA</b> na levi strani URL polja,<br><br> %@ <br><br>nato tapnite <b>'Upravljaj razširitve'</b> in omogočite preklop <b>AdGuard</b>.";
+"onboarding_fours_step_text" = "Za <b>Napredno</b> zaščito, odprite Safari, tapnite ikono na levi strani URL polja,<br><br> %@ <br><br>nato tapnite <b>'Upravljaj razširitve'</b> in omogočite preklop <b>AdGuard</b>.";
 
 /* (BlockRequestController) Block request title */
 "block_request" = "Onemogoči zahtevo";
@@ -1088,6 +1109,9 @@
 /* (ImportSettingsController) add dns rules title */
 "import_dns_user_rules" = "Dodaj uporabniška pravila DNS";
 
+/* (ImportSettingsController) disable YouTube feature title */
+"disable_youtube_feature" = "Onemogoči AdGuard Player";
+
 /* (LowLevelSettingsController) Low level settings description. <b style=color:#c23814ff> It is a color for WARNING! word*/
 "low_level_description" = "<b style=color:#c23814ff>OPOZORILO!</b> Omogočanje teh funkcij lahko prekine internetno povezavo ali ogrozi vašo varnost in zasebnost.";
 
@@ -1219,6 +1243,12 @@ DO NOT TRANSLATE "none" */
 
 /* (YoutubePlayerController) 'userscript error' alert message */
 "youtube_player_controller_userscript_error_message" = "Ustvarjanje uporabniškega skripta ni uspelo";
+
+/* (YoutubePlayerController) YouTube feature disabled alert title */
+"youtube_player_controller_feature_disabled_title" = "AdGuard Player onemogočen";
+
+/* (YoutubePlayerController) YouTube feature disabled alert message */
+"youtube_player_controller_feature_disabled_message" = "Deljenje videoposnetkov z AdGuardom ni mogoče";
 
 /* (YouTubeAdsRequestHandler) 'no url error' alert title */
 "youtube_share_extension_no_url_title" = "URL ni naveden";

@@ -17,6 +17,7 @@
 //
 
 import SafariAdGuardSDK
+import FilterEngine
 
 protocol SafariWebExtensionMessageProcessorProtocol {
     func process(message: Message) -> [String: Any?]
@@ -26,41 +27,56 @@ final class SafariWebExtensionMessageProcessor: SafariWebExtensionMessageProcess
 
     private static let adguardForwarderUrl = "https://link.adtidy.org/forward.html"
 
-    // TODO: - This is a temporary workaround; Should be fixed later
-    private var shouldUpdateAdvancedRules: Bool {
-        get {
-            resources.sharedDefaults().bool(forKey: "SafariAdGuardSDK.shouldUpdateAdvancedRulesKey")
-        }
-        set {
-            resources.sharedDefaults().set(newValue, forKey: "SafariAdGuardSDK.shouldUpdateAdvancedRulesKey")
-        }
-    }
-
-    private var fileReader: ChunkFileReader?
-
     private let resources: AESharedResourcesProtocol
     private let productInfo: ADProductInfoProtocol
+    private let webExtension: WebExtension
 
-    init(resources: AESharedResourcesProtocol, productInfo: ADProductInfoProtocol) {
+    init(
+        resources: AESharedResourcesProtocol,
+        productInfo: ADProductInfoProtocol,
+        sharedStorageUrls: SharedStorageUrlsProtocol
+    ) {
         self.resources = resources
         self.productInfo = productInfo
+
+        // It can throw if it fails to create the work directory which is
+        // a very unlikely fatal error.
+        self.webExtension = try! WebExtension(
+            containerURL: sharedStorageUrls.webExtFolderUrl
+        )
     }
 
     func process(message: Message) -> [String: Any?]  {
+        let requestReceivedTimestamp = Int(Date().timeIntervalSince1970 * 1000)
+
         switch message.type {
         case .getInitData:
             // URL of the website extension is open
             let url = message.data as? String
             return getInitData(url)
-        case .getAdvancedRules:
-            // True if rules file should be read from the beginning
-            let fromBeginning = message.data as? Bool
-            return getAdvancedRules(fromBeginning ?? false)
-        case .shouldUpdateAdvancedRules:
-            let shouldUpdate = shouldUpdateAdvancedRules
-            // TODO: - Maybe we should set it to false later?
-            shouldUpdateAdvancedRules = false
-            return [Message.shouldUpdateAdvancedRules: shouldUpdate]
+        case .getContentScriptData:
+            // URL and top URL
+            let req = message.data as? [String: Any?]
+            guard let url = req?["url"] as? String else {
+                return [Message.messageTypeKey: MessageType.error.rawValue]
+            }
+            let topUrl = req?["topUrl"] as? String
+            let configuration = lookupContentScriptConfiguration(urlString: url, topUrlString: topUrl)
+
+            // Checking logging level to avoid slow string interpolation.
+            if ACLLogger.singleton()?.logLevel == ACLLDebugLevel {
+                DDLogDebug("Responding with configuration: \(String(describing: configuration))")
+            }
+
+            let responseCreatedTimestamp = Int(Date().timeIntervalSince1970 * 1000)
+            let nativeInitTimestamp = Int(Services.initTime.timeIntervalSince1970 * 1000)
+
+            return [
+                Message.configurationKey: configuration,
+                Message.nativeInitTimestampKey: nativeInitTimestamp,
+                Message.requestReceivedTimestampKey: requestReceivedTimestamp,
+                Message.responseCreatedTimestampKey: responseCreatedTimestamp
+            ]
         default:
             DDLogError("Received bad case")
             return [Message.messageTypeKey: MessageType.error.rawValue]
@@ -69,6 +85,56 @@ final class SafariWebExtensionMessageProcessor: SafariWebExtensionMessageProcess
 
     // MARK: - Private methods
 
+
+    private func lookupContentScriptConfiguration(urlString: String, topUrlString: String?) -> [String: Any]? {
+        guard let pageUrl = URL(string: urlString) else {
+            return nil
+        }
+
+        let topUrl = URL(string: topUrlString ?? "")
+
+        let configuration = self.webExtension.lookup(pageUrl: pageUrl, topUrl: topUrl)
+        if let configuration = configuration {
+            return Self.convertToPayload(configuration)
+        }
+
+        return nil
+    }
+
+    /// Converts a WebExtension.Configuration object to a dictionary payload.
+    ///
+    /// - Parameters:
+    ///   - configuration: The WebExtension.Configuration object to convert.
+    /// - Returns: A dictionary containing CSS, extended CSS, JS, and scriptlets
+    ///           that should be applied to the web page.
+    private static func convertToPayload(
+        _ configuration: WebExtension.Configuration
+    ) -> [String: Any] {
+        var payload: [String: Any] = [:]
+        payload["css"] = configuration.css
+        payload["extendedCss"] = configuration.extendedCss
+        payload["js"] = configuration.js
+
+        var scriptlets: [[String: Any]] = []
+        for scriptlet in configuration.scriptlets {
+            var scriptletData: [String: Any] = [:]
+            scriptletData["name"] = scriptlet.name
+            scriptletData["args"] = scriptlet.args
+            scriptlets.append(scriptletData)
+        }
+
+        payload["scriptlets"] = scriptlets
+        payload["engineTimestamp"] = configuration.engineTimestamp
+
+        return payload
+    }
+
+    /// Gets data that is necessary to initialize extension's popup menu (i.e. the extension's UI).
+    ///
+    /// - Parameters:
+    ///   - url: Web page URL.
+    /// - Returns: A dictionary containing extension state information and information related
+    ///           to website settings (i.e. whether protection is enabled or not).
     private func getInitData(_ url: String?) -> [String: Any] {
         let resources = AESharedResources()
         // We set it to be sure the user opened Extension
@@ -112,33 +178,6 @@ final class SafariWebExtensionMessageProcessor: SafariWebExtensionMessageProcess
         ]
     }
 
-    /// Returns chunk of advanced rules or nil if offset is at the end or the is problem with file
-    /// Will return next chunk of file when calling once more
-    /// - Parameter fromBeginning: If true the file will be read from the beginning
-    private func getAdvancedRules(_ fromBeginning: Bool) -> [String: Any?] {
-        let advancedRulesFileUrl = SharedStorageUrls().advancedRulesFileUrl
-
-        // Create file reader object if doesn't exist
-        if fileReader == nil {
-            fileReader = ChunkFileReader(fileUrl: advancedRulesFileUrl, chunkSize: 65536)
-        }
-        // Rewind file reader if fromBeginning is true
-        else if fromBeginning {
-            let success = fileReader?.rewind() ?? false
-            if !success {
-                return [Message.advancedRulesKey: nil]
-            }
-        }
-
-        if let chunk = fileReader?.nextChunk() {
-            return [Message.advancedRulesKey: chunk]
-        } else {
-            fileReader?.close()
-            fileReader = nil
-            return [Message.advancedRulesKey: nil]
-        }
-    }
-
     private func isSafariProtectionEnabled(for domain: String?, resources: AESharedResources) -> Bool {
         guard let domain = domain else { return false }
 
@@ -152,7 +191,7 @@ final class SafariWebExtensionMessageProcessor: SafariWebExtensionMessageProcess
         return isAllowlistInverted ? isDomainInRules : !isDomainInRules
     }
 
-    // TODO pass more params (filters and so on)
+    // TODO: pass more params (filters and so on)
     private func constructReportLink(_ problemUrl: String) -> String {
         let params: [String: String] = [
             "product_type": "iOS",

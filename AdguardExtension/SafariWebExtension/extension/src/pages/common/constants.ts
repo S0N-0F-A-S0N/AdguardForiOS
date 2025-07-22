@@ -1,8 +1,6 @@
 export enum MessagesToNativeApp {
-    WriteInNativeLog = 'writeInNativeLog',
-    GetAdvancedRulesText = 'get_advanced_rules_text',
     GetInitData = 'get_init_data',
-    ShouldUpdateAdvancedRules = 'should_update_advanced_rules',
+    GetContentScriptData = 'get_content_script_data',
 }
 
 export enum MessagesToBackgroundPage {
@@ -16,8 +14,7 @@ export enum MessagesToBackgroundPage {
     UpgradeClicked = 'upgrade_clicked',
     EnableAdvancedBlocking = 'enable_advanced_blocking',
     EnableSafariProtection = 'enable_safari_protection',
-    CheckAdvancedRulesUpdate = 'CheckAdvancedRulesUpdate',
-    GetAdvancedRulesText = 'GetAdvancedRulesText',
+    RequestContentScriptData = 'request_content_script_data',
 }
 
 export enum MessagesToContentScript {
@@ -38,5 +35,3 @@ export enum Platform {
     IPad = 'ipad',
     IPhone = 'iphone',
 }
-
-export const ADVANCED_RULES_STORAGE_KEY = 'AdvancedRulesStorageKey';

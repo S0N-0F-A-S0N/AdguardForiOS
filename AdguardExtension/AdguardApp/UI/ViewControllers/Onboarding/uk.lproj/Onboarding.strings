@@ -1,5 +1,5 @@
 /* Class = "UIButton"; normalTitle = "Video guide"; ObjectID = "3ju-B8-UIZ"; */
-"3ju-B8-UIZ.normalTitle" = "Відео-інструкція";
+"3ju-B8-UIZ.normalTitle" = "Відеоінструкція";
 
 /* Class = "UILabel"; text = "Terms and Conditions"; ObjectID = "E6C-TE-ZI6"; */
 "E6C-TE-ZI6.text" = "Умови користування";
@@ -11,7 +11,7 @@
 "FDG-As-HDY.text" = "Блокуйте стеження";
 
 /* Class = "UIButton"; normalTitle = "Video guide"; ObjectID = "GOu-4j-RcN"; */
-"GOu-4j-RcN.normalTitle" = "Відео-інструкція";
+"GOu-4j-RcN.normalTitle" = "Відеоінструкція";
 
 /* Class = "UILabel"; text = "Stop thousands of corporations from tracking your every move. Regain control of your online privacy."; ObjectID = "Mzf-WJ-CpC"; Note = "String must be less or equal 4 lines"; */
 "Mzf-WJ-CpC.text" = "Протидійте тисячам корпорацій, які стежать за кожним вашим кроком. Захистіть свою приватність в інтернеті.";

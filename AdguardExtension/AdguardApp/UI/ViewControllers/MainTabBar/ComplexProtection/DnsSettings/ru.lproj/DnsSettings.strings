@@ -50,7 +50,7 @@
 "iPl-vI-lX5.text" = "Настройки сети";
 
 /* Class = "UILabel"; text = "Blocklist"; ObjectID = "ihd-7R-RfE"; */
-"ihd-7R-RfE.text" = "Черный список";
+"ihd-7R-RfE.text" = "Чёрный список";
 
 /* Class = "UILabel"; text = "Works as a local \"pseudo\" VPN. Supports any DNS protocol, allows you to inspect your device DNS activity."; ObjectID = "lEg-oH-oxd"; */
 "lEg-oH-oxd.text" = "Работает как локальный «псевдо-VPN». Поддерживает любой DNS-протокол, позволяет проверять DNS-активность устройства.";

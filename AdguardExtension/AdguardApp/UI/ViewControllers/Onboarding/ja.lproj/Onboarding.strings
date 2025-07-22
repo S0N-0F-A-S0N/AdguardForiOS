@@ -8,13 +8,13 @@
 "F7O-MB-LHu.text" = "AdGuardをSafariで使用する方法";
 
 /* Class = "UILabel"; text = "Block Trackers"; ObjectID = "FDG-As-HDY"; */
-"FDG-As-HDY.text" = "個人情報追跡をブロック";
+"FDG-As-HDY.text" = "追跡をブロック";
 
 /* Class = "UIButton"; normalTitle = "Video guide"; ObjectID = "GOu-4j-RcN"; */
 "GOu-4j-RcN.normalTitle" = "手順動画を見る";
 
 /* Class = "UILabel"; text = "Stop thousands of corporations from tracking your every move. Regain control of your online privacy."; ObjectID = "Mzf-WJ-CpC"; Note = "String must be less or equal 4 lines"; */
-"Mzf-WJ-CpC.text" = "一つ一つのタップを追跡しようとする何千社もの企業による個人情報追跡を防止し、オンラインプライバシーを守ります。（「DNS通信を保護」機能）";
+"Mzf-WJ-CpC.text" = "一つ一つのタップを追跡しようとする何千社もの企業による個人情報追跡を防止し、オンライン行動追跡をブロックします。（「DNS通信を保護」機能）";
 
 /* Class = "UIButton"; normalTitle = "Continue"; ObjectID = "cMV-qC-ZdE"; */
 "cMV-qC-ZdE.normalTitle" = "次へ";

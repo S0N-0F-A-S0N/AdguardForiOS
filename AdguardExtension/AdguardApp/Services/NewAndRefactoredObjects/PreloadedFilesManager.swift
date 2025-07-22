@@ -39,10 +39,10 @@ protocol PreloadedFilesManagerProtocol {
 struct PreloadedFilesManager: PreloadedFilesManagerProtocol {
 
     private let bundle: Bundle
-    private let sharedStorageUrls: SharedStorageUrls
+    private let sharedStorageUrls: SharedStorageUrlsProtocol
 
     /// `URL` where to save preloaded files
-    init(sharedStorageUrls: SharedStorageUrls = SharedStorageUrls(), bundle: Bundle = .main) {
+    init(sharedStorageUrls: SharedStorageUrlsProtocol = SharedStorageUrls(), bundle: Bundle = .main) {
         self.sharedStorageUrls = sharedStorageUrls
         self.bundle = bundle
     }

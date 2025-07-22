@@ -20,19 +20,6 @@ import SafariServices
 
 class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
 
-    private let resources = Services.shared.resources
-    private let processor = Services.shared.processor
-
-    override init() {
-        super.init()
-        setupLogger()
-
-        // Let's check if we need to process dev account migration
-        Services.shared
-            .devAccountMigrationHelper
-            .processDevAccountMigrationIfNeeded()
-    }
-
     func beginRequest(with context: NSExtensionContext) {
         let item = context.inputItems[0] as! NSExtensionItem
 
@@ -44,20 +31,14 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
             return
         }
 
-        DDLogInfo("Received message from JS: \(messageDict)")
-        let result = processor.process(message: message)
+        // Checking logging level to avoid slow string interpolation.
+        if ACLLogger.singleton()?.logLevel == ACLLDebugLevel {
+            DDLogDebug("Received message from JS: \(messageDict)")
+        }
+
+        let result = Services.shared.processor.process(message: message)
         let response = NSExtensionItem()
         response.userInfo = [SFExtensionMessageKey: result]
         context.completeRequest(returningItems: [response], completionHandler: nil)
-    }
-
-    // MARK: - Private methods
-
-    /// Initializes `ACLLogger`
-    private func setupLogger() {
-        ACLLogger.singleton()?.initLogger(resources.sharedAppLogsURL())
-        let isDebugLogs = resources.isDebugLogs
-        DDLogDebug("Safari Web Extension was initialized with log level: \(isDebugLogs ? "DEBUG" : "NORMAL")")
-        ACLLogger.singleton()?.logLevel = isDebugLogs ? ACLLDebugLevel : ACLLDefaultLevel
     }
 }
