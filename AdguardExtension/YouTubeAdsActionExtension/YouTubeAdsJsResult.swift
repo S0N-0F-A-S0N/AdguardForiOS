@@ -18,19 +18,18 @@
 
 import Foundation
 
+/// Handles the JSON message passed from `BlockYouTubeAds.js` to the YouTube extension.
 struct YouTubeAdsJsResult {
 
     enum Status: String {
         case success
         case wrongDomain
-        case alreadyExecuted
         case error
 
         var title: String {
             switch self {
             case .success: return String.localizedString("youtube_script_success_title")
             case .wrongDomain: return String.localizedString("youtube_script_wrong_domain_title")
-            case .alreadyExecuted: return String.localizedString("youtube_script_already_executed_title")
             case .error: return String.localizedString("youtube_script_error_title")
             }
         }
@@ -38,16 +37,16 @@ struct YouTubeAdsJsResult {
 
     let successfullyExecuted: Bool
     let status: Status
+    let href: String?
 
     init?(jsDict: [String: Any]) {
         guard let successfullyExecuted = jsDict["success"] as? Bool,
               let statusString = jsDict["status"] as? String,
               let status = Status(rawValue: statusString)
-                else {
-            return nil
-        }
+        else { return nil }
 
         self.successfullyExecuted = successfullyExecuted
         self.status = status
+        self.href = jsDict["href"] as? String
     }
 }

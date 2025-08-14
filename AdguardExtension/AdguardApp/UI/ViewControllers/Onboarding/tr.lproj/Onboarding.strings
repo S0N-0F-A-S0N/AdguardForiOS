@@ -23,7 +23,7 @@
 "hXU-wD-fbI.text" = "Reklamları Engelle";
 
 /* Class = "UILabel"; text = "Block Annoyances"; ObjectID = "hf9-6r-TUk"; */
-"hf9-6r-TUk.text" = "Can Sıkıcı Öğeleri Engelle";
+"hf9-6r-TUk.text" = "Can Sıkıcı Öğeleri engelle";
 
 /* Class = "UIButton"; normalTitle = "Continue"; ObjectID = "q8l-xM-B5q"; */
 "q8l-xM-B5q.normalTitle" = "Devam et";

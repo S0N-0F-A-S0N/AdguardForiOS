@@ -51,6 +51,8 @@ final class LowLevelSettingsController: UITableViewController {
     private let backgroundFetch = 6
 
     private var dnsImplementationObserver: NotificationToken?
+    private var onSettingsImportDidEndObserver: NotificationToken?
+    private var onSettingsResetObserver: NotificationToken?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,10 +63,18 @@ final class LowLevelSettingsController: UITableViewController {
         setupBackButton()
         updateTheme()
 
-        dnsImplementationObserver = NotificationCenter.default.observe(name: .dnsImplementationChanged, object: nil, queue: .main) { [weak self] _ in
+
+        let setUpLabels = { [weak self] in
             guard let self = self else { return }
-            self.setupNotSupportedLabels(isNative: self.resources.dnsImplementation == .native)
+            
+            self.setupNotSupportedLabels(isNative: self.resources.dnsImplementation == .native && !self.resources.disableIntegrationFeature)
         }
+
+        dnsImplementationObserver = NotificationCenter.default.observe(name: .dnsImplementationChanged, object: nil, queue: .main) { _ in setUpLabels() }
+
+        onSettingsImportDidEndObserver = NotificationCenter.default.observe(name: .settingsImportDidEnd, object: nil, queue: .main) { _ in setUpLabels() }
+
+        onSettingsResetObserver = NotificationCenter.default.observe(name: .resetSettings, object: nil, queue: .main) { _ in setUpLabels() }
 
         setupNotSupportedLabels(isNative: resources.dnsImplementation == .native)
     }
@@ -258,7 +268,7 @@ extension LowLevelSettingsController: ThemableProtocol {
         theme.setupTable(tableView)
         theme.setupSeparators(separators)
         theme.setupSwitch(blockIpv6Switch)
-        theme.setupTextView(betaChannelTextView)
+        theme.setupTextViewCode(betaChannelTextView)
         setupWarningDescriptionTextView()
         tableView.reloadData()
     }

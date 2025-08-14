@@ -4,6 +4,7 @@ import browser from 'webextension-polyfill';
 import { MessagesToNativeApp, Platform } from '../../common/constants';
 import { getDomain } from '../../common/utils/url';
 import { storage } from '../../common/storage';
+import { ContentScriptData } from '../../common/interfaces';
 
 interface NativeHostMessage {
     type: MessagesToNativeApp,
@@ -23,31 +24,135 @@ export interface ActionLinks {
 
 type AppearanceTheme = 'system' | 'dark' | 'light';
 
+/**
+ * Extension state + settings for the website that the user is visiting.
+ */
 export interface NativeHostInitData {
+    /**
+     * Application theme.
+     */
     appearanceTheme: AppearanceTheme,
-    contentBlockersEnabled: boolean,
-    hasUserRules: boolean,
-    premiumApp: boolean,
-    protectionEnabled: boolean,
-    advancedBlockingEnabled: boolean,
-    allowlistInverted: boolean,
+
+    /**
+     * Current platform (iPhone or iPad).
+     */
     platform: Platform,
+
+    /**
+     * True if the app is paid.
+     */
+    premiumApp: boolean,
+
+    /**
+     * True if advanced blocking is enabled in the app.
+     * This is a setting that the user can change in the app.
+     */
+    advancedBlockingEnabled: boolean,
+
+    /**
+     * True if Safari protection is enabled in the app.
+     * This is a setting that the user can switch in the app.
+     */
     safariProtectionEnabled: boolean,
+
+    /**
+     * True when at least some content blocking extensions are enabled.
+     * The user need to enable at least one content blocking extension
+     * in **Safari settings** to have this true.
+     */
+    contentBlockersEnabled: boolean,
+
+    /**
+     * True if the user has enabled "inverted allowlist" in the app settings.
+     */
+    allowlistInverted: boolean,
+
+    /**
+     * Website-specific.
+     *
+     * True if there are user rules for this website.
+     */
+    hasUserRules: boolean,
+
+    /**
+     * Website-specific.
+     *
+     * True if protection is enabled for this particular website.
+     */
+    protectionEnabled: boolean,
 }
 
 export interface NativeHostInterface {
+    /**
+     * Retrieves both the application state and website settings. This data
+     * is required for the popup menu initialization.
+     *
+     * @param url URL of the website.
+     */
     getInitData(url: string): Promise<NativeHostInitData>
-    setLinks(links: ActionLinks): void
-    addToUserRules(ruleText: string): Promise<void>
+
+    /**
+     * Retrieves the configuration for the content script that is running on
+     * the specified url. topUrl is only set when the url is an iframe.
+     *
+     * @param url URL of the website.
+     * @param topUrl URL of the top-level website.
+     */
+    getContentScriptData(url: string, topUrl?: string): Promise<ContentScriptData>
+
+    /**
+     * Enables protection for the specified website.
+     *
+     * @param url URL of the website.
+     */
     enableProtection(url: string): Promise<void>
+
+    /**
+     * Disables protection for the specified website.
+     *
+     * @param url URL of the website.
+     */
     disableProtection(url: string): Promise<void>
-    removeUserRulesBySite(url: string): Promise<void>
-    reportProblem(url: string): Promise<void>
-    upgradeMe(): Promise<void>
-    getAdvancedRulesText(): Promise<string | void>
-    enableAdvancedBlocking(): Promise<void>
-    shouldUpdateAdvancedRules(): Promise<boolean>
+
+    /**
+     * Enables Safari protection and makes sure that protection
+     * is enabled for the specified website.
+     *
+     * @param url URL of the website.
+     */
     enableSafariProtection(url: string): Promise<void>
+
+    /**
+     * Enables advanced blocking.
+     */
+    enableAdvancedBlocking(): Promise<void>
+
+    /**
+     * Adds specified rules to user rules.
+     *
+     * @param ruleText rule to add
+     */
+    addToUserRules(ruleText: string): Promise<void>
+
+    /**
+     * Removes user rules for the specified website.
+     *
+     * @param url URL of the website.
+     */
+    removeUserRulesBySite(url: string): Promise<void>
+
+    /**
+     * Opens a page where the user can report an issue with the current
+     * website.
+     *
+     * @param url URL of the website.
+     */
+    reportProblem(url: string): Promise<void>
+
+    /**
+     * Opens a page where the user can upgrade the app.
+     */
+    upgradeMe(): Promise<void>
 }
 
 export class NativeHost implements NativeHostInterface {
@@ -106,8 +211,8 @@ export class NativeHost implements NativeHostInterface {
          * Fix for opening native urls on ipad https://github.com/AdguardTeam/AdguardForiOS/issues/1878
          * We separated this solution from iphone implementation,
          * because it is not working fully correctly:
-         * if user cancels opening application, extension can't open native links until
-         * page is reloaded
+         * if user cancels opening application, extension can't open native
+         * links until the page is reloaded
          */
         if (await this.getPlatform() === Platform.IPad) {
             await browser.tabs.update(currentTab.id, { url: link });
@@ -293,41 +398,6 @@ export class NativeHost implements NativeHostInterface {
         await this.openNativeLink(links.enableAdvancedBlockingLink);
     }
 
-    /**
-     * Retrieves advanced rules text from native host by small parts,
-     * so native host won't exceed memory limit
-     */
-    async getAdvancedRulesText() {
-        let rulesText = '';
-
-        const recursiveCall = async (fromBeginning: boolean) => {
-            const response = await this.sendNativeMessage(
-                MessagesToNativeApp.GetAdvancedRulesText,
-                fromBeginning,
-            );
-
-            if (!response?.advanced_rules) {
-                return;
-            }
-
-            rulesText += response.advanced_rules;
-
-            /**
-             * Subsequent calls to native host are sent with fromBeginning flag = false,
-             * which means to continue return rules from the last point
-             */
-            await recursiveCall(false);
-        };
-
-        /**
-         * First call to native host is sent with flag = true,
-         * which means start to return rules from the beginning of the file
-         */
-        await recursiveCall(true);
-
-        return rulesText;
-    }
-
     async getInitData(url: string): Promise<NativeHostInitData> {
         const result = await this.sendNativeMessage(MessagesToNativeApp.GetInitData, url);
 
@@ -343,20 +413,21 @@ export class NativeHost implements NativeHostInterface {
             safari_protection_enabled: safariProtectionEnabled,
 
             // links
-            // e.g. "adguard://safariWebExtension?action=removeFromAllowlist&domain="
+            // i.e. "adguard://safariWebExtension?action=removeFromAllowlist&domain="
             enable_site_protection_link: enableSiteProtectionLink,
-            // e.g. "adguard://safariWebExtension?action=addToAllowlist&domain="
+            // i.e. "adguard://safariWebExtension?action=addToAllowlist&domain="
             disable_site_protection_link: disableSiteProtectionLink,
-            // e.g. "adguard://safariWebExtension?action=addToBlocklist&domain="
+            // i.e. "adguard://safariWebExtension?action=addToBlocklist&domain="
             add_to_blocklist_link: addToBlocklistLink,
-            // e.g. "adguard://safariWebExtension?action=removeAllBlocklistRules&domain="
+            // i.e. "adguard://safariWebExtension?action=removeAllBlocklistRules&domain="
             remove_all_blocklist_rules_link: removeAllBlocklistRulesLink,
-            // e.g. "adguard://upgradeApp"
+            // i.e. "adguard://upgradeApp"
             upgrade_app_link: upgradeAppLink,
-            // e.g. "https://reports.adguard.com/new_issue.html?browser=Safari&product_version=4.2.1&product_type=iOS"
+            // i.e. "https://reports.adguard.com/new_issue.html?browser=Safari&product_version=4.2.1&product_type=iOS"
             report_problem_link: reportProblemLink,
-            // e.g. "adguard://enableAdvancedBlocking"
+            // i.e. "adguard://enableAdvancedBlocking"
             enable_advanced_blocking_link: enableAdvancedBlockingLink,
+            // i.e. "adguard://safariWebExtension?action=enableSiteAndSafariProtection?domain="
             enable_safari_protection_link: enableSafariProtectionLink,
         } = result;
 
@@ -386,22 +457,13 @@ export class NativeHost implements NativeHostInterface {
         };
     }
 
-    /**
-     * Checks if native app has updated rules
-     */
-    async shouldUpdateAdvancedRules(): Promise<boolean> {
-        const response = await this.sendNativeMessage(
-            MessagesToNativeApp.ShouldUpdateAdvancedRules,
-        );
+    async getContentScriptData(url: string, topUrl?: string): Promise<ContentScriptData> {
+        // TODO(ameshkov): Cache this
+        const result = await this.sendNativeMessage(MessagesToNativeApp.GetContentScriptData, {
+            url,
+            topUrl,
+        });
 
-        if (!response
-            || !Object.prototype.hasOwnProperty.call(
-                response,
-                MessagesToNativeApp.ShouldUpdateAdvancedRules,
-            )) {
-            return false;
-        }
-
-        return !!response[MessagesToNativeApp.ShouldUpdateAdvancedRules];
+        return result as ContentScriptData;
     }
 }

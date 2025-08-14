@@ -38,12 +38,14 @@ final class SafariGroupsModel {
     /* Services */
     private let safariProtection: SafariProtectionProtocol
     private let configuration: ConfigurationServiceProtocol
+    private let resources: AESharedResourcesProtocol
 
     // MARK: - Initialization
 
-    init(safariProtection: SafariProtectionProtocol, configuration: ConfigurationServiceProtocol) {
+    init(safariProtection: SafariProtectionProtocol, configuration: ConfigurationServiceProtocol, resources: AESharedResourcesProtocol ) {
         self.safariProtection = safariProtection
         self.configuration = configuration
+        self.resources = resources
 
         self.proStatusObserver = NotificationCenter.default.observe(name: .proStatusChanged, object: nil, queue: .main) { [weak self] _ in
             self?.createModels()
@@ -77,7 +79,9 @@ final class SafariGroupsModel {
 
     private func createModels() {
         let groupsFromSDK = safariProtection.groups
-        self.groups = groupsFromSDK.map {
+        self.groups = groupsFromSDK.compactMap {
+            if self.resources.disableSecurityRelatedFeatures && $0.groupType == .security { return nil }
+
             return SafariProtectionGroupCellModel(group: $0, proStatus: configuration.proStatus)
         }
     }

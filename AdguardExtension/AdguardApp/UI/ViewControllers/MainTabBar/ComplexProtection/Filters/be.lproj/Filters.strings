@@ -10,11 +10,11 @@
 /* Class = "UITextField"; placeholder = "https://example.com"; ObjectID = "Fwl-LI-5Fu"; Note = "(Add Custom Filter) url hint"; */
 "Fwl-LI-5Fu.placeholder" = "https://example.com";
 
+/* Class = "UILabel"; text = "AdGuard is disabled for the websites from this list"; ObjectID = "Gg8-4u-qvU"; */
+"Gg8-4u-qvU.text" = "AdGuard адключаны для вэб-сайтаў з гэтага спіса";
+
 /* Class = "UILabel"; text = "Filters"; ObjectID = "Lq2-mi-McV"; */
 "Lq2-mi-McV.text" = "Фільтры";
-
-/* Class = "UILabel"; text = "New custom filter"; ObjectID = "NsT-wt-1hd"; Note = "(New Custom Filter Details)"; */
-"NsT-wt-1hd.text" = "Новы фільтр";
 
 /* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "OpB-AR-Og7"; Note = "(AddCustomFilterController) cancel button"; */
 "OpB-AR-Og7.normalTitle" = "Скасаваць";
@@ -22,20 +22,8 @@
 /* Class = "UILabel"; text = "Blocks ads and trackers on websites opened in Safari"; ObjectID = "QHZ-sJ-wTL"; */
 "QHZ-sJ-wTL.text" = "Гэты модуль блакуе рэкламу і асочванне на сайтах, адкрытых у Safari";
 
-/* Class = "UILabel"; text = "Rules count: "; ObjectID = "RJU-32-r8h"; Note = "(New Custom Filter) rules count caption"; */
-"RJU-32-r8h.text" = "Колькасць правілаў: ";
-
 /* Class = "UILabel"; text = "User rules"; ObjectID = "VCK-db-aeg"; */
 "VCK-db-aeg.text" = "Карыстальніцкія правілы";
-
-/* Class = "UILabel"; text = "Filter URL:"; ObjectID = "Z16-OR-tjl"; */
-"Z16-OR-tjl.text" = "URL фільтра:";
-
-/* Class = "UILabel"; text = "Allowlist"; ObjectID = "f3z-Yh-zY2"; */
-"f3z-Yh-zY2.text" = "Белы спіс";
-
-/* Class = "UIButton"; normalTitle = "Add"; ObjectID = "kCb-lJ-BLL"; */
-"kCb-lJ-BLL.normalTitle" = "ДАДАЦЬ";
 
 /* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "mEm-ll-QZR"; Note = "(NewCustomFilterDetailsController) CANCEL button"; */
 "mEm-ll-QZR.normalTitle" = "Скасаваць";

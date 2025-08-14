@@ -50,7 +50,7 @@
 "GBd-dx-t46.text" = "Jangan mengubahnya kecuali Anda tahu apa yang Anda lakukan";
 
 /* Class = "UILabel"; text = "AdGuard will write more details to the logfile. Don't enable unless you need to track down a bug"; ObjectID = "GFO-xu-Bir"; */
-"GFO-xu-Bir.text" = "AdGuard akan menulis detail lebih lanjut ke logfile. Jangan aktifkan kecuali Anda perlu melacak bug";
+"GFO-xu-Bir.text" = "AdGuard akan menulis detail lebih lanjut ke berkas catatan. Jangan aktifkan kecuali Anda perlu melacak bug";
 
 /* Class = "UILabel"; text = "Split-Tunnel"; ObjectID = "GGp-kp-YJI"; */
 "GGp-kp-YJI.text" = "Tunnel-Terpisah";

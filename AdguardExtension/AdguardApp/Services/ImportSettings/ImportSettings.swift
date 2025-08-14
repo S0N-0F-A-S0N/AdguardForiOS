@@ -73,7 +73,11 @@ struct ImportSettings: Decodable {
     var license: String?
     var safariBlocklistRules: [String]?
     var dnsBlocklistRules: [String]?
+
+    // app features for disabling
     var disableYouTubeFeature: Bool?
+    var disableSecurityRelatedFeatures: Bool?
+    var disableIntegrationFeature: Bool?
 
     // import statuses
     var importDnsServerStatus: ImportSettingStatus = .notImported
@@ -81,6 +85,8 @@ struct ImportSettings: Decodable {
     var importSafariBlocklistRulesStatus: ImportSettingStatus = .notImported
     var importDnsBlocklistRulesStatus: ImportSettingStatus = .notImported
     var importDisableYouTubeFeatureStatus: ImportSettingStatus = .notImported
+    var importDisableSecurityRelatedFeatures: ImportSettingStatus = .notImported
+    var importDisableIntegrationFeatureStatus: ImportSettingStatus = .notImported
 
     enum CodingKeys: String, CodingKey  {
         case overrideDefaultSafariFilters = "cb_filter_default_override"
@@ -96,6 +102,9 @@ struct ImportSettings: Decodable {
         case license = "license"
         case safariBlocklistRules = "user_rules"
         case dnsBlocklistRules = "dns_user_rules"
+
         case disableYouTubeFeature = "disable_youtube_feature"
+        case disableSecurityRelatedFeatures = "disable_security_related_features"
+        case disableIntegrationFeature = "disable_integration_feature"
     }
 }

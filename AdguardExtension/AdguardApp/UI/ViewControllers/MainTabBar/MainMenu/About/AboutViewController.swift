@@ -17,6 +17,7 @@
 //
 
 import UIKit
+import ContentBlockerConverter
 
 class AboutViewController: UIViewController {
     @IBOutlet var loginButton: UIBarButtonItem!
@@ -75,16 +76,11 @@ class AboutViewController: UIViewController {
         var versionFormat = String.localizedString("about_version_format")
 
         if showFullVersion {
-            // TODO: Make it more convenient, not manual
-            // ExtendedCss version is placed in AdguardExtension/SafariWebExtension/extension/package.json
-            // Scriptlets version is placed in the yarn.lock file as a dependency of `tsurlfilter`
-            versionFormat += """
+            versionFormat += "\n\n"
+            versionFormat += "SafariConverterLib v\(ContentBlockerConverterVersion.library)\n"
+            versionFormat += "Scriptlets v\(ContentBlockerConverterVersion.scriptlets)\n"
+            versionFormat += "ExtendedCss v\(ContentBlockerConverterVersion.extendedCSS)\n"
 
-                            SafariConverterLib v2.1.1
-                            TSUrlFilter v2.2.23
-                            Scriptlets v1.11.16
-                            ExtendedCss v2.0.52
-                            """
             versionLabel.font = .systemFont(ofSize: isIpadTrait ? 20.0 : 16.0, weight: .bold)
         }
 

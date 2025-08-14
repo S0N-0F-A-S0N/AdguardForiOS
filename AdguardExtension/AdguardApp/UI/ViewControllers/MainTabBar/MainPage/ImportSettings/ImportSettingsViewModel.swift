@@ -28,6 +28,8 @@ enum ImportRowType {
     case userRules
     case dnsRules
     case youTubeFeature
+    case securityRelatedFeatures
+    case integrationFeature
 }
 
 struct SettingRow {
@@ -103,6 +105,12 @@ class ImportSettingsViewModel: ImportSettingsViewModelProtocol {
             settings.isSafariBlocklistRulesImportEnabled = state
         case .youTubeFeature:
             settings.disableYouTubeFeature = state
+
+        // This settings not presenting on UI
+        case .securityRelatedFeatures:
+            settings.disableSecurityRelatedFeatures = state
+        case .integrationFeature:
+            settings.disableIntegrationFeature = state
         }
 
         row.enabled = state
@@ -138,6 +146,8 @@ class ImportSettingsViewModel: ImportSettingsViewModelProtocol {
         fillDnsRules(imported)
 
         fillYouTubeFeature(imported)
+
+        // We skip "disable_security_related_features" and "disable_integration_feature" import settings from being to presenting on UI
     }
 
     fileprivate func fillDnsRules(_ imported: Bool) {

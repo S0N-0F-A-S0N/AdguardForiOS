@@ -39,6 +39,7 @@ final class SupportService: SupportServiceProtocol {
     // MARK: - Services
 
     private let resources: AESharedResourcesProtocol
+    private let sharedStorageUrls: SharedStorageUrlsProtocol
     private let configuration: ConfigurationServiceProtocol
     private let complexProtection: ComplexProtectionServiceProtocol
     private let networkSettings: NetworkSettingsServiceProtocol
@@ -61,10 +62,22 @@ final class SupportService: SupportServiceProtocol {
     private var logsDirectory: URL?
     private var logsZipDirectory: URL?
 
-    //MARK: - Init
+    // MARK: - Init
 
-    init(resources: AESharedResourcesProtocol, configuration: ConfigurationServiceProtocol, complexProtection: ComplexProtectionServiceProtocol, productInfo: ADProductInfoProtocol, keyChainService: KeychainServiceProtocol, safariProtection: SafariProtectionProtocol, networkSettings: NetworkSettingsServiceProtocol, dnsProvidersManager: DnsProvidersManagerProtocol, dnsProtection: DnsProtectionProtocol) {
+    init(
+        resources: AESharedResourcesProtocol,
+        sharedStorageUrls: SharedStorageUrlsProtocol,
+        configuration: ConfigurationServiceProtocol,
+        complexProtection: ComplexProtectionServiceProtocol,
+        productInfo: ADProductInfoProtocol,
+        keyChainService: KeychainServiceProtocol,
+        safariProtection: SafariProtectionProtocol,
+        networkSettings: NetworkSettingsServiceProtocol,
+        dnsProvidersManager: DnsProvidersManagerProtocol,
+        dnsProtection: DnsProtectionProtocol
+    ) {
         self.resources = resources
+        self.sharedStorageUrls = sharedStorageUrls
         self.configuration = configuration
         self.complexProtection = complexProtection
         self.productInfo = productInfo
@@ -83,7 +96,8 @@ final class SupportService: SupportServiceProtocol {
 
         let tmp = URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true)
         let baseUrl = tmp.appendingPathComponent("logs", isDirectory: true)
-        let cbUrl = baseUrl.appendingPathComponent("CB jsons", isDirectory: true)
+        let cbUrl = baseUrl.appendingPathComponent("ContentBlockers", isDirectory: true)
+        let webExtUrl = baseUrl.appendingPathComponent("WebExtension", isDirectory: true)
         let targetsUrl = baseUrl.appendingPathComponent("Targets", isDirectory: true)
         let logsZipUrl = tmp.appendingPathComponent(archiveName)
         self.logsDirectory = fileManager.fileExists(atPath: baseUrl.path) ? baseUrl : nil
@@ -94,11 +108,17 @@ final class SupportService: SupportServiceProtocol {
 
         /// Create directories in base directory
         try fileManager.createDirectory(at: baseUrl, withIntermediateDirectories: true, attributes: nil)
-        try fileManager.createDirectory(at: cbUrl, withIntermediateDirectories: true, attributes: nil)
         try fileManager.createDirectory(at: targetsUrl, withIntermediateDirectories: true, attributes: nil)
 
-        /// Get jsons for content blockers and append them to base directory
-        try appendCBJsonsIntoTemporaryDirectory(cbUrl: cbUrl)
+        /// Copy content blockers folder
+        if fileManager.fileExists(atPath: sharedStorageUrls.cbJsonsFolderUrl.path) {
+            try fileManager.copyItem(at: sharedStorageUrls.cbJsonsFolderUrl, to: cbUrl)
+        }
+
+        // Copy web extension files
+        if fileManager.fileExists(atPath: sharedStorageUrls.webExtFolderUrl.path) {
+            try fileManager.copyItem(at: sharedStorageUrls.webExtFolderUrl, to: webExtUrl)
+        }
 
         /// Get application state info and save it as state.txt to base directory
         let appStateData = createApplicationStateInfo().data(using: .utf8)
@@ -296,16 +316,6 @@ final class SupportService: SupportServiceProtocol {
         delimeter += "LOG FILE: \(fileName)"
         delimeter += "\r\n-------------------------------------------------------------\r\n"
         return delimeter
-    }
-
-    private func appendCBJsonsIntoTemporaryDirectory(cbUrl: URL) throws {
-        let advancedRulesFileUrl = safariProtection.advancedRulesFileUrl
-        if FileManager.default.fileExists(atPath: advancedRulesFileUrl.path) {
-            try FileManager.default.copyItem(at: advancedRulesFileUrl, to: cbUrl.appendingPathComponent(advancedRulesFileUrl.lastPathComponent))
-        }
-        try safariProtection.allContentBlockerJsonUrls.forEach { fileUrl in
-            try FileManager.default.copyItem(at: fileUrl, to: cbUrl.appendingPathComponent(fileUrl.lastPathComponent))
-        }
     }
 
     private func collectDnsServerInfo() -> DnsServerInfo {

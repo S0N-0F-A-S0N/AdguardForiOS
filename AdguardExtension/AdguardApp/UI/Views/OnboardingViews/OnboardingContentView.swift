@@ -81,6 +81,11 @@ final class OnboardingContentView: UIView {
     }
 
     private func setupWithAdvancedProtection() {
+        if #available(iOS 18.0, *) {
+            // In iOS 18, the path for enabling content blockers and extensions has changed, so this text block is no longer needed.
+            return
+        }
+
         self.addSubview(advancedProtectionView)
         applyConstraints(to: advancedProtectionView)
         advancedProtectionView.labelString = String.localizedString("onboarding_fours_step_text")

@@ -322,6 +322,24 @@
 /* (ContentBlockersTableController) - Content Blockers title */
 "cb_screen_content_blockers_title" = "Blocchi di Contenuto";
 
+/* (ContentBlockersTableController) - General content blocker name */
+"cb_screen_content_blockers_general_name" = "Generale";
+
+/* (ContentBlockersTableController) - Privacy content blocker name */
+"cb_screen_content_blockers_privacy_name" = "Riservatezza";
+
+/* (ContentBlockersTableController) - Social content blocker name */
+"cb_screen_content_blockers_social_name" = "Social";
+
+/* (ContentBlockersTableController) - Other content blocker name */
+"cb_screen_content_blockers_other_name" = "Altri";
+
+/* (ContentBlockersTableController) - Custom content blocker name */
+"cb_screen_content_blockers_custom_name" = "Personale";
+
+/* (ContentBlockersTableController) - Security content blocker name */
+"cb_screen_content_blockers_security_name" = "Sicurezza";
+
 /* (AdvancedSettingsController) Restart when network changes error */
 "general_settings_restart_tunnel_error" = "Devi prima attivare la VPN";
 
@@ -730,6 +748,9 @@
 /* (OnboardingController) second step with advanced protection text */
 "advanced_protection_onboarding_second_step_text" = "Dirigiti su <b>Safari > Estensioni</b>.";
 
+/* (OnboardingController) second step with advanced protection text for iOS 18+ */
+"advanced_protection_onboarding_second_step_text_ios_18" = "Dirigiti su <b>App > Safari > Estensioni</b>.";
+
 /* (OnboardingController) third step text */
 "onboarding_third_step_text" = "<b>Attiva</b> tutte le estensioni AdGuard.";
 
@@ -737,7 +758,7 @@
 "advanced_protection_onboarding_third_step_text" = "Imposta tutte le opzioni di AdGuard su <b>attiva</b>. Ora è tutto ok!";
 
 /* (OnboardingContentView) fours step. '%@' will be replaced with the share icon */
-"onboarding_fours_step_text" = "Per la protezione <b>Avanzata</b>, apri Safari, clicca l'icona <b>aA</b> sul lato sinistro del campo dell'URL,<br><br> %@ <br><br>dopodichè clicca su <b>Gestisci estensioni</b> e attiva l'interruttore di <b>AdGuard</b>.";
+"onboarding_fours_step_text" = "Per la protezione <b>Avanzata</b>, apri Safari, clicca l'icona sul lato sinistro del campo dell'URL,<br><br> %@ <br><br>dopodichè clicca su <b>Gestisci estensioni</b> e attiva l'interruttore di <b>AdGuard</b>.";
 
 /* (BlockRequestController) Block request title */
 "block_request" = "Bloccare richiesta";
@@ -1088,6 +1109,9 @@
 /* (ImportSettingsController) add dns rules title */
 "import_dns_user_rules" = "Aggiungi Regole Utente DNS";
 
+/* (ImportSettingsController) disable YouTube feature title */
+"disable_youtube_feature" = "Disabilita riproduttore AdGuard";
+
 /* (LowLevelSettingsController) Low level settings description. <b style=color:#c23814ff> It is a color for WARNING! word*/
 "low_level_description" = "<b style=color:#c23814ff>AVVISO!</b> L'attivazione di queste funzionalità potrebbe interrompere la connessione a Internet o compromettere la sicurezza e la privacy.";
 
@@ -1219,6 +1243,12 @@ DO NOT TRANSLATE "none" */
 
 /* (YoutubePlayerController) 'userscript error' alert message */
 "youtube_player_controller_userscript_error_message" = "Errore nella creazione dello script utente";
+
+/* (YoutubePlayerController) YouTube feature disabled alert title */
+"youtube_player_controller_feature_disabled_title" = "Riproduttore AdGuard disabilitato";
+
+/* (YoutubePlayerController) YouTube feature disabled alert message */
+"youtube_player_controller_feature_disabled_message" = "Condivisione video AdGuard non disponibile";
 
 /* (YouTubeAdsRequestHandler) 'no url error' alert title */
 "youtube_share_extension_no_url_title" = "Non è stato fornito alcun URL";

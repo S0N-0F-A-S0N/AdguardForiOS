@@ -8,7 +8,7 @@
 "3zG-B5-jE5.text" = "Hata ayıklama günlükleri";
 
 /* Class = "UILabel"; text = "Blocked response TTL"; ObjectID = "7nl-3p-BP2"; */
-"7nl-3p-BP2.text" = "Engellenen yanıt kullanım süresi";
+"7nl-3p-BP2.text" = "Engellenen yanıtın geçerlilik süresi";
 
 /* Class = "UILabel"; text = "Invert the Allowlist"; ObjectID = "8ad-4w-rbs"; */
 "8ad-4w-rbs.text" = "İzin listesini ters çevir";

@@ -322,6 +322,24 @@
 /* (ContentBlockersTableController) - Content Blockers title */
 "cb_screen_content_blockers_title" = "內容阻擋器";
 
+/* (ContentBlockersTableController) - General content blocker name */
+"cb_screen_content_blockers_general_name" = "一般的";
+
+/* (ContentBlockersTableController) - Privacy content blocker name */
+"cb_screen_content_blockers_privacy_name" = "隱私";
+
+/* (ContentBlockersTableController) - Social content blocker name */
+"cb_screen_content_blockers_social_name" = "社群";
+
+/* (ContentBlockersTableController) - Other content blocker name */
+"cb_screen_content_blockers_other_name" = "其它";
+
+/* (ContentBlockersTableController) - Custom content blocker name */
+"cb_screen_content_blockers_custom_name" = "自訂的";
+
+/* (ContentBlockersTableController) - Security content blocker name */
+"cb_screen_content_blockers_security_name" = "安全性";
+
 /* (AdvancedSettingsController) Restart when network changes error */
 "general_settings_restart_tunnel_error" = "您需要先啟用 VPN";
 
@@ -704,7 +722,7 @@
 "dns_request_status_encrypted" = "已加密的";
 
 /*(DnsLogController) status of dns request */
-"dns_request_status_allowlisted" = "已允許的";
+"dns_request_status_allowlisted" = "被允許的";
 
 /*(DnsLogController) user status of dns request */
 "dns_request_user_status_added_to_whitelist" = "被加至允許清單";
@@ -730,6 +748,9 @@
 /* (OnboardingController) second step with advanced protection text */
 "advanced_protection_onboarding_second_step_text" = "前往 <b>Safari > 延伸功能</b>。";
 
+/* (OnboardingController) second step with advanced protection text for iOS 18+ */
+"advanced_protection_onboarding_second_step_text_ios_18" = "前往 <b>應用程式 > Safari > 擴充功能</b>。";
+
 /* (OnboardingController) third step text */
 "onboarding_third_step_text" = "<b>啟用</b>所有的 AdGuard 延伸功能。";
 
@@ -737,7 +758,7 @@
 "advanced_protection_onboarding_third_step_text" = "設定所有的 AdGuard 切換為<b>開著</b>。您準備好了！";
 
 /* (OnboardingContentView) fours step. '%@' will be replaced with the share icon */
-"onboarding_fours_step_text" = "為了啟用<b>進階</b>防護，開啟 Safari，於網址欄位的左側上輕觸該<b>大小</b>圖像，<br><br>%@<br><br>然後輕觸<b>管理延伸功能</b>，並打開該 <b>AdGuard</b> 切換。";
+"onboarding_fours_step_text" = "為了啟用<b>進階</b>防護，開啟 Safari，於網址欄位的左側上輕觸該圖像，<br><br>%@<br><br>然後輕觸<b>管理延伸功能</b>，並打開該 <b>AdGuard</b> 切換。";
 
 /* (BlockRequestController) Block request title */
 "block_request" = "封鎖該請求";
@@ -902,7 +923,7 @@
 "blocked_only_alert_action" = "僅已封鎖的";
 
 /* (ActivityViewController) - Allowed only alert action */
-"allowed_only_alert_action" = "僅已允許的";
+"allowed_only_alert_action" = "僅被允許的";
 
 /* (ActivityViewController) - None message when there is no statistics */
 "none_message" = "無";
@@ -1021,7 +1042,7 @@
 "safari_protection_disabled_voiceover" = "Safari 防護被禁用";
 
 /* (MainPageController) DNS protection enabled title for VoiceOver*/
-"tracking_protection_enabled_voiceover" = "DNS 防護被啟用";
+"tracking_protection_enabled_voiceover" = "DNS 防護已啟用";
 
 /* (MainPageController) DNS protection disabled title for VoiceOver*/
 "tracking_protection_disabled_voiceover" = "DNS 防護被禁用";

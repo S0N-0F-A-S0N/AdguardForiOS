@@ -22,6 +22,15 @@
 /* Something went wrong title for unknown error */
 "something_went_wrong_title" = "Noe gikk galt";
 
+/* Unknown error desription */
+"unknown_error_description" = "Vennligst rapporter denne feilen til brukerstøtte.";
+
+/* (AEService) Service errors descriptions */
+"safari_filters_loading_error" = "Filtrene kan ikke lastes inn i Safari. Derfor ble de siste endringene dine ikke lagret.";
+
+/* (AppDegelate) Alert message. When converting rules process finished in foreground updating. */
+"load_to_safari_error" = "Filtrene kan ikke lastes inn i Safari. Prøv å tømme reglene og hvitelisten, eller endre settet av brukte filtre.";
+
 /* NO Button caption in alert */
 "common_action_no" = "NEI";
 
@@ -49,6 +58,9 @@
 /* (MainPageController) Text for data units 10000 for China, Korea and Japan, it shouldn't be translated in other languages */
 "ten_thousands_unit" = "%@10T";
 
+/* Bytes infromation unit */
+"b_unit" = "%@ B";
+
 /* Kilobytes infromation unit */
 "kb_unit" = "%@ KB";
 
@@ -57,6 +69,12 @@
 
 /* Gigabytes infromation unit */
 "gb_unit" = "%@ GB";
+
+/* (MainPageController) Native DNS is working title */
+"native_dns_working" = "Standard DNS fungerer";
+
+/* (MainPageController) Native DNS is not working title */
+"native_dns_not_working" = "Innebygd DNS kjører ikke";
 
 /* (User Filter Screen) Title */
 "user_filter_title" = "Brukerfiltre";
@@ -68,19 +86,49 @@
 "common_action_yes" = "Ja";
 
 /* (MainController) login status caption on main screen */
+"protection_enabled_caption" = "Beskyttelse er skrudd på";
+
+/* (MainController) login status caption on main screen */
 "protection_partly_enabled_caption" = "Noen innholdsblokkerere er skrudd av";
+
+/* (MainController) login status caption on main screen */
+"protection_disabled_caption" = "Beskyttelse er skrudd av";
+
+/* (GetProTableController) upgrade button title; look like 'Try for free\n7 days free, then 1$.00/moth'*/
+"upgrade_button_title" = "Prøv gratis\n7 dager gratis, deretter %@";
+
+/* (GetProTableController) upgrade button title for month; looks like '$1.00/moth' */
+"upgrade_button_subscription_price_month" = "%@/måned";
+
+/* (GetProTableController) upgrade button title for year; looks like '$1.00/year' */
+"upgrade_button_subscription_price_year" = "%@/år";
 
 /* (LicenseProductChoiceCell) restore purchase button title */
 "restore_purchase_button_title" = "Gjenopprett kjøp";
 
+/* (FreeLicenseStateTableViewModel) One month subscription title */
+"one_month_subscription_title" = "Månedlig";
+
+/* (FreeLicenseStateTableViewModel) One year subscription title */
+"one_year_subscription_title" = "Årlig";
+
 /* (FreeLicenseStateTableViewModel) title for permanent subscription */
 "permanent_subscription_title" = "Livstid";
+
+/* (PremiumLicenseStateView) Title for button that leads to account page in Safari */
+"go_to_my_account_title" = "Gå til kontoen min";
 
 /* (GetProTableController) upgrade button title for lifetime license */
 "upgrade_lifetime_button_title" = "Kjøp";
 
+/* (GetProTableController) missing purchase alert message */
+"upgrade_missing_purchase_message" = "Abonnementsplaner er ikke tilgjengelige. Vennligst sjekk internettforbindelsen din og prøv igjen.";
+
 /* (LoginController) lost password button title */
 "lost_password" = "Har du glemt passordet?";
+
+/* (SignInController) user not found message */
+"user_not_found_message" = "Ingen bruker funnet med denne e-postadressen. Vennligst registrer deg på %@ først.";
 
 /* (SignInController) SignIn via AdGuard account title */
 "sign_in_via_adguard_title" = "Bruk AdGuard-konto";
@@ -100,11 +148,26 @@
 /* (AEUIGetProViewController) title of the message that appears if the account has expired */
 "premium_expired_title" = "Oppmerksomhet";
 
+/* (AEUIGetProViewController) message that appears if the account is not premium */
+"not_premium_message" = "Du har logget inn på din AdGuard-konto, men det er ingen lisensnøkler som tillater deg å aktivere premiumversjonen.";
+
+/* (AEUIGetProViewController) message that appears when the user successfully logs in */
+"login_success_message" = "Du har logget inn på din AdGuard-konto! Premiumversjonen av AdGuard for iOS er aktivert.";
+
+/* (AEUIGetProViewController) message that appears when the user successfully logs in but all premium keys have expired */
+"login_premium_expired_message" = "Du har logget inn på din AdGuard-konto, men lisensnøklene som tillater deg å aktivere premiumversjonen har utløpt.";
+
 /* (AEUIGetProViewController) message that appears when an error occurred during purchase restoring */
 "restore_purchases_failure_message" = "En feil oppstod i forsøket på å gjenopprette kjøpet.";
 
+/* (AEUIGetProViewController) message that appears when purchase successfully restored */
+"restore_success_message" = "Kjøpet er gjenopprettet! Premiumversjonen av AdGuard for iOS er aktivert.";
+
 /* (AEUIGetProControllerViewController) this message showes when user try ro restore purchases but there is nothing to restore. */
 "nothing_to_restore_message" = "Ingen kjøp å gjenopprette";
+
+/* (AEUIGetProViewController) message that appears when the purchase is successful */
+"purchase_success_message" = "Kjøpet er vellykket gjennomført! Premiumversjonen av AdGuard for iOS er aktivert.";
 
 /* (AEUIGetProViewController) message that appears when an error occurred during purchase */
 "purchase_failure_message" = "En feil oppstod under behandling av kjøpet ditt.";
@@ -121,11 +184,26 @@
 /* (UserFilterController) blacklist description format */
 "blacklist_text_format" = "Du kan legge til dine egne regler her.<br>Les dette <a href=\"%@\">notatet om regelsyntaksen</a> .";
 
+/* (UserFilterController) whitelist description */
+"whitelist_text" = "Skriv inn domenenavnene her. AdGuard vil ikke filtrere disse domenene, og alle andre innstillinger vil bli ignorert.";
+
+/* (UserFilterController) inverted whitelist description */
+"inverted_whitelist_text" = "Skriv inn domenenavn her. AdGuard vil aktivere filtrering i Safari for bare disse nettstedene.";
+
+/* (UserFilterController) dns whitelist description */
+"dns_whitelist_text" = "Skriv inn domenenavnene her atskilt med linjeskift. AdGuard vil tillate alle forbindelser til disse domenene.";
+
+/* (UserFilterController) dns blocklist description */
+"dns_blacklist_text_format" = "Denne blokkeringslisten støtter <a href=\"%@\">AdGuards DNS-syntaks</a>. Skriv inn reglene her, atskilt med linjeskift. AdGuard vil blokkere alle forbindelser til domener som samsvarer med disse reglene.";
+
 /* (MainController) message that appers when filters updating */
 "update_filter_start_message" = "Oppdaterer…";
 
 /* (UserFilterController) add blocklist rule button title */
 "add_blacklist_rule_title" = "Legg til ny regel";
+
+/* (UserFilterController) add whitelist domain button title */
+"add_whitelist_domain_title" = "Legg til et domene";
 
 /* (UserFilterController) add blacklist rule placeholder */
 "add_blacklist_rule_placeholder" = "||example.org^";
@@ -156,6 +234,9 @@
 
 /* (MainController) Message on main screen during update - count of updated filters */
 "filters_updated_format" = "Filtre oppdatert: %lu ";
+
+/* (FiltersController) Filter Version format */
+"filter_version_format" = "versjon %@";
 
 /* (DnsSettingController) split tunel mode description */
 "tunnel_mode_split_description" = "Split-tunnel, kompatibel med «Personlig VPN»-apper";
@@ -199,6 +280,12 @@
 /* login error message */
 "login_error_message" = "En feil oppstod under pålogging";
 
+/* purchase secription format */
+"purchase_description_format" = "AdGuards abonnementsbetingelser<br><br>• Betaling vil bli belastet din iTunes-konto ved bekreftelse av kjøp.<br><br>• Abonnementet fornyes automatisk med mindre auto-fornyelse er skrudd av minst 24 timer før slutten av den nåværende perioden.<br><br>• Abonnementsfornyelsesavgiften vil bli belastet din iTunes-konto innen 24 timer før slutten av den nåværende perioden.<br><br>• Du kan håndtere abonnementet ditt og skru av auto-fornyelse ved å gå til innstillingene for kontoen din etter kjøpet.<br><br>AdGuard <a href=%2$@>EULA</a> og <a href=%1$@>Personvernerklæring</a>";
+
+/* lifetime purchase secription format */
+"lifetime_purchase_description_format" = "AdGuards <a href=\"%2$@\">EULA</a> og <a href=\"%1$@\">personvernerklæring</a>";
+
 /* DnsSettingsController - alert button. This message is shown when the user first starts the VPN. */
 "common_action_ok" = "Ok";
 
@@ -207,6 +294,9 @@
 
 /* DnsSettingsController - alert title. This message is shown when the user first starts the VPN. */
 "vpn_confirm_title" = "En VPN vil bli opprettet";
+
+/* DnsSettingsController - alert message. This message is shown when the user first starts the VPN. */
+"vpn_confirm_message" = "VPN kreves for å sette opp tilpassede DNS-innstillinger. Den opprettede VPN-en er lokal, noe som betyr at trafikken din ikke vil bli rutet gjennom noen servere.\nVi samler ikke inn noen data når du bruker denne VPN-profilen.";
 
 /* this message is shown during the login on the license screen */
 "loading_message" = "Vennligst vent...";
@@ -217,8 +307,38 @@
 /* (AdvancedSettingsController) "Other" header view title*/
 "other_header_title" = "Andre";
 
+/* (AdvancedSettingsController) Content blocker description text */
+"cb_description_common" = "6 AdGuard-innholdsblokkerere, hver med opptil 50 000 regler";
+
+/* (AdvancedSettingsController) Content blocker description text */
+"cb_description_advanced_protection" = "6 innholdsblokkere, hver med opptil 150 000 regler, pluss avansert beskyttelse";
+
 /* (ContentBlockerStateController) Enabled filters */
 "content_blocker_filters" = "Filtre:";
+
+/* (ContentBlockersTableController) - Advanced protection title */
+"cb_screen_advanced_protection_title" = "Avansert beskyttelse";
+
+/* (ContentBlockersTableController) - Content Blockers title */
+"cb_screen_content_blockers_title" = "Innholdsblokkerere";
+
+/* (ContentBlockersTableController) - General content blocker name */
+"cb_screen_content_blockers_general_name" = "Generelt";
+
+/* (ContentBlockersTableController) - Privacy content blocker name */
+"cb_screen_content_blockers_privacy_name" = "Personvern";
+
+/* (ContentBlockersTableController) - Social content blocker name */
+"cb_screen_content_blockers_social_name" = "Sosiale medier";
+
+/* (ContentBlockersTableController) - Other content blocker name */
+"cb_screen_content_blockers_other_name" = "Andre";
+
+/* (ContentBlockersTableController) - Custom content blocker name */
+"cb_screen_content_blockers_custom_name" = "Egendefinert";
+
+/* (ContentBlockersTableController) - Security content blocker name */
+"cb_screen_content_blockers_security_name" = "Sikkerhet";
 
 /* (AdvancedSettingsController) Restart when network changes error */
 "general_settings_restart_tunnel_error" = "Du må skru på VPN først";
@@ -238,6 +358,9 @@
 /* (AdvancedSettingsController) Remove Vpn profile title */
 "remove_vpn_profile_title" = "Fjern VPN-profil";
 
+/* (AdvancedSettingsController) Delete Vpn profile message */
+"delete_vpn_profile_message" = "Er du sikker på at du vil slette din VPN-profil og skru av DNS-beskyttelse?";
+
 /* (AdvancedSettingsController) Remove Vpn profile error title */
 "remove_vpn_profile_error_title" = "En feil oppstod";
 
@@ -250,11 +373,35 @@
 /* (ContentBlockerStateCell) text is shown in currentFilterStateLabel when disabled  */
 "disabled_current_state_label" = "Skrudd av i Safari-innstillingene";
 
+/* (ContentBlockerStateCell) Description for advanced protection disabled state */
+"disabled_current_state_advanced_protection" = "Deaktivert i beskyttelsesinnstillinger";
+
 /* (ContentBlockerStateCell) text is shown in currentFilterStateLabel when updating  */
 "update_current_state_label" = "Laster inn i Safari …";
 
+/* (ContentBlockerStateCell) text is shown in currentFilterStateLabel when over limited  */
+"over_limit_current_state_label" = "Grensen på %1$@ regler er nådd. Appen kan muligens ikke fungere korrekt. Vennligst deaktiver de ekstra reglene. For tiden er %2$@ av %3$@ regler i bruk; %4$@ regler er deaktivert.";
+
 /* (ContentBlockerStateCell) text is shown in currentFilterStateLabel when failed updating */
 "failed_updating_current_state_label" = "Filtrene har ikke blitt oppdatert";
+
+/* (GetProController) login error message text */
+"login_max_computers_exceeded" = "Denne lisensen har blitt aktivert på det maksimale antallet enheter.\nDu kan avbinde lisensen fra ubrukte enheter i din personlige konto på nettstedet: adguard.com";
+
+/* (Action Extension - ActionViewController) An error which occurs if the action extension is launched before the main Adguard app. */
+"action_extension_no_configuration_message_format" = "Før du kan bruke denne handlingsutvidelsen, må %1$@ utføre en innledende konfigurasjon. Start %2$@-hovedappen for å la den gjøre det.";
+
+/* (Action Extension - AEAUIMainController) error occurs when content blocker is disabled. */
+"content_blocker_disabled_format" = "Merk at innholdsblokkereren er deaktivert. Det betyr at annonser ikke blir filtrert, uavhengig av AdGuard-innstillingene. Vennligst aktiver AdGuard-innholdsblokker i Safari-innstillingene for å starte filtreringen.";
+
+/* (Action Extension - ActionViewController) Can't obtain hostname when starting. */
+"hostname_obtaining_error" = "Vertsnavnet er ikke innhentet. Kanskje siden er ikke lastet inn ennå.";
+
+/* (Action Extension - AEAUIMainController) error occurs when click on Block Element button. */
+"assistant_launching_unable" = "Denne nettsidens sikkerhetsretningslinjer tillater ikke å starte AdGuard-assistent.";
+
+/* (Action Extension - ActionViewController) Some errors when starting. */
+"support_error_safari_extension" = "Det oppstod uventet feil under initialiseringen av Safari-handlingsutvidelsen. Ta kontakt med AdGuard-brukerstøtten hvis dette oppstår igjen.";
 
 /* (APUIAdguardDNSController) PRO version. Alert title. On warning. */
 "common_warning_title" = "Advarsel";
@@ -267,6 +414,9 @@
 
 /* (FiltersController) Disabled state in groups section */
 "off_state" = "Deaktivert";
+
+/* (NewCustomFilterDetailedController) homepage string */
+"homepage_title" = "Hjemmeside: ";
 
 /* (FilterDetailsController) delete filter title */
 "delete_filter_title" = "Slett filter";
@@ -304,6 +454,9 @@
 /* (NetworkSettingsController) title for wifi exceptions */
 "wifi_exceptions_title" = "Wi-Fi-unntak";
 
+/* (NetworkSettingsController) description for wifi exceptions */
+"wifi_exceptions_description" = "DNS-beskyttelse vil ikke fungere for Wi-Fi-nettverkene som er listet nedenfor";
+
 /* (NetworkSettingsController) button title for "Add an exception" */
 "add_exception_title" = "Legg til et unntak";
 
@@ -337,6 +490,21 @@
 /* (UserRulesTableController) - title for editing user rules option  */
 "open_user_rules_editor" = "Åpne redigerer";
 
+/* (UserRulesTableController) - description for Safari user rules in editor  */
+"editor_safari_user_rules_description" = "Legg til Safari-brukerregler";
+
+/* (UserRulesTableController) - description for allowlist rules in editor  */
+"editor_allowlist_rules_description" = "Legg til egendefinerte regler for godkjenningsliste";
+
+/* (UserRulesTableController) - description for inverted allowlist rules in editor  */
+"editor_inverted_allowlist_rules_description" = "Legg til egendefinerte inverterte regler for godkjenningsliste";
+
+/* (UserRulesTableController) - description for DNS allowlist rules in editor  */
+"editor_dns_allowlist_rules_description" = "Legg til egendefinerte DNS-regler for godkjenningsliste";
+
+/* (UserRulesTableController) - description for DNS blocklist rules in editor  */
+"editor_dns_blocklist_rules_description" = "Legg til egendefinerte DNS-regler for blokkeringsliste";
+
 /* (ListOfRulesModel) title for Clear button*/
 "common_clear" = "Tøm";
 
@@ -360,6 +528,9 @@
 
 /*(LogRecord) "ADD TO BLOCKLIST" button title */
 "add_to_blacklist" = "LEGG TIL I BLOKKERINGSLISTEN";
+
+/*(GroupsController) Security description without premium  */
+"security_description" = "Tillat å blokkere phishing-nettsteder og andre farlige domener. Tilgjengelig for Premium-brukere";
 
 /*(GroupsController) Custom filters description without premium  */
 "custom_description" = "Tillater å legge til tredjepartsfiltre. Tilgjengelig for Premium-brukere";
@@ -427,6 +598,33 @@
 /* (OneSafariGroupFiltersModel) Add new filter title */
 "add_new_filter" = "Legg til filter";
 
+/* (OneSafariGroupFiltersModel) Ads filters group description */
+"ads_filters_group_description" = "Filterlister som fjerner reklamer";
+
+/* (OneSafariGroupFiltersModel) Privacy filters group description */
+"privacy_filters_group_description" = "Filterlister som forhindrer sporing";
+
+/* (OneSafariGroupFiltersModel) Social Widgets filters group description */
+"social_widgets_filters_group_description" = "Filterlister som skjuler sosiale medier-moduler (\"Liker\"-knapper og lignende)";
+
+/* (OneSafariGroupFiltersModel) Annoyances filters group description */
+"annoyances_filters_group_description" = "Filterlister som blokkerer irriterende elementer på nettsider. Definisjonen av \"irriterende\" kan være subjektiv og avhenger av listeforfatteren";
+
+/* (OneSafariGroupFiltersModel) Security filters group description */
+"security_filters_group_description" = "Filterlister som blokkerer kjente netttrusler";
+
+/* (OneSafariGroupFiltersModel) Other filters group description */
+"other_filters_group_description" = "Diverse filterlister for forskjellige formål";
+
+/* (OneSafariGroupFiltersModel) Language Specific filters group description */
+"language_specific_filters_group_description" = "Filterlister som retter seg mot nettsteder på spesifikke språk";
+
+/* (OneSafariGroupFiltersModel) Custom filters group description */
+"custom_filters_group_description" = "Filterlister som du legger til manuelt";
+
+/* confirm reset lert text */
+"confirm_reset_text" = "Alle innstillinger, inkludert brukerregler, DNS-beskyttelse, grensesnitt og autorisasjonsinnstillinger, vil bli tilbakestilt. Denne operasjonen kan ikke angres. Tilbakestill innstillingene?";
+
 /* (DnsLogContainerController) reset activity log title */
 "reset_activity_title" = "Tilbakestill aktivitetsloggen";
 
@@ -448,11 +646,23 @@
 /*(MainScreen) "all time" chart date type */
 "chart_alltime" = "Til alle tider";
 
+/*(SafariService) notification about loading content blockers  */
+"loading_content_blockers" = "Innholdsblokkerere blir oppdatert …";
+
+/*(FiltersService) notification about filters laoding  */
+"loading_filters" = "Laster inn filtre …";
+
+/*(ContentBlockerService) notification about converting rules  */
+"converting_rules" = "Reglene blir konvertert  …";
+
 /*(NewCustomFilterDetailsController) title for new custom filter */
 "new_filter_title" = "Nytt selvvalgt filter";
 
 /*(NewCustomFilterDetailsController) title for new dns filter */
 "new_dns_filter_title" = "Nytt DNS-filter";
+
+/* (NewCustomFilterDetailsController) Error message when adding custom filter fails */
+"add_custom_filter_error_message" = "Noe gikk galt, eller formatet på filen med tilpasningsfilteret er feil";
 
 /*(NewCustomFilterDetailsController) title for editing custom filter */
 "edit_custom_filter_title" = "Rediger tilpasset filter";
@@ -460,11 +670,29 @@
 /*(NewCustomFilterDetailsController) add button title */
 "common_add" = "Legg til";
 
+/*(TodayViewController) Protection is disabled title  */
+"protection_disabled" = "Beskyttelse er skrudd av";
+
+/*(TodayViewController) Protection is enabled title  */
+"protection_enabled" = "Beskyttelse er skrudd på";
+
+/*(TodayViewController) Complex protection is enabled text  */
+"complex_enabled" = "Safari- og DNS-beskyttelse";
+
+/*(TodayViewController) Safari protection is enabled text  */
+"safari_enabled" = "Safari-beskyttelse er på";
+
+/*(TodayViewController) All protection is disabled text  */
+"complex_disabled" = "Beskyttelse er slått av";
+
 /*(TodayViewController) DNS protection is enabled text  */
 "system_enabled" = "DNS-beskyttelse";
 
 /*(TodayViewController) Statistics format text  */
 "widget_statistics" = "%1$d forespørsler, %2$d kryptert";
+
+/*(DnsRequestDetailsController) message for info alert  */
+"whotrackme_message" = "Denne informasjonen ble lastet fra WhoTracksMe.com-tjenesten";
 
 /*(DnsRequestDetailsController) action title for info alert  */
 "common_action_more" = "Mer";
@@ -474,6 +702,9 @@
 
 /*(DnsFiltersController) DNS filters number title */
 "dns_filters_number_title" = "%@ regler er skrudd på";
+
+/*(DnsFiltersController) DNS filters overlimit title */
+"dns_filters_overlimit_title" = "For mange regler er aktivert: %@. Noen av dem vil bli deaktivert";
 
 /*(DnsFiltersController) DNS filters overlimit title */
 "dns_filters_notification_title" = "Skru av noen filtre for at det skal fungere riktig";
@@ -496,6 +727,39 @@
 /*(DnsLogController) user status of dns request */
 "dns_request_user_status_added_to_whitelist" = "lagt til i hvitelisten";
 
+/*(DnsLogController) user status of dns request */
+"dns_request_user_status_added_to_blacklist" = "lagt til i blokkeringslisten";
+
+/*(DnsLogController) user status of dns request */
+"dns_request_user_status_removed_from_whitelist" = "fjernet fra hvitelisten";
+
+/*(DnsLogController) user status of dns request */
+"dns_request_user_status_removed_from_blacklist" = "fjernet fra blokkeringslisten";
+
+/* (OnboardingController) first step text*/
+"onboarding_first_step_text" = "Åpne <b>innstillingene</b>";
+
+/* (OnboardingController) first step with advanced protection text*/
+"advanced_protection_onboarding_first_step_text" = "Åpne <b>innstillingene</b>";
+
+/* (OnboardingController) second step text */
+"onboarding_second_step_text" = "Trykk på <b>Safari</b>, sveip nedover, og trykk på <b>AdGuard-innholdsblokkerer</b>.";
+
+/* (OnboardingController) second step with advanced protection text */
+"advanced_protection_onboarding_second_step_text" = "Gå til <b>Safari > Utvidelser</b>.";
+
+/* (OnboardingController) second step with advanced protection text for iOS 18+ */
+"advanced_protection_onboarding_second_step_text_ios_18" = "Gå til <b>Apper > Safari > Utvidelser</b>.";
+
+/* (OnboardingController) third step text */
+"onboarding_third_step_text" = "<b>Aktiver</b> alle AdGuard-utvidelser.";
+
+/* (OnboardingController) third step with advanced protection text */
+"advanced_protection_onboarding_third_step_text" = "Sett alle AdGuard-brytere til <b>på</b>. Du er klar til å gå!";
+
+/* (OnboardingContentView) fours step. '%@' will be replaced with the share icon */
+"onboarding_fours_step_text" = "For <b>Avansert</b> beskyttelse, åpne Safari, trykk på ikonet på venstre side av URL-feltet,<br><br> %@ <br><br>deretter trykk på <b>Administrer utvidelser</b> og skru på <b>AdGuard</b> bryteren.";
+
 /* (BlockRequestController) Block request title */
 "block_request" = "Blokker forespørsel";
 
@@ -508,8 +772,17 @@
 /* (NewDnsServerController) error message text */
 "invalid_upstream_message" = "Du har skrevet inn en ugyldig oppstrømstjener";
 
+/* (UpstreamsController) error message text */
+"invalid_ip_message" = "Du har skrevet inn en ugyldig IP-adresse";
+
 /* (NewDnsServerController) error title when trying to add unsupported protocol for DNS native implementation */
 "invalid_dns_protocol_title" = "Ugyldig DNS-protokoll";
+
+/* (NewDnsServerController) error message when trying to add unsupported protocol for DNS native implementation */
+"invalid_dns_protocol_message" = "%@ er ikke støttet av iOS ennå. Prøv å legge til en annen upstream.";
+
+/*(DnsFiltersController) the error message that is shown when trying to add a duplicate custom dns server */
+"custom_dns_server_exists" = "Du har forsøkt å legge til et duplikat DNS-server. Serveren med den spesifiserte upstream er allerede på listen";
 
 /* (NewDnsServerController) save and select button title */
 "save_and_select_button_title" = "Lagre og velg";
@@ -525,6 +798,9 @@
 
 /* (NewDnsServerController) add dns server alert title */
 "add_dns_server_alert_title" = "Legg til en selvvalgt DNS-tjener";
+
+/* (NewDnsServerController) edit dns server alert title */
+"edit_dns_server_alert_title" = "Rediger egen DNS-server";
 
 /* (DnsRequestDetailsController) - matched filter name for user filter */
 "system_blacklist" = "Systemets blokkeringsliste";
@@ -601,8 +877,20 @@
 /* (BugReportController) Message when bug report successed */
 "bug_report_successed_message" = "Feilrapporten din ble vellykket sendt!";
 
+/* (IntroductionOnboardingController) - License agreement text */
+"introduction_license_agreement" = "Jeg godtar AdGuards <a href=%2$@>EULA</a> og <a href=%1$@>Personvernerklæring</a>.";
+
 /* (ActivityViewController) - Requests alert title */
 "requests_info_alert_title" = "Forespørsler";
+
+/* (ActivityViewController) - Requests alert message */
+"requests_info_alert_message" = "Hver gang du besøker en nettside, sendes det en forespørsel. Nettsteder kan sende skjulte forespørseler og lekkasje personlig informasjon. Det er nyttig å vite det totale antallet forespørseler for å forstå omfanget av dette problemet.";
+
+/* (ActivityViewController) -  Blocked alret title */
+"blocked_info_alert_title" = "Blokkerte forespørsler";
+
+/* (ActivityViewController) -  Blocked alret message */
+"blocked_info_alert_message" = "AdGuard filtrerer de fleste DNS-forespørslene på telefonen din, og blokkerer sporings- og farlige forespørsel. Her er det totale antallet forespørsel som er blokkert av AdGuard for den valgte tidsperioden.";
 
 /* (ActivityViewController) - encrypted alert title */
 "encrypted_info_alert_title" = "Krypterte forespørsler";
@@ -612,6 +900,15 @@
 
 /* (ActivityViewController) - Average time title */
 "average_info_alert_title" = "Gjennomsnittstid";
+
+/* (ActivityViewController) - Average time message */
+"average_info_alert_message" = "Gjennomsnittlig tid det tar å behandle en DNS-forespørsel. Jo raskere DNS-server du bruker, desto lavere blir denne.";
+
+/* (ActivityViewController) -  Data saved alret title */
+"data_saved_info_alert_title" = "Data lagret";
+
+/* (ActivityViewController) -  Data saved alret message */
+"data_saved_info_alert_message" = "AdGuard hindrer enheten din fra å laste inn verktøy for sporing i appen, og reduserer databruken til enheten din\n\nHer er den totale mengden data som er lagret av AdGuard for den valgte tidsperioden";
 
 /* (ActivityViewController) - Companies alert title */
 "companies_info_alert_title" = "Antall firmaer";
@@ -637,6 +934,24 @@
 /* (MostActiveCompaniesController) - Requests number label */
 "requests_number" = "%d forespørsler";
 
+/* (MostActiveCompaniesController) - Blocked requests number label */
+"blocked_number" = "%d blokkert";
+
+/* (HowToSetupController) - Native DNS setup title '%@' stands for application name */
+"native_dns_setup_title" = "Aktiver %@ i DNS-innstillingene dine";
+
+/* (HowToSetupController) - Native DNS setup description '%@' stands for application name */
+"native_dns_setup_description" = "For å bruke native DNS, velg <b>%@</b> i <b>Systeminnstillinger > Generelt > VPN & Nettverk > DNS</b>.";
+
+/* (HowToSetupController) - Native DNS setup description '%@' stands for application name; String for iOS 15 and newer */
+"native_dns_setup_description_ios15" = "For å bruke innebygd DNS, velg <b>%@</b> i <b>Systeminnstillinger > Generelt > VPN og Enhetshåndtering > DNS</b>.";
+
+/* (RateAppController) Rate app description text (\n) stands for new line */
+"rate_app_description" = "Fortell oss om du er fornøyd med opplevelsen av annonseblokkerings så langt";
+
+/* (RateAppProblemController) Rate app problem description text (\n) stands for new line */
+"rate_app_problem_description" = "Forsikre deg om at du bruker <b>Safari-nettleseren</b>.<br>For tiden er det teknisk umulig å blokkere innhold i andre nettlesere.<br>Gå til beskyttelsesinnstillingene i Safari og aktiver alle nødvendige filterlister.<br>Start Safari-appen på nytt: avslutt og åpne den igjen.";
+
 /* (FilterDetailsViewController) Version subtitle for detailed filter info */
 "detailed_filter_info_version_subtitle" = "Versjon";
 
@@ -652,11 +967,54 @@
 /* (FilterDetailsViewController) Subscription URL subtitle for detailed filter info */
 "detailed_filter_info_subscription_subtitle" = "Abonnements-URL";
 
+/* (AddRuleController) Error description when adding rule that already exists */
+"user_rule_exists_error" = "Du prøver å legge til en regel som allerede er på listen";
+
+// MARK: - Strings for UserRulesRedirectController
+/* (UserRulesRedirectController) - Processing state title */
+
+"user_rules_processing_title" = "Behandler ...";
+
+/* (UserRulesRedirectController) - Processing state description */
+"user_rules_processing_descr" = "Vennligst vent et øyeblikk …";
+
+/* (UserRulesRedirectController) - Description when allowlist rule is removed; %@ stands for 'allowlist' word hex color */
+"user_rules_allowlist_rule_removed" = "ble fjernet fra <u style=color:%@>allowlist</u>";
+
+/* (UserRulesRedirectController) - Description when new allowlist rule is added; %@ stands for 'allowlist' word hex color */
+"user_rules_allowlist_rule_added" = "ble lagt til i <u style=color:%@>tillatelseslisten</u>";
+
+/* (UserRulesRedirectController) - Description when blocklist rule is added; %@ stands for 'user rules' words hex color */
+"user_rules_blocklist_rule_added" = "har en ny blokkeringsregel i <u style=color:%@>brukerregler</u>";
+
+/* (UserRulesRedirectController) - Description when blocklist rules are removed */
+"user_rules_blocklist_rules_removed" = "har ikke flere brukerregler";
+
+// MARK: - Strings for license screen
+/* (PremiumFeature) - Advanced protection premium feature name */
+
+"advanced_protection_feature_name" = "Avansert beskyttelse";
+
+/* (PremiumFeature) -  Security filters premium feature name */
+"security_filters_feature_name" = "Sikkerhetsfiltre";
+
 /* (PremiumFeature) - DNS privacy premium feature name */
 "dns_privacy_feature_name" = "DNS-beskyttelse";
 
 /* (PremiumFeature) - Custom filters premium feature name */
 "custom_filters_feature_name" = "Selvvalgte lister";
+
+/* (PremiumFeature) - Advanced protection premium feature description */
+"advanced_protection_feature_description" = "Forbedrede metoder for å blokkere komplekse annonser, som YouTube-annonser i Safari";
+
+/* (PremiumFeature) - Security filters premium feature description */
+"security_filters_feature_description" = "Blokker phishing, skadelig programvare og mistenkelig innhold";
+
+/* (PremiumFeature) - DNS privacy premium feature description */
+"dns_privacy_feature_description" = "Blokker in-app sporere som stille samler inn data om deg";
+
+/* (PremiumFeature) - Custom filters premium feature description */
+"custom_filters_feature_description" = "Bruk filtre fra tredjeparter, eller opprett dine egne";
 
 // MARK: - Strings for VoiceOver -
 // MARK: - MainTabBarController
@@ -723,6 +1081,13 @@
 /* (LoginController) Enter your password here title for VoiceOver*/
 "enter_password_voiceover" = "Skriv inn passordet ditt her";
 
+// MARK: = ImportSettingsController
+/* (ImportSettingsController) add custom content blocker filter format */
+"import_custom_cb_filter_format" = "Legg til det tilpassede innholdsblokkeringsfilteret: %@";
+
+/* (ImportSettingsController) add custom dns filter format */
+"import_dns_filter_format" = "Legg til det tilpassede DNS-filteret: %@";
+
 /* (ImportSettingsController) enable content blocker filter format */
 "enable_cb_filter_format" = "Skru på filter: %@";
 
@@ -735,11 +1100,26 @@
 /* (ImportSettingsController) select dns title */
 "import_dns_settings_format" = "Velg DNS-tjener: %@";
 
+/* (ImportSettingsController) activate license format */
+"import_license_format" = "Aktiver premium-funksjoner med %@ lisensnøkkel";
+
 /* (ImportSettingsController) add user rules title */
 "import_user_rules" = "Legg til brukerregler";
 
 /* (ImportSettingsController) add dns rules title */
 "import_dns_user_rules" = "Legg til DNS-brukerregler";
+
+/* (ImportSettingsController) disable YouTube feature title */
+"disable_youtube_feature" = "Deaktiver AdGuard Player";
+
+/* (LowLevelSettingsController) Low level settings description. <b style=color:#c23814ff> It is a color for WARNING! word*/
+"low_level_description" = "<b style=color:#c23814ff>ADVARSEL!</b> Aktivering av disse funksjonene kan bryte internettforbindelsen eller kompromittere sikkerheten og personvernet ditt.";
+
+/* (LowLevelSettingsController) Low level settings beta channel link */
+"low_level_beta_link" = "Interessert i kule nye AdGuard-funksjoner? Prøv vår <a href=\"%@\">beta-kanal</a>.";
+
+/* (LowLevelSettingsController) Low level bootstraps placeholder */
+"low_level_bootstraps_placeholder" = "Liste over enkle DNS-servere som skal brukes til å løse DOH/DOT vertsnavn (hvis noen)";
 
 /* low_level_fallbacks_placeholder
 (LowLevelSettingsController) Low level fallbacks placeholder
@@ -758,8 +1138,14 @@ DO NOT TRANSLATE "none" */
 /* (UpstreamsController) Fallbacks title */
 "upstreams_fallbacks_title" = "Reservetjenere";
 
+/* (UpstreamsController) Custom address title */
+"upstreams_custom_address_title" = "Legg til egendefinert IP-adresse";
+
 /* (UpstreamsController) Custom address description */
 "upstreams_custom_address_description" = "IP-adresse";
+
+/* (BlockingModeController) Custom ip description text */
+"custom_ip_description" = "Svar med en manuelt valgt IP-adresse";
 
 /* (FiltersMasterController) Header Filters title */
 "navigation_item_filters_title" = "Filtre";
@@ -767,8 +1153,63 @@ DO NOT TRANSLATE "none" */
 /* (DnsFiltersController) Header DNS Filters title */
 "navigation_item_dns_filters_title" = "DNS-filtre";
 
+/* (LowLevelSettingsController) - title for unsupported options */
+"unsupported_setting" = "Dette alternativet er ikke kompatibelt med den innfødte DNS-modusen";
+
+/* (SetappManager) - alert message on error during login via setapp  */
+"setapp_device_limit_reached" = "Du har koblet maks antall enheter til kontoen din på Setapp.";
+
+/* (AdvancedYouTubeBlockingController) YouTube blocking instruction text that is shown if youtube app is installed */
+"block_youtube_ads_instructions_safari" = "Visste du at YouTube har endret algoritmene sine for å vise deg flere annonser?<br><br>Nå, for å blokkere dem, må du:<br><br>1. Åpne <a href=\"%@\">Safari</a>.<br><br>2. Åpne youtube.com.<br><br>3. Trykk %@ Del.<br><br>4. Trykk \"Blokker YouTube-annonser (av AdGuard)\".";
+
+/* (AdvancedYouTubeBlockingController) YouTube blocking instruction text  */
+"block_youtube_ads_instructions" = "Visste du at YouTube har endret algoritmene sine for å vise deg flere annonser?<br><br>Nå, for å blokkere dem må du:<br><br>1. Åpne <a href=\"%@\">youtube.com</a> i Safari.<br><br>2. Trykk på %@ Del.<br><br>3. Trykk på \"Blokker annonser på YouTube (av AdGuard)\".";
+
+/* (AdvancedYouTubeBlockingController) YouTube blocking instruction done text that is shown if youtube app is installed */
+"block_youtube_ads_instructions_done_text_safari" = "Ferdig! Nå kan du se YouTube uten annonser.\n\nNår utvidelsen er aktivert, vises teksten \"med AdGuard\" ved siden av YouTube-logoen.<br><br><b>Hvis du laster inn siden på nytt, må du gjenta trinn 3 og 4.</b>";
+
+/* (AdvancedYouTubeBlockingController) YouTube blocking instruction done text  */
+"block_youtube_ads_instructions_done_text" = "Ferdig! Nå kan du se YouTube uten annonser.\n\nNår utvidelsen er aktivert, vises teksten \"med AdGuard\" ved siden av YouTube-logoen.<br><br><b>Hvis du laster inn siden på nytt, må du gjenta trinn 2 og 3.</b>";
+
+// MARK: - YouTubeAdsRequestHandler
+/* (YouTubeAdsRequestHandler) - Title for notification when YouTube ads script was successfully executed */
+
+"youtube_script_success_title" = "YouTube er nå uten annonser! Du må kjøre denne utvidelsen igjen hver gang du laster inn siden.";
+
+/* (YouTubeAdsRequestHandler) - Title for notification when YouTube ads script was launched on wrong domain */
+"youtube_script_wrong_domain_title" = "Denne utvidelsen virker bare for YouTube.";
+
+/* (YouTubeAdsRequestHandler) - Title for notification when YouTube ads script was already executed */
+"youtube_script_already_executed_title" = "Utvidelsen har allerede blitt kjørt";
+
+/* (YouTubeAdsRequestHandler) - Title for notification when YouTube ads script was executed with error */
+"youtube_script_error_title" = "Det oppsto en ukjent feil under fjerning av YouTube-annonser";
+
+// MARK: - ActionExtensionMainController
+/* (ActionExtensionMainController) - ActionExtension info for iOS 15>= */
+
+"action_extension_obsolete_info" = "Dette handlingsutvidelsen er utdatert, men den nye AdGuard Web Safari-utvidelsen er tilgjengelig i aA-menyen. For å begynne å bruke den nye utvidelsen, åpne aA-menyen, trykk på Administrer utvidelser og slå på AdGuard-bryteren.";
+
+/* (ActionExtensionMainController) - ActionExtension info for iOS 14<= */
+"action_extension_new_version_info" = "En ny versjon av denne utvidelsen er tilgjengelig for iOS 15. Den har flere funksjoner og et forbedret brukergrensesnitt. Husk å oppdatere!";
+
+/* (BackgroundFetchController) - Background app refresh default title */
+"background_fetch_default_period" = "Standardperiode";
+
 /* (BackgroundFetchController) - Background app refresh every 1 hour title */
 "background_fetch_hour_period" = "Hver time";
+
+/* (BackgroundFetchController) - Background app refresh every 3 hours title */
+"background_fetch_tree_hours_period" = "Hver 3. time";
+
+/* (BackgroundFetchController) - Background app refresh every 12 hours title */
+"background_fetch_twelve_hours_period" = "Hver 12. time";
+
+/* (BackgroundFetchController) - Background app refresh every 24 hours title */
+"background_fetch_twenty_four_hours_period" = "Hver 24. time";
+
+/* Background app refresh time title */
+"background_app_refresh_time_title" = "Bakgrunns-appoppdateringsintervall";
 
 /* (DnsProvidersController) - add new dns server title */
 "add_custom_dns_server_title" = "Legg til en selvvalgt DNS-tjener";
@@ -776,14 +1217,62 @@ DO NOT TRANSLATE "none" */
 /* (DnsProvidersController) - Header title */
 "dns_provider_controller_title" = "DNS-tjener";
 
+/* (DnsProvidersController) - Header description */
+"dns_provider_controller_description" = "Du kan forbedre personvernet ditt på nettet ved å kryptere DNS-trafikk. For å gjøre det, velg en av de anbefalte DNS-leverandørene.";
+
 /* (DnsProviderDetailsController) Server title */
 "server_title" = "Server";
 
 /* (DnsProviderDetailsController) Website title */
 "website_title" = "Nettsted";
 
+/* (YoutubePlayerController) 'bad url' alert title */
+"youtube_player_controller_bad_url_title" = "Ugyldig URL";
+
+/* (YoutubePlayerController) 'bad url' alert message */
+"youtube_player_controller_bad_url_message" = "Vennligst oppgi en lenke til YouTube";
+
+/* (YoutubePlayerController) 'content blocking list error' alert title */
+"youtube_player_controller_content_blocking_list_error_title" = "Filtreringsfeil";
+
+/* (YoutubePlayerController) 'content blocking list error' alert message */
+"youtube_player_controller_content_blocking_list_error_message" = "Kunne ikke kompilere blokkeringslisten";
+
+/* (YoutubePlayerController) 'userscript error' alert title */
+"youtube_player_controller_userscript_error_title" = "Brukerskriptfeil";
+
+/* (YoutubePlayerController) 'userscript error' alert message */
+"youtube_player_controller_userscript_error_message" = "Kunne ikke opprette brukerskript";
+
+/* (YoutubePlayerController) YouTube feature disabled alert title */
+"youtube_player_controller_feature_disabled_title" = "AdGuard Player deaktivert";
+
+/* (YoutubePlayerController) YouTube feature disabled alert message */
+"youtube_player_controller_feature_disabled_message" = "Videodeling med AdGuard er ikke tilgjengelig";
+
+/* (YouTubeAdsRequestHandler) 'no url error' alert title */
+"youtube_share_extension_no_url_title" = "Ingen URL angitt";
+
+/* (YouTubeAdsRequestHandler) 'no url error' alert message */
+"youtube_share_extension_no_url_summary" = "Del YouTube-videoer med AdGuard for å se dem uten annonser";
+
+/* (YouTubeAdsRequestHandler) 'bad url error' alert title */
+"youtube_share_extension_bad_url_title" = "Ugyldig URL";
+
+/* (YouTubeAdsRequestHandler) 'bad url error' alert message */
+"youtube_share_extension_bad_url_summary" = "Del YouTube-videoer til AdGuard for å se dem uten annonser";
+
+/* (YouTubeAdsRequestHandler) 'item provider error' alert title */
+"youtube_share_extension_item_provider_error_title" = "Intern feil";
+
+/* (YouTubeAdsRequestHandler) 'item provider error' alert message */
+"youtube_share_extension_item_provider_error_summary" = "Kunne ikke dele lenken med AdGuard";
+
 /* (YouTubeAdsRequestHandler) 'item provider error' alert title */
 "youtube_share_extension_item_provider_unknown_error_title" = "Ukjent feil";
 
 /* (YouTubeAdsRequestHandler) 'item provider error' alert message */
 "youtube_share_extension_item_provider_unknown_error_summary" = "Noe gikk galt";
+
+/* (DevAccountMigrationHelper) 'Content blockers are disabled after dev account migration' notification title */
+"dev_account_migration_helper_content_blockers_disabled_title" = "AdGuard-innholdsblokkerere er deaktivert i Safari-innstillingene. Aktiver dem for å tillate oss å blokkere annonser og sporere.";

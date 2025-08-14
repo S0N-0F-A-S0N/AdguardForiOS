@@ -19,7 +19,7 @@
 SLASH = /
 
 // Builder target resources directory
-BUILDER_DIR = $(SYMROOT)/Build/Products/$(CONFIGURATION)
+BUILDER_DIR = $(SRCROOT)/../SupportingScripts/.builder
 BUILDER_RESOURCES_DIR = $(BUILDER_DIR)/BuilderResources
 
 // Action Extension VARs

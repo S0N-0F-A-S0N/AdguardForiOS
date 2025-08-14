@@ -5,7 +5,7 @@
 "884-Hm-mb6.text" = "Safari bescherming";
 
 /* Class = "UILabel"; text = "Enhanced functionality for ultimate ad blocking and content filtering"; ObjectID = "9wg-p1-Dh8"; */
-"9wg-p1-Dh8.text" = "Verbeterde functionaliteit voor ultieme reclameblokkering en inhoudfiltering";
+"9wg-p1-Dh8.text" = "Verbeterde functionaliteit voor ultieme advertentieblokkering en inhoudsfiltering";
 
 /* Class = "UILabel"; text = "YouTube ad blocking"; ObjectID = "AZY-QZ-8d9"; */
 "AZY-QZ-8d9.text" = "YouTube-advertentie blokkering";
@@ -47,7 +47,7 @@
 "l1g-hs-4EK.text" = "gratis";
 
 /* Class = "UIButton"; normalTitle = "Purchase license"; ObjectID = "pv0-hE-9gb"; */
-"pv0-hE-9gb.normalTitle" = "Koop licentie";
+"pv0-hE-9gb.normalTitle" = "Licentie aanschaffen";
 
 /* Class = "UILabel"; text = "Blocks complex ads, such as YouTube ads in Safari"; ObjectID = "rm0-Ip-riS"; */
 "rm0-Ip-riS.text" = "Blokkeert complexe advertenties, zoals YouTube-advertenties in Safari";
@@ -56,7 +56,7 @@
 "rr4-ic-Pg8.text" = "Gebruikt geavanceerde filterregels op meerdere niveaus";
 
 /* Class = "UILabel"; text = "Works alongside the AdGuard ad blocker"; ObjectID = "tKQ-Yn-fgL"; */
-"tKQ-Yn-fgL.text" = "Werkt samen met de AdGuard-advertentieblokkeerder";
+"tKQ-Yn-fgL.text" = "Werkt samen met de AdGuard Advertentieblokker";
 
 /* Class = "UILabel"; text = "Enhances your privacy by blocking in-app trackers and encrypting your DNS requests"; ObjectID = "teo-vm-NRJ"; */
 "teo-vm-NRJ.text" = "Verbetert je privacy door in-app volgers te blokkeren en jouw DNS-verzoeken te versleutelen";

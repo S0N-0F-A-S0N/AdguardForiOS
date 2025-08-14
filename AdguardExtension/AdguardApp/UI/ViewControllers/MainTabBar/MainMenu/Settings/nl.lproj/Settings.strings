@@ -113,7 +113,7 @@
 "cdQ-kW-CG7.text" = "Tunnel modus";
 
 /* Class = "UILabel"; text = "Respond with zero IP address (0.0.0.0 for A; :: for AAAA) when blocked by AdBlock-style rule; respond with the IP address specified in the rule when blocked by /etc/hosts-style rule"; ObjectID = "cgV-he-JNk"; */
-"cgV-he-JNk.text" = "Reageren met een nul IP adres (0.0.0.0 voor A; :: voor AAAA) wanneer geblokkeerd door een Adblock-type regel; reageer met het IP-adres dat is opgegeven in de regel wanneer geblokkeerd door een /etc/hosts type regel";
+"cgV-he-JNk.text" = "Reageren met een nul IP-adres (0.0.0.0 voor A; :: voor AAAA) wanneer geblokkeerd door een Adblock-type regel; reageer met het IP-adres dat is opgegeven in de regel wanneer geblokkeerd door een /etc/hosts type regel";
 
 /* Class = "UILabel"; text = "Restart protection when network changes"; ObjectID = "dLN-5K-c1N"; */
 "dLN-5K-c1N.text" = "Bescherming opnieuw starten wanneer het netwerk verandert";
@@ -149,7 +149,7 @@
 "qxo-YS-JWL.text" = "Statusbalk weergeven";
 
 /* Class = "UILabel"; text = "Respond with zero IP address (0.0.0.0 for A; :: for AAAA)"; ObjectID = "rDk-OP-kAS"; */
-"rDk-OP-kAS.text" = "Reageren met een nul IP adres (0.0.0.0 voor A; :: voor AAAA)";
+"rDk-OP-kAS.text" = "Reageren met een nul IP-adres (0.0.0.0 voor A; :: voor AAAA)";
 
 /* Class = "UILabel"; text = "Low-level settings"; ObjectID = "reQ-4X-84i"; */
 "reQ-4X-84i.text" = "Laag-niveau instellingen";

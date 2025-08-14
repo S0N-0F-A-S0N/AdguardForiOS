@@ -322,6 +322,24 @@
 /* (ContentBlockersTableController) - Content Blockers title */
 "cb_screen_content_blockers_title" = "Content Blockers";
 
+/* (ContentBlockersTableController) - General content blocker name */
+"cb_screen_content_blockers_general_name" = "General";
+
+/* (ContentBlockersTableController) - Privacy content blocker name */
+"cb_screen_content_blockers_privacy_name" = "Privacy";
+
+/* (ContentBlockersTableController) - Social content blocker name */
+"cb_screen_content_blockers_social_name" = "Social";
+
+/* (ContentBlockersTableController) - Other content blocker name */
+"cb_screen_content_blockers_other_name" = "Other";
+
+/* (ContentBlockersTableController) - Custom content blocker name */
+"cb_screen_content_blockers_custom_name" = "Custom";
+
+/* (ContentBlockersTableController) - Security content blocker name */
+"cb_screen_content_blockers_security_name" = "Security";
+
 /* (AdvancedSettingsController) Restart when network changes error */
 "general_settings_restart_tunnel_error" = "You need to enable VPN first";
 
@@ -730,6 +748,9 @@
 /* (OnboardingController) second step with advanced protection text */
 "advanced_protection_onboarding_second_step_text" = "Go to <b>Safari > Extensions</b>.";
 
+/* (OnboardingController) second step with advanced protection text for iOS 18+ */
+"advanced_protection_onboarding_second_step_text_ios_18" = "Go to <b>Apps > Safari > Extensions</b>.";
+
 /* (OnboardingController) third step text */
 "onboarding_third_step_text" = "<b>Enable</b> all AdGuard extensions.";
 
@@ -737,7 +758,7 @@
 "advanced_protection_onboarding_third_step_text" = "Set all AdGuard toggles to <b>on</b>. You`re good to go!";
 
 /* (OnboardingContentView) fours step. '%@' will be replaced with the share icon */
-"onboarding_fours_step_text" = "For <b>Advanced</b> protection, open Safari, tap the <b>aA</b> icon on the left side of the URL field,<br><br> %@ <br><br>then tap <b>Manage extensions</b> and switch on the <b>AdGuard</b> toggle.";
+"onboarding_fours_step_text" = "For <b>Advanced</b> protection, open Safari, tap the icon on the left side of the URL field,<br><br> %@ <br><br>then tap <b>Manage extensions</b> and switch on the <b>AdGuard</b> toggle.";
 
 /* (BlockRequestController) Block request title */
 "block_request" = "Block request";

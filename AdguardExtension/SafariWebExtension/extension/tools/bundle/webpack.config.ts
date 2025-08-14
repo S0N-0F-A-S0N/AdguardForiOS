@@ -3,7 +3,6 @@ import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
-import TerserPlugin from 'terser-webpack-plugin';
 
 const BUILD_PATH = path.resolve(__dirname, '../../build');
 
@@ -15,11 +14,11 @@ const POPUP_PATH = path.resolve(__dirname, '../../src/targets/popup');
 /**
  * Max size limit for assets and entry points.
  *
- * Based on production build with minification.
+ * Consider that we don't minimize JS files so it's a bit higher than in prod.
  *
- * 600 KiB.
+ * 1MB
  */
-const MAX_FILE_SIZE_LIMIT = 600 * 1024;
+const MAX_FILE_SIZE_LIMIT = 1000 * 1024;
 
 export const config = {
     mode: 'production',
@@ -42,15 +41,7 @@ export const config = {
         extensions: ['.ts', '.tsx', '.js'],
     },
     optimization: {
-        minimize: true,
-        minimizer: [
-            new TerserPlugin({
-                extractComments: false,
-                // do not use TerserPlugin.swcMinify for minification
-                // as it can generate broken background.js
-                minify: TerserPlugin.uglifyJsMinify,
-            }),
-        ],
+        minimize: false,
     },
     module: {
         rules: [

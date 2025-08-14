@@ -42,11 +42,6 @@ final class ActionExtensionLoaderViewController: UIViewController {
 
         activityIndicator.startAnimating()
 
-        // Let's check if we need to process dev account migration
-        ServicesInitializer.shared
-            .devAccountMigrationHelper
-            .processDevAccountMigrationIfNeeded()
-
         // FIXME: do not stop ui thread. 
         migrateIfNeeded()
 
@@ -115,13 +110,11 @@ final class ActionExtensionLoaderViewController: UIViewController {
     }
 
     private func migrateIfNeeded() {
-
         let resources = ServicesInitializer.shared.resources
         let safariProtection = ServicesInitializer.shared.safariProtection
         let migrationVersionProvider = ServicesInitializer.shared.migrationVersionProvider
 
         if migrationVersionProvider.isMigrationFrom4_1To4_3Needed {
-
             do {
                 let migration = try SafariMigration4_3(resources: resources, safariProtection: safariProtection)
                 migration.migrate()

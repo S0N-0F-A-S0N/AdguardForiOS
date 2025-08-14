@@ -67,7 +67,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private let themeService: ThemeServiceProtocol
     private let dnsConfigAssistant: DnsConfigManagerAssistantProtocol
     private var keychain: KeychainServiceProtocol
-    private let devAccountMigrationHelper: DevAccountMigrationHelper
 
     // MARK: - Application init
 
@@ -99,7 +98,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.dnsProtection = ServiceLocator.shared.getService()!
         self.dnsConfigAssistant = ServiceLocator.shared.getService()!
         self.keychain = ServiceLocator.shared.getService()!
-        self.devAccountMigrationHelper = DevAccountMigrationHelper(ServiceLocator.shared.getService()!, ServiceLocator.shared.getService()!, ServiceLocator.shared.getService()!)
 
         super.init()
 
@@ -177,12 +175,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             configuration.showStatusBar = false
             // TODO: this is a slow operation that works with network and it is called on the main thread, rework this
             setupOnFirstAppRun()
+
             // After first app run we don't need to call finishBackgroundUpdate
             return true
         }
 
-        // Background fetch consists of 3 steps, so if the update process didn't fully finish in the background than we should continue it here
-
+        // Background fetch consists of 3 steps, so if the update process
+        // didn't fully finish in the background than we should continue it here
         if application.applicationState != .background {
             safariProtection.finishBackgroundUpdate { error in
                 if let error = error {
@@ -263,8 +262,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // For more information on background update strategies check the documentation:
     // https://developer.apple.com/documentation/backgroundtasks/choosing_background_strategies_for_your_app
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        // Let's check if we need to process dev account migration
-        devAccountMigrationHelper.processDevAccountMigrationIfNeeded()
 
         // Note that all heavy background operations should be accompanied by calling beginBackgroundTask/endBackgroundTask.
         // The explanation on why it is important can be found in the documentation (see the section on 0xdead10cc).

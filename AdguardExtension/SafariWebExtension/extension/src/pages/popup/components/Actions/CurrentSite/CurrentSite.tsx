@@ -24,12 +24,20 @@ export const CurrentSite = observer(() => {
     let descriptionColor = 'gray';
     let iconEnabled = true;
 
+    let websiteTitle = store.currentSiteDomain;
+    if (!websiteTitle) {
+        // We're dealing with a Secure page where nothing can be blocked.
+        // TODO: Make it localizable in the next update.
+        websiteTitle = 'Secure page';
+        iconEnabled = false;
+    }
+
     if (!store.premiumApp || !store.advancedBlockingEnabled) {
         description = SiteStatusesMessages[SiteStatus.BasicOnly];
         descriptionColor = 'yellow';
     }
 
-    if (!store.protectionEnabled) {
+    if (!store.protectionEnabled && !!store.currentSiteDomain) {
         description = SiteStatusesMessages[SiteStatus.Allowlisted];
         descriptionColor = 'green';
         iconEnabled = false;
@@ -57,7 +65,7 @@ export const CurrentSite = observer(() => {
         const showAttentionButton = !store.premiumApp
             || (!store.advancedBlockingEnabled && store.safariProtectionEnabled);
 
-        const noopHandler = () => {};
+        const noopHandler = () => { };
         let button;
         let handler;
         if (showAttentionButton) {
@@ -98,7 +106,7 @@ export const CurrentSite = observer(() => {
             iconId="network"
             iconColor="gray400"
             iconDataUrl={store.currentSiteFaviconDataUrl}
-            title={store.currentSiteDomain}
+            title={websiteTitle}
             titleMod="bold"
             description={description}
             descriptionMod={descriptionColor}

@@ -81,7 +81,10 @@ final class OnboardingAdvancedProtectionView: UIView {
     }
 
     private func processAttributes(with string: String) {
-        guard let image = UIImage(named: "advancedSafariProtection") else { return }
+        let version = ProcessInfo.processInfo.operatingSystemVersion
+        let imageName = version.majorVersion >= 18 ? "advancedSafariProtection" : "advancedSafariProtectionIOS17"
+
+        guard let image = UIImage(named: imageName) else { return }
         let attachmentSettings = NSMutableAttributedString.AttachmentSettings(
             image: image,
             topEdge: 7.5,

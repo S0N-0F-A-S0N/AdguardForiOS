@@ -25,17 +25,14 @@ public protocol SafariProtectionContentBlockersProtocol {
     /* Returns every content blocker reloading state */
     var reloadingContentBlockers: [ContentBlockerType: Bool] { get }
 
+    /* Returns every content blocker reload error (if any) */
+    var allContentBlockersErrors: [ContentBlockerType: Error?] { get }
+
     /* Returns every content blocker state */
     var allContentBlockersStates: [ContentBlockerType: Bool] { get }
 
     /* Returns all content blocker conversion results */
     var allConverterResults: [ConverterResult] { get }
-
-    /* Returns all content blocker JSON urls */
-    var allContentBlockerJsonUrls: [URL] { get }
-
-    /* Returns advanced rules file URL */
-    var advancedRulesFileUrl: URL { get }
 
     /* Returns state of the specified content blocker */
     func getState(for cbType: ContentBlockerType) -> Bool
@@ -51,24 +48,16 @@ extension SafariProtection {
         return workingQueue.sync { return cbService.reloadingContentBlockers }
     }
 
+    public var allContentBlockersErrors: [ContentBlockerType: Error?] {
+        return workingQueue.sync { return cbService.allContentBlockersErrors }
+    }
+
     public var allContentBlockersStates: [ContentBlockerType : Bool] {
         return workingQueue.sync { return cbService.allContentBlockersStates }
     }
 
     public var allConverterResults: [ConverterResult] {
         return workingQueue.sync { return cbStorage.allConverterResults }
-    }
-
-    public var allContentBlockerJsonUrls: [URL] {
-        return workingQueue.sync {
-            return ContentBlockerType.allCases.map { cbStorage.getJsonUrl(for: $0) }
-        }
-    }
-
-    public var advancedRulesFileUrl: URL {
-        return workingQueue.sync {
-            return cbStorage.advancedRulesFileUrl
-        }
     }
 
     public func getState(for cbType: ContentBlockerType) -> Bool {

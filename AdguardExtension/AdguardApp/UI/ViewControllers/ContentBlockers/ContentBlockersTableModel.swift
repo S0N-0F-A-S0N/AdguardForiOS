@@ -63,6 +63,9 @@ final class ContentBlockersTableModel {
         // Reloading state for each CB
         let cbReloadingStates = safariProtection.reloadingContentBlockers
 
+        // Reload errors if any for every CB
+        let cbReloadErrors = safariProtection.allContentBlockersErrors
+
         // State of each Content Blocker enabled/disabled
         let cbStates = safariProtection.allContentBlockersStates
 
@@ -74,11 +77,13 @@ final class ContentBlockersTableModel {
 
             // Reveal number of rules that are not in CB
             var overLimitCount: Int = 0
-
             if converterResult.overlimit {
                 let overLimitRulesCount = converterResult.totalRules - converterResult.totalConverted
                 overLimitCount = overLimitRulesCount <= 0 ? 0 : overLimitRulesCount
             }
+
+            // Reload error if there's any
+            let reloadError = cbReloadErrors[cbType] ?? nil
 
             // Reveal CB state
             let state: ContentBlockerCellState
@@ -86,9 +91,13 @@ final class ContentBlockersTableModel {
                 state = .convertingFilters
             } else if cbReloadingStates[cbType] == true {
                 state = .updatingContentBlockers
+            } else if let error = reloadError {
+                state = .error(error: error)
             } else if cbStates[cbType] == true {
                 if overLimitCount > 0 {
-                    let maxRulesLimit = UIDevice.current.iosVersion < 15 ? 50_000 : 150_000
+                    // TODO: It does not correctly indicate the bytes size limit at the moment.
+                    // TODO: The bytes size limit would look like the regular rules limit.
+                    let maxRulesLimit = converterResult.totalConverted
                     state = .overlimited(maxRulesLimit: maxRulesLimit, currentRulesCount: converterResult.totalConverted, totalRulesInCB: converterResult.totalRules, overlimitRulesCount: overLimitCount)
                 } else {
                     state = .enabled(

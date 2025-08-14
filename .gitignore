@@ -2,6 +2,8 @@
 Adguard.app.dSYM.zip
 Adguard.ipa
 
+/SupportingScripts/.builder
+
 # fastlane auth key
 **/fastlane/AuthKey.p8
 **/fastlane/AuthKeyASL.p8

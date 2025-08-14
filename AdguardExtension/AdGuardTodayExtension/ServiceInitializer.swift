@@ -27,7 +27,6 @@ protocol ServiceInitializerProtocol  {
     var complexProtection: ComplexProtectionServiceProtocol { get }
     var dnsProvidersManager: DnsProvidersManagerProtocol { get }
     var activityStatistics: ActivityStatisticsProtocol { get }
-    var devAccountMigrationHelper: DevAccountMigrationHelper { get }
 }
 
 final class ServiceInitializer: ServiceInitializerProtocol {
@@ -38,17 +37,18 @@ final class ServiceInitializer: ServiceInitializerProtocol {
     let complexProtection: ComplexProtectionServiceProtocol
     let dnsProvidersManager: DnsProvidersManagerProtocol
     let activityStatistics: ActivityStatisticsProtocol
-    let devAccountMigrationHelper: DevAccountMigrationHelper
 
     init(resources: AESharedResourcesProtocol) throws {
         DDLogInfo("(TodayViewController) - init services start")
+
         let networkService = ACNNetworking()
         let productInfo = ADProductInfo()
         let purchaseService = PurchaseService(network: networkService, resources: resources, productInfo: productInfo)
 
-        let sharedStorageUrls = SharedStorageUrls()
+        let sharedStorageUrls: SharedStorageUrlsProtocol = SharedStorageUrls()
 
         DDLogInfo("(TodayViewController) - init safari protection service")
+
         let safariConfiguration = SafariConfiguration(
             resources: resources, 
             isProPurchased: purchaseService.isProPurchased
@@ -60,6 +60,8 @@ final class ServiceInitializer: ServiceInitializerProtocol {
             filterFilesDirectoryUrl: sharedStorageUrls.filtersFolderUrl,
             dbContainerUrl: sharedStorageUrls.dbFolderUrl,
             jsonStorageUrl: sharedStorageUrls.cbJsonsFolderUrl,
+            webExtFolderUrl: sharedStorageUrls.webExtFolderUrl,
+            advancedRulesFileUrl: sharedStorageUrls.advancedRulesFileUrl,
             userDefaults: resources.sharedDefaults()
         )
 
@@ -96,8 +98,6 @@ final class ServiceInitializer: ServiceInitializerProtocol {
             nativeDnsSettingsManager: nativeDnsSettingsManager,
             safariProtection: safariProtection
         )
-
-        self.devAccountMigrationHelper = DevAccountMigrationHelper(fromExtension: true, resources, productInfo, UserNotificationService())
 
         // MARK: - ActivityStatistics
 

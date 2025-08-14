@@ -59,7 +59,7 @@
 "tKQ-Yn-fgL.text" = "AdGuard広告ブロッカーと併用可能";
 
 /* Class = "UILabel"; text = "Enhances your privacy by blocking in-app trackers and encrypting your DNS requests"; ObjectID = "teo-vm-NRJ"; */
-"teo-vm-NRJ.text" = "アプリ内トラッキングをブロックして、DNS通信を暗号化することでプライバシーを保護する機能です。";
+"teo-vm-NRJ.text" = "アプリ内トラッキングをブロックして、DNS通信を暗号化して保護する機能です。";
 
 /* Class = "UILabel"; text = "Not installed"; ObjectID = "vNo-hV-l4c"; */
 "vNo-hV-l4c.text" = "インストールされていません";

@@ -53,6 +53,10 @@ protocol FiltersServiceProtocol: ResetableAsyncProtocol {
      */
     var lastFiltersUpdateCheckDate: Date { get }
 
+    /// Returs true if there were no filters update check for more than 1 hour.
+    /// We use this to check if the filters update should be performed on the app startup.
+    var expiredFilters: Bool { get }
+
     /**
      Checks update conditions for meta and updates them if needed
      - Parameter forcibly: ignores update conditions and immediately updates filters
@@ -106,6 +110,7 @@ protocol FiltersServiceProtocol: ResetableAsyncProtocol {
      - throws: Can throw error if error occured while setuping
      */
     func enablePredefinedGroupsAndFilters() throws
+
     // TODO: - Refactor it later
     // It is a crutch because we add some data to DB while migrating custom filters
     // If we don't reinitialize groups after migration we'll get inconsistency of states
@@ -150,6 +155,12 @@ final class FiltersService: FiltersServiceProtocol {
 
     var lastFiltersUpdateCheckDate: Date {
         workingQueue.sync { userDefaultsStorage.lastFiltersUpdateCheckDate }
+    }
+
+    var expiredFilters: Bool {
+        let expirationDate = Date().addingTimeInterval(-1 * 60 * 60)
+
+        return lastFiltersUpdateCheckDate < expirationDate
     }
 
     /// Sometimes we don't want some filters to exist in our app
@@ -838,7 +849,7 @@ final class FiltersService: FiltersServiceProtocol {
         apiMethods.loadFiltersMetadata(
             version: configuration.appProductVersion,
             id: configuration.appId,
-            cid: configuration.cid,
+            cid: configuration.appId, // Use appId for filter loading
             lang: lang
         ) { [weak self] filtersMeta in
             guard let self = self else { return }

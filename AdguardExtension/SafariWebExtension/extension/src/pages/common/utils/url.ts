@@ -37,6 +37,7 @@ export const getCroppedDomain = (hostname: string) => {
  * @returns Domain name.
  */
 export const getDomain = (url: string) => {
-    const hostname = getHostname(url)
+    const hostname = getHostname(url);
+
     return getCroppedDomain(hostname);
 };

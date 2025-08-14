@@ -89,9 +89,9 @@ platform :ios do
     clean()
     prepare_key()
 
-    match(type: "adhoc", readonly: true)
+    match(type: "adhoc", readonly: true, shallow_clone: "true")
     if !options[:ignore_match]
-      match(type: "appstore")
+      match(type: "appstore", readonly: true, shallow_clone: "true")
     end
     build_app(
       scheme: ENV['BUILD_SCHEME'],
@@ -101,7 +101,7 @@ platform :ios do
       clean: true,
       archive_path: "#{ENV['OUTPUT_DIRECTORY']}/#{ENV['ARCHIVE_NAME']}",
     )
-    write_build_info( 
+    write_build_info(
       xcconfig: ENV['BUILD_NUMBER_XCCONFIG_PATH'],
       build_info_output: "#{ENV['OUTPUT_DIRECTORY']}/build.txt",
     )
@@ -138,11 +138,11 @@ platform :ios do
     #
     # As a result, to stay in the legal field of XCode and at the same time not suffer from gut-wrenching restrictions
     # we should learn how to resolve dependency configurations for custom target configurations.
-    match(type: "appstore", readonly: true)
+    match(type: "appstore", readonly: true, shallow_clone: "true")
     if !options[:ignore_match]
-      match(app_identifier: app_identifiers_to_match, type: "adhoc", force_for_new_devices: true)
+      match(app_identifier: app_identifiers_to_match, type: "adhoc", force_for_new_devices: true, shallow_clone: "true")
     else
-      match(app_identifier: app_identifiers_to_match, type: "adhoc", readonly: true)
+      match(app_identifier: app_identifiers_to_match, type: "adhoc", readonly: true, shallow_clone: "true")
     end
 
     build_app(
@@ -151,6 +151,7 @@ platform :ios do
       output_directory: ENV['OUTPUT_DIRECTORY'],
       include_bitcode: false,
       include_symbols: true,
+      clean: true,
       archive_path: "#{ENV['OUTPUT_DIRECTORY']}/#{ENV['ARCHIVE_NAME']}",
     )
     write_build_info(
@@ -191,9 +192,9 @@ end
 lane :prepare do
   prepare_key()
 
-  match(type: "development", readonly: true, generate_apple_certs: true, platform: "ios", team_id: ENV['TEAM_ID'])
-  match(type: "appstore", readonly: true, generate_apple_certs: true, platform: "ios", team_id: ENV['TEAM_ID'])
-  match(type: "adhoc", readonly: true, generate_apple_certs: true, platform: "ios", team_id: ENV['TEAM_ID'])
+  match(type: "development", readonly: true, generate_apple_certs: true, shallow_clone: "true", platform: "ios", team_id: ENV['TEAM_ID'])
+  match(type: "appstore", readonly: true, generate_apple_certs: true, shallow_clone: "true", platform: "ios", team_id: ENV['TEAM_ID'])
+  match(type: "adhoc", readonly: true, generate_apple_certs: true, shallow_clone: "true", platform: "ios", team_id: ENV['TEAM_ID'])
 end
 
 # Run this only if you need to generate certs and provisioning profiles

@@ -358,8 +358,8 @@ extension NewDnsServerController: ThemableProtocol {
         contentView.backgroundColor = theme.popupBackgroundColor
         titleLabel.textColor = theme.popupTitleTextColor
         theme.setupPopupLabels(themableLabels)
-        theme.setupTextField(nameField)
-        theme.setupTextField(upstreamsField)
+        theme.setupTextFieldCode(nameField)
+        theme.setupTextFieldCode(upstreamsField)
         saveOrAddButton.indicatorStyle = theme.indicatorStyle
         nameField.updateTheme()
         upstreamsField.updateTheme()

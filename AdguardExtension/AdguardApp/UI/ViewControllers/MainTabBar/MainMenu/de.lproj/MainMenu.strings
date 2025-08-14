@@ -11,7 +11,7 @@
 "B4f-Bt-0w6.text" = "App bewerten";
 
 /* Class = "UILabel"; text = "Missed ads or broken sites"; ObjectID = "Con-9Z-LDc"; */
-"Con-9Z-LDc.text" = "Nicht gesperrte Werbung oder unvollständige Websites";
+"Con-9Z-LDc.text" = "Verpasste Anzeigen oder fehlerhafte Websites";
 
 /* Class = "UILabel"; text = "License"; ObjectID = "Ebc-Lf-9R1"; */
 "Ebc-Lf-9R1.text" = "Lizenz";

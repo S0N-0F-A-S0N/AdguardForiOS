@@ -316,6 +316,24 @@
 /* (ContentBlockersTableController) - Content Blockers title */
 "cb_screen_content_blockers_title" = "Блокувальники вмісту";
 
+/* (ContentBlockersTableController) - General content blocker name */
+"cb_screen_content_blockers_general_name" = "Загальні";
+
+/* (ContentBlockersTableController) - Privacy content blocker name */
+"cb_screen_content_blockers_privacy_name" = "Приватність";
+
+/* (ContentBlockersTableController) - Social content blocker name */
+"cb_screen_content_blockers_social_name" = "Соціальні";
+
+/* (ContentBlockersTableController) - Other content blocker name */
+"cb_screen_content_blockers_other_name" = "Інші";
+
+/* (ContentBlockersTableController) - Custom content blocker name */
+"cb_screen_content_blockers_custom_name" = "Власні";
+
+/* (ContentBlockersTableController) - Security content blocker name */
+"cb_screen_content_blockers_security_name" = "Безпека";
+
 /* (AdvancedSettingsController) Restart when network changes error */
 "general_settings_restart_tunnel_error" = "Спочатку потрібно ввімкнути VPN";
 
@@ -724,6 +742,9 @@
 /* (OnboardingController) second step with advanced protection text */
 "advanced_protection_onboarding_second_step_text" = "Перейдіть до <b>Safari > Розширення</b>.";
 
+/* (OnboardingController) second step with advanced protection text for iOS 18+ */
+"advanced_protection_onboarding_second_step_text_ios_18" = "Перейдіть до <b>Додатки > Safari > Розширення</b>.";
+
 /* (OnboardingController) third step text */
 "onboarding_third_step_text" = "<b>Увімкніть</b> усі розширення AdGuard.";
 
@@ -731,7 +752,7 @@
 "advanced_protection_onboarding_third_step_text" = "<b>Увімкніть</b> кожен перемикач для AdGuard. Готово!";
 
 /* (OnboardingContentView) fours step. '%@' will be replaced with the share icon */
-"onboarding_fours_step_text" = "Щоб увімкнути <b>Розширений захист</b>, відкрийте Safari, торкніть <b>aA</b> ліворуч від поля адреси, <br><br> %@ <br><br>потім торкніть <b>Керувати розширеннями</b> та увімкніть <b>AdGuard</b>.";
+"onboarding_fours_step_text" = "Щоб увімкнути <b>Розширений захист</b>, відкрийте Safari, торкніть ліворуч від поля адреси, <br><br> %@ <br><br>потім торкніть <b>Керувати розширеннями</b> та увімкніть <b>AdGuard</b>.";
 
 /* (BlockRequestController) Block request title */
 "block_request" = "Блокувати запит";
@@ -1082,6 +1103,9 @@
 /* (ImportSettingsController) add dns rules title */
 "import_dns_user_rules" = "Додати DNS-Правила користувача";
 
+/* (ImportSettingsController) disable YouTube feature title */
+"disable_youtube_feature" = "Вимкнути програвач AdGuard";
+
 /* (LowLevelSettingsController) Low level settings description. <b style=color:#c23814ff> It is a color for WARNING! word*/
 "low_level_description" = "<b style=color:#c23814ff>ПОПЕРЕДЖЕННЯ!</b> Увімкнення цих функцій може пошкодити інтернет-з'єднання або порушити вашу безпеку та приватність.";
 
@@ -1213,6 +1237,12 @@ DO NOT TRANSLATE "none" */
 
 /* (YoutubePlayerController) 'userscript error' alert message */
 "youtube_player_controller_userscript_error_message" = "Не вдалось створити користувацький скрипт";
+
+/* (YoutubePlayerController) YouTube feature disabled alert title */
+"youtube_player_controller_feature_disabled_title" = "AdGuard Player вимкнено";
+
+/* (YoutubePlayerController) YouTube feature disabled alert message */
+"youtube_player_controller_feature_disabled_message" = "Обмін відео за допомогою AdGuard недоступний";
 
 /* (YouTubeAdsRequestHandler) 'no url error' alert title */
 "youtube_share_extension_no_url_title" = "Не вказано URL-адресу";

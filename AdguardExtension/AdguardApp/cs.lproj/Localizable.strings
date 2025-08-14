@@ -263,13 +263,13 @@
 "dns_crypt_protocol" = "DNSCrypt";
 
 /* DnsProviderDetailsController - dns over https protocol */
-"doh_protocol" = "DNS skrze HTTPS";
+"doh_protocol" = "DNS-over-HTTPS";
 
 /* DnsProviderDetailsController - dns over https rotocol */
-"dot_protocol" = "DNS skrze TLS";
+"dot_protocol" = "DNS-over-TLS";
 
 /* DnsProviderDetailsController - dns over quic rotocol */
-"doq_protocol" = "DNS skrze QUIC";
+"doq_protocol" = "DNS-over-QUIC";
 
 /* GetProController - confirm logout text */
 "confirm_logout_text" = "Opravdu se chcete odhlásit?";
@@ -321,6 +321,24 @@
 
 /* (ContentBlockersTableController) - Content Blockers title */
 "cb_screen_content_blockers_title" = "Blokátory obsahu";
+
+/* (ContentBlockersTableController) - General content blocker name */
+"cb_screen_content_blockers_general_name" = "Obecné";
+
+/* (ContentBlockersTableController) - Privacy content blocker name */
+"cb_screen_content_blockers_privacy_name" = "Soukromí";
+
+/* (ContentBlockersTableController) - Social content blocker name */
+"cb_screen_content_blockers_social_name" = "Sociální média";
+
+/* (ContentBlockersTableController) - Other content blocker name */
+"cb_screen_content_blockers_other_name" = "Ostatní";
+
+/* (ContentBlockersTableController) - Custom content blocker name */
+"cb_screen_content_blockers_custom_name" = "Vlastní";
+
+/* (ContentBlockersTableController) - Security content blocker name */
+"cb_screen_content_blockers_security_name" = "Zabezpečení";
 
 /* (AdvancedSettingsController) Restart when network changes error */
 "general_settings_restart_tunnel_error" = "Nejprve musíte zapnout VPN";
@@ -730,6 +748,9 @@
 /* (OnboardingController) second step with advanced protection text */
 "advanced_protection_onboarding_second_step_text" = "Přejděte na <b>Safari > Rozšíření</b>.";
 
+/* (OnboardingController) second step with advanced protection text for iOS 18+ */
+"advanced_protection_onboarding_second_step_text_ios_18" = "Přejděte na <b>Aplikace > Safari > Rozšíření</b>.";
+
 /* (OnboardingController) third step text */
 "onboarding_third_step_text" = "<b>Povolte</b> všechna rozšíření AdGuardu.";
 
@@ -737,7 +758,7 @@
 "advanced_protection_onboarding_third_step_text" = "Nastavte přepínače AdGuardu na <b>zapnuto</b>. Můžete začít!";
 
 /* (OnboardingContentView) fours step. '%@' will be replaced with the share icon */
-"onboarding_fours_step_text" = "Pro <b>Pokročilou</b> ochranu otevřete Safari, klepněte na ikonu <b>aA</b> na levé straně pole URL,<br><br> %@ <br><br>pak klepněte na <b>Spravovat rozšíření</b> a zapněte přepínač <b>AdGuard</b>.";
+"onboarding_fours_step_text" = "Pro <b>Pokročilou</b> ochranu otevřete Safari, klepněte na ikonu na levé straně pole URL,<br><br> %@ <br><br>pak klepněte na <b>Spravovat rozšíření</b> a zapněte přepínač <b>AdGuard</b>.";
 
 /* (BlockRequestController) Block request title */
 "block_request" = "Blokovat požadavek";
@@ -1088,6 +1109,9 @@
 /* (ImportSettingsController) add dns rules title */
 "import_dns_user_rules" = "Přidat uživatelská pravidla DNS";
 
+/* (ImportSettingsController) disable YouTube feature title */
+"disable_youtube_feature" = "Zakázat AdGuard Player";
+
 /* (LowLevelSettingsController) Low level settings description. <b style=color:#c23814ff> It is a color for WARNING! word*/
 "low_level_description" = "<b style=color:#c23814ff>VAROVÁNÍ!</b> Povolení těchto funkcí může narušit připojení k Internetu nebo ohrozit vaše zabezpečení a soukromí.";
 
@@ -1219,6 +1243,12 @@ DO NOT TRANSLATE "none" */
 
 /* (YoutubePlayerController) 'userscript error' alert message */
 "youtube_player_controller_userscript_error_message" = "Nepodařilo se vytvořit uživatelský skript";
+
+/* (YoutubePlayerController) YouTube feature disabled alert title */
+"youtube_player_controller_feature_disabled_title" = "AdGuard Player je vypnutý";
+
+/* (YoutubePlayerController) YouTube feature disabled alert message */
+"youtube_player_controller_feature_disabled_message" = "Sdílení videa pomocí AdGuardu není k dispozici";
 
 /* (YouTubeAdsRequestHandler) 'no url error' alert title */
 "youtube_share_extension_no_url_title" = "Nebyla uvedena adresa URL";

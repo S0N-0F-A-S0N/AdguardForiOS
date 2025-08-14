@@ -316,6 +316,24 @@
 /* (ContentBlockersTableController) - Content Blockers title */
 "cb_screen_content_blockers_title" = "Tartalomblokkolók";
 
+/* (ContentBlockersTableController) - General content blocker name */
+"cb_screen_content_blockers_general_name" = "Általános";
+
+/* (ContentBlockersTableController) - Privacy content blocker name */
+"cb_screen_content_blockers_privacy_name" = "Adatvédelem";
+
+/* (ContentBlockersTableController) - Social content blocker name */
+"cb_screen_content_blockers_social_name" = "Közösségi";
+
+/* (ContentBlockersTableController) - Other content blocker name */
+"cb_screen_content_blockers_other_name" = "Egyéb";
+
+/* (ContentBlockersTableController) - Custom content blocker name */
+"cb_screen_content_blockers_custom_name" = "Egyéb";
+
+/* (ContentBlockersTableController) - Security content blocker name */
+"cb_screen_content_blockers_security_name" = "Biztonság";
+
 /* (AdvancedSettingsController) Restart when network changes error */
 "general_settings_restart_tunnel_error" = "Először engedélyeznie kell a VPN-t";
 
@@ -724,6 +742,9 @@
 /* (OnboardingController) second step with advanced protection text */
 "advanced_protection_onboarding_second_step_text" = "Menjen <b>Safari > Bővítések</b>.";
 
+/* (OnboardingController) second step with advanced protection text for iOS 18+ */
+"advanced_protection_onboarding_second_step_text_ios_18" = "Menjen a <b>Alkalmazások > Safari > Kiegészítők</b> menüpontra.";
+
 /* (OnboardingController) third step text */
 "onboarding_third_step_text" = "<b>Engedélyezze</b> az összes AdGuard kiegészítőt.";
 
@@ -731,7 +752,7 @@
 "advanced_protection_onboarding_third_step_text" = "Állítsa az összes AdGuard kapcsolót <b>be</b> állásba. Már mehet is!";
 
 /* (OnboardingContentView) fours step. '%@' will be replaced with the share icon */
-"onboarding_fours_step_text" = "For <b>Advanced</b> protection, open Safari, tap the <b>aA</b> icon on the left side of the URL field,<br><br> %@ <br><br>majd koppintson a <b>Bővítmények kezelése</b> lehetőségre, és kapcsolja be az <b>AdGuard</b> kapcsolót.";
+"onboarding_fours_step_text" = "A <b>speciális</b> védelem bekapcsolásához nyisd meg a Safarit, koppints az ikonra az URL mező bal oldalán,<br><br> %@ <br><br>majd koppints a <b>Bővítmények kezelése</b> lehetőségre, és kapcsold be az <b>AdGuard</b> kapcsolót.";
 
 /* (BlockRequestController) Block request title */
 "block_request" = "Kérés blokkolása";
@@ -879,6 +900,9 @@
 
 /* (ActivityViewController) -  Data saved alret title */
 "data_saved_info_alert_title" = "Mentett adatok";
+
+/* (ActivityViewController) -  Data saved alret message */
+"data_saved_info_alert_message" = "Az AdGuard nem engedi, hogy a böngésző betöltse a szükségtelen oldalelemeket, ezzel csökkentve az eszköz adatfogyasztását\n\nItt látható az AdGuard által a kiválasztott időszakban mentett adatok teljes mennyisége";
 
 /* (ActivityViewController) - Companies alert title */
 "companies_info_alert_title" = "Vállalatok száma";
@@ -1079,6 +1103,9 @@
 /* (ImportSettingsController) add dns rules title */
 "import_dns_user_rules" = "Saját DNS szabályok hozzáadása";
 
+/* (ImportSettingsController) disable YouTube feature title */
+"disable_youtube_feature" = "Az AdGuard Player letiltása";
+
 /* (LowLevelSettingsController) Low level settings description. <b style=color:#c23814ff> It is a color for WARNING! word*/
 "low_level_description" = "<b style=color:#c23814ff>FIGYELEM!</b> Ezen funkciók helytelen beállítása tönkreteheti az internetkapcsolatot vagy veszélyeztetheti a biztonságot és az adatvédelmet.";
 
@@ -1210,6 +1237,12 @@ DO NOT TRANSLATE "none" */
 
 /* (YoutubePlayerController) 'userscript error' alert message */
 "youtube_player_controller_userscript_error_message" = "Nem sikerült létrehozni a userscript-et";
+
+/* (YoutubePlayerController) YouTube feature disabled alert title */
+"youtube_player_controller_feature_disabled_title" = "Az AdGuard Player letiltva";
+
+/* (YoutubePlayerController) YouTube feature disabled alert message */
+"youtube_player_controller_feature_disabled_message" = "A videómegosztás az AdGuarddal nem érhető el";
 
 /* (YouTubeAdsRequestHandler) 'no url error' alert title */
 "youtube_share_extension_no_url_title" = "Nincs megadva URL";

@@ -24,7 +24,7 @@ type MessageValidationResult = {
      * Error message.
      */
     error: string,
-}
+};
 
 /**
  * @typedef Result

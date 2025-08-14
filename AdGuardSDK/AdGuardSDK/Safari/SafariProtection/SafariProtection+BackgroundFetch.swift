@@ -113,14 +113,14 @@ extension SafariProtection {
     }
 
     public func finishBackgroundUpdate(_ onUpdateFinished: @escaping (_ error: Error?) -> Void) {
-        BackgroundTaskExecutor.executeAsynchronousTask("SafariProtection+BackgroundFetch.finishBackgroundUpdate") { [weak self] onTaskFinished in
-            guard let self = self else {
-                Logger.logError("(SafariProtection+BackgroundFetch) - finishBackgroundUpdate; Missing self")
-                onUpdateFinished(CommonError.missingSelf)
-                onTaskFinished()
-                return
-            }
+        BackgroundTaskExecutor.executeAsynchronousTask("SafariProtection+BackgroundFetch.finishBackgroundUpdate") { onTaskFinished in
             Logger.logInfo("(SafariProtection+BackgroundFetch) - finishBackgroundUpdate start; Current state = \(self.currentBackgroundFetchState)")
+
+            // If we're dealing with expired filters make sure that the filters are updated
+            // on the first launch.
+            if self.filters.expiredFilters && self.currentBackgroundFetchState == .updateFinished {
+                self.currentBackgroundFetchState = .loadAndSaveFilters
+            }
 
             switch self.currentBackgroundFetchState {
             case .loadAndSaveFilters:
@@ -130,6 +130,7 @@ extension SafariProtection {
                     group.leave()
                 }
                 group.wait()
+
                 fallthrough
             case .convertFilters:
                 var result: BackgroundFetchUpdateResult?
@@ -147,6 +148,7 @@ extension SafariProtection {
                     }
                     return
                 }
+
                 fallthrough
             case .reloadContentBlockers:
                 self.reloadContentBlockers({ result in

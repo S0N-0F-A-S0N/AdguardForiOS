@@ -5,7 +5,7 @@
 "2A9-hH-oY3.text" = "Время в секундах";
 
 /* Class = "UILabel"; text = "Debug logs"; ObjectID = "3zG-B5-jE5"; */
-"3zG-B5-jE5.text" = "Отладочные логи";
+"3zG-B5-jE5.text" = "Расширенное логирование";
 
 /* Class = "UILabel"; text = "Blocked response TTL"; ObjectID = "7nl-3p-BP2"; */
 "7nl-3p-BP2.text" = "TTL заблокированного ответа";
@@ -104,13 +104,13 @@
 "bRu-jJ-qsB.text" = "DNS-серверы";
 
 /* Class = "UILabel"; text = "Tunnel mode"; ObjectID = "bnd-Eh-hpk"; */
-"bnd-Eh-hpk.text" = "Туннельный режим";
+"bnd-Eh-hpk.text" = "Режим туннелирования";
 
 /* Class = "UILabel"; text = "Blocking mode"; ObjectID = "cXx-vF-2MX"; */
 "cXx-vF-2MX.text" = "Режим блокировки";
 
 /* Class = "UILabel"; text = "Tunnel mode"; ObjectID = "cdQ-kW-CG7"; */
-"cdQ-kW-CG7.text" = "Туннельный режим";
+"cdQ-kW-CG7.text" = "Режим туннелирования";
 
 /* Class = "UILabel"; text = "Respond with zero IP address (0.0.0.0 for A; :: for AAAA) when blocked by AdBlock-style rule; respond with the IP address specified in the rule when blocked by /etc/hosts-style rule"; ObjectID = "cgV-he-JNk"; */
 "cgV-he-JNk.text" = "Стандартный: Отвечает с нулевым IP-адресом, (0.0.0.0 для A; :: для AAAA) когда заблокировано правилом в стиле Adblock; отвечает с IP-адресом, указанным в правиле, когда заблокировано правилом в стиле /etc/hosts-style";
@@ -128,10 +128,10 @@
 "eiP-yl-Xb3.text" = "Full-Tunnel (без иконки VPN)";
 
 /* Class = "UILabel"; text = "Compatible with “Personal VPN” apps"; ObjectID = "gxl-pG-zh1"; */
-"gxl-pG-zh1.text" = "Совместим с персональными VPN-приложениями";
+"gxl-pG-zh1.text" = "Совместим с приложениями, которые используют VPN-профиль";
 
 /* Class = "UILabel"; text = "In the Split-Tunnel mode AdGuard is compatible with so-called “Personal VPN” apps. As a trade-off, in this mode it may be bypassed by system in case of bad connectivity."; ObjectID = "jmQ-ze-hFG"; */
-"jmQ-ze-hFG.text" = "В режиме Split-Tunnel AdGuard совместим с так называемыми «персональными VPN-приложениями». В качестве компромисса, в этом режиме он может быть обойден системой в случае плохой связи.";
+"jmQ-ze-hFG.text" = "В режиме Split-Tunnel AdGuard совместим с приложениями, которые используют VPN-профиль. В этом режиме при плохой связи система может обойти настройки AdGuard";
 
 /* Class = "UILabel"; text = "Fallback servers"; ObjectID = "k0U-fn-m9X"; */
 "k0U-fn-m9X.text" = "Fallback-серверы";
@@ -164,7 +164,7 @@
 "tTY-BW-QcN.text" = "Если эта опция включена, AdGuard будет использовать только Wi-Fi для фонового обновления фильтров";
 
 /* Class = "UILabel"; text = "Blocked response TTL"; ObjectID = "uRk-qq-TJH"; */
-"uRk-qq-TJH.text" = "Заблокированный ответ TTL";
+"uRk-qq-TJH.text" = "TTL заблокированного ответа";
 
 /* Class = "UILabel"; text = "Are you a developer?"; ObjectID = "wPe-ae-X0G"; */
 "wPe-ae-X0G.text" = "Вы разработчик?";

@@ -322,6 +322,21 @@
 /* (ContentBlockersTableController) - Content Blockers title */
 "cb_screen_content_blockers_title" = "Inhaltsblocker";
 
+/* (ContentBlockersTableController) - General content blocker name */
+"cb_screen_content_blockers_general_name" = "Allgemein";
+
+/* (ContentBlockersTableController) - Privacy content blocker name */
+"cb_screen_content_blockers_privacy_name" = "Datenschutz";
+
+/* (ContentBlockersTableController) - Social content blocker name */
+"cb_screen_content_blockers_social_name" = "Soziale Widgets";
+
+/* (ContentBlockersTableController) - Other content blocker name */
+"cb_screen_content_blockers_other_name" = "Sonstiges";
+
+/* (ContentBlockersTableController) - Security content blocker name */
+"cb_screen_content_blockers_security_name" = "Sicherheit";
+
 /* (AdvancedSettingsController) Restart when network changes error */
 "general_settings_restart_tunnel_error" = "Sie müssen zuerst VPN aktivieren";
 
@@ -647,7 +662,7 @@
 "add_custom_filter_error_message" = "Ein Problem ist aufgetreten, oder das Format der Datei mit benutzerdefinierten Filtern ist fehlerhaft";
 
 /*(NewCustomFilterDetailsController) title for editing custom filter */
-"edit_custom_filter_title" = "Eigene Filter bearbeiten";
+"edit_custom_filter_title" = "Eigenen Filter bearbeiten";
 
 /*(NewCustomFilterDetailsController) add button title */
 "common_add" = "Hinzufügen";
@@ -728,7 +743,10 @@
 "onboarding_second_step_text" = "Tippen Sie auf <b>Safari</b>, wischen Sie nach unten und wählen Sie <b>Inhaltsblocker</b>.";
 
 /* (OnboardingController) second step with advanced protection text */
-"advanced_protection_onboarding_second_step_text" = "Wechseln Sie zu <b>„Safari“ ➜ „Erweiterungen“</b>.";
+"advanced_protection_onboarding_second_step_text" = "Wechseln Sie zu <b>Safari > Erweiterungen</b>.";
+
+/* (OnboardingController) second step with advanced protection text for iOS 18+ */
+"advanced_protection_onboarding_second_step_text_ios_18" = "Wechseln Sie zu <b>Apps > Safari > Erweiterungen</b>.";
 
 /* (OnboardingController) third step text */
 "onboarding_third_step_text" = "<b>Aktivieren</b> Sie alle AdGuard-Erweiterungen.";
@@ -737,7 +755,7 @@
 "advanced_protection_onboarding_third_step_text" = "Setzen Sie alle AdGuard-Schalter auf <b>Ein</b>. Sie können jetzt loslegen!";
 
 /* (OnboardingContentView) fours step. '%@' will be replaced with the share icon */
-"onboarding_fours_step_text" = "Für den <b>Erweiterten</b> Schutz öffnen Sie Safari, tippen Sie auf das <b>aA</b>-Symbol auf der linken Seite des Adressleiste,<br><br> %@ <br><br>dann tippen Sie auf „Erweiterungen verwalten“ und aktivieren dort <b>AdGuard</b>.";
+"onboarding_fours_step_text" = "Für den <b>Erweiterten</b> Schutz öffnen Sie Safari, tippen Sie auf das Symbol auf der linken Seite des Adressleiste,<br><br> %@ <br><br>dann tippen Sie auf „Erweiterungen verwalten“ und aktivieren dort <b>AdGuard</b>.";
 
 /* (BlockRequestController) Block request title */
 "block_request" = "Anfrage sperren";
@@ -1088,6 +1106,9 @@
 /* (ImportSettingsController) add dns rules title */
 "import_dns_user_rules" = "Benutzerdefinierte DNS-Regeln hinzufügen";
 
+/* (ImportSettingsController) disable YouTube feature title */
+"disable_youtube_feature" = "AdGuard Player deaktivieren";
+
 /* (LowLevelSettingsController) Low level settings description. <b style=color:#c23814ff> It is a color for WARNING! word*/
 "low_level_description" = "<b style=color:#c23814ff>Warnhinweis!</b> Das Aktivieren dieser Funktionen kann die Internetverbindung unterbrechen oder Ihre Sicherheit und Privatsphäre gefährden.";
 
@@ -1219,6 +1240,12 @@ DO NOT TRANSLATE "none" */
 
 /* (YoutubePlayerController) 'userscript error' alert message */
 "youtube_player_controller_userscript_error_message" = "Benutzerskript konnte nicht erstellt werden";
+
+/* (YoutubePlayerController) YouTube feature disabled alert title */
+"youtube_player_controller_feature_disabled_title" = "AdGuard Player deaktiviert";
+
+/* (YoutubePlayerController) YouTube feature disabled alert message */
+"youtube_player_controller_feature_disabled_message" = "Die Videofreigabe mit AdGuard steht derzeit nicht zur Verfügung";
 
 /* (YouTubeAdsRequestHandler) 'no url error' alert title */
 "youtube_share_extension_no_url_title" = "Keine Adresse angegeben";

@@ -2,7 +2,10 @@
   "compilerOptions": {
     "experimentalDecorators": true,
     "target": "esnext",
-    "lib": ["esnext", "dom"],
+    "lib": [
+      "esnext",
+      "dom"
+    ],
     "module": "esnext",
     "allowJs": true,
     "strict": true,

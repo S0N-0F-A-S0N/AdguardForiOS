@@ -8,6 +8,15 @@
       location = "container:SupportingScripts"
       name = "SupportingScripts">
       <FileRef
+         location = "group:get_providers.sh">
+      </FileRef>
+      <FileRef
+         location = "group:localization.py">
+      </FileRef>
+      <FileRef
+         location = "group:readme.md">
+      </FileRef>
+      <FileRef
          location = "group:runBuilder.sh">
       </FileRef>
    </Group>

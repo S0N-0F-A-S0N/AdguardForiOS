@@ -126,6 +126,8 @@ final class LoginService: LoginServiceProtocol {
     static let emailAllreadyUsed = -11
     static let accountIsLocked = -12
     static let socialUserNotFound = -13
+    static let licenseBlocked = -14
+    static let applicationBlocked = -15
 
     static let errorDescription = "error_description"
 
@@ -390,9 +392,19 @@ final class LoginService: LoginServiceProtocol {
             DDLogInfo("(LoginService) checkStatus - processStatusResponse: premium = \(premium) " + (expirationDate == nil ? "" : "expirationDate = \(expirationDate!)"))
 
 
-            if error != nil {
-                DDLogError("(LoginService) checkStatus - processStatusResponse error: \(error!.localizedDescription)")
-                callback(error!)
+            if let error = error {
+                if error.domain == LoginService.loginErrorDomain && (error.code == LoginService.licenseBlocked || error.code == LoginService.applicationBlocked) {
+                    DDLogInfo("(LoginService) checkStatus - processStatusResponse error: current license status: \(error.code == LoginService.licenseBlocked ? "license blocked" : "application blocked"); let's reset local app license status to free state")
+
+                    self.expirationDate = expirationDate
+                    self.hasPremiumLicense = premium
+                    self.loggedIn = premium
+                    self.licenseKey = licenseKey
+                } else {
+                    DDLogError("(LoginService) checkStatus - processStatusResponse error: \(error.localizedDescription)")
+                }
+
+                callback(error)
                 return
             }
 

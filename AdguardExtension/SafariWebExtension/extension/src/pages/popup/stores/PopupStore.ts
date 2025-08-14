@@ -128,7 +128,7 @@ export class PopupStore {
 
     @action
     async toggleProtection() {
-        if (!this.currentSiteUrl) {
+        if (!this.currentSiteUrl || !this.currentSiteDomain) {
             return;
         }
 

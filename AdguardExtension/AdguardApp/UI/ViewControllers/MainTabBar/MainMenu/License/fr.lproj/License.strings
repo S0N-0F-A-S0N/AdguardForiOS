@@ -17,7 +17,7 @@
 "bUa-fF-AXO.normalTitle" = "Connexion";
 
 /* Class = "UILabel"; text = "Log in"; ObjectID = "fxK-6y-LB6"; */
-"fxK-6y-LB6.text" = "Connexion";
+"fxK-6y-LB6.text" = "S'identifier";
 
 /* Class = "UIButton"; normalTitle = "Confirm"; ObjectID = "rrj-Gm-LCJ"; */
 "rrj-Gm-LCJ.normalTitle" = "Confirmer";

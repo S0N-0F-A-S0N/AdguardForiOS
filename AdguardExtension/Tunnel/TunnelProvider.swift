@@ -31,7 +31,9 @@ import AGDnsProxy
 class TunnelProvider: PacketTunnelProvider {
     static let tunnelRemoteAddress = "127.1.1.1"
 
-    // These addresses are meaningful and must not be changed. We use it in VPN application to determine in what mode the packet tunnel is running.
+    // These addresses are meaningful and must not be changed.
+    // We use it in VPN application to determine in what mode
+    // the packet tunnel is running.
     static let interfaceFullIpv4 = "172.16.209.3"
     static let interfaceFullIpv6 = "fd12:1:1:1::3"
     static let interfaceFullWithoutIconIpv4 = "172.16.209.4"

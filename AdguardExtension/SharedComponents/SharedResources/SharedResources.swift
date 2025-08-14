@@ -373,16 +373,6 @@ extension AESharedResourcesProtocol {
         }
     }
 
-    /* Flag meaning that 'Safari content blockers are disabled after dev team migration' notification was shown */
-    var safariContentBlockersAreDisabledAfterDevTeamMigrationNotificationShown: Bool {
-        get {
-            sharedDefaults().bool(forKey: safariContentBlockersAreDisabledAfterDevTeamMigrationNotificationShownKey)
-        }
-        set {
-            sharedDefaults().set(newValue, forKey: safariContentBlockersAreDisabledAfterDevTeamMigrationNotificationShownKey)
-        }
-    }
-
     /* Advanced protection state */
     var advancedProtection: Bool {
         get {
@@ -449,6 +439,16 @@ extension AESharedResourcesProtocol {
         get { sharedDefaults().object(forKey: disableYouTubeFeatureKey) as? Bool ?? false } // FALSE value by default
         set { sharedDefaults().set(newValue, forKey: disableYouTubeFeatureKey) }
     }
+
+    var disableSecurityRelatedFeatures: Bool {
+        get { sharedDefaults().object(forKey: disableSecurityRelatedFeaturesKey) as? Bool ?? false } // FALSE value by default
+        set { sharedDefaults().set(newValue, forKey: disableSecurityRelatedFeaturesKey) }
+    }
+
+    var disableIntegrationFeature: Bool {
+        get { sharedDefaults().object(forKey: disableIntegrationFeatureKey) as? Bool ?? false } // FALSE value by default
+        set { sharedDefaults().set(newValue, forKey: disableIntegrationFeatureKey) }
+    }
 }
 
 fileprivate extension AESharedResourcesProtocol {
@@ -458,6 +458,8 @@ fileprivate extension AESharedResourcesProtocol {
     var safariWebExtensionIsOnKey: String { "safariWebExtensionIsOnKey" }
     var whatsNewScreenShownKey: String { "whatsNewScreenShownKey" }
     var disableYouTubeFeatureKey: String { "disableYouTubeFeatureKey" }
+    var disableSecurityRelatedFeaturesKey: String { "disableSecurityRelatedFeaturesKey" }
+    var disableIntegrationFeatureKey: String { "disableIntegrationFeatureKey" }
 
     // VPN/Proxy keys
     var proxyEnabledKey: String { "proxyEnabled" }
@@ -473,7 +475,6 @@ fileprivate extension AESharedResourcesProtocol {
 
     // Performiks to ASL dev account migration keys
     var pretendPremiumAfterKeychainLossKey: String { "pretendPremiumAfterKeychainLoss" }
-    var safariContentBlockersAreDisabledAfterDevTeamMigrationNotificationShownKey: String { "safariContentBlockersAreDisabledAfterDevTeamMigrationNotificationShown" }
 }
 
 extension Notification.Name {

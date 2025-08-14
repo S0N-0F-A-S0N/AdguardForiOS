@@ -182,7 +182,7 @@
 "filter_date_format" = "Фильтры обновлены: %@";
 
 /* (UserFilterController) blacklist description format */
-"blacklist_text_format" = "Введите ваши собственные правила здесь<br>Прочтите эту <a href=\"%@\">заметку о синтаксисе правил</a>.";
+"blacklist_text_format" = "Здесь вы можете добавить собственные правила фильтрации<br><a href=\"%@\">Синтаксис правил</a>";
 
 /* (UserFilterController) whitelist description */
 "whitelist_text" = "Введите здесь домены, которые вы не хотите, чтобы AdGuard фильтровал. Этот список приоритетнее других настроек.";
@@ -194,7 +194,7 @@
 "dns_whitelist_text" = "Введите доменные имена, разделенные разрывом строки. AdGuard откроет доступ к этим доменам.";
 
 /* (UserFilterController) dns blocklist description */
-"dns_blacklist_text_format" = "Черный список поддерживает <a href=\"%@\">DNS-синтаксис AdGuard</a>. Введите правила, разделенные разрывом строки. AdGuard заблокирует все подключения к доменам, которые подходят под эти правила.";
+"dns_blacklist_text_format" = "Чёрный список поддерживает <a href=\"%@\">синтаксис DNS-правил AdGuard</a>. Введите правила по одному на строку. AdGuard заблокирует все подключения к доменам, которые подходят под эти правила.";
 
 /* (MainController) message that appers when filters updating */
 "update_filter_start_message" = "Обновление...";
@@ -239,7 +239,7 @@
 "filter_version_format" = "Версия %@";
 
 /* (DnsSettingController) split tunel mode description */
-"tunnel_mode_split_description" = "Split-Tunnel, совместим с персональными VPN-приложениями";
+"tunnel_mode_split_description" = "Split-Tunnel, совместим с приложениями, которые используют VPN-профиль";
 
 /* (DnsSettingController) Full tunel mode description */
 "tunnel_mode_full_description" = "Full-Tunnel, не совместим с другими VPN-приложениями";
@@ -321,6 +321,24 @@
 
 /* (ContentBlockersTableController) - Content Blockers title */
 "cb_screen_content_blockers_title" = "Блокировщики контента";
+
+/* (ContentBlockersTableController) - General content blocker name */
+"cb_screen_content_blockers_general_name" = "Основные";
+
+/* (ContentBlockersTableController) - Privacy content blocker name */
+"cb_screen_content_blockers_privacy_name" = "Антитрекинг";
+
+/* (ContentBlockersTableController) - Social content blocker name */
+"cb_screen_content_blockers_social_name" = "Виджеты соцсетей";
+
+/* (ContentBlockersTableController) - Other content blocker name */
+"cb_screen_content_blockers_other_name" = "Прочее";
+
+/* (ContentBlockersTableController) - Custom content blocker name */
+"cb_screen_content_blockers_custom_name" = "Другая";
+
+/* (ContentBlockersTableController) - Security content blocker name */
+"cb_screen_content_blockers_security_name" = "Безопасность";
 
 /* (AdvancedSettingsController) Restart when network changes error */
 "general_settings_restart_tunnel_error" = "Вам необходимо сначала включить VPN";
@@ -461,7 +479,7 @@
 "whitelist_title" = "Белый список";
 
 /* (ListOfRulesModel) title for dns block list */
-"dns_blacklist_title" = "Черный список";
+"dns_blacklist_title" = "Чёрный список";
 
 /* (ListOfRulesModel) title for safari user filter */
 "safari_userfilter_title" = "Пользовательские правила Safari";
@@ -509,7 +527,7 @@
 "add_to_whitelist" = "Добавить в белый список";
 
 /*(LogRecord) "ADD TO BLOCKLIST" button title */
-"add_to_blacklist" = "Добавить в черный список";
+"add_to_blacklist" = "Добавить в чёрный список";
 
 /*(GroupsController) Security description without premium  */
 "security_description" = "Позволяют блокировать фишинговые сайты и другие опасные домены. Доступен пользователям Премиум-подписки";
@@ -626,7 +644,7 @@
 "chart_30days" = "30 дней";
 
 /*(MainScreen) "all time" chart date type */
-"chart_alltime" = "Все время";
+"chart_alltime" = "Всё время";
 
 /*(SafariService) notification about loading content blockers  */
 "loading_content_blockers" = "Блокировщики контента обновляются...";
@@ -730,6 +748,9 @@
 /* (OnboardingController) second step with advanced protection text */
 "advanced_protection_onboarding_second_step_text" = "Перейдите в <b>Safari > Расширения</b>.";
 
+/* (OnboardingController) second step with advanced protection text for iOS 18+ */
+"advanced_protection_onboarding_second_step_text_ios_18" = "Перейдите в <b>Приложения > Safari > Расширения</b>.";
+
 /* (OnboardingController) third step text */
 "onboarding_third_step_text" = "<b>Включите</b> все расширения AdGuard.";
 
@@ -737,7 +758,7 @@
 "advanced_protection_onboarding_third_step_text" = "Разрешите применение всех правил блокирования контента <b>AdGuard</b>. Готово!";
 
 /* (OnboardingContentView) fours step. '%@' will be replaced with the share icon */
-"onboarding_fours_step_text" = "Чтобы включить <b>Расширенную защиту</b>, откройте Safari, нажмите на иконку <b>aA</b> слева от адресной строки,<br><br> %@ <br><br>затем нажмите <b>«Управлять расширениями»</b> и включите <b>AdGuard</b>.";
+"onboarding_fours_step_text" = "Чтобы включить <b>Расширенную защиту</b>, откройте Safari, нажмите на иконку слева от адресной строки,<br><br> %@ <br><br>затем нажмите <b>«Управлять расширениями»</b> и включите <b>AdGuard</b>.";
 
 /* (BlockRequestController) Block request title */
 "block_request" = "Заблокировать запрос";
@@ -782,7 +803,7 @@
 "edit_dns_server_alert_title" = "Изменить пользовательский DNS-сервер";
 
 /* (DnsRequestDetailsController) - matched filter name for user filter */
-"system_blacklist" = "Общий черный список";
+"system_blacklist" = "Общий чёрный список";
 
 /* (DnsRequestDetailsController) - matched filter name for user filter */
 "system_whitelist" = "Общий белый список";
@@ -833,7 +854,7 @@
 "dns_status_title" = "DNS-статус";
 
 /* (DnsRequestDetailsController) "DNS upstream" title for cell */
-"dns_upstream_title" = "DNS upstream";
+"dns_upstream_title" = "DNS-сервер";
 
 /* (DnsRequestDetailsController) "DNS answer" title for cell */
 "dns_answer_title" = "DNS-ответ";
@@ -1088,6 +1109,9 @@
 /* (ImportSettingsController) add dns rules title */
 "import_dns_user_rules" = "Добавить пользовательские правила DNS";
 
+/* (ImportSettingsController) disable YouTube feature title */
+"disable_youtube_feature" = "Отключить Плеер AdGuard";
+
 /* (LowLevelSettingsController) Low level settings description. <b style=color:#c23814ff> It is a color for WARNING! word*/
 "low_level_description" = "<b style=color:#c23814ff>Внимание!</b> Включение этих функций может нарушить интернет-соединение и подвергнуть риску вашу безопасность и конфиденциальность. ";
 
@@ -1219,6 +1243,12 @@ DO NOT TRANSLATE "none" */
 
 /* (YoutubePlayerController) 'userscript error' alert message */
 "youtube_player_controller_userscript_error_message" = "Не удалось создать пользовательский скрипт";
+
+/* (YoutubePlayerController) YouTube feature disabled alert title */
+"youtube_player_controller_feature_disabled_title" = "Плеер AdGuard отключён";
+
+/* (YoutubePlayerController) YouTube feature disabled alert message */
+"youtube_player_controller_feature_disabled_message" = "Поделиться видео с AdGuard не получится";
 
 /* (YouTubeAdsRequestHandler) 'no url error' alert title */
 "youtube_share_extension_no_url_title" = "Не указан URL-адрес";

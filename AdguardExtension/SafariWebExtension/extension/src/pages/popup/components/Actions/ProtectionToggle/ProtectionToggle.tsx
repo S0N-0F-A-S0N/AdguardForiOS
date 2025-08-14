@@ -23,6 +23,13 @@ export const ProtectionToggle = observer(() => {
     let descriptionColor = 'gray';
     let iconEnabled = true;
 
+    // Hide this element for the case when we're dealing with a secure page
+    // and content blockers are enabled.
+    const hide = !store.currentSiteDomain && store.contentBlockersEnabled;
+    if (hide) {
+        return null;
+    }
+
     let button;
 
     if (!store.contentBlockersEnabled) {
@@ -62,7 +69,10 @@ export const ProtectionToggle = observer(() => {
 
         button = (
             <div className="actions__control">
-                <Switcher onChange={toggleProtection} enabled={store.protectionEnabled} />
+                <Switcher
+                    onChange={toggleProtection}
+                    enabled={store.protectionEnabled}
+                />
             </div>
         );
     }

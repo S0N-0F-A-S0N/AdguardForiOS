@@ -43,33 +43,39 @@ struct FilterFileContent: Equatable {
 protocol ContentBlockerConverterProtocol {
     func convertArray(
         rules: [String],
-        safariVersion: SafariVersion,
-        optimize: Bool,
         advancedBlocking: Bool
     ) -> ConversionResult
 }
 
 final class ContentBlockerConverterWrapper: ContentBlockerConverterProtocol {
-    func convertArray(rules: [String], safariVersion: SafariVersion, optimize: Bool, advancedBlocking: Bool) -> ConversionResult {
+    func convertArray(rules: [String], advancedBlocking: Bool) -> ConversionResult {
         let converter = ContentBlockerConverter()
 
-        // In iOS 17.0, there was a bug in content blockers that caused them to crash if a safari rules file larger than 10 megabytes was passed. (Feedback ID FB13282146).
-        // Since iOS 17.2 Apple has fixed the issue, so it is possible to remove the size limit for the safari rules file.
+        // Starting with iOS 17.0 the memory limit of a content blocker is severely limited.
+        // It causes the content blocker extension process crash when the limit is exceeded.
+        // We reported it to Apple (Feedback ID FB13282146), but it was only partially addressed.
+        //
+        // So for now the situation is the following:
+        // From iOS 17 to 17.2 the content blocker file size MUST NOT exceed ~10MB.
+        // Starting from 17.2 the content blocker file size MUST NOT exceed ~19MB.
         var maxJsonSizeBytes: Int?
         if #available(iOS 17.0, *) {
             if #unavailable(iOS 17.2) {
-                maxJsonSizeBytes = 10 * 1024 * 1024 // 10 MB in bytes
+                maxJsonSizeBytes = 10_000_000 // 10MiB
+            } else {
+                maxJsonSizeBytes = 19_000_000 // 19MiB
             }
         }
+
+        let safariVersion = SafariVersion.autodetect()
 
         let result = converter.convertArray(
             rules: rules,
             safariVersion: safariVersion,
-            optimize: optimize,
             advancedBlocking: advancedBlocking,
-            advancedBlockingFormat: .txt,
             maxJsonSizeBytes: maxJsonSizeBytes
         )
+
         return result
     }
 }
@@ -97,8 +103,7 @@ final class FiltersConverter: FiltersConverterProtocol {
      */
     private lazy var emptyRuleJsonResult: ConversionResult = {
         let converter = ContentBlockerConverterWrapper()
-        let safariVersion = SafariVersion(configuration.iosVersion)
-        return converter.convertArray(rules: [], safariVersion: safariVersion, optimize: false, advancedBlocking: false)
+        return converter.convertArray(rules: [], advancedBlocking: false)
     }()
 
     private let configuration: SafariConfigurationProtocol
@@ -112,6 +117,7 @@ final class FiltersConverter: FiltersConverterProtocol {
     func convert(filters: [FilterFileContent], blocklistRules: [String]?, allowlistRules: [String]?, invertedAllowlistRules: [String]?) -> [FiltersConverterResult] {
         let sortedRules = sortRulesByContentBlockers(filters, blocklistRules, allowlistRules, invertedAllowlistRules)
         let safariFilters = convert(filters: sortedRules)
+
         return safariFilters
     }
 
@@ -188,7 +194,6 @@ final class FiltersConverter: FiltersConverterProtocol {
     private func convert(filters: [ContentBlockerType: [String]]) -> [FiltersConverterResult] {
         Logger.logInfo("(FiltersConverter) - convertFilters; Safari rules conversion started")
 
-        let safariVersion = SafariVersion(configuration.iosVersion)
         let conversionResult: [FiltersConverterResult] = filters.concurrentMap { [unowned self] cbType, rules -> FiltersConverterResult in
 
             let start = Date()
@@ -197,16 +202,14 @@ final class FiltersConverter: FiltersConverterProtocol {
             let converter = ContentBlockerConverterWrapper()
             let result = converter.convertArray(
                 rules: rules,
-                safariVersion: safariVersion,
-                optimize: false,
                 advancedBlocking: configuration.advancedBlockingIsEnabled && configuration.proStatus
             )
 
             let elapsed = String(format: "%.2fs", Date().timeIntervalSince(start))
 
-            Logger.logInfo("(FiltersConverter) - FiltersConverter for \(cbType) result: \(result.convertedCount) rules, elapsed \(elapsed)")
+            Logger.logInfo("(FiltersConverter) - FiltersConverter for \(cbType) result: \(result.safariRulesCount) safari rules, \(result.advancedRulesCount) advanced rules, elapsed \(elapsed)")
 
-            Logger.logDebug("(FiltersConverter) - FiltersConverter for \(cbType) result message: \(result.message)")
+            Logger.logDebug("(FiltersConverter) - FiltersConverter for \(cbType) result message: \(result)")
 
             // Just take the info we need
             let converterResult = FiltersConverterResult(type: cbType, conversionResult: result)

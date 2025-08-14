@@ -322,6 +322,24 @@
 /* (ContentBlockersTableController) - Content Blockers title */
 "cb_screen_content_blockers_title" = "コンテンツブロッカー";
 
+/* (ContentBlockersTableController) - General content blocker name */
+"cb_screen_content_blockers_general_name" = "一般";
+
+/* (ContentBlockersTableController) - Privacy content blocker name */
+"cb_screen_content_blockers_privacy_name" = "トラッキング";
+
+/* (ContentBlockersTableController) - Social content blocker name */
+"cb_screen_content_blockers_social_name" = "ソーシャル";
+
+/* (ContentBlockersTableController) - Other content blocker name */
+"cb_screen_content_blockers_other_name" = "その他";
+
+/* (ContentBlockersTableController) - Custom content blocker name */
+"cb_screen_content_blockers_custom_name" = "カスタム";
+
+/* (ContentBlockersTableController) - Security content blocker name */
+"cb_screen_content_blockers_security_name" = "保護";
+
 /* (AdvancedSettingsController) Restart when network changes error */
 "general_settings_restart_tunnel_error" = "先にVPNを有効にする必要があります";
 
@@ -730,6 +748,9 @@
 /* (OnboardingController) second step with advanced protection text */
 "advanced_protection_onboarding_second_step_text" = "<b>Safari</b> → <b>機能拡張</b>";
 
+/* (OnboardingController) second step with advanced protection text for iOS 18+ */
+"advanced_protection_onboarding_second_step_text_ios_18" = "<b>アプリ → Safari → 拡張機能</b>";
+
 /* (OnboardingController) third step text */
 "onboarding_third_step_text" = "<b>AdGuard機能拡張のスイッチ</b>をすべて<b>オン</b>にする";
 
@@ -737,7 +758,7 @@
 "advanced_protection_onboarding_third_step_text" = "AdGuardスイッチをすべて<b>オン</b>にします。完了です！";
 
 /* (OnboardingContentView) fours step. '%@' will be replaced with the share icon */
-"onboarding_fours_step_text" = "<b>高度な保護機能</b>を有効にするには、<br>①Safariを開く→URL欄左側の「<b>ぁあ</b>」アイコンをタップ<br><br> %@ <br><br>②「<b>機能拡張を管理</b>」をタップ→「<b>AdGuard</b>」スイッチをオンにしてください。";
+"onboarding_fours_step_text" = "<b>高度な保護機能</b>を有効にするには、<br>①Safariを開く→URL欄左側のアイコンをタップ<br><br> %@ <br><br>②「<b>機能拡張を管理</b>」をタップ→「<b>AdGuard</b>」スイッチをオンにします。";
 
 /* (BlockRequestController) Block request title */
 "block_request" = "リクエストをブロック";
@@ -990,7 +1011,7 @@
 "security_filters_feature_description" = "フィッシング詐欺、マルウェア、怪しいコンテンツをブロック";
 
 /* (PremiumFeature) - DNS privacy premium feature description */
-"dns_privacy_feature_description" = "個人情報を無断で収集するアプリ内トラッカーをブロック";
+"dns_privacy_feature_description" = "オンライン行動を無断で追跡するアプリ内トラッカーをブロック";
 
 /* (PremiumFeature) - Custom filters premium feature description */
 "custom_filters_feature_description" = "好みの外製フィルタを使用したり、自分のものを作成したり";
@@ -1197,7 +1218,7 @@ DO NOT TRANSLATE "none" */
 "dns_provider_controller_title" = "DNSサーバー";
 
 /* (DnsProvidersController) - Header description */
-"dns_provider_controller_description" = "DNS通信を暗号化することにより、オンラインプライバシーを強化できます。そうするには、以下の推奨DNSプロバイダーのいずれを選択してください。";
+"dns_provider_controller_description" = "DNS通信を暗号化することにより保護します。有効にするには、以下の推奨DNSプロバイダーのいずれを選択してください。";
 
 /* (DnsProviderDetailsController) Server title */
 "server_title" = "サーバー";
